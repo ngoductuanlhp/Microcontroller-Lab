@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\timer_and_button.X.production.sym \
   --cmf=dist/default/production\timer_and_button.X.production.cmf -z \
-  -Q18F8722 -oC:\Users\Tuan\AppData\Local\Temp\s2nc.2 \
+  -Q18F8722 -oC:\Users\Tuan\AppData\Local\Temp\sc24.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/timer_and_button.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=083h-0F5Fh -pstack=STACK -ACODE=00h-01FFFFh \
@@ -27,7 +27,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Tuan\AppData\Local\Temp\s2nc.o \
+  C:\Users\Tuan\AppData\Local\Temp\sc24.o \
   dist/default/production\timer_and_button.X.production.o 
 
 Object code version is 3.11
@@ -40,35 +40,37 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Tuan\AppData\Local\Temp\s2nc.o
+C:\Users\Tuan\AppData\Local\Temp\sc24.o
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\timer_and_button.X.production.o
                 intcode                               8        8        6        4       0
-                temp                                 45       45        1        1       1
+                temp                                 41       41        1        1       1
                 smallconst                         1000     1000        8      800       0
-                text12                             16A4     16A4       50      804       0
-                text11                             1654     1654       50      804       0
-                text10                             12A8     12A8      146      804       0
-                text9                              1782     1782        2      804       0
-                text8                              14E4     14E4       96      804       0
-                text7                              13EE     13EE       F6      804       0
-                text6                              15F2     15F2       62      804       0
-                text5                              1736     1736       26      804       0
-                intcode_body                       157A     157A       78      804       0
-                text3                              1778     1778        6      804       0
-                text2                              175C     175C       12      804       0
-                text1                              176E     176E        A      804       0
-                text0                              1008     1008      2A0      804       0
+                text14                             15A2     15A2       64      804       0
+                text13                             16B8     16B8       50      804       0
+                text12                             1668     1668       50      804       0
+                text11                             1260     1260      13E      804       0
+                text10                             17A0     17A0        2      804       0
+                text9                              1494     1494       96      804       0
+                text8                              139E     139E       F6      804       0
+                text7                              1606     1606       62      804       0
+                text6                              174A     174A       26      804       0
+                intcode_body                       152A     152A       78      804       0
+                text4                              1796     1796        6      804       0
+                text3                              178C     178C        A      804       0
+                text2                              1770     1770       12      804       0
+                text1                              1782     1782        A      804       0
+                text0                              1008     1008      258      804       0
                 cstackCOMRAM                          1        1       25        1       1
                 cstackBANK0                          80       80        3       60       1
                 bssBANK0                             60       60       20       60       1
-                dataCOMRAM                           41       41        4        1       1
-                bssCOMRAM                            26       26       1B        1       1
-                cinit                              16F4     16F4       42      804       0
-                idataCOMRAM                        177E     177E        4      804       0
+                dataCOMRAM                           3D       3D        4        1       1
+                bssCOMRAM                            26       26       17        1       1
+                cinit                              1708     1708       42      804       0
+                idataCOMRAM                        179C     179C        4      804       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -77,21 +79,23 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8        6         0
                 init                                  E        E        4         0
                 reset_vec                             0        0        4         0
-                text12                             16A4     16A4       50         0
-                text11                             1654     1654       50         0
-                text10                             12A8     12A8      146         0
-                text9                              1782     1782        2         0
-                text8                              14E4     14E4       96         0
-                text7                              13EE     13EE       F6         0
-                text6                              15F2     15F2       62         0
-                text5                              1736     1736       26         0
-                intcode_body                       157A     157A       78         0
-                text3                              1778     1778        6         0
-                text2                              175C     175C       12         0
-                text1                              176E     176E        A         0
-                text0                              1008     1008      2A0         0
-                cinit                              16F4     16F4       42         0
-                idataCOMRAM                        177E     177E        4         0
+                text14                             15A2     15A2       64         0
+                text13                             16B8     16B8       50         0
+                text12                             1668     1668       50         0
+                text11                             1260     1260      13E         0
+                text10                             17A0     17A0        2         0
+                text9                              1494     1494       96         0
+                text8                              139E     139E       F6         0
+                text7                              1606     1606       62         0
+                text6                              174A     174A       26         0
+                intcode_body                       152A     152A       78         0
+                text4                              1796     1796        6         0
+                text3                              178C     178C        A         0
+                text2                              1770     1770       12         0
+                text1                              1782     1782        A         0
+                text0                              1008     1008      258         0
+                cinit                              1708     1708       42         0
+                idataCOMRAM                        179C     179C        4         0
 
         CLASS   CONST          
 
@@ -101,10 +105,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 45       45        1         1
+                temp                                 41       41        1         1
                 cstackCOMRAM                          1        1       25         1
-                dataCOMRAM                           41       41        4         1
-                bssCOMRAM                            26       26       1B         1
+                dataCOMRAM                           3D       3D        4         1
+                bssCOMRAM                            26       26       17         1
 
         CLASS   ABS1           
 
@@ -163,11 +167,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000045  000046         1       1  COMRAM  
+                cstackCOMRAM                   000001  000041  000042         1       1  COMRAM  
                 intcode                        000008  00000A  000012         4       0  CODE    
                 bssBANK0                       000060  000023  000083        60       1  BANK0   
                 smallconst                     001000  000008  001008       800       0  SMALLCON
-                text0                          001008  00077C  001784       804       0  CODE    
+                text0                          001008  00079A  0017A2       804       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -191,25 +195,26 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           000046-00005F               1A
+        BIGRAM           000042-00005F               1E
                          000083-000F5F              EDD
         CODE             000004-000007                4
                          000012-000FFF              FEE
-                         001784-01FFFF            1E87C
-        COMRAM           000046-00005F               1A
+                         0017A2-01FFFF            1E85E
+        COMRAM           000042-00005F               1E
         CONST            000004-000007                4
                          000012-000FFF              FEE
-                         001784-01FFFF            1E87C
+                         0017A2-01FFFF            1E85E
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001784-00FFFF             E87C
+        MEDIUMCONST      0017A2-00FFFF             E85E
                          011000-01FFFF             F000
         RAM              000083-000F5F              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       001784-01FFFF              100
+        SMALLCONST       0017A2-01FFFF              100
         STACK            000083-000F5F              EDD
 
                                   Symbol Table
 
+?___lwmod                cstackCOMRAM 000001
 ?_printf                 cstackCOMRAM 000018
 ?_readButtonRA5          cstackCOMRAM 000001
 ?_readButtonRB0          cstackCOMRAM 000001
@@ -305,16 +310,18 @@ __Hspace_1               (abs)        000083
 __Hspace_2               (abs)        000000
 __Hstack                 stack        000000
 __Hstruct                struct       000000
-__Htemp                  temp         000046
+__Htemp                  temp         000042
 __Htext                  text         000000
 __Htext0                 text0        000000
 __Htext1                 text1        000000
 __Htext10                text10       000000
 __Htext11                text11       000000
 __Htext12                text12       000000
+__Htext13                text13       000000
+__Htext14                text14       000000
 __Htext2                 text2        000000
 __Htext3                 text3        000000
-__Htext5                 text5        000000
+__Htext4                 text4        000000
 __Htext6                 text6        000000
 __Htext7                 text7        000000
 __Htext8                 text8        000000
@@ -388,16 +395,18 @@ __Lspace_1               (abs)        000000
 __Lspace_2               (abs)        000000
 __Lstack                 stack        000000
 __Lstruct                struct       000000
-__Ltemp                  temp         000045
+__Ltemp                  temp         000041
 __Ltext                  text         000000
 __Ltext0                 text0        000000
 __Ltext1                 text1        000000
 __Ltext10                text10       000000
 __Ltext11                text11       000000
 __Ltext12                text12       000000
+__Ltext13                text13       000000
+__Ltext14                text14       000000
 __Ltext2                 text2        000000
 __Ltext3                 text3        000000
-__Ltext5                 text5        000000
+__Ltext4                 text4        000000
 __Ltext6                 text6        000000
 __Ltext7                 text7        000000
 __Ltext8                 text8        000000
@@ -408,55 +417,65 @@ __S2                     (abs)        000000
 ___extmem_base           (abs)        020000
 ___inthi_sp              stack        000000
 ___intlo_sp              stack        000000
+___lwmod                 text14       0015A2
+___lwmod@counter         cstackCOMRAM 000005
+___lwmod@dividend        cstackCOMRAM 000001
+___lwmod@divisor         cstackCOMRAM 000003
 ___param_bank            (abs)        000000
 ___rparam_used           (abs)        000001
 ___sp                    stack        000000
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000003
-__end_of__initialization cinit        00172C
-__end_of_fputc           text8        00157A
-__end_of_handleButton    text10       0013EE
-__end_of_interrupt_init  text3        00177E
-__end_of_main            text0        0012A8
-__end_of_myISR           intcode_body 0015F2
-__end_of_pin_init        text2        00176E
-__end_of_printf          text5        00175C
-__end_of_putch           text9        001784
-__end_of_readButtonRA5   text12       0016F4
-__end_of_readButtonRB0   text11       0016A4
-__end_of_timer0_init     text1        001778
-__end_of_vfpfcnvrt       text7        0014E4
-__end_of_vfprintf        text6        001654
-__initialization         cinit        0016F4
+__end_of___lwmod         text14       001606
+__end_of__initialization cinit        001740
+__end_of_fputc           text9        00152A
+__end_of_handleButton    text11       00139E
+__end_of_interrupt_init  text4        00179C
+__end_of_main            text0        001260
+__end_of_myISR           intcode_body 0015A2
+__end_of_osc_init        text3        001796
+__end_of_pin_init        text2        001782
+__end_of_printf          text6        001770
+__end_of_putch           text10       0017A2
+__end_of_readButtonRA5   text13       001708
+__end_of_readButtonRB0   text12       0016B8
+__end_of_timer0_init     text1        00178C
+__end_of_vfpfcnvrt       text8        001494
+__end_of_vfprintf        text7        001668
+__initialization         cinit        001708
 __mediumconst            mediumconst  000000
 __pbssBANK0              bssBANK0     000060
 __pbssCOMRAM             bssCOMRAM    000026
-__pcinit                 cinit        0016F4
+__pcinit                 cinit        001708
 __pcstackBANK0           cstackBANK0  000080
 __pcstackCOMRAM          cstackCOMRAM 000001
-__pdataCOMRAM            dataCOMRAM   000041
-__pidataCOMRAM           idataCOMRAM  00177E
+__pdataCOMRAM            dataCOMRAM   00003D
+__pidataCOMRAM           idataCOMRAM  00179C
 __pintcode               intcode      000008
-__pintcode_body          intcode_body 00157A
+__pintcode_body          intcode_body 00152A
 __psmallconst            smallconst   001000
 __ptext0                 text0        001008
-__ptext1                 text1        00176E
-__ptext10                text10       0012A8
-__ptext11                text11       001654
-__ptext12                text12       0016A4
-__ptext2                 text2        00175C
-__ptext3                 text3        001778
-__ptext5                 text5        001736
-__ptext6                 text6        0015F2
-__ptext7                 text7        0013EE
-__ptext8                 text8        0014E4
-__ptext9                 text9        001782
+__ptext1                 text1        001782
+__ptext10                text10       0017A0
+__ptext11                text11       001260
+__ptext12                text12       001668
+__ptext13                text13       0016B8
+__ptext14                text14       0015A2
+__ptext2                 text2        001770
+__ptext3                 text3        00178C
+__ptext4                 text4        001796
+__ptext6                 text6        00174A
+__ptext7                 text7        001606
+__ptext8                 text8        00139E
+__ptext9                 text9        001494
 __ramtop                 ramtop       001000
+__size_of___lwmod        (abs)        000000
 __size_of_fputc          (abs)        000000
 __size_of_handleButton   (abs)        000000
 __size_of_interrupt_init (abs)        000000
 __size_of_main           (abs)        000000
 __size_of_myISR          (abs)        000000
+__size_of_osc_init       (abs)        000000
 __size_of_pin_init       (abs)        000000
 __size_of_printf         (abs)        000000
 __size_of_putch          (abs)        000000
@@ -466,48 +485,49 @@ __size_of_timer0_init    (abs)        000000
 __size_of_vfpfcnvrt      (abs)        000000
 __size_of_vfprintf       (abs)        000000
 __smallconst             smallconst   001000
-_buttonRA5               bssCOMRAM    00003F
-_buttonRA5_1s_pressed    bssCOMRAM    00003E
-_buttonRA5_3s_pressed    bssCOMRAM    00003D
-_buttonRB0               bssCOMRAM    00003C
-_buttonRB0_1s_pressed    bssCOMRAM    00003B
-_buttonRB0_3s_pressed    bssCOMRAM    00003A
-_countRA5                bssCOMRAM    000038
-_countRA5_1              bssCOMRAM    000036
-_countRA5_2              bssCOMRAM    000034
-_countRB0                bssCOMRAM    000032
-_countRB0_1              bssCOMRAM    000030
-_countRB0_2              bssCOMRAM    00002E
-_firstReadRA5            dataCOMRAM   000044
-_firstReadRB0            dataCOMRAM   000042
+_buttonRA5               bssCOMRAM    00003B
+_buttonRA5_1s_pressed    bssCOMRAM    00003A
+_buttonRA5_3s_pressed    bssCOMRAM    000039
+_buttonRB0               bssCOMRAM    000038
+_buttonRB0_1s_pressed    bssCOMRAM    000037
+_buttonRB0_3s_pressed    bssCOMRAM    000036
+_countRA5                bssCOMRAM    000030
+_countRB0                bssCOMRAM    00002E
+_decrease1               bssCOMRAM    000033
+_decrease2               bssCOMRAM    000032
+_firstReadRA5            dataCOMRAM   000040
+_firstReadRB0            dataCOMRAM   00003E
 _flags                   bssCOMRAM    00002C
-_fputc                   text8        0014E4
-_handleButton            text10       0012A8
-_interrupt_init          text3        001778
-_ledValue                bssCOMRAM    000040
+_fputc                   text9        001494
+_handleButton            text11       001260
+_increase1               bssCOMRAM    000035
+_increase2               bssCOMRAM    000034
+_interrupt_init          text4        001796
+_ledValue                bssCOMRAM    00003C
 _main                    text0        001008
 _myISR                   intcode      000008
 _nout                    bssCOMRAM    000026
-_pin_init                text2        00175C
+_osc_init                text3        00178C
+_pin_init                text2        001770
 _prec                    bssCOMRAM    00002A
-_printf                  text5        001736
-_putch                   text9        001782
-_readButtonRA5           text12       0016A4
-_readButtonRB0           text11       001654
-_secondReadRA5           dataCOMRAM   000043
-_secondReadRB0           dataCOMRAM   000041
-_timer0_init             text1        00176E
-_vfpfcnvrt               text7        0013EE
-_vfprintf                text6        0015F2
+_printf                  text6        00174A
+_putch                   text10       0017A0
+_readButtonRA5           text13       0016B8
+_readButtonRB0           text12       001668
+_secondReadRA5           dataCOMRAM   00003F
+_secondReadRB0           dataCOMRAM   00003D
+_timer0_init             text1        001782
+_vfpfcnvrt               text8        00139E
+_vfprintf                text7        001606
 _width                   bssCOMRAM    000028
-btemp                    temp         000045
-end_of_initialization    cinit        00172C
+btemp                    temp         000041
+end_of_initialization    cinit        001740
 fputc@c                  cstackCOMRAM 000001
 fputc@fp                 cstackCOMRAM 000003
-handleButton@checkRA5    cstackCOMRAM 000003
-handleButton@checkRB0    cstackCOMRAM 000005
-int$flags                temp         000045
-int_func                 intcode_body 00157A
+handleButton@checkRA5    cstackCOMRAM 000006
+handleButton@checkRB0    cstackCOMRAM 000008
+int$flags                temp         000041
+int_func                 intcode_body 00152A
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
@@ -518,10 +538,10 @@ printf@fmt               cstackCOMRAM 000018
 stackhi                  (abs)        000F5F
 stacklo                  (abs)        000083
 start                    init         00000E
-start_initialization     cinit        0016F4
-ttemp5                   temp         000046
-ttemp6                   temp         000049
-ttemp7                   temp         00004D
+start_initialization     cinit        001708
+ttemp5                   temp         000042
+ttemp6                   temp         000045
+ttemp7                   temp         000049
 vfpfcnvrt@ap             cstackCOMRAM 00000E
 vfpfcnvrt@fmt            cstackCOMRAM 00000C
 vfpfcnvrt@fp             cstackCOMRAM 00000A
@@ -529,18 +549,18 @@ vfprintf@ap              cstackCOMRAM 000014
 vfprintf@cfmt            cstackCOMRAM 000016
 vfprintf@fmt             cstackCOMRAM 000012
 vfprintf@fp              cstackCOMRAM 000010
-wtemp8                   temp         000046
+wtemp8                   temp         000042
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 146 in file "main.c"
+		line 134 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  state           1    2[BANK0 ] enum E4889
+  state           1    2[BANK0 ] enum E4890
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -558,6 +578,7 @@ Total ram usage:        3 bytes
  Hardware stack levels required when called:    7
  This function calls:
 		_interrupt_init
+		_osc_init
 		_pin_init
 		_timer0_init
  This function is called by:
@@ -567,7 +588,7 @@ Total ram usage:        3 bytes
 
  *************** function _timer0_init *****************
  Defined at:
-		line 62 in file "main.c"
+		line 63 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -597,7 +618,37 @@ Total ram usage:        0 bytes
 
  *************** function _pin_init *****************
  Defined at:
-		line 67 in file "main.c"
+		line 68 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _osc_init *****************
+ Defined at:
+		line 77 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -627,7 +678,7 @@ Total ram usage:        0 bytes
 
  *************** function _interrupt_init *****************
  Defined at:
-		line 57 in file "main.c"
+		line 58 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -657,7 +708,7 @@ Total ram usage:        0 bytes
 
  *************** function _myISR *****************
  Defined at:
-		line 132 in file "main.c"
+		line 125 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -861,12 +912,12 @@ Total ram usage:        0 bytes
 
  *************** function _handleButton *****************
  Defined at:
-		line 94 in file "main.c"
+		line 100 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  checkRB0        2    4[COMRAM] int 
-  checkRA5        2    2[COMRAM] int 
+  checkRB0        2    7[COMRAM] int 
+  checkRA5        2    5[COMRAM] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -884,6 +935,7 @@ Total ram usage:        4 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
+		___lwmod
 		_readButtonRA5
 		_readButtonRB0
  This function is called by:
@@ -893,7 +945,7 @@ Total ram usage:        4 bytes
 
  *************** function _readButtonRB0 *****************
  Defined at:
-		line 85 in file "main.c"
+		line 91 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -922,7 +974,7 @@ Total ram usage:        2 bytes
 
  *************** function _readButtonRA5 *****************
  Defined at:
-		line 76 in file "main.c"
+		line 82 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -949,45 +1001,81 @@ Total ram usage:        2 bytes
  This function uses a non-reentrant model
 
 
+ *************** function ___lwmod *****************
+ Defined at:
+		line 7 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c"
+ Parameters:    Size  Location     Type
+  dividend        2    0[COMRAM] unsigned int 
+  divisor         2    2[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+  counter         1    4[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[COMRAM] unsigned int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_handleButton
+ This function uses a non-reentrant model
+
+
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
-		_vfpfcnvrt     		CODE           	13EE	0000	247
-		_vfprintf      		CODE           	15F2	0000	99
+		_vfpfcnvrt     		CODE           	139E	0000	247
+		_vfprintf      		CODE           	1606	0000	99
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c estimated size: 346
 
 shared
-		__initialization		CODE           	16F4	0000	57
+		__initialization		CODE           	1708	0000	57
 
 shared estimated size: 57
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\putch.c
-		_putch         		CODE           	1782	0000	3
+		_putch         		CODE           	17A0	0000	3
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\putch.c estimated size: 3
 
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c
+		___lwmod       		CODE           	15A2	0000	101
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c estimated size: 101
+
 main.c
 		_myISR         		CODE           	0008	0000	127
-		_main          		CODE           	1008	0000	673
-		_handleButton  		CODE           	12A8	0000	327
-		_timer0_init   		CODE           	176E	0000	11
-		_pin_init      		CODE           	175C	0000	19
-		_readButtonRB0 		CODE           	1654	0000	81
-		_readButtonRA5 		CODE           	16A4	0000	81
-		_interrupt_init		CODE           	1778	0000	7
+		_main          		CODE           	1008	0000	601
+		_osc_init      		CODE           	178C	0000	11
+		_handleButton  		CODE           	1260	0000	319
+		_timer0_init   		CODE           	1782	0000	11
+		_pin_init      		CODE           	1770	0000	19
+		_readButtonRB0 		CODE           	1668	0000	81
+		_readButtonRA5 		CODE           	16B8	0000	81
+		_interrupt_init		CODE           	1796	0000	7
 
-main.c estimated size: 1326
+main.c estimated size: 1257
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
-		_printf        		CODE           	1736	0000	39
+		_printf        		CODE           	174A	0000	39
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c estimated size: 39
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
-		_fputc         		CODE           	14E4	0000	151
+		_fputc         		CODE           	1494	0000	151
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c estimated size: 151
 

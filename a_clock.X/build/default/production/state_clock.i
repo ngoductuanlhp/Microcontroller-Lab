@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "state_clock.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,20 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 14 "main.c"
-#pragma config OSC = INTIO7
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
-#pragma config PWRT = OFF
-#pragma config BOREN = OFF
-#pragma config WDT = OFF
-#pragma config MCLRE = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-
+# 1 "state_clock.c" 2
+# 1 "./state_clock.h" 1
+# 15 "./state_clock.h"
+# 1 "./config.h" 1
+# 15 "./config.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -7778,7 +7769,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 25 "main.c" 2
+# 15 "./config.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
@@ -7918,7 +7909,129 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 26 "main.c" 2
+# 16 "./config.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+# 17 "./config.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 18 "./config.h" 2
+
+# 1 "./BBSPI_LCD.h" 1
+# 15 "./BBSPI_LCD.h"
+# 1 "./config.h" 1
+# 16 "./BBSPI_LCD.h" 2
+# 67 "./BBSPI_LCD.h"
+    void LCDInit(void);
+# 76 "./BBSPI_LCD.h"
+    void InitBBSPI (void);
+# 85 "./BBSPI_LCD.h"
+    void SendByteBBSPI (unsigned char output);
+# 94 "./BBSPI_LCD.h"
+    void Port_BBSPIInit (unsigned char port_dir);
+# 104 "./BBSPI_LCD.h"
+    void WritePort_BBSPI (unsigned char port_add, unsigned char a);
+# 113 "./BBSPI_LCD.h"
+    void LCDPutChar(unsigned char);
+# 122 "./BBSPI_LCD.h"
+    void LCDPutInst(unsigned char);
+# 131 "./BBSPI_LCD.h"
+    void LCDPutStr(const char *);
+# 19 "./config.h" 2
+
+
+
+#pragma config OSC = INTIO7
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
+#pragma config PWRT = OFF
+#pragma config BOREN = OFF
+#pragma config WDT = OFF
+#pragma config MCLRE = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
 
 
 
@@ -7926,175 +8039,79 @@ char *tempnam(const char *, const char *);
 
 
 
+enum State{CLOCK, MODIFY, STOP_WATCH};
+volatile enum State state;
+
+volatile unsigned char hour = 0, min = 0, sec = 0;
+
+unsigned char timerflag_10ms = 0;
+unsigned char timerflag_1s = 0;
+
+unsigned int count = 0;
 
 unsigned char firstReadRA5 = 1;
 unsigned char secondReadRA5 = 1;
-unsigned char firstReadRB0 = 1;
-unsigned char secondReadRB0 = 1;
-
-unsigned char ledValue = 0;
 
 unsigned char buttonRA5 = 0;
 unsigned char buttonRA5_1s_pressed = 0;
-unsigned char buttonRA5_3s_pressed = 0;
-
-unsigned char buttonRB0 = 0;
-unsigned char buttonRB0_1s_pressed = 0;
-unsigned char buttonRB0_3s_pressed = 0;
-
 unsigned int countRA5 = 0;
-unsigned char increase1 = 0;
-unsigned char increase2 = 0;
+unsigned int countRA5_1 = 0;
+unsigned int checkRA5 = 0;
 
-unsigned int countRB0 = 0;
-unsigned char decrease1 = 0;
-unsigned char decrease2 = 0;
+void clock(void);
+
+void modify(void);
+
+void stop_watch(void);
+# 15 "./state_clock.h" 2
 
 
-void interrupt_init() {
-    INTCONbits.TMR0IE = 1;
-    INTCONbits.GIE = 1;
+
+void display_clock();
+# 1 "state_clock.c" 2
+
+
+void display_clock() {
+   LCDPutInst(0x80);
+   LCDPutChar(hour/10+'0');
+   LCDPutChar(hour%10+'0');
+   LCDPutChar(':');
+   LCDPutChar(min/10+'0');
+   LCDPutChar(min%10+'0');
+   LCDPutChar(':');
+   LCDPutChar(sec/10+'0');
+   LCDPutChar(sec%10+'0');
+   LCDPutStr("        ");
+
+   printf("%02d:", hour);
+   printf("%02d:", min);
+   printf("%02d \t", sec);
 }
 
-void timer0_init() {
-    T0CON = 0b11000111;
-    TMR0L = 177;
-}
-
-void pin_init() {
-    TRISD = 0x00;
-    LATD = 0x00;
-
-    TRISAbits.TRISA5 = 1;
-    TRISBbits.TRISB0 = 1;
-    ADCON1 = 0b00001111;
-}
-
-void osc_init() {
-    OSCCON = 0b01110111;
-    OSCTUNE = 0b00001111;
-}
-
-int readButtonRA5() {
-    firstReadRA5 = secondReadRA5;
-    secondReadRA5 = PORTAbits.RA5;
-    if(secondReadRA5 == firstReadRA5) {
-        return (secondReadRA5 == 0) ? 2 : 1;
-    }
-    return 0;
-}
-
-int readButtonRB0() {
-    firstReadRB0 = secondReadRB0;
-    secondReadRB0 = PORTBbits.RB0;
-    if(secondReadRB0 == firstReadRB0) {
-        return (secondReadRB0 == 0) ? 2 : 1;
-    }
-    return 0;
-}
-
-void handleButton() {
-    int checkRA5 = readButtonRA5();
-    int checkRB0 = readButtonRB0();
-    if(checkRA5 == 2) {
-        countRB0 = 0;
-        countRA5++;
-        if(countRA5 % 10 == 0)
-            increase2 = 1;
-        if(countRA5 % 50 == 0)
-            increase1 = 1;
-    }
-    else if(checkRB0 == 2) {
-        countRA5 = 0;
-        countRB0++;
-        if(countRB0 % 10 == 0)
-            decrease2 = 1;
-        if(countRB0 % 50 == 0)
-            decrease1 = 1;
-    }
-    else if(checkRB0 == 1 || checkRA5 == 1) {
-        countRA5 = 0;
-        countRB0 = 0;
-    }
-}
-
-void __attribute__((picinterrupt(("")))) myISR(void) {
-    if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
-        INTCONbits.TMR0IF = 0;
-        TMR0L = 177;
-        handleButton();
-        printf("hello");
-    }
-}
-
-void main(void) {
-    enum State{INIT, INCREASE0, INCREASE1, INCREASE2, DECREASE0, DECREASE1, DECREASE2};
-    enum State state = INIT;
-    pin_init();
-    timer0_init();
-    interrupt_init();
-    osc_init();
-    while(1) {
-        LATD = ledValue;
-        switch(state) {
-            case INIT:
-                if(countRA5 > 0) {
-                    ledValue++;
-                    state = INCREASE0;
-                }
-                else if(countRB0 > 0) {
-                    ledValue--;
-                    state = DECREASE0;
-                }
-                break;
-            case INCREASE0:
-                if(countRA5 > 100)
-                    state = INCREASE1;
-                else if (countRA5 == 0)
-                    state = (countRB0 > 0) ? DECREASE0 : INIT;
-                break;
-            case INCREASE1:
-                if(increase1) {
-                    ledValue++;
-                    increase1 = 0;
-                }
-                if(countRA5 > 300)
-                    state = INCREASE2;
-                else if(countRA5 == 0)
-                    state = (countRB0 > 0) ? DECREASE0 : INIT;
-                break;
-            case INCREASE2:
-                if(increase2) {
-                    ledValue++;
-                    increase2 = 0;
-                }
-                if(countRA5 == 0)
-                    state = (countRB0 > 0) ? DECREASE0 : INIT;
-                break;
-            case DECREASE0:
-                if(countRB0 > 100)
-                    state = DECREASE1;
-                else if (countRB0 == 0)
-                    state = (countRA5 > 0) ? INCREASE0 : INIT;
-                break;
-            case DECREASE1:
-                if(decrease1) {
-                    ledValue--;
-                    decrease1 = 0;
-                }
-                if(countRB0 > 300)
-                    state = DECREASE2;
-                else if(countRB0 == 0)
-                    state = (countRA5 > 0) ? INCREASE0 : INIT;
-                break;
-            case DECREASE2:
-                if(decrease2) {
-                    ledValue--;
-                    decrease2 = 0;
-                }
-                if(countRB0 == 0)
-                    state = (countRA5 > 0) ? INCREASE0 : INIT;
-                break;
+void clock(void) {
+    LCDPutInst(0xC0);
+    LCDPutStr("RA5=MODIFY_HOUR");
+    printf("RA5=MODIFY_HOUR\n\r");
+    while(state == CLOCK) {
+        if(timerflag_1s == 1) {
+            sec++;
+            if(sec > 59) {
+                sec = 0;
+                min++;
+            }
+            if(min > 59) {
+                min = 0;
+                hour++;
+            }
+            if(hour > 23) {
+                hour = 0;
+            }
+            display_clock();
+            timerflag_1s = 0;
+        }
+        if(checkRA5 == 1) {
+            checkRA5 = 0;
+            state = MODIFY;
         }
     }
 }

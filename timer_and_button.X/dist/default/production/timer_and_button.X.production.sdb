@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip 18F8722 ]
 [d frameptr 4065 ]
-"148 E:\MPLAPXProjects\timer_and_button.X\main.c
-[e E4889 State `uc
+"136 E:\MPLAPXProjects\timer_and_button.X\main.c
+[e E4890 State `uc
 INIT 0
 INCREASE0 1
 INCREASE1 2
@@ -29,6 +29,8 @@ DECREASE2 6
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
@@ -51,21 +53,23 @@ DECREASE2 6
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"57 E:\MPLAPXProjects\timer_and_button.X\main.c
+"58 E:\MPLAPXProjects\timer_and_button.X\main.c
 [v _interrupt_init interrupt_init `(v  1 e 1 0 ]
-"62
+"63
 [v _timer0_init timer0_init `(v  1 e 1 0 ]
-"67
+"68
 [v _pin_init pin_init `(v  1 e 1 0 ]
-"76
+"77
+[v _osc_init osc_init `(v  1 e 1 0 ]
+"82
 [v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
-"85
+"91
 [v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
-"94
+"100
 [v _handleButton handleButton `(v  1 e 1 0 ]
-"132
+"125
 [v _myISR myISR `IIH(v  1 e 1 0 ]
-"146
+"134
 [v _main main `(v  1 e 1 0 ]
 [s S86 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -77,28 +81,28 @@ DECREASE2 6
 `uc 1 RA7 1 0 :1:7 
 ]
 "2684 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
-[s S167 . 1 `uc 1 . 1 0 :2:0 
+[s S169 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S173 . 1 `uc 1 AN0 1 0 :1:0 
+[s S175 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S180 . 1 `uc 1 . 1 0 :5:0 
+[s S182 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S183 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S185 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S187 . 1 `S86 1 . 1 0 `S167 1 . 1 0 `S173 1 . 1 0 `S180 1 . 1 0 `S183 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES187  1 e 1 @3968 ]
+[u S189 . 1 `S86 1 . 1 0 `S169 1 . 1 0 `S175 1 . 1 0 `S182 1 . 1 0 `S185 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES189  1 e 1 @3968 ]
 [s S126 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -109,7 +113,7 @@ DECREASE2 6
 `uc 1 RB7 1 0 :1:7 
 ]
 "2833
-[s S232 . 1 `uc 1 INT0 1 0 :1:0 
+[s S234 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -118,21 +122,21 @@ DECREASE2 6
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S241 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S243 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ECCP2 1 0 :1:3 
 ]
-[s S245 . 1 `uc 1 . 1 0 :3:0 
+[s S247 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2 1 0 :1:3 
 ]
-[s S248 . 1 `uc 1 . 1 0 :3:0 
+[s S250 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 P2A 1 0 :1:3 
 ]
-[s S251 . 1 `uc 1 . 1 0 :3:0 
+[s S253 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S254 . 1 `S126 1 . 1 0 `S232 1 . 1 0 `S241 1 . 1 0 `S245 1 . 1 0 `S248 1 . 1 0 `S251 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES254  1 e 1 @3969 ]
+[u S256 . 1 `S126 1 . 1 0 `S234 1 . 1 0 `S243 1 . 1 0 `S247 1 . 1 0 `S250 1 . 1 0 `S253 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES256  1 e 1 @3969 ]
 "4815
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 [s S77 . 1 `uc 1 TRISA0 1 0 :1:0 
@@ -215,41 +219,46 @@ DECREASE2 6
 "49
 [v _countRA5 countRA5 `ui  1 e 2 0 ]
 "50
-[v _countRA5_1 countRA5_1 `ui  1 e 2 0 ]
+[v _increase1 increase1 `uc  1 e 1 0 ]
 "51
-[v _countRA5_2 countRA5_2 `ui  1 e 2 0 ]
+[v _increase2 increase2 `uc  1 e 1 0 ]
 "53
 [v _countRB0 countRB0 `ui  1 e 2 0 ]
 "54
-[v _countRB0_1 countRB0_1 `ui  1 e 2 0 ]
+[v _decrease1 decrease1 `uc  1 e 1 0 ]
 "55
-[v _countRB0_2 countRB0_2 `ui  1 e 2 0 ]
-"146
+[v _decrease2 decrease2 `uc  1 e 1 0 ]
+"134
 [v _main main `(v  1 e 1 0 ]
 {
-"148
-[v main@state state `E4889  1 a 1 2 ]
-"237
+"136
+[v main@state state `E4890  1 a 1 2 ]
+"204
 } 0
-"62
+"63
 [v _timer0_init timer0_init `(v  1 e 1 0 ]
 {
-"65
+"66
 } 0
-"67
+"68
 [v _pin_init pin_init `(v  1 e 1 0 ]
 {
-"74
+"75
 } 0
-"57
+"77
+[v _osc_init osc_init `(v  1 e 1 0 ]
+{
+"80
+} 0
+"58
 [v _interrupt_init interrupt_init `(v  1 e 1 0 ]
 {
-"60
+"61
 } 0
-"132
+"125
 [v _myISR myISR `IIH(v  1 e 1 0 ]
 {
-"144
+"132
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -265,9 +274,9 @@ DECREASE2 6
 {
 "1371
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 21 ]
-[s S399 _IO_FILE 0 ]
+[s S401 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S399  1 p 2 15 ]
+[v vfprintf@fp fp `*.2S401  1 p 2 15 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 17 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 19 ]
 "1382
@@ -275,8 +284,8 @@ DECREASE2 6
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S399 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.2S399  1 p 2 9 ]
+[s S401 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.2S401  1 p 2 9 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 11 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 13 ]
 "1365
@@ -285,8 +294,8 @@ DECREASE2 6
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S884 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S884  1 p 2 2 ]
+[s S886 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S886  1 p 2 2 ]
 "21
 } 0
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\putch.c
@@ -294,22 +303,32 @@ DECREASE2 6
 {
 "9
 } 0
-"94 E:\MPLAPXProjects\timer_and_button.X\main.c
+"100 E:\MPLAPXProjects\timer_and_button.X\main.c
 [v _handleButton handleButton `(v  1 e 1 0 ]
 {
-"96
-[v handleButton@checkRB0 checkRB0 `i  1 a 2 4 ]
-"95
-[v handleButton@checkRA5 checkRA5 `i  1 a 2 2 ]
-"130
+"102
+[v handleButton@checkRB0 checkRB0 `i  1 a 2 7 ]
+"101
+[v handleButton@checkRA5 checkRA5 `i  1 a 2 5 ]
+"123
 } 0
-"85
+"91
 [v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
 {
-"92
+"98
 } 0
-"76
+"82
 [v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
 {
-"83
+"89
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+"25
 } 0

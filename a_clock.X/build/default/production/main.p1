@@ -1,4 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"39 ./config.h
+[c E4907 0 1 2 .. ]
+[n E4907 State CLOCK MODIFY STOP_WATCH  ]
+"11 main.c
+[; ;main.c: 11: enum State_Button state_buttonRA5, state_buttonRB0;
+[c E4928 0 1 2 .. ]
+[n E4928 State_Button INIT PRESSED PRESSED_1S  ]
 "13118 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13118:     struct {
 [s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -24,45 +31,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12640
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12640: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"6123
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6123: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"4479
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4479: extern volatile unsigned char LATA __attribute__((address(0xF89)));
+[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"5457
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5457: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"4591
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4591: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
+[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
+"5679
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5679: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"4703
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4703: extern volatile unsigned char LATC __attribute__((address(0xF8B)));
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+"5901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5901: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
 "4815
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4815: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
-"5468
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5468:     struct {
-[s S212 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S212 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"5478
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5478:     struct {
-[s S213 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S213 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"5467
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5467: typedef union {
-[u S211 `S212 1 `S213 1 ]
-[n S211 . . . ]
-"5489
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5489: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
-[v _TRISAbits `VS211 ~T0 @X0 0 e@3986 ]
-"5690
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5690:     struct {
-[s S218 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S218 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"5700
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5700:     struct {
-[s S219 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S219 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"5689
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5689: typedef union {
-[u S217 `S218 1 `S219 1 ]
-[n S217 . . . ]
-"5711
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5711: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
-[v _TRISBbits `VS217 ~T0 @X0 0 e@3987 ]
-"10174
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 10174: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"6123
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6123: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"4927
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4927: extern volatile unsigned char LATE __attribute__((address(0xF8D)));
+[v _LATE `Vuc ~T0 @X0 0 e@3981 ]
+"6345
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6345: extern volatile unsigned char TRISE __attribute__((address(0xF96)));
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
+"13025
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13025:     struct {
+[s S490 :7 `uc 1 :1 `uc 1 ]
+[n S490 . . NOT_RBPU ]
+"13029
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13029:     struct {
+[s S491 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S491 . RBIP INT3IP TMR0IP INTEDG3 INTEDG2 INTEDG1 INTEDG0 nRBPU ]
+"13039
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13039:     struct {
+[s S492 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S492 . . INT3P T0IP . RBPU ]
+"13024
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13024: typedef union {
+[u S489 `S490 1 `S491 1 `S492 1 ]
+[n S489 . . . . ]
+"13047
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13047: extern volatile INTCON2bits_t INTCON2bits __attribute__((address(0xFF1)));
+[v _INTCON2bits `VS489 ~T0 @X0 0 e@4081 ]
 "12474
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12474: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -96,64 +113,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2684
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2684: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS117 ~T0 @X0 0 e@3968 ]
-"2795
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2795:     struct {
-[s S124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S124 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"2805
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2805:     struct {
-[s S125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S125 . INT0 INT1 INT2 INT3 KBI0 KBI1 KBI2 KBI3 ]
-"2815
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2815:     struct {
-[s S126 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S126 . FLT0 . ECCP2 ]
-"2820
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2820:     struct {
-[s S127 :3 `uc 1 :1 `uc 1 ]
-[n S127 . . CCP2 ]
-"2824
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2824:     struct {
-[s S128 :3 `uc 1 :1 `uc 1 ]
-[n S128 . . P2A ]
-"2828
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2828:     struct {
-[s S129 :3 `uc 1 :1 `uc 1 ]
-[n S129 . . CCP2_PA2 ]
-"2794
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2794: typedef union {
-[u S123 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 ]
-[n S123 . . . . . . . ]
-"2833
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2833: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS123 ~T0 @X0 0 e@3969 ]
 [t ~ __interrupt . k ]
 [t T110 __interrupt ]
-"111 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 [p mainexit ]
-"136 main.c
-[; ;main.c: 136:     enum State state = INIT;
-[c E4890 0 1 2 3 4 5 6 .. ]
-[n E4890 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
-"14 main.c
-[p x OSC = INTIO7 ]
-"15
-[p x FCMEN = OFF ]
-"16
-[p x IESO = OFF ]
-"17
-[p x PWRT = OFF ]
-"18
-[p x BOREN = OFF ]
-"19
-[p x WDT = OFF ]
-"20
-[p x MCLRE = ON ]
-"21
-[p x LVP = OFF ]
-"22
-[p x XINST = OFF ]
+"57 ./config.h
+[v _clock `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -748,631 +712,412 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"34 main.c
-[; ;main.c: 34: unsigned char firstReadRA5 = 1;
+"22 ./config.h
+[; ;./config.h: 22: unsigned int countRA5_1 = 0;
+[p x OSC = INTIO7 ]
+"23
+[; ;./config.h: 23: unsigned int checkRA5 = 0;
+[p x FCMEN = OFF ]
+"24
+[; ;./config.h: 24: 
+[p x IESO = OFF ]
+"25
+[; ;./config.h: 25: void clock(void);
+[p x PWRT = OFF ]
+"26
+[; ;./config.h: 26: 
+[p x BOREN = OFF ]
+"27
+[; ;./config.h: 27: void modify(void);
+[p x WDT = OFF ]
+"28
+[; ;./config.h: 28: 
+[p x MCLRE = ON ]
+"29
+[; ;./config.h: 29: void stop_watch(void);
+[p x LVP = OFF ]
+"30
+[p x XINST = OFF ]
+"39
+[v _state `VE4907 ~T0 @X0 1 e ]
+"41
+[v _hour `Vuc ~T0 @X0 1 e ]
+[i _hour
+-> -> 0 `i `uc
+]
+[v _min `Vuc ~T0 @X0 1 e ]
+[i _min
+-> -> 0 `i `uc
+]
+[v _sec `Vuc ~T0 @X0 1 e ]
+[i _sec
+-> -> 0 `i `uc
+]
+"43
+[v _timerflag_10ms `uc ~T0 @X0 1 e ]
+[i _timerflag_10ms
+-> -> 0 `i `uc
+]
+"44
+[v _timerflag_1s `uc ~T0 @X0 1 e ]
+[i _timerflag_1s
+-> -> 0 `i `uc
+]
+"46
+[v _count `ui ~T0 @X0 1 e ]
+[i _count
+-> -> 0 `i `ui
+]
+"48
 [v _firstReadRA5 `uc ~T0 @X0 1 e ]
 [i _firstReadRA5
 -> -> 1 `i `uc
 ]
-"35
-[; ;main.c: 35: unsigned char secondReadRA5 = 1;
+"49
 [v _secondReadRA5 `uc ~T0 @X0 1 e ]
 [i _secondReadRA5
 -> -> 1 `i `uc
 ]
-"36
-[; ;main.c: 36: unsigned char firstReadRB0 = 1;
-[v _firstReadRB0 `uc ~T0 @X0 1 e ]
-[i _firstReadRB0
--> -> 1 `i `uc
-]
-"37
-[; ;main.c: 37: unsigned char secondReadRB0 = 1;
-[v _secondReadRB0 `uc ~T0 @X0 1 e ]
-[i _secondReadRB0
--> -> 1 `i `uc
-]
-"39
-[; ;main.c: 39: unsigned char ledValue = 0;
-[v _ledValue `uc ~T0 @X0 1 e ]
-[i _ledValue
--> -> 0 `i `uc
-]
-"41
-[; ;main.c: 41: unsigned char buttonRA5 = 0;
+"51
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"42
-[; ;main.c: 42: unsigned char buttonRA5_1s_pressed = 0;
+"52
 [v _buttonRA5_1s_pressed `uc ~T0 @X0 1 e ]
 [i _buttonRA5_1s_pressed
 -> -> 0 `i `uc
 ]
-"43
-[; ;main.c: 43: unsigned char buttonRA5_3s_pressed = 0;
-[v _buttonRA5_3s_pressed `uc ~T0 @X0 1 e ]
-[i _buttonRA5_3s_pressed
--> -> 0 `i `uc
-]
-"45
-[; ;main.c: 45: unsigned char buttonRB0 = 0;
-[v _buttonRB0 `uc ~T0 @X0 1 e ]
-[i _buttonRB0
--> -> 0 `i `uc
-]
-"46
-[; ;main.c: 46: unsigned char buttonRB0_1s_pressed = 0;
-[v _buttonRB0_1s_pressed `uc ~T0 @X0 1 e ]
-[i _buttonRB0_1s_pressed
--> -> 0 `i `uc
-]
-"47
-[; ;main.c: 47: unsigned char buttonRB0_3s_pressed = 0;
-[v _buttonRB0_3s_pressed `uc ~T0 @X0 1 e ]
-[i _buttonRB0_3s_pressed
--> -> 0 `i `uc
-]
-"49
-[; ;main.c: 49: unsigned int countRA5 = 0;
+"53
 [v _countRA5 `ui ~T0 @X0 1 e ]
 [i _countRA5
 -> -> 0 `i `ui
 ]
-"50
-[; ;main.c: 50: unsigned char increase1 = 0;
-[v _increase1 `uc ~T0 @X0 1 e ]
-[i _increase1
--> -> 0 `i `uc
-]
-"51
-[; ;main.c: 51: unsigned char increase2 = 0;
-[v _increase2 `uc ~T0 @X0 1 e ]
-[i _increase2
--> -> 0 `i `uc
-]
-"53
-[; ;main.c: 53: unsigned int countRB0 = 0;
-[v _countRB0 `ui ~T0 @X0 1 e ]
-[i _countRB0
+"54
+[v _countRA5_1 `ui ~T0 @X0 1 e ]
+[i _countRA5_1
 -> -> 0 `i `ui
 ]
-"54
-[; ;main.c: 54: unsigned char decrease1 = 0;
-[v _decrease1 `uc ~T0 @X0 1 e ]
-[i _decrease1
--> -> 0 `i `uc
-]
 "55
-[; ;main.c: 55: unsigned char decrease2 = 0;
-[v _decrease2 `uc ~T0 @X0 1 e ]
-[i _decrease2
--> -> 0 `i `uc
+[v _checkRA5 `ui ~T0 @X0 1 e ]
+[i _checkRA5
+-> -> 0 `i `ui
 ]
-"58
-[; ;main.c: 58: void interrupt_init() {
+"11 main.c
+[; ;main.c: 11: enum State_Button state_buttonRA5, state_buttonRB0;
+[v _state_buttonRA5 `E4928 ~T0 @X0 1 e ]
+[v _state_buttonRB0 `E4928 ~T0 @X0 1 e ]
+"14
+[; ;main.c: 14: void interrupt_init() {
 [v _interrupt_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _interrupt_init ]
 [f ]
-"59
-[; ;main.c: 59:     INTCONbits.TMR0IE = 1;
+"15
+[; ;main.c: 15:     INTCONbits.TMR0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"60
-[; ;main.c: 60:     INTCONbits.GIE = 1;
+"16
+[; ;main.c: 16:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61: }
+"17
+[; ;main.c: 17: }
 [e :UE 503 ]
 }
-"63
-[; ;main.c: 63: void timer0_init() {
+"19
+[; ;main.c: 19: void timer0_init() {
 [v _timer0_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _timer0_init ]
 [f ]
-"64
-[; ;main.c: 64:     T0CON = 0b11000111;
+"20
+[; ;main.c: 20:     T0CON = 0b11000111;
 [e = _T0CON -> -> 199 `i `uc ]
-"65
-[; ;main.c: 65:     TMR0L = 177;
+"21
+[; ;main.c: 21:     TMR0L = 177;
 [e = _TMR0L -> -> 177 `i `uc ]
-"66
-[; ;main.c: 66: }
+"22
+[; ;main.c: 22: }
 [e :UE 504 ]
 }
-"68
-[; ;main.c: 68: void pin_init() {
+"24
+[; ;main.c: 24: void pin_init() {
 [v _pin_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _pin_init ]
 [f ]
-"69
-[; ;main.c: 69:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"70
-[; ;main.c: 70:     LATD = 0x00;
+"25
+[; ;main.c: 25:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"26
+[; ;main.c: 26:     TRISA = 0xF3;
+[e = _TRISA -> -> 243 `i `uc ]
+"29
+[; ;main.c: 29:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
+"30
+[; ;main.c: 30:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
+"34
+[; ;main.c: 34:     LATC = 0x00;
+[e = _LATC -> -> 0 `i `uc ]
+"35
+[; ;main.c: 35:     TRISC = 0xD7;
+[e = _TRISC -> -> 215 `i `uc ]
+"38
+[; ;main.c: 38:     LATD = 0x00;
 [e = _LATD -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:     TRISAbits.TRISA5 = 1;
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:     TRISBbits.TRISB0 = 1;
-[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-"74
-[; ;main.c: 74:     ADCON1 = 0b00001111;
-[e = _ADCON1 -> -> 15 `i `uc ]
-"75
-[; ;main.c: 75: }
+"39
+[; ;main.c: 39:     TRISD = 0xFF;
+[e = _TRISD -> -> 255 `i `uc ]
+"42
+[; ;main.c: 42:     LATE = 0x00;
+[e = _LATE -> -> 0 `i `uc ]
+"43
+[; ;main.c: 43:     TRISE = 0x07;
+[e = _TRISE -> -> 7 `i `uc ]
+"46
+[; ;main.c: 46:     INTCON2bits.nRBPU = 0x01;
+[e = . . _INTCON2bits 1 7 -> -> 1 `i `uc ]
+"53
+[; ;main.c: 53: }
 [e :UE 505 ]
 }
-"77
-[; ;main.c: 77: void osc_init() {
+"55
+[; ;main.c: 55: void osc_init() {
 [v _osc_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _osc_init ]
 [f ]
-"78
-[; ;main.c: 78:     OSCCON = 0b01110111;
+"56
+[; ;main.c: 56:     OSCCON = 0b01110111;
 [e = _OSCCON -> -> 119 `i `uc ]
-"79
-[; ;main.c: 79:     OSCTUNE = 0b00001111;
+"57
+[; ;main.c: 57:     OSCTUNE = 0b00001111;
 [e = _OSCTUNE -> -> 15 `i `uc ]
-"80
-[; ;main.c: 80: }
+"58
+[; ;main.c: 58: }
 [e :UE 506 ]
 }
-"82
-[; ;main.c: 82: int readButtonRA5() {
-[v _readButtonRA5 `(i ~T0 @X0 1 ef ]
+"60
+[; ;main.c: 60: void readButtonRA5() {
+[v _readButtonRA5 `(v ~T0 @X0 1 ef ]
 {
 [e :U _readButtonRA5 ]
 [f ]
-"83
-[; ;main.c: 83:     firstReadRA5 = secondReadRA5;
+"61
+[; ;main.c: 61:     firstReadRA5 = secondReadRA5;
 [e = _firstReadRA5 _secondReadRA5 ]
-"84
-[; ;main.c: 84:     secondReadRA5 = PORTAbits.RA5;
+"62
+[; ;main.c: 62:     secondReadRA5 = PORTAbits.RA5;
 [e = _secondReadRA5 . . _PORTAbits 0 5 ]
-"85
-[; ;main.c: 85:     if(secondReadRA5 == firstReadRA5) {
+"63
+[; ;main.c: 63:     if(secondReadRA5 == firstReadRA5) {
 [e $ ! == -> _secondReadRA5 `i -> _firstReadRA5 `i 508  ]
 {
-"86
-[; ;main.c: 86:         return (secondReadRA5 == 0) ? 2 : 1;
-[e ) ? == -> _secondReadRA5 `i -> 0 `i : -> 2 `i -> 1 `i ]
-[e $UE 507  ]
-"87
-[; ;main.c: 87:     }
-}
-[e :U 508 ]
-"88
-[; ;main.c: 88:     return 0;
-[e ) -> 0 `i ]
-[e $UE 507  ]
-"89
-[; ;main.c: 89: }
-[e :UE 507 ]
-}
-"91
-[; ;main.c: 91: int readButtonRB0() {
-[v _readButtonRB0 `(i ~T0 @X0 1 ef ]
+"64
+[; ;main.c: 64:         switch(state_buttonRA5) {
+[e $U 510  ]
 {
-[e :U _readButtonRB0 ]
-[f ]
-"92
-[; ;main.c: 92:     firstReadRB0 = secondReadRB0;
-[e = _firstReadRB0 _secondReadRB0 ]
-"93
-[; ;main.c: 93:     secondReadRB0 = PORTBbits.RB0;
-[e = _secondReadRB0 . . _PORTBbits 0 0 ]
-"94
-[; ;main.c: 94:     if(secondReadRB0 == firstReadRB0) {
-[e $ ! == -> _secondReadRB0 `i -> _firstReadRB0 `i 510  ]
+"65
+[; ;main.c: 65:             case INIT:
+[e :U 511 ]
+"66
+[; ;main.c: 66:                 if(secondReadRA5 == 0) {
+[e $ ! == -> _secondReadRA5 `i -> 0 `i 512  ]
 {
-"95
-[; ;main.c: 95:         return (secondReadRB0 == 0) ? 2 : 1;
-[e ) ? == -> _secondReadRB0 `i -> 0 `i : -> 2 `i -> 1 `i ]
-[e $UE 509  ]
-"96
-[; ;main.c: 96:     }
-}
-[e :U 510 ]
-"97
-[; ;main.c: 97:     return 0;
-[e ) -> 0 `i ]
-[e $UE 509  ]
-"98
-[; ;main.c: 98: }
-[e :UE 509 ]
-}
-"100
-[; ;main.c: 100: void handleButton() {
-[v _handleButton `(v ~T0 @X0 1 ef ]
-{
-[e :U _handleButton ]
-[f ]
-"101
-[; ;main.c: 101:     int checkRA5 = readButtonRA5();
-[v _checkRA5 `i ~T0 @X0 1 a ]
-[e = _checkRA5 ( _readButtonRA5 ..  ]
-"102
-[; ;main.c: 102:     int checkRB0 = readButtonRB0();
-[v _checkRB0 `i ~T0 @X0 1 a ]
-[e = _checkRB0 ( _readButtonRB0 ..  ]
-"103
-[; ;main.c: 103:     if(checkRA5 == 2) {
-[e $ ! == _checkRA5 -> 2 `i 512  ]
-{
-"104
-[; ;main.c: 104:         countRB0 = 0;
-[e = _countRB0 -> -> 0 `i `ui ]
-"105
-[; ;main.c: 105:         countRA5++;
+"67
+[; ;main.c: 67:                     checkRA5 = 1;
+[e = _checkRA5 -> -> 1 `i `ui ]
+"68
+[; ;main.c: 68:                     state_buttonRA5 = PRESSED;
+[e = _state_buttonRA5 . `E4928 1 ]
+"69
+[; ;main.c: 69:                     countRA5++;
 [e ++ _countRA5 -> -> 1 `i `ui ]
-"106
-[; ;main.c: 106:         if(countRA5 % 10 == 0)
-[e $ ! == % _countRA5 -> -> 10 `i `ui -> -> 0 `i `ui 513  ]
-"107
-[; ;main.c: 107:             increase2 = 1;
-[e = _increase2 -> -> 1 `i `uc ]
+"70
+[; ;main.c: 70:                 }
+}
+[e :U 512 ]
+"71
+[; ;main.c: 71:                 break;
+[e $U 509  ]
+"72
+[; ;main.c: 72:             case PRESSED:
 [e :U 513 ]
-"108
-[; ;main.c: 108:         if(countRA5 % 50 == 0)
-[e $ ! == % _countRA5 -> -> 50 `i `ui -> -> 0 `i `ui 514  ]
-"109
-[; ;main.c: 109:             increase1 = 1;
-[e = _increase1 -> -> 1 `i `uc ]
-[e :U 514 ]
-"110
-[; ;main.c: 110:     }
+"73
+[; ;main.c: 73:                 if(secondReadRA5 != 0) {
+[e $ ! != -> _secondReadRA5 `i -> 0 `i 514  ]
+{
+"74
+[; ;main.c: 74:                     countRA5 = 0;
+[e = _countRA5 -> -> 0 `i `ui ]
+"75
+[; ;main.c: 75:                     state_buttonRA5 = INIT;
+[e = _state_buttonRA5 . `E4928 0 ]
+"76
+[; ;main.c: 76:                 }
 }
 [e $U 515  ]
-"111
-[; ;main.c: 111:     else if(checkRB0 == 2) {
-[e :U 512 ]
-[e $ ! == _checkRB0 -> 2 `i 516  ]
+"77
+[; ;main.c: 77:                 else {
+[e :U 514 ]
 {
-"112
-[; ;main.c: 112:         countRA5 = 0;
-[e = _countRA5 -> -> 0 `i `ui ]
-"113
-[; ;main.c: 113:         countRB0++;
-[e ++ _countRB0 -> -> 1 `i `ui ]
-"114
-[; ;main.c: 114:         if(countRB0 % 10 == 0)
-[e $ ! == % _countRB0 -> -> 10 `i `ui -> -> 0 `i `ui 517  ]
-"115
-[; ;main.c: 115:             decrease2 = 1;
-[e = _decrease2 -> -> 1 `i `uc ]
-[e :U 517 ]
-"116
-[; ;main.c: 116:         if(countRB0 % 50 == 0)
-[e $ ! == % _countRB0 -> -> 50 `i `ui -> -> 0 `i `ui 518  ]
-"117
-[; ;main.c: 117:             decrease1 = 1;
-[e = _decrease1 -> -> 1 `i `uc ]
-[e :U 518 ]
-"118
-[; ;main.c: 118:     }
+"78
+[; ;main.c: 78:                     countRA5++;
+[e ++ _countRA5 -> -> 1 `i `ui ]
+"79
+[; ;main.c: 79:                     if(countRA5 > 99 && countRA5 % 20 == 0) {
+[e $ ! && > _countRA5 -> -> 99 `i `ui == % _countRA5 -> -> 20 `i `ui -> -> 0 `i `ui 516  ]
+{
+"80
+[; ;main.c: 80:                         checkRA5 = 1;
+[e = _checkRA5 -> -> 1 `i `ui ]
+"81
+[; ;main.c: 81:                     }
 }
-[e $U 519  ]
-"119
-[; ;main.c: 119:     else if(checkRB0 == 1 || checkRA5 == 1) {
 [e :U 516 ]
-[e $ ! || == _checkRB0 -> 1 `i == _checkRA5 -> 1 `i 520  ]
-{
-"120
-[; ;main.c: 120:         countRA5 = 0;
-[e = _countRA5 -> -> 0 `i `ui ]
-"121
-[; ;main.c: 121:         countRB0 = 0;
-[e = _countRB0 -> -> 0 `i `ui ]
-"122
-[; ;main.c: 122:     }
+"82
+[; ;main.c: 82:                 }
 }
-[e :U 520 ]
-[e :U 519 ]
 [e :U 515 ]
-"123
-[; ;main.c: 123: }
-[e :UE 511 ]
+"83
+[; ;main.c: 83:                 break;
+[e $U 509  ]
+"84
+[; ;main.c: 84:         }
+}
+[e $U 509  ]
+[e :U 510 ]
+[e [\ -> _state_buttonRA5 `ui , $ -> . `E4928 0 `ui 511
+ , $ -> . `E4928 1 `ui 513
+ 509 ]
+[e :U 509 ]
+"85
+[; ;main.c: 85:     }
+}
+[e :U 508 ]
+"86
+[; ;main.c: 86: }
+[e :UE 507 ]
 }
 [v $root$_myISR `(v ~T0 @X0 0 e ]
-"125
-[; ;main.c: 125: void __attribute__((picinterrupt(("")))) myISR(void) {
+"88
+[; ;main.c: 88: void __attribute__((picinterrupt(("")))) myISR(void) {
 [v _myISR `(v ~T110 @X0 1 ef ]
 {
 [e :U _myISR ]
 [f ]
-"126
-[; ;main.c: 126:     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
-[e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 522  ]
+"89
+[; ;main.c: 89:     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
+[e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 518  ]
 {
-"127
-[; ;main.c: 127:         INTCONbits.TMR0IF = 0;
+"90
+[; ;main.c: 90:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"128
-[; ;main.c: 128:         TMR0L = 177;
+"91
+[; ;main.c: 91:         TMR0L = 177;
 [e = _TMR0L -> -> 177 `i `uc ]
-"129
-[; ;main.c: 129:         handleButton();
-[e ( _handleButton ..  ]
-"130
-[; ;main.c: 130:         printf("hello");
-[e ( _printf :s 1C ]
-"131
-[; ;main.c: 131:     }
+"92
+[; ;main.c: 92:         timerflag_10ms = 1;
+[e = _timerflag_10ms -> -> 1 `i `uc ]
+"93
+[; ;main.c: 93:         count++;
+[e ++ _count -> -> 1 `i `ui ]
+"94
+[; ;main.c: 94:         if(count >= 100) {
+[e $ ! >= _count -> -> 100 `i `ui 519  ]
+{
+"95
+[; ;main.c: 95:             timerflag_1s = 1;
+[e = _timerflag_1s -> -> 1 `i `uc ]
+"96
+[; ;main.c: 96:             count = 0;
+[e = _count -> -> 0 `i `ui ]
+"97
+[; ;main.c: 97:         }
 }
-[e :U 522 ]
-"132
-[; ;main.c: 132: }
-[e :UE 521 ]
+[e :U 519 ]
+"98
+[; ;main.c: 98:         readButtonRA5();
+[e ( _readButtonRA5 ..  ]
+"99
+[; ;main.c: 99:     }
+}
+[e :U 518 ]
+"100
+[; ;main.c: 100: }
+[e :UE 517 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"134
-[; ;main.c: 134: void main(void) {
+"102
+[; ;main.c: 102: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"136
-[; ;main.c: 136:     enum State state = INIT;
-[v _state `E4890 ~T0 @X0 1 a ]
-[e = _state . `E4890 0 ]
-"137
-[; ;main.c: 137:     pin_init();
+"103
+[; ;main.c: 103:     pin_init();
 [e ( _pin_init ..  ]
-"138
-[; ;main.c: 138:     timer0_init();
+"104
+[; ;main.c: 104:     timer0_init();
 [e ( _timer0_init ..  ]
-"139
-[; ;main.c: 139:     interrupt_init();
+"105
+[; ;main.c: 105:     interrupt_init();
 [e ( _interrupt_init ..  ]
-"140
-[; ;main.c: 140:     osc_init();
+"106
+[; ;main.c: 106:     osc_init();
 [e ( _osc_init ..  ]
-"141
-[; ;main.c: 141:     while(1) {
-[e :U 525 ]
+"107
+[; ;main.c: 107:     state = CLOCK;
+[e = _state . `E4907 0 ]
+"108
+[; ;main.c: 108:     while(1) {
+[e :U 522 ]
 {
-"142
-[; ;main.c: 142:         LATD = ledValue;
-[e = _LATD _ledValue ]
-"143
-[; ;main.c: 143:         switch(state) {
-[e $U 528  ]
-{
-"144
-[; ;main.c: 144:             case INIT:
-[e :U 529 ]
-"145
-[; ;main.c: 145:                 if(countRA5 > 0) {
-[e $ ! > _countRA5 -> -> 0 `i `ui 530  ]
-{
-"146
-[; ;main.c: 146:                     ledValue++;
-[e ++ _ledValue -> -> 1 `i `uc ]
-"147
-[; ;main.c: 147:                     state = INCREASE0;
-[e = _state . `E4890 1 ]
-"148
-[; ;main.c: 148:                 }
-}
-[e $U 531  ]
-"149
-[; ;main.c: 149:                 else if(countRB0 > 0) {
-[e :U 530 ]
-[e $ ! > _countRB0 -> -> 0 `i `ui 532  ]
-{
-"150
-[; ;main.c: 150:                     ledValue--;
-[e -- _ledValue -> -> 1 `i `uc ]
-"151
-[; ;main.c: 151:                     state = DECREASE0;
-[e = _state . `E4890 4 ]
-"152
-[; ;main.c: 152:                 }
-}
-[e :U 532 ]
-[e :U 531 ]
-"153
-[; ;main.c: 153:                 break;
-[e $U 527  ]
-"154
-[; ;main.c: 154:             case INCREASE0:
-[e :U 533 ]
-"155
-[; ;main.c: 155:                 if(countRA5 > 100)
-[e $ ! > _countRA5 -> -> 100 `i `ui 534  ]
-"156
-[; ;main.c: 156:                     state = INCREASE1;
-[e = _state . `E4890 2 ]
-[e $U 535  ]
-"157
-[; ;main.c: 157:                 else if (countRA5 == 0)
-[e :U 534 ]
-[e $ ! == _countRA5 -> -> 0 `i `ui 536  ]
-"158
-[; ;main.c: 158:                     state = (countRB0 > 0) ? DECREASE0 : INIT;
-[e = _state -> ? > _countRB0 -> -> 0 `i `ui : . `E4890 4 . `E4890 0 `E4890 ]
-[e :U 536 ]
-[e :U 535 ]
-"159
-[; ;main.c: 159:                 break;
-[e $U 527  ]
-"160
-[; ;main.c: 160:             case INCREASE1:
-[e :U 537 ]
-"161
-[; ;main.c: 161:                 if(increase1) {
-[e $ ! != -> _increase1 `i -> 0 `i 538  ]
-{
-"162
-[; ;main.c: 162:                     ledValue++;
-[e ++ _ledValue -> -> 1 `i `uc ]
-"163
-[; ;main.c: 163:                     increase1 = 0;
-[e = _increase1 -> -> 0 `i `uc ]
-"164
-[; ;main.c: 164:                 }
-}
-[e :U 538 ]
-"165
-[; ;main.c: 165:                 if(countRA5 > 300)
-[e $ ! > _countRA5 -> -> 300 `i `ui 539  ]
-"166
-[; ;main.c: 166:                     state = INCREASE2;
-[e = _state . `E4890 3 ]
-[e $U 540  ]
-"167
-[; ;main.c: 167:                 else if(countRA5 == 0)
-[e :U 539 ]
-[e $ ! == _countRA5 -> -> 0 `i `ui 541  ]
-"168
-[; ;main.c: 168:                     state = (countRB0 > 0) ? DECREASE0 : INIT;
-[e = _state -> ? > _countRB0 -> -> 0 `i `ui : . `E4890 4 . `E4890 0 `E4890 ]
-[e :U 541 ]
-[e :U 540 ]
-"169
-[; ;main.c: 169:                 break;
-[e $U 527  ]
-"170
-[; ;main.c: 170:             case INCREASE2:
-[e :U 542 ]
-"171
-[; ;main.c: 171:                 if(increase2) {
-[e $ ! != -> _increase2 `i -> 0 `i 543  ]
-{
-"172
-[; ;main.c: 172:                     ledValue++;
-[e ++ _ledValue -> -> 1 `i `uc ]
-"173
-[; ;main.c: 173:                     increase2 = 0;
-[e = _increase2 -> -> 0 `i `uc ]
-"174
-[; ;main.c: 174:                 }
-}
-[e :U 543 ]
-"175
-[; ;main.c: 175:                 if(countRA5 == 0)
-[e $ ! == _countRA5 -> -> 0 `i `ui 544  ]
-"176
-[; ;main.c: 176:                     state = (countRB0 > 0) ? DECREASE0 : INIT;
-[e = _state -> ? > _countRB0 -> -> 0 `i `ui : . `E4890 4 . `E4890 0 `E4890 ]
-[e :U 544 ]
-"177
-[; ;main.c: 177:                 break;
-[e $U 527  ]
-"178
-[; ;main.c: 178:             case DECREASE0:
-[e :U 545 ]
-"179
-[; ;main.c: 179:                 if(countRB0 > 100)
-[e $ ! > _countRB0 -> -> 100 `i `ui 546  ]
-"180
-[; ;main.c: 180:                     state = DECREASE1;
-[e = _state . `E4890 5 ]
-[e $U 547  ]
-"181
-[; ;main.c: 181:                 else if (countRB0 == 0)
-[e :U 546 ]
-[e $ ! == _countRB0 -> -> 0 `i `ui 548  ]
-"182
-[; ;main.c: 182:                     state = (countRA5 > 0) ? INCREASE0 : INIT;
-[e = _state -> ? > _countRA5 -> -> 0 `i `ui : . `E4890 1 . `E4890 0 `E4890 ]
-[e :U 548 ]
-[e :U 547 ]
-"183
-[; ;main.c: 183:                 break;
-[e $U 527  ]
-"184
-[; ;main.c: 184:             case DECREASE1:
-[e :U 549 ]
-"185
-[; ;main.c: 185:                 if(decrease1) {
-[e $ ! != -> _decrease1 `i -> 0 `i 550  ]
-{
-"186
-[; ;main.c: 186:                     ledValue--;
-[e -- _ledValue -> -> 1 `i `uc ]
-"187
-[; ;main.c: 187:                     decrease1 = 0;
-[e = _decrease1 -> -> 0 `i `uc ]
-"188
-[; ;main.c: 188:                 }
-}
-[e :U 550 ]
-"189
-[; ;main.c: 189:                 if(countRB0 > 300)
-[e $ ! > _countRB0 -> -> 300 `i `ui 551  ]
-"190
-[; ;main.c: 190:                     state = DECREASE2;
-[e = _state . `E4890 6 ]
-[e $U 552  ]
-"191
-[; ;main.c: 191:                 else if(countRB0 == 0)
-[e :U 551 ]
-[e $ ! == _countRB0 -> -> 0 `i `ui 553  ]
-"192
-[; ;main.c: 192:                     state = (countRA5 > 0) ? INCREASE0 : INIT;
-[e = _state -> ? > _countRA5 -> -> 0 `i `ui : . `E4890 1 . `E4890 0 `E4890 ]
-[e :U 553 ]
-[e :U 552 ]
-"193
-[; ;main.c: 193:                 break;
-[e $U 527  ]
-"194
-[; ;main.c: 194:             case DECREASE2:
-[e :U 554 ]
-"195
-[; ;main.c: 195:                 if(decrease2) {
-[e $ ! != -> _decrease2 `i -> 0 `i 555  ]
-{
-"196
-[; ;main.c: 196:                     ledValue--;
-[e -- _ledValue -> -> 1 `i `uc ]
-"197
-[; ;main.c: 197:                     decrease2 = 0;
-[e = _decrease2 -> -> 0 `i `uc ]
-"198
-[; ;main.c: 198:                 }
-}
-[e :U 555 ]
-"199
-[; ;main.c: 199:                 if(countRB0 == 0)
-[e $ ! == _countRB0 -> -> 0 `i `ui 556  ]
-"200
-[; ;main.c: 200:                     state = (countRA5 > 0) ? INCREASE0 : INIT;
-[e = _state -> ? > _countRA5 -> -> 0 `i `ui : . `E4890 1 . `E4890 0 `E4890 ]
-[e :U 556 ]
-"201
-[; ;main.c: 201:                 break;
-[e $U 527  ]
-"202
-[; ;main.c: 202:         }
-}
-[e $U 527  ]
-[e :U 528 ]
-[e [\ -> _state `ui , $ -> . `E4890 0 `ui 529
- , $ -> . `E4890 1 `ui 533
- , $ -> . `E4890 2 `ui 537
- , $ -> . `E4890 3 `ui 542
- , $ -> . `E4890 4 `ui 545
- , $ -> . `E4890 5 `ui 549
- , $ -> . `E4890 6 `ui 554
- 527 ]
-[e :U 527 ]
-"203
-[; ;main.c: 203:     }
-}
-[e :U 524 ]
+"109
+[; ;main.c: 109:         switch(state) {
 [e $U 525  ]
+{
+"110
+[; ;main.c: 110:             case CLOCK: clock();
 [e :U 526 ]
-"204
-[; ;main.c: 204: }
-[e :UE 523 ]
+[e ( _clock ..  ]
+"111
+[; ;main.c: 111:                 break;
+[e $U 524  ]
+"112
+[; ;main.c: 112:             case MODIFY: clock();
+[e :U 527 ]
+[e ( _clock ..  ]
+"113
+[; ;main.c: 113:                 break;
+[e $U 524  ]
+"114
+[; ;main.c: 114:             case STOP_WATCH:
+[e :U 528 ]
+"115
+[; ;main.c: 115:                 break;
+[e $U 524  ]
+"116
+[; ;main.c: 116:         }
 }
-[p f _printf 8388608 ]
-[a 1C 104 101 108 108 111 0 ]
+[e $U 524  ]
+[e :U 525 ]
+[e [\ -> _state `ui , $ -> . `E4907 0 `ui 526
+ , $ -> . `E4907 1 `ui 527
+ , $ -> . `E4907 2 `ui 528
+ 524 ]
+[e :U 524 ]
+"117
+[; ;main.c: 117:     }
+}
+[e :U 521 ]
+[e $U 522  ]
+[e :U 523 ]
+"118
+[; ;main.c: 118:     return;
+[e $UE 520  ]
+"119
+[; ;main.c: 119: }
+[e :UE 520 ]
+}

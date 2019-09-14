@@ -1,36 +1,54 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"13118 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13118:     struct {
-[s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S494 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"13128
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13128:     struct {
-[s S495 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S495 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"13138
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13138:     struct {
-[s S496 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S496 . . GIEL GIEH ]
-"13117
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13117: typedef union {
-[u S493 `S494 1 `S495 1 `S496 1 ]
-[n S493 . . . . ]
-"13144
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13144: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS493 ~T0 @X0 0 e@4082 ]
-"12557
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12557: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
-[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
-"12640
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12640: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
-[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"6123
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6123: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"4815
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4815: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
-[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
-"5468
+"39 ./config.h
+[c E4892 0 1 2 .. ]
+[n E4892 State CLOCK MODIFY STOP_WATCH  ]
+"76 ./BBSPI_LCD.h
+[; ;./BBSPI_LCD.h: 76:     void InitBBSPI (void);
+[v _InitBBSPI `(v ~T0 @X0 0 ef ]
+"6578 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6578:     struct {
+[s S242 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S242 . TRISF0 TRISF1 TRISF2 TRISF3 TRISF4 TRISF5 TRISF6 TRISF7 ]
+"6588
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6588:     struct {
+[s S243 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S243 . RF0 RF1 RF2 RF3 RF4 RF5 RF6 RF7 ]
+"6577
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6577: typedef union {
+[u S241 `S242 1 `S243 1 ]
+[n S241 . . . ]
+"6599
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6599: extern volatile TRISFbits_t TRISFbits __attribute__((address(0xF97)));
+[v _TRISFbits `VS241 ~T0 @X0 0 e@3991 ]
+"5045
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5045:     struct {
+[s S200 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S200 . LATF0 LATF1 LATF2 LATF3 LATF4 LATF5 LATF6 LATF7 ]
+"5055
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5055:     struct {
+[s S201 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S201 . LF0 LF1 LF2 LF3 LF4 LF5 LF6 LF7 ]
+"5044
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5044: typedef union {
+[u S199 `S200 1 `S201 1 ]
+[n S199 . . . ]
+"5066
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5066: extern volatile LATFbits_t LATFbits __attribute__((address(0xF8E)));
+[v _LATFbits `VS199 ~T0 @X0 0 e@3982 ]
+[v F4536 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF4536 ~T0 @X0 0 e ]
+[p i __delay ]
+"94 ./BBSPI_LCD.h
+[; ;./BBSPI_LCD.h: 94:     void Port_BBSPIInit (unsigned char port_dir);
+[v _Port_BBSPIInit `(v ~T0 @X0 0 ef1`uc ]
+"104
+[; ;./BBSPI_LCD.h: 104:     void WritePort_BBSPI (unsigned char port_add, unsigned char a);
+[v _WritePort_BBSPI `(v ~T0 @X0 0 ef2`uc`uc ]
+"122
+[; ;./BBSPI_LCD.h: 122:     void LCDPutInst(unsigned char);
+[v _LCDPutInst `(v ~T0 @X0 0 ef1`uc ]
+"5468 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5468:     struct {
 [s S212 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S212 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
@@ -45,115 +63,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5489
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5489: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
 [v _TRISAbits `VS211 ~T0 @X0 0 e@3986 ]
-"5690
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5690:     struct {
-[s S218 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S218 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"5700
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5700:     struct {
-[s S219 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S219 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"5689
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5689: typedef union {
-[u S217 `S218 1 `S219 1 ]
-[n S217 . . . ]
-"5711
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5711: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
-[v _TRISBbits `VS217 ~T0 @X0 0 e@3987 ]
-"10174
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 10174: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
-"12474
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12474: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"7383
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 7383: extern volatile unsigned char OSCTUNE __attribute__((address(0xF9B)));
-[v _OSCTUNE `Vuc ~T0 @X0 0 e@3995 ]
-"2649
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2649:     struct {
-[s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S118 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"2659
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2659:     struct {
-[s S119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S119 . . VREFM VREFP T0CKI LVDIN ]
-"2666
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2666:     struct {
-[s S120 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S120 . AN0 AN1 AN2 AN3 . AN4 ]
-"2674
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2674:     struct {
-[s S121 :5 `uc 1 :1 `uc 1 ]
-[n S121 . . HLVDIN ]
-"2678
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2678:     struct {
-[s S122 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S122 . ULPWUIN . RJPU ]
-"2648
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2648: typedef union {
-[u S117 `S118 1 `S119 1 `S120 1 `S121 1 `S122 1 ]
-[n S117 . . . . . . ]
-"2684
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2684: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS117 ~T0 @X0 0 e@3968 ]
-"2795
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2795:     struct {
-[s S124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S124 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"2805
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2805:     struct {
-[s S125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S125 . INT0 INT1 INT2 INT3 KBI0 KBI1 KBI2 KBI3 ]
-"2815
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2815:     struct {
-[s S126 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S126 . FLT0 . ECCP2 ]
-"2820
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2820:     struct {
-[s S127 :3 `uc 1 :1 `uc 1 ]
-[n S127 . . CCP2 ]
-"2824
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2824:     struct {
-[s S128 :3 `uc 1 :1 `uc 1 ]
-[n S128 . . P2A ]
-"2828
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2828:     struct {
-[s S129 :3 `uc 1 :1 `uc 1 ]
-[n S129 . . CCP2_PA2 ]
-"2794
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2794: typedef union {
-[u S123 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 ]
-[n S123 . . . . . . . ]
-"2833
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2833: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS123 ~T0 @X0 0 e@3969 ]
-[t ~ __interrupt . k ]
-[t T110 __interrupt ]
-"111 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-[p mainexit ]
-"136 main.c
-[; ;main.c: 136:     enum State state = INIT;
-[c E4890 0 1 2 3 4 5 6 .. ]
-[n E4890 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
-"14 main.c
-[p x OSC = INTIO7 ]
-"15
-[p x FCMEN = OFF ]
-"16
-[p x IESO = OFF ]
-"17
-[p x PWRT = OFF ]
-"18
-[p x BOREN = OFF ]
-"19
-[p x WDT = OFF ]
-"20
-[p x MCLRE = ON ]
-"21
-[p x LVP = OFF ]
-"22
-[p x XINST = OFF ]
+"5912
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5912:     struct {
+[s S224 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S224 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"5922
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5922:     struct {
+[s S225 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S225 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"5911
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5911: typedef union {
+[u S223 `S224 1 `S225 1 ]
+[n S223 . . . ]
+"5933
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5933: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS223 ~T0 @X0 0 e@3988 ]
+"4485
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4485:     struct {
+[s S185 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"4495
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4495:     struct {
+[s S186 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S186 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
+"4484
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4484: typedef union {
+[u S184 `S185 1 `S186 1 ]
+[n S184 . . . ]
+"4506
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4506: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
+[v _LATAbits `VS184 ~T0 @X0 0 e@3977 ]
+"4709
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4709:     struct {
+[s S191 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S191 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"4719
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4719:     struct {
+[s S192 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S192 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"4708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4708: typedef union {
+[u S190 `S191 1 `S192 1 ]
+[n S190 . . . ]
+"4730
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4730: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
+[v _LATCbits `VS190 ~T0 @X0 0 e@3979 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -748,631 +705,450 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"34 main.c
-[; ;main.c: 34: unsigned char firstReadRA5 = 1;
+"22 ./config.h
+[; ;./config.h: 22: unsigned int countRA5_1 = 0;
+[p x OSC = INTIO7 ]
+"23
+[; ;./config.h: 23: unsigned int checkRA5 = 0;
+[p x FCMEN = OFF ]
+"24
+[; ;./config.h: 24: 
+[p x IESO = OFF ]
+"25
+[; ;./config.h: 25: void clock(void);
+[p x PWRT = OFF ]
+"26
+[; ;./config.h: 26: 
+[p x BOREN = OFF ]
+"27
+[; ;./config.h: 27: void modify(void);
+[p x WDT = OFF ]
+"28
+[; ;./config.h: 28: 
+[p x MCLRE = ON ]
+"29
+[; ;./config.h: 29: void stop_watch(void);
+[p x LVP = OFF ]
+"30
+[p x XINST = OFF ]
+"39
+[v _state `VE4892 ~T0 @X0 1 e ]
+"41
+[v _hour `Vuc ~T0 @X0 1 e ]
+[i _hour
+-> -> 0 `i `uc
+]
+[v _min `Vuc ~T0 @X0 1 e ]
+[i _min
+-> -> 0 `i `uc
+]
+[v _sec `Vuc ~T0 @X0 1 e ]
+[i _sec
+-> -> 0 `i `uc
+]
+"43
+[v _timerflag_10ms `uc ~T0 @X0 1 e ]
+[i _timerflag_10ms
+-> -> 0 `i `uc
+]
+"44
+[v _timerflag_1s `uc ~T0 @X0 1 e ]
+[i _timerflag_1s
+-> -> 0 `i `uc
+]
+"46
+[v _count `ui ~T0 @X0 1 e ]
+[i _count
+-> -> 0 `i `ui
+]
+"48
 [v _firstReadRA5 `uc ~T0 @X0 1 e ]
 [i _firstReadRA5
 -> -> 1 `i `uc
 ]
-"35
-[; ;main.c: 35: unsigned char secondReadRA5 = 1;
+"49
 [v _secondReadRA5 `uc ~T0 @X0 1 e ]
 [i _secondReadRA5
 -> -> 1 `i `uc
 ]
-"36
-[; ;main.c: 36: unsigned char firstReadRB0 = 1;
-[v _firstReadRB0 `uc ~T0 @X0 1 e ]
-[i _firstReadRB0
--> -> 1 `i `uc
-]
-"37
-[; ;main.c: 37: unsigned char secondReadRB0 = 1;
-[v _secondReadRB0 `uc ~T0 @X0 1 e ]
-[i _secondReadRB0
--> -> 1 `i `uc
-]
-"39
-[; ;main.c: 39: unsigned char ledValue = 0;
-[v _ledValue `uc ~T0 @X0 1 e ]
-[i _ledValue
--> -> 0 `i `uc
-]
-"41
-[; ;main.c: 41: unsigned char buttonRA5 = 0;
+"51
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"42
-[; ;main.c: 42: unsigned char buttonRA5_1s_pressed = 0;
+"52
 [v _buttonRA5_1s_pressed `uc ~T0 @X0 1 e ]
 [i _buttonRA5_1s_pressed
 -> -> 0 `i `uc
 ]
-"43
-[; ;main.c: 43: unsigned char buttonRA5_3s_pressed = 0;
-[v _buttonRA5_3s_pressed `uc ~T0 @X0 1 e ]
-[i _buttonRA5_3s_pressed
--> -> 0 `i `uc
-]
-"45
-[; ;main.c: 45: unsigned char buttonRB0 = 0;
-[v _buttonRB0 `uc ~T0 @X0 1 e ]
-[i _buttonRB0
--> -> 0 `i `uc
-]
-"46
-[; ;main.c: 46: unsigned char buttonRB0_1s_pressed = 0;
-[v _buttonRB0_1s_pressed `uc ~T0 @X0 1 e ]
-[i _buttonRB0_1s_pressed
--> -> 0 `i `uc
-]
-"47
-[; ;main.c: 47: unsigned char buttonRB0_3s_pressed = 0;
-[v _buttonRB0_3s_pressed `uc ~T0 @X0 1 e ]
-[i _buttonRB0_3s_pressed
--> -> 0 `i `uc
-]
-"49
-[; ;main.c: 49: unsigned int countRA5 = 0;
+"53
 [v _countRA5 `ui ~T0 @X0 1 e ]
 [i _countRA5
 -> -> 0 `i `ui
 ]
-"50
-[; ;main.c: 50: unsigned char increase1 = 0;
-[v _increase1 `uc ~T0 @X0 1 e ]
-[i _increase1
--> -> 0 `i `uc
-]
-"51
-[; ;main.c: 51: unsigned char increase2 = 0;
-[v _increase2 `uc ~T0 @X0 1 e ]
-[i _increase2
--> -> 0 `i `uc
-]
-"53
-[; ;main.c: 53: unsigned int countRB0 = 0;
-[v _countRB0 `ui ~T0 @X0 1 e ]
-[i _countRB0
+"54
+[v _countRA5_1 `ui ~T0 @X0 1 e ]
+[i _countRA5_1
 -> -> 0 `i `ui
 ]
-"54
-[; ;main.c: 54: unsigned char decrease1 = 0;
-[v _decrease1 `uc ~T0 @X0 1 e ]
-[i _decrease1
--> -> 0 `i `uc
-]
 "55
-[; ;main.c: 55: unsigned char decrease2 = 0;
-[v _decrease2 `uc ~T0 @X0 1 e ]
-[i _decrease2
--> -> 0 `i `uc
+[v _checkRA5 `ui ~T0 @X0 1 e ]
+[i _checkRA5
+-> -> 0 `i `ui
 ]
-"58
-[; ;main.c: 58: void interrupt_init() {
-[v _interrupt_init `(v ~T0 @X0 1 ef ]
+"45 BBSPI_LCD.c
+[; ;BBSPI_LCD.c: 45: void LCDInit (void)
+[v _LCDInit `(v ~T0 @X0 1 ef ]
+"46
+[; ;BBSPI_LCD.c: 46: {
 {
-[e :U _interrupt_init ]
+[e :U _LCDInit ]
 [f ]
+"47
+[; ;BBSPI_LCD.c: 47:     InitBBSPI();
+[e ( _InitBBSPI ..  ]
+"48
+[; ;BBSPI_LCD.c: 48:     TRISFbits.TRISF6 = 0;
+[e = . . _TRISFbits 0 6 -> -> 0 `i `uc ]
+"49
+[; ;BBSPI_LCD.c: 49:     LATFbits.LATF6 = 0;
+[e = . . _LATFbits 0 6 -> -> 0 `i `uc ]
+"50
+[; ;BBSPI_LCD.c: 50:     _delay((unsigned long)((5)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"51
+[; ;BBSPI_LCD.c: 51:     LATFbits.LATF6 = 1;
+[e = . . _LATFbits 0 6 -> -> 1 `i `uc ]
+"52
+[; ;BBSPI_LCD.c: 52:     Port_BBSPIInit (0x00);
+[e ( _Port_BBSPIInit (1 -> -> 0 `i `uc ]
+"53
+[; ;BBSPI_LCD.c: 53:     Port_BBSPIInit (0x01);
+[e ( _Port_BBSPIInit (1 -> -> 1 `i `uc ]
+"54
+[; ;BBSPI_LCD.c: 54:     WritePort_BBSPI (0x12, 0);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+"55
+[; ;BBSPI_LCD.c: 55:     _delay((unsigned long)((15)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"56
+[; ;BBSPI_LCD.c: 56:     LCDPutInst(0x32);
+[e ( _LCDPutInst (1 -> -> 50 `i `uc ]
+"57
+[; ;BBSPI_LCD.c: 57:     LCDPutInst(0x3C);
+[e ( _LCDPutInst (1 -> -> 60 `i `uc ]
+"58
+[; ;BBSPI_LCD.c: 58:     LCDPutInst(0x0C);
+[e ( _LCDPutInst (1 -> -> 12 `i `uc ]
 "59
-[; ;main.c: 59:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;BBSPI_LCD.c: 59:     LCDPutInst(0x01);
+[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
 "60
-[; ;main.c: 60:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;BBSPI_LCD.c: 60:     LCDPutInst(0x06);
+[e ( _LCDPutInst (1 -> -> 6 `i `uc ]
 "61
-[; ;main.c: 61: }
+[; ;BBSPI_LCD.c: 61: }
 [e :UE 503 ]
 }
-"63
-[; ;main.c: 63: void timer0_init() {
-[v _timer0_init `(v ~T0 @X0 1 ef ]
+"70
+[; ;BBSPI_LCD.c: 70: void InitBBSPI (void)
+[v _InitBBSPI `(v ~T0 @X0 1 ef ]
+"71
+[; ;BBSPI_LCD.c: 71: {
 {
-[e :U _timer0_init ]
+[e :U _InitBBSPI ]
 [f ]
-"64
-[; ;main.c: 64:     T0CON = 0b11000111;
-[e = _T0CON -> -> 199 `i `uc ]
-"65
-[; ;main.c: 65:     TMR0L = 177;
-[e = _TMR0L -> -> 177 `i `uc ]
-"66
-[; ;main.c: 66: }
+"72
+[; ;BBSPI_LCD.c: 72:     TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+"73
+[; ;BBSPI_LCD.c: 73:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+"74
+[; ;BBSPI_LCD.c: 74:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"75
+[; ;BBSPI_LCD.c: 75:     TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;BBSPI_LCD.c: 77:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"78
+[; ;BBSPI_LCD.c: 78:     LATCbits.LATC4 = 1;
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"79
+[; ;BBSPI_LCD.c: 79:     LATCbits.LATC5 = 0;
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+"80
+[; ;BBSPI_LCD.c: 80:     LATCbits.LATC3 = 0;
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"81
+[; ;BBSPI_LCD.c: 81: }
 [e :UE 504 ]
 }
-"68
-[; ;main.c: 68: void pin_init() {
-[v _pin_init `(v ~T0 @X0 1 ef ]
+"91
+[; ;BBSPI_LCD.c: 91: void SendByteBBSPI (unsigned char output)
+[v _SendByteBBSPI `(v ~T0 @X0 1 ef1`uc ]
+"92
+[; ;BBSPI_LCD.c: 92: {
 {
-[e :U _pin_init ]
+[e :U _SendByteBBSPI ]
+"91
+[; ;BBSPI_LCD.c: 91: void SendByteBBSPI (unsigned char output)
+[v _output `uc ~T0 @X0 1 r1 ]
+"92
+[; ;BBSPI_LCD.c: 92: {
 [f ]
-"69
-[; ;main.c: 69:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"70
-[; ;main.c: 70:     LATD = 0x00;
-[e = _LATD -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:     TRISAbits.TRISA5 = 1;
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:     TRISBbits.TRISB0 = 1;
-[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-"74
-[; ;main.c: 74:     ADCON1 = 0b00001111;
-[e = _ADCON1 -> -> 15 `i `uc ]
-"75
-[; ;main.c: 75: }
+"93
+[; ;BBSPI_LCD.c: 93:     unsigned char bitcount;
+[v _bitcount `uc ~T0 @X0 1 a ]
+"94
+[; ;BBSPI_LCD.c: 94:     unsigned char input = output;
+[v _input `uc ~T0 @X0 1 a ]
+[e = _input _output ]
+"96
+[; ;BBSPI_LCD.c: 96:     for(bitcount=0;bitcount<8;bitcount++)
+{
+[e = _bitcount -> -> 0 `i `uc ]
+[e $ < -> _bitcount `i -> 8 `i 506  ]
+[e $U 507  ]
+[e :U 506 ]
+"97
+[; ;BBSPI_LCD.c: 97:     {
+{
+"99
+[; ;BBSPI_LCD.c: 99:         if(output & 0x80)
+[e $ ! != & -> _output `i -> 128 `i -> 0 `i 509  ]
+"100
+[; ;BBSPI_LCD.c: 100:             LATCbits.LATC5 = 1;
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[e $U 510  ]
+"101
+[; ;BBSPI_LCD.c: 101:         else
+[e :U 509 ]
+"102
+[; ;BBSPI_LCD.c: 102:             LATCbits.LATC5 = 0;
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[e :U 510 ]
+"104
+[; ;BBSPI_LCD.c: 104:         if (LATCbits.LATC4)
+[e $ ! != -> . . _LATCbits 0 4 `i -> 0 `i 511  ]
+"105
+[; ;BBSPI_LCD.c: 105:             input = (input << 1) | 0x1;
+[e = _input -> | << -> _input `i -> 1 `i -> 1 `i `uc ]
+[e $U 512  ]
+"106
+[; ;BBSPI_LCD.c: 106:         else
+[e :U 511 ]
+"107
+[; ;BBSPI_LCD.c: 107:             input = input << 1;
+[e = _input -> << -> _input `i -> 1 `i `uc ]
+[e :U 512 ]
+"108
+[; ;BBSPI_LCD.c: 108:         LATCbits.LATC3 = 1;
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+"109
+[; ;BBSPI_LCD.c: 109:         __nop();__nop();__nop();__nop();__nop();__nop();
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+"110
+[; ;BBSPI_LCD.c: 110:         __nop();__nop();__nop();__nop();__nop();__nop();
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+"111
+[; ;BBSPI_LCD.c: 111:         LATCbits.LATC3 = 0;
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"112
+[; ;BBSPI_LCD.c: 112:         output <<= 1;
+[e =<< _output -> -> 1 `i `uc ]
+"113
+[; ;BBSPI_LCD.c: 113:     }
+}
+[e ++ _bitcount -> -> 1 `i `uc ]
+[e $ < -> _bitcount `i -> 8 `i 506  ]
+[e :U 507 ]
+}
+"114
+[; ;BBSPI_LCD.c: 114: }
 [e :UE 505 ]
 }
-"77
-[; ;main.c: 77: void osc_init() {
-[v _osc_init `(v ~T0 @X0 1 ef ]
-{
-[e :U _osc_init ]
-[f ]
-"78
-[; ;main.c: 78:     OSCCON = 0b01110111;
-[e = _OSCCON -> -> 119 `i `uc ]
-"79
-[; ;main.c: 79:     OSCTUNE = 0b00001111;
-[e = _OSCTUNE -> -> 15 `i `uc ]
-"80
-[; ;main.c: 80: }
-[e :UE 506 ]
-}
-"82
-[; ;main.c: 82: int readButtonRA5() {
-[v _readButtonRA5 `(i ~T0 @X0 1 ef ]
-{
-[e :U _readButtonRA5 ]
-[f ]
-"83
-[; ;main.c: 83:     firstReadRA5 = secondReadRA5;
-[e = _firstReadRA5 _secondReadRA5 ]
-"84
-[; ;main.c: 84:     secondReadRA5 = PORTAbits.RA5;
-[e = _secondReadRA5 . . _PORTAbits 0 5 ]
-"85
-[; ;main.c: 85:     if(secondReadRA5 == firstReadRA5) {
-[e $ ! == -> _secondReadRA5 `i -> _firstReadRA5 `i 508  ]
-{
-"86
-[; ;main.c: 86:         return (secondReadRA5 == 0) ? 2 : 1;
-[e ) ? == -> _secondReadRA5 `i -> 0 `i : -> 2 `i -> 1 `i ]
-[e $UE 507  ]
-"87
-[; ;main.c: 87:     }
-}
-[e :U 508 ]
-"88
-[; ;main.c: 88:     return 0;
-[e ) -> 0 `i ]
-[e $UE 507  ]
-"89
-[; ;main.c: 89: }
-[e :UE 507 ]
-}
-"91
-[; ;main.c: 91: int readButtonRB0() {
-[v _readButtonRB0 `(i ~T0 @X0 1 ef ]
-{
-[e :U _readButtonRB0 ]
-[f ]
-"92
-[; ;main.c: 92:     firstReadRB0 = secondReadRB0;
-[e = _firstReadRB0 _secondReadRB0 ]
-"93
-[; ;main.c: 93:     secondReadRB0 = PORTBbits.RB0;
-[e = _secondReadRB0 . . _PORTBbits 0 0 ]
-"94
-[; ;main.c: 94:     if(secondReadRB0 == firstReadRB0) {
-[e $ ! == -> _secondReadRB0 `i -> _firstReadRB0 `i 510  ]
-{
-"95
-[; ;main.c: 95:         return (secondReadRB0 == 0) ? 2 : 1;
-[e ) ? == -> _secondReadRB0 `i -> 0 `i : -> 2 `i -> 1 `i ]
-[e $UE 509  ]
-"96
-[; ;main.c: 96:     }
-}
-[e :U 510 ]
-"97
-[; ;main.c: 97:     return 0;
-[e ) -> 0 `i ]
-[e $UE 509  ]
-"98
-[; ;main.c: 98: }
-[e :UE 509 ]
-}
-"100
-[; ;main.c: 100: void handleButton() {
-[v _handleButton `(v ~T0 @X0 1 ef ]
-{
-[e :U _handleButton ]
-[f ]
-"101
-[; ;main.c: 101:     int checkRA5 = readButtonRA5();
-[v _checkRA5 `i ~T0 @X0 1 a ]
-[e = _checkRA5 ( _readButtonRA5 ..  ]
-"102
-[; ;main.c: 102:     int checkRB0 = readButtonRB0();
-[v _checkRB0 `i ~T0 @X0 1 a ]
-[e = _checkRB0 ( _readButtonRB0 ..  ]
-"103
-[; ;main.c: 103:     if(checkRA5 == 2) {
-[e $ ! == _checkRA5 -> 2 `i 512  ]
-{
-"104
-[; ;main.c: 104:         countRB0 = 0;
-[e = _countRB0 -> -> 0 `i `ui ]
-"105
-[; ;main.c: 105:         countRA5++;
-[e ++ _countRA5 -> -> 1 `i `ui ]
-"106
-[; ;main.c: 106:         if(countRA5 % 10 == 0)
-[e $ ! == % _countRA5 -> -> 10 `i `ui -> -> 0 `i `ui 513  ]
-"107
-[; ;main.c: 107:             increase2 = 1;
-[e = _increase2 -> -> 1 `i `uc ]
-[e :U 513 ]
-"108
-[; ;main.c: 108:         if(countRA5 % 50 == 0)
-[e $ ! == % _countRA5 -> -> 50 `i `ui -> -> 0 `i `ui 514  ]
-"109
-[; ;main.c: 109:             increase1 = 1;
-[e = _increase1 -> -> 1 `i `uc ]
-[e :U 514 ]
-"110
-[; ;main.c: 110:     }
-}
-[e $U 515  ]
-"111
-[; ;main.c: 111:     else if(checkRB0 == 2) {
-[e :U 512 ]
-[e $ ! == _checkRB0 -> 2 `i 516  ]
-{
-"112
-[; ;main.c: 112:         countRA5 = 0;
-[e = _countRA5 -> -> 0 `i `ui ]
-"113
-[; ;main.c: 113:         countRB0++;
-[e ++ _countRB0 -> -> 1 `i `ui ]
-"114
-[; ;main.c: 114:         if(countRB0 % 10 == 0)
-[e $ ! == % _countRB0 -> -> 10 `i `ui -> -> 0 `i `ui 517  ]
-"115
-[; ;main.c: 115:             decrease2 = 1;
-[e = _decrease2 -> -> 1 `i `uc ]
-[e :U 517 ]
-"116
-[; ;main.c: 116:         if(countRB0 % 50 == 0)
-[e $ ! == % _countRB0 -> -> 50 `i `ui -> -> 0 `i `ui 518  ]
-"117
-[; ;main.c: 117:             decrease1 = 1;
-[e = _decrease1 -> -> 1 `i `uc ]
-[e :U 518 ]
-"118
-[; ;main.c: 118:     }
-}
-[e $U 519  ]
-"119
-[; ;main.c: 119:     else if(checkRB0 == 1 || checkRA5 == 1) {
-[e :U 516 ]
-[e $ ! || == _checkRB0 -> 1 `i == _checkRA5 -> 1 `i 520  ]
-{
-"120
-[; ;main.c: 120:         countRA5 = 0;
-[e = _countRA5 -> -> 0 `i `ui ]
-"121
-[; ;main.c: 121:         countRB0 = 0;
-[e = _countRB0 -> -> 0 `i `ui ]
-"122
-[; ;main.c: 122:     }
-}
-[e :U 520 ]
-[e :U 519 ]
-[e :U 515 ]
 "123
-[; ;main.c: 123: }
-[e :UE 511 ]
-}
-[v $root$_myISR `(v ~T0 @X0 0 e ]
-"125
-[; ;main.c: 125: void __attribute__((picinterrupt(("")))) myISR(void) {
-[v _myISR `(v ~T110 @X0 1 ef ]
+[; ;BBSPI_LCD.c: 123: void Port_BBSPIInit (unsigned char port_dir)
+[v _Port_BBSPIInit `(v ~T0 @X0 1 ef1`uc ]
+"124
+[; ;BBSPI_LCD.c: 124: {
 {
-[e :U _myISR ]
+[e :U _Port_BBSPIInit ]
+"123
+[; ;BBSPI_LCD.c: 123: void Port_BBSPIInit (unsigned char port_dir)
+[v _port_dir `uc ~T0 @X0 1 r1 ]
+"124
+[; ;BBSPI_LCD.c: 124: {
 [f ]
-"126
-[; ;main.c: 126:     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
-[e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 522  ]
-{
-"127
-[; ;main.c: 127:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "128
-[; ;main.c: 128:         TMR0L = 177;
-[e = _TMR0L -> -> 177 `i `uc ]
+[; ;BBSPI_LCD.c: 128:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "129
-[; ;main.c: 129:         handleButton();
-[e ( _handleButton ..  ]
+[; ;BBSPI_LCD.c: 129:     SendByteBBSPI(0x40);
+[e ( _SendByteBBSPI (1 -> -> 64 `i `uc ]
 "130
-[; ;main.c: 130:         printf("hello");
-[e ( _printf :s 1C ]
+[; ;BBSPI_LCD.c: 130:     SendByteBBSPI(port_dir);
+[e ( _SendByteBBSPI (1 _port_dir ]
 "131
-[; ;main.c: 131:     }
-}
-[e :U 522 ]
+[; ;BBSPI_LCD.c: 131:     SendByteBBSPI(0x00);
+[e ( _SendByteBBSPI (1 -> -> 0 `i `uc ]
 "132
-[; ;main.c: 132: }
-[e :UE 521 ]
+[; ;BBSPI_LCD.c: 132:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"133
+[; ;BBSPI_LCD.c: 133: }
+[e :UE 513 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"134
-[; ;main.c: 134: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"136
-[; ;main.c: 136:     enum State state = INIT;
-[v _state `E4890 ~T0 @X0 1 a ]
-[e = _state . `E4890 0 ]
-"137
-[; ;main.c: 137:     pin_init();
-[e ( _pin_init ..  ]
-"138
-[; ;main.c: 138:     timer0_init();
-[e ( _timer0_init ..  ]
-"139
-[; ;main.c: 139:     interrupt_init();
-[e ( _interrupt_init ..  ]
-"140
-[; ;main.c: 140:     osc_init();
-[e ( _osc_init ..  ]
-"141
-[; ;main.c: 141:     while(1) {
-[e :U 525 ]
-{
-"142
-[; ;main.c: 142:         LATD = ledValue;
-[e = _LATD _ledValue ]
-"143
-[; ;main.c: 143:         switch(state) {
-[e $U 528  ]
-{
 "144
-[; ;main.c: 144:             case INIT:
-[e :U 529 ]
+[; ;BBSPI_LCD.c: 144: void WritePort_BBSPI (unsigned char port_add, unsigned char a)
+[v _WritePort_BBSPI `(v ~T0 @X0 1 ef2`uc`uc ]
 "145
-[; ;main.c: 145:                 if(countRA5 > 0) {
-[e $ ! > _countRA5 -> -> 0 `i `ui 530  ]
+[; ;BBSPI_LCD.c: 145: {
 {
+[e :U _WritePort_BBSPI ]
+"144
+[; ;BBSPI_LCD.c: 144: void WritePort_BBSPI (unsigned char port_add, unsigned char a)
+[v _port_add `uc ~T0 @X0 1 r1 ]
+[v _a `uc ~T0 @X0 1 r2 ]
+"145
+[; ;BBSPI_LCD.c: 145: {
+[f ]
 "146
-[; ;main.c: 146:                     ledValue++;
-[e ++ _ledValue -> -> 1 `i `uc ]
+[; ;BBSPI_LCD.c: 146:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "147
-[; ;main.c: 147:                     state = INCREASE0;
-[e = _state . `E4890 1 ]
+[; ;BBSPI_LCD.c: 147:     SendByteBBSPI(0x40);
+[e ( _SendByteBBSPI (1 -> -> 64 `i `uc ]
 "148
-[; ;main.c: 148:                 }
-}
-[e $U 531  ]
+[; ;BBSPI_LCD.c: 148:     SendByteBBSPI(port_add);
+[e ( _SendByteBBSPI (1 _port_add ]
 "149
-[; ;main.c: 149:                 else if(countRB0 > 0) {
-[e :U 530 ]
-[e $ ! > _countRB0 -> -> 0 `i `ui 532  ]
-{
+[; ;BBSPI_LCD.c: 149:     SendByteBBSPI(a);
+[e ( _SendByteBBSPI (1 _a ]
 "150
-[; ;main.c: 150:                     ledValue--;
-[e -- _ledValue -> -> 1 `i `uc ]
+[; ;BBSPI_LCD.c: 150:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 "151
-[; ;main.c: 151:                     state = DECREASE0;
-[e = _state . `E4890 4 ]
-"152
-[; ;main.c: 152:                 }
+[; ;BBSPI_LCD.c: 151: }
+[e :UE 514 ]
 }
-[e :U 532 ]
-[e :U 531 ]
-"153
-[; ;main.c: 153:                 break;
-[e $U 527  ]
-"154
-[; ;main.c: 154:             case INCREASE0:
-[e :U 533 ]
-"155
-[; ;main.c: 155:                 if(countRA5 > 100)
-[e $ ! > _countRA5 -> -> 100 `i `ui 534  ]
-"156
-[; ;main.c: 156:                     state = INCREASE1;
-[e = _state . `E4890 2 ]
-[e $U 535  ]
-"157
-[; ;main.c: 157:                 else if (countRA5 == 0)
-[e :U 534 ]
-[e $ ! == _countRA5 -> -> 0 `i `ui 536  ]
-"158
-[; ;main.c: 158:                     state = (countRB0 > 0) ? DECREASE0 : INIT;
-[e = _state -> ? > _countRB0 -> -> 0 `i `ui : . `E4890 4 . `E4890 0 `E4890 ]
-[e :U 536 ]
-[e :U 535 ]
-"159
-[; ;main.c: 159:                 break;
-[e $U 527  ]
 "160
-[; ;main.c: 160:             case INCREASE1:
-[e :U 537 ]
+[; ;BBSPI_LCD.c: 160: void LCDPutChar (unsigned char ch)
+[v _LCDPutChar `(v ~T0 @X0 1 ef1`uc ]
 "161
-[; ;main.c: 161:                 if(increase1) {
-[e $ ! != -> _increase1 `i -> 0 `i 538  ]
+[; ;BBSPI_LCD.c: 161: {
 {
+[e :U _LCDPutChar ]
+"160
+[; ;BBSPI_LCD.c: 160: void LCDPutChar (unsigned char ch)
+[v _ch `uc ~T0 @X0 1 r1 ]
+"161
+[; ;BBSPI_LCD.c: 161: {
+[f ]
 "162
-[; ;main.c: 162:                     ledValue++;
-[e ++ _ledValue -> -> 1 `i `uc ]
+[; ;BBSPI_LCD.c: 162:     _delay((unsigned long)((5)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "163
-[; ;main.c: 163:                     increase1 = 0;
-[e = _increase1 -> -> 0 `i `uc ]
+[; ;BBSPI_LCD.c: 163:     WritePort_BBSPI (0x12, 0x80);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 128 `i `uc ]
 "164
-[; ;main.c: 164:                 }
-}
-[e :U 538 ]
+[; ;BBSPI_LCD.c: 164:     _delay((unsigned long)((1)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "165
-[; ;main.c: 165:                 if(countRA5 > 300)
-[e $ ! > _countRA5 -> -> 300 `i `ui 539  ]
+[; ;BBSPI_LCD.c: 165:     WritePort_BBSPI (0x13, ch);
+[e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
 "166
-[; ;main.c: 166:                     state = INCREASE2;
-[e = _state . `E4890 3 ]
-[e $U 540  ]
+[; ;BBSPI_LCD.c: 166:     _delay((unsigned long)((1)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "167
-[; ;main.c: 167:                 else if(countRA5 == 0)
-[e :U 539 ]
-[e $ ! == _countRA5 -> -> 0 `i `ui 541  ]
+[; ;BBSPI_LCD.c: 167:     WritePort_BBSPI (0x12, 0xC0);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 192 `i `uc ]
 "168
-[; ;main.c: 168:                     state = (countRB0 > 0) ? DECREASE0 : INIT;
-[e = _state -> ? > _countRB0 -> -> 0 `i `ui : . `E4890 4 . `E4890 0 `E4890 ]
-[e :U 541 ]
-[e :U 540 ]
+[; ;BBSPI_LCD.c: 168:     _delay((unsigned long)((1)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "169
-[; ;main.c: 169:                 break;
-[e $U 527  ]
+[; ;BBSPI_LCD.c: 169:     WritePort_BBSPI (0x12, 0x00);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
 "170
-[; ;main.c: 170:             case INCREASE2:
-[e :U 542 ]
-"171
-[; ;main.c: 171:                 if(increase2) {
-[e $ ! != -> _increase2 `i -> 0 `i 543  ]
-{
-"172
-[; ;main.c: 172:                     ledValue++;
-[e ++ _ledValue -> -> 1 `i `uc ]
-"173
-[; ;main.c: 173:                     increase2 = 0;
-[e = _increase2 -> -> 0 `i `uc ]
-"174
-[; ;main.c: 174:                 }
+[; ;BBSPI_LCD.c: 170: }
+[e :UE 515 ]
 }
-[e :U 543 ]
-"175
-[; ;main.c: 175:                 if(countRA5 == 0)
-[e $ ! == _countRA5 -> -> 0 `i `ui 544  ]
-"176
-[; ;main.c: 176:                     state = (countRB0 > 0) ? DECREASE0 : INIT;
-[e = _state -> ? > _countRB0 -> -> 0 `i `ui : . `E4890 4 . `E4890 0 `E4890 ]
-[e :U 544 ]
-"177
-[; ;main.c: 177:                 break;
-[e $U 527  ]
-"178
-[; ;main.c: 178:             case DECREASE0:
-[e :U 545 ]
 "179
-[; ;main.c: 179:                 if(countRB0 > 100)
-[e $ ! > _countRB0 -> -> 100 `i `ui 546  ]
+[; ;BBSPI_LCD.c: 179: void LCDPutInst (unsigned char ch)
+[v _LCDPutInst `(v ~T0 @X0 1 ef1`uc ]
 "180
-[; ;main.c: 180:                     state = DECREASE1;
-[e = _state . `E4890 5 ]
-[e $U 547  ]
+[; ;BBSPI_LCD.c: 180: {
+{
+[e :U _LCDPutInst ]
+"179
+[; ;BBSPI_LCD.c: 179: void LCDPutInst (unsigned char ch)
+[v _ch `uc ~T0 @X0 1 r1 ]
+"180
+[; ;BBSPI_LCD.c: 180: {
+[f ]
 "181
-[; ;main.c: 181:                 else if (countRB0 == 0)
-[e :U 546 ]
-[e $ ! == _countRB0 -> -> 0 `i `ui 548  ]
+[; ;BBSPI_LCD.c: 181:     _delay((unsigned long)((5)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "182
-[; ;main.c: 182:                     state = (countRA5 > 0) ? INCREASE0 : INIT;
-[e = _state -> ? > _countRA5 -> -> 0 `i `ui : . `E4890 1 . `E4890 0 `E4890 ]
-[e :U 548 ]
-[e :U 547 ]
+[; ;BBSPI_LCD.c: 182:     WritePort_BBSPI (0x12, 0x00);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
 "183
-[; ;main.c: 183:                 break;
-[e $U 527  ]
+[; ;BBSPI_LCD.c: 183:     _delay((unsigned long)((1)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "184
-[; ;main.c: 184:             case DECREASE1:
-[e :U 549 ]
+[; ;BBSPI_LCD.c: 184:     WritePort_BBSPI (0x13, ch);
+[e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
 "185
-[; ;main.c: 185:                 if(decrease1) {
-[e $ ! != -> _decrease1 `i -> 0 `i 550  ]
-{
+[; ;BBSPI_LCD.c: 185:     _delay((unsigned long)((1)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "186
-[; ;main.c: 186:                     ledValue--;
-[e -- _ledValue -> -> 1 `i `uc ]
+[; ;BBSPI_LCD.c: 186:     WritePort_BBSPI (0x12,0x40);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 64 `i `uc ]
 "187
-[; ;main.c: 187:                     decrease1 = 0;
-[e = _decrease1 -> -> 0 `i `uc ]
+[; ;BBSPI_LCD.c: 187:     _delay((unsigned long)((1)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "188
-[; ;main.c: 188:                 }
-}
-[e :U 550 ]
+[; ;BBSPI_LCD.c: 188:     WritePort_BBSPI (0x12, 0x00);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
 "189
-[; ;main.c: 189:                 if(countRB0 > 300)
-[e $ ! > _countRB0 -> -> 300 `i `ui 551  ]
-"190
-[; ;main.c: 190:                     state = DECREASE2;
-[e = _state . `E4890 6 ]
-[e $U 552  ]
-"191
-[; ;main.c: 191:                 else if(countRB0 == 0)
-[e :U 551 ]
-[e $ ! == _countRB0 -> -> 0 `i `ui 553  ]
-"192
-[; ;main.c: 192:                     state = (countRA5 > 0) ? INCREASE0 : INIT;
-[e = _state -> ? > _countRA5 -> -> 0 `i `ui : . `E4890 1 . `E4890 0 `E4890 ]
-[e :U 553 ]
-[e :U 552 ]
-"193
-[; ;main.c: 193:                 break;
-[e $U 527  ]
-"194
-[; ;main.c: 194:             case DECREASE2:
-[e :U 554 ]
-"195
-[; ;main.c: 195:                 if(decrease2) {
-[e $ ! != -> _decrease2 `i -> 0 `i 555  ]
-{
-"196
-[; ;main.c: 196:                     ledValue--;
-[e -- _ledValue -> -> 1 `i `uc ]
-"197
-[; ;main.c: 197:                     decrease2 = 0;
-[e = _decrease2 -> -> 0 `i `uc ]
+[; ;BBSPI_LCD.c: 189: }
+[e :UE 516 ]
+}
 "198
-[; ;main.c: 198:                 }
-}
-[e :U 555 ]
+[; ;BBSPI_LCD.c: 198: void LCDPutStr (const char *ptr)
+[v _LCDPutStr `(v ~T0 @X0 1 ef1`*Cuc ]
 "199
-[; ;main.c: 199:                 if(countRB0 == 0)
-[e $ ! == _countRB0 -> -> 0 `i `ui 556  ]
+[; ;BBSPI_LCD.c: 199: {
+{
+[e :U _LCDPutStr ]
+"198
+[; ;BBSPI_LCD.c: 198: void LCDPutStr (const char *ptr)
+[v _ptr `*Cuc ~T0 @X0 1 r1 ]
+"199
+[; ;BBSPI_LCD.c: 199: {
+[f ]
 "200
-[; ;main.c: 200:                     state = (countRA5 > 0) ? INCREASE0 : INIT;
-[e = _state -> ? > _countRA5 -> -> 0 `i `ui : . `E4890 1 . `E4890 0 `E4890 ]
-[e :U 556 ]
+[; ;BBSPI_LCD.c: 200:     while(*ptr) LCDPutChar(*(ptr++));
+[e $U 518  ]
+[e :U 519 ]
+[e ( _LCDPutChar (1 -> *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x `uc ]
+[e :U 518 ]
+[e $ != -> *U _ptr `i -> 0 `i 519  ]
+[e :U 520 ]
 "201
-[; ;main.c: 201:                 break;
-[e $U 527  ]
-"202
-[; ;main.c: 202:         }
+[; ;BBSPI_LCD.c: 201: }
+[e :UE 517 ]
 }
-[e $U 527  ]
-[e :U 528 ]
-[e [\ -> _state `ui , $ -> . `E4890 0 `ui 529
- , $ -> . `E4890 1 `ui 533
- , $ -> . `E4890 2 `ui 537
- , $ -> . `E4890 3 `ui 542
- , $ -> . `E4890 4 `ui 545
- , $ -> . `E4890 5 `ui 549
- , $ -> . `E4890 6 `ui 554
- 527 ]
-[e :U 527 ]
-"203
-[; ;main.c: 203:     }
-}
-[e :U 524 ]
-[e $U 525  ]
-[e :U 526 ]
-"204
-[; ;main.c: 204: }
-[e :UE 523 ]
-}
-[p f _printf 8388608 ]
-[a 1C 104 101 108 108 111 0 ]

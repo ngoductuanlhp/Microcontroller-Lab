@@ -47,12 +47,13 @@ unsigned char buttonRB0_1s_pressed = 0;
 unsigned char buttonRB0_3s_pressed = 0;
 
 unsigned int countRA5 = 0;
-unsigned int countRA5_1 = 0;
-unsigned int countRA5_2 = 0;
+unsigned char increase1 = 0;
+unsigned char increase2 = 0;
 
 unsigned int countRB0 = 0;
-unsigned int countRB0_1 = 0;
-unsigned int countRB0_2 = 0;
+unsigned char decrease1 = 0;
+unsigned char decrease2 = 0;
+
 
 void interrupt_init() {
     INTCONbits.TMR0IE = 1;
@@ -71,6 +72,11 @@ void pin_init() {
     TRISAbits.TRISA5 = 1;
     TRISBbits.TRISB0 = 1;
     ADCON1 = 0b00001111; //DON'T KNOW WHY BUT IT WORKS
+}
+
+void osc_init() {
+    OSCCON = 0b01110111;
+    OSCTUNE = 0b00001111;
 }
 
 int readButtonRA5() {
@@ -96,36 +102,23 @@ void handleButton() {
     int checkRB0 = readButtonRB0();
     if(checkRA5 == 2) {
         countRB0 = 0;
-        countRB0_1 = 0;
-        countRB0_2 = 0;
         countRA5++;
-        if(countRA5 > time_pressed2) {
-            countRA5_2++;
-        }
-        else if(countRA5 > time_pressed1) {
-            countRA5_1++;
-        }
+        if(countRA5 % time_interval2 == 0)
+            increase2 = 1;
+        if(countRA5 % time_interval1 == 0)
+            increase1 = 1;
     }
     else if(checkRB0 == 2) {
         countRA5 = 0;
-        countRA5_1 = 0;
-        countRA5_2 = 0;
         countRB0++;
-        if(countRB0 > time_pressed2) {
-            countRB0_2++;
-        }
-        else if(countRB0 > time_pressed1) {
-            countRB0_1++;
-        }
+        if(countRB0 % time_interval2 == 0)
+            decrease2 = 1;
+        if(countRB0 % time_interval1 == 0)
+            decrease1 = 1;
     }
     else if(checkRB0 == 1 || checkRA5 == 1) {
         countRA5 = 0;
-        countRA5_1 = 0;
-        countRA5_2 = 0;
-        
         countRB0 = 0;
-        countRB0_1 = 0;
-        countRB0_2 = 0;
     }
 }
 
@@ -133,11 +126,6 @@ void __interrupt() myISR(void) {
     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
         TMR0L = 177;
-////        if(PORTBbits.RB0 == 0)
-////            ledValue++;
-////        else 
-//        if(PORTAbits.RA5 == 0)
-//            ledValue--;
         handleButton();
         printf("hello");
     }
@@ -145,14 +133,11 @@ void __interrupt() myISR(void) {
 
 void main(void) {
     enum State{INIT, INCREASE0, INCREASE1, INCREASE2, DECREASE0, DECREASE1, DECREASE2};
-    enum State state;
+    enum State state = INIT;
     pin_init();
     timer0_init();
     interrupt_init();
-    OSCCON = 0b01110111;
-    OSCTUNE = 0b00001111;
-    //SYSTEM_initialize();
-    
+    osc_init();
     while(1) {
         LATD = ledValue;
         switch(state) {
@@ -167,70 +152,52 @@ void main(void) {
                 }
                 break;
             case INCREASE0:
-                if(countRA5 > time_pressed1)
+                if(countRA5 > time_pressed1) 
                     state = INCREASE1;
-                else if (countRA5 == 0) {
-                    if(countRB0 > 0)
-                        state = DECREASE0;
-                    else state = INIT;
-                }
+                else if (countRA5 == 0)
+                    state = (countRB0 > 0) ? DECREASE0 : INIT;
                 break;
             case INCREASE1:
-                if(countRA5_1 > time_interval1) {
+                if(increase1) {
                     ledValue++;
-                    countRA5_1 = 0;
+                    increase1 = 0;
                 }
                 if(countRA5 > time_pressed2)
                     state = INCREASE2;
-                else if(countRA5 == 0) {
-                    if(countRB0 > 0)
-                        state = DECREASE0;
-                    else state = INIT;
-                }
+                else if(countRA5 == 0)
+                    state = (countRB0 > 0) ? DECREASE0 : INIT;
                 break;
             case INCREASE2:
-                if(countRA5_2 > time_interval2) {
+                if(increase2) {
                     ledValue++;
-                    countRA5_2 = 0;
+                    increase2 = 0;
                 }
-                if(countRA5 == 0) {
-                    if(countRB0 > 0)
-                        state = DECREASE0;
-                    else state = INIT;
-                }
+                if(countRA5 == 0)
+                    state = (countRB0 > 0) ? DECREASE0 : INIT;
                 break;
             case DECREASE0:
                 if(countRB0 > time_pressed1)
                     state = DECREASE1;
-                else if (countRB0 == 0) {
-                    if(countRA5 > 0)
-                        state = INCREASE0;
-                    else state = INIT;
-                }
+                else if (countRB0 == 0)
+                    state = (countRA5 > 0) ? INCREASE0 : INIT;
                 break;
             case DECREASE1:
-                if(countRB0_1 > time_interval1) {
+                if(decrease1) {
                     ledValue--;
-                    countRB0_1 = 0;
+                    decrease1 = 0;
                 }
                 if(countRB0 > time_pressed2)
                     state = DECREASE2;
-                else if(countRB0 == 0) {
-                    if(countRA5 > 0)
-                        state = INCREASE0;
-                    else state = INIT;
-                }
+                else if(countRB0 == 0)
+                    state = (countRA5 > 0) ? INCREASE0 : INIT;
                 break;
             case DECREASE2:
-                if(countRB0_2 > time_interval2) {
+                if(decrease2) {
                     ledValue--;
-                    countRB0_2 = 0;
+                    decrease2 = 0;
                 }
-                if(countRB0 == 0) {
-                    if(countRA5 > 0)
-                        state = INCREASE0;
-                    else state = INIT;
-                }
+                if(countRB0 == 0)
+                    state = (countRA5 > 0) ? INCREASE0 : INIT;
                 break;
         }
     }
