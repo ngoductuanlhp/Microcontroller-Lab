@@ -1,5 +1,5 @@
-build/default/production/main.p1:  \
-main.c  \
+build/default/production/pin_manager.p1:  \
+pin_manager.c  \
 config.h  \
 interrupt_manager.h  \
 pin_manager.h  \

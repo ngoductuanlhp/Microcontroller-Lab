@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "buttons.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,14 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 12 "main.c"
+# 1 "buttons.c" 2
+# 1 "./buttons.h" 1
+# 14 "./buttons.h"
+int readButtonRA5();
+int readButtonRB0();
+void handleButton();
+# 1 "buttons.c" 2
+
 # 1 "./config.h" 1
 # 15 "./config.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -7926,12 +7932,6 @@ void pin_init();
 void timer0_init();
 # 19 "./config.h" 2
 
-# 1 "./buttons.h" 1
-# 14 "./buttons.h"
-int readButtonRA5();
-int readButtonRB0();
-void handleButton();
-# 20 "./config.h" 2
 
 # 1 "./myFSM.h" 1
 # 14 "./myFSM.h"
@@ -7978,16 +7978,48 @@ unsigned char increase2 = 0;
 unsigned int countRB0 = 0;
 unsigned char decrease1 = 0;
 unsigned char decrease2 = 0;
-# 12 "main.c" 2
+# 2 "buttons.c" 2
 
 
-void main(void) {
-    pin_init();
-    timer0_init();
-    interrupt_init();
-    osc_init();
+int readButtonRA5() {
+    firstReadRA5 = secondReadRA5;
+    secondReadRA5 = PORTAbits.RA5;
+    if(secondReadRA5 == firstReadRA5) {
+        return (secondReadRA5 == 0) ? 2 : 1;
+    }
+    return 0;
+}
 
-    while(1) {
-        FSM();
+int readButtonRB0() {
+    firstReadRB0 = secondReadRB0;
+    secondReadRB0 = PORTBbits.RB0;
+    if(secondReadRB0 == firstReadRB0) {
+        return (secondReadRB0 == 0) ? 2 : 1;
+    }
+    return 0;
+}
+
+void handleButton() {
+    int checkRA5 = readButtonRA5();
+    int checkRB0 = readButtonRB0();
+    if(checkRA5 == 2) {
+        countRB0 = 0;
+        countRA5++;
+        if(countRA5 % 10 == 0)
+            increase2 = 1;
+        if(countRA5 % 50 == 0)
+            increase1 = 1;
+    }
+    else if(checkRB0 == 2) {
+        countRA5 = 0;
+        countRB0++;
+        if(countRB0 % 10 == 0)
+            decrease2 = 1;
+        if(countRB0 % 50 == 0)
+            decrease1 = 1;
+    }
+    else if(checkRB0 == 1 || checkRA5 == 1) {
+        countRA5 = 0;
+        countRB0 = 0;
     }
 }

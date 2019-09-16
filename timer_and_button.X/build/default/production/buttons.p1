@@ -2,22 +2,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38 ./config.h
 [c E4871 0 1 2 3 4 5 6 .. ]
 [n E4871 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
-[p mainexit ]
-"11 ./pin_manager.h
-[; ;./pin_manager.h: 11: void pin_init();
-[v _pin_init `(v ~T0 @X0 0 e? ]
-"11 ./timer_manager.h
-[; ;./timer_manager.h: 11: void timer0_init();
-[v _timer0_init `(v ~T0 @X0 0 e? ]
-"11 ./interrupt_manager.h
-[; ;./interrupt_manager.h: 11: void interrupt_init();
-[v _interrupt_init `(v ~T0 @X0 0 e? ]
-"11 ./osc_manager.h
-[; ;./osc_manager.h: 11: void osc_init();
-[v _osc_init `(v ~T0 @X0 0 e? ]
-"14 ./myFSM.h
-[; ;./myFSM.h: 14: void FSM();
-[v _FSM `(v ~T0 @X0 0 e? ]
+"2649 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2649:     struct {
+[s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S118 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"2659
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2659:     struct {
+[s S119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S119 . . VREFM VREFP T0CKI LVDIN ]
+"2666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2666:     struct {
+[s S120 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S120 . AN0 AN1 AN2 AN3 . AN4 ]
+"2674
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2674:     struct {
+[s S121 :5 `uc 1 :1 `uc 1 ]
+[n S121 . . HLVDIN ]
+"2678
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2678:     struct {
+[s S122 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
+[n S122 . ULPWUIN . RJPU ]
+"2648
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2648: typedef union {
+[u S117 `S118 1 `S119 1 `S120 1 `S121 1 `S122 1 ]
+[n S117 . . . . . . ]
+"2684
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2684: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
+[v _PORTAbits `VS117 ~T0 @X0 0 e@3968 ]
+"2795
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2795:     struct {
+[s S124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S124 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"2805
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2805:     struct {
+[s S125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S125 . INT0 INT1 INT2 INT3 KBI0 KBI1 KBI2 KBI3 ]
+"2815
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2815:     struct {
+[s S126 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S126 . FLT0 . ECCP2 ]
+"2820
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2820:     struct {
+[s S127 :3 `uc 1 :1 `uc 1 ]
+[n S127 . . CCP2 ]
+"2824
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2824:     struct {
+[s S128 :3 `uc 1 :1 `uc 1 ]
+[n S128 . . P2A ]
+"2828
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2828:     struct {
+[s S129 :3 `uc 1 :1 `uc 1 ]
+[n S129 . . CCP2_PA2 ]
+"2794
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2794: typedef union {
+[u S123 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 ]
+[n S123 . . . . . . . ]
+"2833
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2833: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS123 ~T0 @X0 0 e@3969 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -700,39 +742,159 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _decrease2
 -> -> 0 `i `uc
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"14 main.c
-[; ;main.c: 14: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"4 buttons.c
+[; ;buttons.c: 4: int readButtonRA5() {
+[v _readButtonRA5 `(i ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _readButtonRA5 ]
 [f ]
-"15
-[; ;main.c: 15:     pin_init();
-[e ( _pin_init ..  ]
-"16
-[; ;main.c: 16:     timer0_init();
-[e ( _timer0_init ..  ]
-"17
-[; ;main.c: 17:     interrupt_init();
-[e ( _interrupt_init ..  ]
-"18
-[; ;main.c: 18:     osc_init();
-[e ( _osc_init ..  ]
-"20
-[; ;main.c: 20:     while(1) {
-[e :U 505 ]
+"5
+[; ;buttons.c: 5:     firstReadRA5 = secondReadRA5;
+[e = _firstReadRA5 _secondReadRA5 ]
+"6
+[; ;buttons.c: 6:     secondReadRA5 = PORTAbits.RA5;
+[e = _secondReadRA5 . . _PORTAbits 0 5 ]
+"7
+[; ;buttons.c: 7:     if(secondReadRA5 == firstReadRA5) {
+[e $ ! == -> _secondReadRA5 `i -> _firstReadRA5 `i 504  ]
 {
-"21
-[; ;main.c: 21:         FSM();
-[e ( _FSM ..  ]
-"22
-[; ;main.c: 22:     }
+"8
+[; ;buttons.c: 8:         return (secondReadRA5 == 0) ? 2 : 1;
+[e ) ? == -> _secondReadRA5 `i -> 0 `i : -> 2 `i -> 1 `i ]
+[e $UE 503  ]
+"9
+[; ;buttons.c: 9:     }
 }
 [e :U 504 ]
-[e $U 505  ]
-[e :U 506 ]
-"23
-[; ;main.c: 23: }
+"10
+[; ;buttons.c: 10:     return 0;
+[e ) -> 0 `i ]
+[e $UE 503  ]
+"11
+[; ;buttons.c: 11: }
 [e :UE 503 ]
+}
+"13
+[; ;buttons.c: 13: int readButtonRB0() {
+[v _readButtonRB0 `(i ~T0 @X0 1 ef ]
+{
+[e :U _readButtonRB0 ]
+[f ]
+"14
+[; ;buttons.c: 14:     firstReadRB0 = secondReadRB0;
+[e = _firstReadRB0 _secondReadRB0 ]
+"15
+[; ;buttons.c: 15:     secondReadRB0 = PORTBbits.RB0;
+[e = _secondReadRB0 . . _PORTBbits 0 0 ]
+"16
+[; ;buttons.c: 16:     if(secondReadRB0 == firstReadRB0) {
+[e $ ! == -> _secondReadRB0 `i -> _firstReadRB0 `i 506  ]
+{
+"17
+[; ;buttons.c: 17:         return (secondReadRB0 == 0) ? 2 : 1;
+[e ) ? == -> _secondReadRB0 `i -> 0 `i : -> 2 `i -> 1 `i ]
+[e $UE 505  ]
+"18
+[; ;buttons.c: 18:     }
+}
+[e :U 506 ]
+"19
+[; ;buttons.c: 19:     return 0;
+[e ) -> 0 `i ]
+[e $UE 505  ]
+"20
+[; ;buttons.c: 20: }
+[e :UE 505 ]
+}
+"22
+[; ;buttons.c: 22: void handleButton() {
+[v _handleButton `(v ~T0 @X0 1 ef ]
+{
+[e :U _handleButton ]
+[f ]
+"23
+[; ;buttons.c: 23:     int checkRA5 = readButtonRA5();
+[v _checkRA5 `i ~T0 @X0 1 a ]
+[e = _checkRA5 ( _readButtonRA5 ..  ]
+"24
+[; ;buttons.c: 24:     int checkRB0 = readButtonRB0();
+[v _checkRB0 `i ~T0 @X0 1 a ]
+[e = _checkRB0 ( _readButtonRB0 ..  ]
+"25
+[; ;buttons.c: 25:     if(checkRA5 == 2) {
+[e $ ! == _checkRA5 -> 2 `i 508  ]
+{
+"26
+[; ;buttons.c: 26:         countRB0 = 0;
+[e = _countRB0 -> -> 0 `i `ui ]
+"27
+[; ;buttons.c: 27:         countRA5++;
+[e ++ _countRA5 -> -> 1 `i `ui ]
+"28
+[; ;buttons.c: 28:         if(countRA5 % 10 == 0)
+[e $ ! == % _countRA5 -> -> 10 `i `ui -> -> 0 `i `ui 509  ]
+"29
+[; ;buttons.c: 29:             increase2 = 1;
+[e = _increase2 -> -> 1 `i `uc ]
+[e :U 509 ]
+"30
+[; ;buttons.c: 30:         if(countRA5 % 50 == 0)
+[e $ ! == % _countRA5 -> -> 50 `i `ui -> -> 0 `i `ui 510  ]
+"31
+[; ;buttons.c: 31:             increase1 = 1;
+[e = _increase1 -> -> 1 `i `uc ]
+[e :U 510 ]
+"32
+[; ;buttons.c: 32:     }
+}
+[e $U 511  ]
+"33
+[; ;buttons.c: 33:     else if(checkRB0 == 2) {
+[e :U 508 ]
+[e $ ! == _checkRB0 -> 2 `i 512  ]
+{
+"34
+[; ;buttons.c: 34:         countRA5 = 0;
+[e = _countRA5 -> -> 0 `i `ui ]
+"35
+[; ;buttons.c: 35:         countRB0++;
+[e ++ _countRB0 -> -> 1 `i `ui ]
+"36
+[; ;buttons.c: 36:         if(countRB0 % 10 == 0)
+[e $ ! == % _countRB0 -> -> 10 `i `ui -> -> 0 `i `ui 513  ]
+"37
+[; ;buttons.c: 37:             decrease2 = 1;
+[e = _decrease2 -> -> 1 `i `uc ]
+[e :U 513 ]
+"38
+[; ;buttons.c: 38:         if(countRB0 % 50 == 0)
+[e $ ! == % _countRB0 -> -> 50 `i `ui -> -> 0 `i `ui 514  ]
+"39
+[; ;buttons.c: 39:             decrease1 = 1;
+[e = _decrease1 -> -> 1 `i `uc ]
+[e :U 514 ]
+"40
+[; ;buttons.c: 40:     }
+}
+[e $U 515  ]
+"41
+[; ;buttons.c: 41:     else if(checkRB0 == 1 || checkRA5 == 1) {
+[e :U 512 ]
+[e $ ! || == _checkRB0 -> 1 `i == _checkRA5 -> 1 `i 516  ]
+{
+"42
+[; ;buttons.c: 42:         countRA5 = 0;
+[e = _countRA5 -> -> 0 `i `ui ]
+"43
+[; ;buttons.c: 43:         countRB0 = 0;
+[e = _countRB0 -> -> 0 `i `ui ]
+"44
+[; ;buttons.c: 44:     }
+}
+[e :U 516 ]
+[e :U 515 ]
+[e :U 511 ]
+"45
+[; ;buttons.c: 45: }
+[e :UE 507 ]
 }

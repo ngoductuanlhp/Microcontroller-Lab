@@ -2,22 +2,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38 ./config.h
 [c E4871 0 1 2 3 4 5 6 .. ]
 [n E4871 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
-[p mainexit ]
-"11 ./pin_manager.h
-[; ;./pin_manager.h: 11: void pin_init();
-[v _pin_init `(v ~T0 @X0 0 e? ]
-"11 ./timer_manager.h
-[; ;./timer_manager.h: 11: void timer0_init();
-[v _timer0_init `(v ~T0 @X0 0 e? ]
-"11 ./interrupt_manager.h
-[; ;./interrupt_manager.h: 11: void interrupt_init();
-[v _interrupt_init `(v ~T0 @X0 0 e? ]
-"11 ./osc_manager.h
-[; ;./osc_manager.h: 11: void osc_init();
-[v _osc_init `(v ~T0 @X0 0 e? ]
-"14 ./myFSM.h
-[; ;./myFSM.h: 14: void FSM();
-[v _FSM `(v ~T0 @X0 0 e? ]
+"12474 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12474: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
+"7383
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 7383: extern volatile unsigned char OSCTUNE __attribute__((address(0xF9B)));
+[v _OSCTUNE `Vuc ~T0 @X0 0 e@3995 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -700,39 +690,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _decrease2
 -> -> 0 `i `uc
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"14 main.c
-[; ;main.c: 14: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"4 osc_manager.c
+[; ;osc_manager.c: 4: void osc_init() {
+[v _osc_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _osc_init ]
 [f ]
-"15
-[; ;main.c: 15:     pin_init();
-[e ( _pin_init ..  ]
-"16
-[; ;main.c: 16:     timer0_init();
-[e ( _timer0_init ..  ]
-"17
-[; ;main.c: 17:     interrupt_init();
-[e ( _interrupt_init ..  ]
-"18
-[; ;main.c: 18:     osc_init();
-[e ( _osc_init ..  ]
-"20
-[; ;main.c: 20:     while(1) {
-[e :U 505 ]
-{
-"21
-[; ;main.c: 21:         FSM();
-[e ( _FSM ..  ]
-"22
-[; ;main.c: 22:     }
-}
-[e :U 504 ]
-[e $U 505  ]
-[e :U 506 ]
-"23
-[; ;main.c: 23: }
+"5
+[; ;osc_manager.c: 5:     OSCCON = 0b01110111;
+[e = _OSCCON -> -> 119 `i `uc ]
+"6
+[; ;osc_manager.c: 6:     OSCTUNE = 0b00001111;
+[e = _OSCTUNE -> -> 15 `i `uc ]
+"7
+[; ;osc_manager.c: 7: }
 [e :UE 503 ]
 }

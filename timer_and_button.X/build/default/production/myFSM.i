@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "myFSM.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 12 "main.c"
+# 1 "myFSM.c" 2
+# 1 "./myFSM.h" 1
+# 14 "./myFSM.h"
+void FSM();
+# 1 "myFSM.c" 2
+
 # 1 "./config.h" 1
 # 15 "./config.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -7933,10 +7937,6 @@ int readButtonRB0();
 void handleButton();
 # 20 "./config.h" 2
 
-# 1 "./myFSM.h" 1
-# 14 "./myFSM.h"
-void FSM();
-# 21 "./config.h" 2
 
 # 1 "./osc_manager.h" 1
 # 11 "./osc_manager.h"
@@ -7978,16 +7978,93 @@ unsigned char increase2 = 0;
 unsigned int countRB0 = 0;
 unsigned char decrease1 = 0;
 unsigned char decrease2 = 0;
-# 12 "main.c" 2
+# 2 "myFSM.c" 2
 
 
-void main(void) {
-    pin_init();
-    timer0_init();
-    interrupt_init();
-    osc_init();
-
-    while(1) {
-        FSM();
-    }
+void FSM(){
+    LATD = ledValue;
+    switch(state) {
+            case INIT:
+                if(countRA5 > 0) {
+                    ledValue++;
+                    printf("Increase\n");
+                    state = INCREASE0;
+                }
+                else if(countRB0 > 0) {
+                    ledValue--;
+                    printf("Decrease\n");
+                    state = DECREASE0;
+                }
+                break;
+            case INCREASE0:
+                if(countRA5 > 100)
+                    state = INCREASE1;
+                else if (countRA5 == 0)
+                    if(countRB0 > 0)
+                        state = DECREASE0;
+                    else
+                        state = INIT;
+                break;
+            case INCREASE1:
+                if(increase1) {
+                    ledValue++;
+                    printf("Increase\n");
+                    increase1 = 0;
+                }
+                if(countRA5 > 300)
+                    state = INCREASE2;
+                else if(countRA5 == 0)
+                    if(countRB0 > 0)
+                        state = DECREASE0;
+                    else
+                        state = INIT;
+                break;
+            case INCREASE2:
+                if(increase2) {
+                    ledValue++;
+                    printf("Increase\n");
+                    increase2 = 0;
+                }
+                if(countRA5 == 0)
+                    if(countRB0 > 0)
+                        state = DECREASE0;
+                    else
+                        state = INIT;
+                break;
+            case DECREASE0:
+                if(countRB0 > 100)
+                    state = DECREASE1;
+                else if (countRB0 == 0)
+                    if(countRA5 > 0)
+                        state = INCREASE0;
+                    else
+                        state = INIT;
+                break;
+            case DECREASE1:
+                if(decrease1) {
+                    ledValue--;
+                    printf("Decrease\n");
+                    decrease1 = 0;
+                }
+                if(countRB0 > 300)
+                    state = DECREASE2;
+                else if(countRB0 == 0)
+                    if(countRA5 > 0)
+                        state = INCREASE0;
+                    else
+                        state = INIT;
+                break;
+            case DECREASE2:
+                if(decrease2) {
+                    ledValue--;
+                    printf("Decrease\n");
+                    decrease2 = 0;
+                }
+                if(countRB0 == 0)
+                    if(countRA5 > 0)
+                        state = INCREASE0;
+                    else
+                        state = INIT;
+                break;
+        }
 }

@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip 18F8722 ]
 [d frameptr 4065 ]
-"136 E:\MPLAPXProjects\timer_and_button.X\main.c
-[e E4890 State `uc
+"38 E:\MPLAPXProjects\timer_and_button.X/config.h
+[e E4871 State `uc
 INIT 0
 INCREASE0 1
 INCREASE1 2
@@ -13,6 +13,66 @@ DECREASE0 4
 DECREASE1 5
 DECREASE2 6
 ]
+[e E4871 State `uc
+INIT 0
+INCREASE0 1
+INCREASE1 2
+INCREASE2 3
+DECREASE0 4
+DECREASE1 5
+DECREASE2 6
+]
+[e E4871 State `uc
+INIT 0
+INCREASE0 1
+INCREASE1 2
+INCREASE2 3
+DECREASE0 4
+DECREASE1 5
+DECREASE2 6
+]
+[e E4871 State `uc
+INIT 0
+INCREASE0 1
+INCREASE1 2
+INCREASE2 3
+DECREASE0 4
+DECREASE1 5
+DECREASE2 6
+]
+[e E4871 State `uc
+INIT 0
+INCREASE0 1
+INCREASE1 2
+INCREASE2 3
+DECREASE0 4
+DECREASE1 5
+DECREASE2 6
+]
+[e E4871 State `uc
+INIT 0
+INCREASE0 1
+INCREASE1 2
+INCREASE2 3
+DECREASE0 4
+DECREASE1 5
+DECREASE2 6
+]
+[e E4871 State `uc
+INIT 0
+INCREASE0 1
+INCREASE1 2
+INCREASE2 3
+DECREASE0 4
+DECREASE1 5
+DECREASE2 6
+]
+"4 E:\MPLAPXProjects\timer_and_button.X\buttons.c
+[v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
+"13
+[v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
+"22
+[v _handleButton handleButton `(v  1 e 1 0 ]
 "670 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 "1368
@@ -53,25 +113,45 @@ DECREASE2 6
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"58 E:\MPLAPXProjects\timer_and_button.X\main.c
+"4 E:\MPLAPXProjects\timer_and_button.X\interrupt_manager.c
 [v _interrupt_init interrupt_init `(v  1 e 1 0 ]
-"63
-[v _timer0_init timer0_init `(v  1 e 1 0 ]
-"68
-[v _pin_init pin_init `(v  1 e 1 0 ]
-"77
-[v _osc_init osc_init `(v  1 e 1 0 ]
-"82
-[v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
-"91
-[v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
-"100
-[v _handleButton handleButton `(v  1 e 1 0 ]
-"125
+"9
 [v _myISR myISR `IIH(v  1 e 1 0 ]
-"134
+"14 E:\MPLAPXProjects\timer_and_button.X\main.c
 [v _main main `(v  1 e 1 0 ]
-[s S86 . 1 `uc 1 RA0 1 0 :1:0 
+"4 E:\MPLAPXProjects\timer_and_button.X\myFSM.c
+[v _FSM FSM `(v  1 e 1 0 ]
+"4 E:\MPLAPXProjects\timer_and_button.X\osc_manager.c
+[v _osc_init osc_init `(v  1 e 1 0 ]
+"4 E:\MPLAPXProjects\timer_and_button.X\pin_manager.c
+[v _pin_init pin_init `(v  1 e 1 0 ]
+"4 E:\MPLAPXProjects\timer_and_button.X\timer_manager.c
+[v _timer0_init timer0_init `(v  1 e 1 0 ]
+"38 E:\MPLAPXProjects\timer_and_button.X/config.h
+[v _state state `VEE4871  1 e 1 0 ]
+"40
+[v _firstReadRA5 firstReadRA5 `uc  1 e 1 0 ]
+"41
+[v _secondReadRA5 secondReadRA5 `uc  1 e 1 0 ]
+"42
+[v _firstReadRB0 firstReadRB0 `uc  1 e 1 0 ]
+"43
+[v _secondReadRB0 secondReadRB0 `uc  1 e 1 0 ]
+"45
+[v _ledValue ledValue `uc  1 e 1 0 ]
+"51
+[v _countRA5 countRA5 `ui  1 e 2 0 ]
+"52
+[v _increase1 increase1 `uc  1 e 1 0 ]
+"53
+[v _increase2 increase2 `uc  1 e 1 0 ]
+"55
+[v _countRB0 countRB0 `ui  1 e 2 0 ]
+"56
+[v _decrease1 decrease1 `uc  1 e 1 0 ]
+"57
+[v _decrease2 decrease2 `uc  1 e 1 0 ]
+[s S188 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -81,29 +161,29 @@ DECREASE2 6
 `uc 1 RA7 1 0 :1:7 
 ]
 "2684 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
-[s S169 . 1 `uc 1 . 1 0 :2:0 
+[s S308 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S175 . 1 `uc 1 AN0 1 0 :1:0 
+[s S314 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S182 . 1 `uc 1 . 1 0 :5:0 
+[s S321 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S185 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S324 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S189 . 1 `S86 1 . 1 0 `S169 1 . 1 0 `S175 1 . 1 0 `S182 1 . 1 0 `S185 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES189  1 e 1 @3968 ]
-[s S126 . 1 `uc 1 RB0 1 0 :1:0 
+[u S328 . 1 `S188 1 . 1 0 `S308 1 . 1 0 `S314 1 . 1 0 `S321 1 . 1 0 `S324 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES328  1 e 1 @3968 ]
+[s S228 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -113,7 +193,7 @@ DECREASE2 6
 `uc 1 RB7 1 0 :1:7 
 ]
 "2833
-[s S234 . 1 `uc 1 INT0 1 0 :1:0 
+[s S373 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -122,24 +202,24 @@ DECREASE2 6
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S243 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S382 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ECCP2 1 0 :1:3 
 ]
-[s S247 . 1 `uc 1 . 1 0 :3:0 
+[s S386 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2 1 0 :1:3 
 ]
-[s S250 . 1 `uc 1 . 1 0 :3:0 
+[s S389 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 P2A 1 0 :1:3 
 ]
-[s S253 . 1 `uc 1 . 1 0 :3:0 
+[s S392 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S256 . 1 `S126 1 . 1 0 `S234 1 . 1 0 `S243 1 . 1 0 `S247 1 . 1 0 `S250 1 . 1 0 `S253 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES256  1 e 1 @3969 ]
+[u S395 . 1 `S228 1 . 1 0 `S373 1 . 1 0 `S382 1 . 1 0 `S386 1 . 1 0 `S389 1 . 1 0 `S392 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES395  1 e 1 @3969 ]
 "4815
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S77 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S179 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -149,9 +229,9 @@ DECREASE2 6
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "5489
-[u S95 . 1 `S77 1 . 1 0 `S86 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES95  1 e 1 @3986 ]
-[s S117 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S197 . 1 `S179 1 . 1 0 `S188 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES197  1 e 1 @3986 ]
+[s S219 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -161,8 +241,8 @@ DECREASE2 6
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "5711
-[u S135 . 1 `S117 1 . 1 0 `S126 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES135  1 e 1 @3987 ]
+[u S237 . 1 `S219 1 . 1 0 `S228 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES237  1 e 1 @3987 ]
 "6123
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "7383
@@ -175,7 +255,7 @@ DECREASE2 6
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
 "12640
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
-[s S24 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S79 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -185,7 +265,7 @@ DECREASE2 6
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "13144
-[s S33 . 1 `uc 1 . 1 0 :1:0 
+[s S88 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -194,108 +274,84 @@ DECREASE2 6
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S42 . 1 `uc 1 . 1 0 :6:0 
+[s S97 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S46 . 1 `S24 1 . 1 0 `S33 1 . 1 0 `S42 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES46  1 e 1 @4082 ]
+[u S101 . 1 `S79 1 . 1 0 `S88 1 . 1 0 `S97 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES101  1 e 1 @4082 ]
 "55 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"34 E:\MPLAPXProjects\timer_and_button.X\main.c
-[v _firstReadRA5 firstReadRA5 `uc  1 e 1 0 ]
-"35
-[v _secondReadRA5 secondReadRA5 `uc  1 e 1 0 ]
-"36
-[v _firstReadRB0 firstReadRB0 `uc  1 e 1 0 ]
-"37
-[v _secondReadRB0 secondReadRB0 `uc  1 e 1 0 ]
-"39
-[v _ledValue ledValue `uc  1 e 1 0 ]
-"49
-[v _countRA5 countRA5 `ui  1 e 2 0 ]
-"50
-[v _increase1 increase1 `uc  1 e 1 0 ]
-"51
-[v _increase2 increase2 `uc  1 e 1 0 ]
-"53
-[v _countRB0 countRB0 `ui  1 e 2 0 ]
-"54
-[v _decrease1 decrease1 `uc  1 e 1 0 ]
-"55
-[v _decrease2 decrease2 `uc  1 e 1 0 ]
-"134
+"14 E:\MPLAPXProjects\timer_and_button.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"136
-[v main@state state `E4890  1 a 1 2 ]
-"204
+"23
 } 0
-"63
+"4 E:\MPLAPXProjects\timer_and_button.X\timer_manager.c
 [v _timer0_init timer0_init `(v  1 e 1 0 ]
 {
-"66
+"7
 } 0
-"68
+"4 E:\MPLAPXProjects\timer_and_button.X\pin_manager.c
 [v _pin_init pin_init `(v  1 e 1 0 ]
 {
-"75
+"11
 } 0
-"77
+"4 E:\MPLAPXProjects\timer_and_button.X\osc_manager.c
 [v _osc_init osc_init `(v  1 e 1 0 ]
 {
-"80
+"7
 } 0
-"58
+"4 E:\MPLAPXProjects\timer_and_button.X\interrupt_manager.c
 [v _interrupt_init interrupt_init `(v  1 e 1 0 ]
 {
-"61
+"7
 } 0
-"125
-[v _myISR myISR `IIH(v  1 e 1 0 ]
+"4 E:\MPLAPXProjects\timer_and_button.X\myFSM.c
+[v _FSM FSM `(v  1 e 1 0 ]
 {
-"132
+"90
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.39v  1 a 2 27 ]
+[v printf@ap ap `[1]*.39v  1 a 2 36 ]
 "5
-[v printf@fmt fmt `*.32Cuc  1 p 2 23 ]
+[v printf@fmt fmt `*.32Cuc  1 p 2 32 ]
 "13
 } 0
 "1368 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1371
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 21 ]
-[s S401 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 30 ]
+[s S556 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S401  1 p 2 15 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 17 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 19 ]
+[v vfprintf@fp fp `*.2S556  1 p 2 24 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 26 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 28 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S401 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.2S401  1 p 2 9 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 11 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 13 ]
+[s S556 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.2S556  1 p 2 18 ]
+[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 20 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 22 ]
 "1365
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 0 ]
-[s S886 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S886  1 p 2 2 ]
+[v fputc@c c `i  1 p 2 9 ]
+[s S1041 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1041  1 p 2 11 ]
 "21
 } 0
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\putch.c
@@ -303,24 +359,29 @@ DECREASE2 6
 {
 "9
 } 0
-"100 E:\MPLAPXProjects\timer_and_button.X\main.c
+"9 E:\MPLAPXProjects\timer_and_button.X\interrupt_manager.c
+[v _myISR myISR `IIH(v  1 e 1 0 ]
+{
+"15
+} 0
+"22 E:\MPLAPXProjects\timer_and_button.X\buttons.c
 [v _handleButton handleButton `(v  1 e 1 0 ]
 {
-"102
+"24
 [v handleButton@checkRB0 checkRB0 `i  1 a 2 7 ]
-"101
+"23
 [v handleButton@checkRA5 checkRA5 `i  1 a 2 5 ]
-"123
+"45
 } 0
-"91
+"13
 [v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
 {
-"98
+"20
 } 0
-"82
+"4
 [v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
 {
-"89
+"11
 } 0
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]

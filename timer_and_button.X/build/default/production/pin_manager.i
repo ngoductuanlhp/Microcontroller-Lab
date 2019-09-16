@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "pin_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 12 "main.c"
+# 1 "pin_manager.c" 2
 # 1 "./config.h" 1
 # 15 "./config.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -7978,16 +7977,15 @@ unsigned char increase2 = 0;
 unsigned int countRB0 = 0;
 unsigned char decrease1 = 0;
 unsigned char decrease2 = 0;
-# 12 "main.c" 2
+# 1 "pin_manager.c" 2
 
 
-void main(void) {
-    pin_init();
-    timer0_init();
-    interrupt_init();
-    osc_init();
 
-    while(1) {
-        FSM();
-    }
+void pin_init() {
+    TRISD = 0x00;
+    LATD = 0x00;
+
+    TRISAbits.TRISA5 = 1;
+    TRISBbits.TRISB0 = 1;
+    ADCON1 = 0b00001111;
 }

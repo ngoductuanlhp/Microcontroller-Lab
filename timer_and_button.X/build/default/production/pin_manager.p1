@@ -2,22 +2,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38 ./config.h
 [c E4871 0 1 2 3 4 5 6 .. ]
 [n E4871 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
-[p mainexit ]
-"11 ./pin_manager.h
-[; ;./pin_manager.h: 11: void pin_init();
-[v _pin_init `(v ~T0 @X0 0 e? ]
-"11 ./timer_manager.h
-[; ;./timer_manager.h: 11: void timer0_init();
-[v _timer0_init `(v ~T0 @X0 0 e? ]
-"11 ./interrupt_manager.h
-[; ;./interrupt_manager.h: 11: void interrupt_init();
-[v _interrupt_init `(v ~T0 @X0 0 e? ]
-"11 ./osc_manager.h
-[; ;./osc_manager.h: 11: void osc_init();
-[v _osc_init `(v ~T0 @X0 0 e? ]
-"14 ./myFSM.h
-[; ;./myFSM.h: 14: void FSM();
-[v _FSM `(v ~T0 @X0 0 e? ]
+"6123 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6123: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"4815
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4815: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"5468
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5468:     struct {
+[s S212 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S212 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"5478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5478:     struct {
+[s S213 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S213 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"5467
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5467: typedef union {
+[u S211 `S212 1 `S213 1 ]
+[n S211 . . . ]
+"5489
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5489: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
+[v _TRISAbits `VS211 ~T0 @X0 0 e@3986 ]
+"5690
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5690:     struct {
+[s S218 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S218 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"5700
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5700:     struct {
+[s S219 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S219 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"5689
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5689: typedef union {
+[u S217 `S218 1 `S219 1 ]
+[n S217 . . . ]
+"5711
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5711: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
+[v _TRISBbits `VS217 ~T0 @X0 0 e@3987 ]
+"10174
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 10174: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -700,39 +723,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _decrease2
 -> -> 0 `i `uc
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"14 main.c
-[; ;main.c: 14: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"4 pin_manager.c
+[; ;pin_manager.c: 4: void pin_init() {
+[v _pin_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _pin_init ]
 [f ]
-"15
-[; ;main.c: 15:     pin_init();
-[e ( _pin_init ..  ]
-"16
-[; ;main.c: 16:     timer0_init();
-[e ( _timer0_init ..  ]
-"17
-[; ;main.c: 17:     interrupt_init();
-[e ( _interrupt_init ..  ]
-"18
-[; ;main.c: 18:     osc_init();
-[e ( _osc_init ..  ]
-"20
-[; ;main.c: 20:     while(1) {
-[e :U 505 ]
-{
-"21
-[; ;main.c: 21:         FSM();
-[e ( _FSM ..  ]
-"22
-[; ;main.c: 22:     }
-}
-[e :U 504 ]
-[e $U 505  ]
-[e :U 506 ]
-"23
-[; ;main.c: 23: }
+"5
+[; ;pin_manager.c: 5:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"6
+[; ;pin_manager.c: 6:     LATD = 0x00;
+[e = _LATD -> -> 0 `i `uc ]
+"8
+[; ;pin_manager.c: 8:     TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+"9
+[; ;pin_manager.c: 9:     TRISBbits.TRISB0 = 1;
+[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
+"10
+[; ;pin_manager.c: 10:     ADCON1 = 0b00001111;
+[e = _ADCON1 -> -> 15 `i `uc ]
+"11
+[; ;pin_manager.c: 11: }
 [e :UE 503 ]
 }

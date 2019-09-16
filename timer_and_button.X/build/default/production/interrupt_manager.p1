@@ -2,22 +2,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38 ./config.h
 [c E4871 0 1 2 3 4 5 6 .. ]
 [n E4871 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
-[p mainexit ]
-"11 ./pin_manager.h
-[; ;./pin_manager.h: 11: void pin_init();
-[v _pin_init `(v ~T0 @X0 0 e? ]
-"11 ./timer_manager.h
-[; ;./timer_manager.h: 11: void timer0_init();
-[v _timer0_init `(v ~T0 @X0 0 e? ]
-"11 ./interrupt_manager.h
-[; ;./interrupt_manager.h: 11: void interrupt_init();
-[v _interrupt_init `(v ~T0 @X0 0 e? ]
-"11 ./osc_manager.h
-[; ;./osc_manager.h: 11: void osc_init();
-[v _osc_init `(v ~T0 @X0 0 e? ]
-"14 ./myFSM.h
-[; ;./myFSM.h: 14: void FSM();
-[v _FSM `(v ~T0 @X0 0 e? ]
+"13118 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13118:     struct {
+[s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S494 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"13128
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13128:     struct {
+[s S495 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S495 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"13138
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13138:     struct {
+[s S496 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S496 . . GIEL GIEH ]
+"13117
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13117: typedef union {
+[u S493 `S494 1 `S495 1 `S496 1 ]
+[n S493 . . . . ]
+"13144
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13144: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS493 ~T0 @X0 0 e@4082 ]
+[t ~ __interrupt . k ]
+[t T111 __interrupt ]
+"12640
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12640: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"16 ./buttons.h
+[; ;./buttons.h: 16: void handleButton();
+[v _handleButton `(v ~T0 @X0 0 e? ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -700,39 +711,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _decrease2
 -> -> 0 `i `uc
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"14 main.c
-[; ;main.c: 14: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"4 interrupt_manager.c
+[; ;interrupt_manager.c: 4: void interrupt_init() {
+[v _interrupt_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _interrupt_init ]
 [f ]
-"15
-[; ;main.c: 15:     pin_init();
-[e ( _pin_init ..  ]
-"16
-[; ;main.c: 16:     timer0_init();
-[e ( _timer0_init ..  ]
-"17
-[; ;main.c: 17:     interrupt_init();
-[e ( _interrupt_init ..  ]
-"18
-[; ;main.c: 18:     osc_init();
-[e ( _osc_init ..  ]
-"20
-[; ;main.c: 20:     while(1) {
-[e :U 505 ]
-{
-"21
-[; ;main.c: 21:         FSM();
-[e ( _FSM ..  ]
-"22
-[; ;main.c: 22:     }
-}
-[e :U 504 ]
-[e $U 505  ]
-[e :U 506 ]
-"23
-[; ;main.c: 23: }
+"5
+[; ;interrupt_manager.c: 5:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"6
+[; ;interrupt_manager.c: 6:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"7
+[; ;interrupt_manager.c: 7: }
 [e :UE 503 ]
+}
+[v $root$_myISR `(v ~T0 @X0 0 e ]
+"9
+[; ;interrupt_manager.c: 9: void __attribute__((picinterrupt(("")))) myISR(void) {
+[v _myISR `(v ~T111 @X0 1 ef ]
+{
+[e :U _myISR ]
+[f ]
+"10
+[; ;interrupt_manager.c: 10:     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
+[e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 505  ]
+{
+"11
+[; ;interrupt_manager.c: 11:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"12
+[; ;interrupt_manager.c: 12:         TMR0L = 177;
+[e = _TMR0L -> -> 177 `i `uc ]
+"13
+[; ;interrupt_manager.c: 13:         handleButton();
+[e ( _handleButton ..  ]
+"14
+[; ;interrupt_manager.c: 14:     }
+}
+[e :U 505 ]
+"15
+[; ;interrupt_manager.c: 15: }
+[e :UE 504 ]
 }
