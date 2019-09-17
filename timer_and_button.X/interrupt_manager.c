@@ -9,7 +9,9 @@ void interrupt_init() {
 void __interrupt() myISR(void) {
     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
-        TMR0L = 177;
+        TMR0L = counter_low;
+        TMR0H = counter_high;
+        //ledValue++;
         handleButton();
     }
 }

@@ -1,13 +1,35 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"38 ./config.h
-[c E4871 0 1 2 3 4 5 6 .. ]
-[n E4871 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
+"44 ./config.h
+[c E5325 0 1 2 3 4 5 6 .. ]
+[n E5325 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
 "12557 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12557: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
 [v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+[v F344 `(f ~T0 @X0 1 tf2`f`f ]
+"319 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h: 319: __attribute__((nonreentrant)) float powf(float, float);
+[v _powf `JF344 ~T0 @X0 0 e ]
+"12563 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12563:     struct {
+[s S481 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S481 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"12571
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12571:     struct {
+[s S482 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S482 . T0PS0 T0PS1 T0PS2 T0PS3 ]
+"12562
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12562: typedef union {
+[u S480 `S481 1 `S482 1 ]
+[n S480 . . . ]
+"12578
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12578: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
+[v _T0CONbits `VS480 ~T0 @X0 0 e@4053 ]
 "12640
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12640: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"12647
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12647: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -603,106 +625,199 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "26 ./config.h
+[; ;./config.h: 26: unsigned char decrease1 = 0;
 [p x OSC = INTIO7 ]
 "27
+[; ;./config.h: 27: unsigned char decrease2 = 0;
 [p x FCMEN = OFF ]
 "28
+[; ;./config.h: 28: 
 [p x IESO = OFF ]
 "29
+[; ;./config.h: 29: unsigned int counter_low = 0;
 [p x PWRT = OFF ]
 "30
+[; ;./config.h: 30: unsigned int counter_high = 0;
 [p x BOREN = OFF ]
 "31
+[; ;./config.h: 31: 
 [p x WDT = OFF ]
 "32
+[; ;./config.h: 32: unsigned int time_pressed1 = 1000 / 10;
 [p x MCLRE = ON ]
 "33
+[; ;./config.h: 33: unsigned int time_pressed2 = 5000 / 10;
 [p x LVP = OFF ]
 "34
+[; ;./config.h: 34: 
 [p x XINST = OFF ]
-"38
-[v _state `VE4871 ~T0 @X0 1 e ]
+"44
+[v _state `VE5325 ~T0 @X0 1 e ]
 [i _state
-. `E4871 0
+. `E5325 0
 ]
-"40
-[v _firstReadRA5 `uc ~T0 @X0 1 e ]
-[i _firstReadRA5
--> -> 1 `i `uc
-]
-"41
-[v _secondReadRA5 `uc ~T0 @X0 1 e ]
-[i _secondReadRA5
--> -> 1 `i `uc
-]
-"42
-[v _firstReadRB0 `uc ~T0 @X0 1 e ]
-[i _firstReadRB0
--> -> 1 `i `uc
-]
-"43
-[v _secondReadRB0 `uc ~T0 @X0 1 e ]
-[i _secondReadRB0
--> -> 1 `i `uc
-]
-"45
+"46
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"47
+"48
+[v _firstReadRA5 `uc ~T0 @X0 1 e ]
+[i _firstReadRA5
+-> -> 1 `i `uc
+]
+"49
+[v _secondReadRA5 `uc ~T0 @X0 1 e ]
+[i _secondReadRA5
+-> -> 1 `i `uc
+]
+"50
+[v _firstReadRB0 `uc ~T0 @X0 1 e ]
+[i _firstReadRB0
+-> -> 1 `i `uc
+]
+"51
+[v _secondReadRB0 `uc ~T0 @X0 1 e ]
+[i _secondReadRB0
+-> -> 1 `i `uc
+]
+"53
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"49
+"55
 [v _buttonRB0 `uc ~T0 @X0 1 e ]
 [i _buttonRB0
 -> -> 0 `i `uc
 ]
-"51
+"57
 [v _countRA5 `ui ~T0 @X0 1 e ]
 [i _countRA5
 -> -> 0 `i `ui
 ]
-"52
+"58
 [v _increase1 `uc ~T0 @X0 1 e ]
 [i _increase1
 -> -> 0 `i `uc
 ]
-"53
+"59
 [v _increase2 `uc ~T0 @X0 1 e ]
 [i _increase2
 -> -> 0 `i `uc
 ]
-"55
+"61
 [v _countRB0 `ui ~T0 @X0 1 e ]
 [i _countRB0
 -> -> 0 `i `ui
 ]
-"56
+"62
 [v _decrease1 `uc ~T0 @X0 1 e ]
 [i _decrease1
 -> -> 0 `i `uc
 ]
-"57
+"63
 [v _decrease2 `uc ~T0 @X0 1 e ]
 [i _decrease2
 -> -> 0 `i `uc
 ]
-"4 timer_manager.c
-[; ;timer_manager.c: 4: void timer0_init() {
+"65
+[v _counter_low `ui ~T0 @X0 1 e ]
+[i _counter_low
+-> -> 0 `i `ui
+]
+"66
+[v _counter_high `ui ~T0 @X0 1 e ]
+[i _counter_high
+-> -> 0 `i `ui
+]
+"68
+[v _time_pressed1 `ui ~T0 @X0 1 e ]
+[i _time_pressed1
+-> / -> 1000 `i -> 10 `i `ui
+]
+"69
+[v _time_pressed2 `ui ~T0 @X0 1 e ]
+[i _time_pressed2
+-> / -> 5000 `i -> 10 `i `ui
+]
+"71
+[v _time_interval1 `ui ~T0 @X0 1 e ]
+[i _time_interval1
+-> / -> 500 `i -> 10 `i `ui
+]
+"72
+[v _time_interval2 `ui ~T0 @X0 1 e ]
+[i _time_interval2
+-> / -> 100 `i -> 10 `i `ui
+]
+"5 timer_manager.c
+[; ;timer_manager.c: 5: void preCalculate() {
+[v _preCalculate `(v ~T0 @X0 1 ef ]
+{
+[e :U _preCalculate ]
+[f ]
+"6
+[; ;timer_manager.c: 6:     T0CON = 0b11100111;
+[e = _T0CON -> -> 231 `i `uc ]
+"7
+[; ;timer_manager.c: 7:     int count = 10 * 2 * powf(10,3);
+[v _count `i ~T0 @X0 1 a ]
+[e = _count -> * -> * -> 10 `i -> 2 `i `f ( _powf (2 , -> -> 10 `i `f -> -> 3 `i `f `i ]
+"8
+[; ;timer_manager.c: 8:     int count_scaled = count / 256;
+[v _count_scaled `i ~T0 @X0 1 a ]
+[e = _count_scaled / _count -> 256 `i ]
+"9
+[; ;timer_manager.c: 9:     if(count_scaled < 256) {
+[e $ ! < _count_scaled -> 256 `i 504  ]
+{
+"10
+[; ;timer_manager.c: 10:         counter_low = 255 - count_scaled;
+[e = _counter_low -> - -> 255 `i _count_scaled `ui ]
+"11
+[; ;timer_manager.c: 11:     } else {
+}
+[e $U 505  ]
+[e :U 504 ]
+{
+"12
+[; ;timer_manager.c: 12:         T0CONbits.T08BIT = 0;
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+"13
+[; ;timer_manager.c: 13:         int temp = 65535 - count_scaled;
+[v _temp `i ~T0 @X0 1 a ]
+[e = _temp -> - -> 65535 `l -> _count_scaled `l `i ]
+"14
+[; ;timer_manager.c: 14:         counter_low = temp % 256;
+[e = _counter_low -> % _temp -> 256 `i `ui ]
+"15
+[; ;timer_manager.c: 15:         counter_high = (temp - counter_low) / 256;
+[e = _counter_high / - -> _temp `ui _counter_low -> -> 256 `i `ui ]
+"16
+[; ;timer_manager.c: 16:     }
+}
+[e :U 505 ]
+"17
+[; ;timer_manager.c: 17: }
+[e :UE 503 ]
+}
+"19
+[; ;timer_manager.c: 19: void timer0_init() {
 [v _timer0_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _timer0_init ]
 [f ]
-"5
-[; ;timer_manager.c: 5:     T0CON = 0b11000111;
-[e = _T0CON -> -> 199 `i `uc ]
-"6
-[; ;timer_manager.c: 6:     TMR0L = 177;
-[e = _TMR0L -> -> 177 `i `uc ]
-"7
-[; ;timer_manager.c: 7: }
-[e :UE 503 ]
+"20
+[; ;timer_manager.c: 20:     preCalculate();
+[e ( _preCalculate ..  ]
+"21
+[; ;timer_manager.c: 21:     TMR0L = counter_low;
+[e = _TMR0L -> _counter_low `uc ]
+"22
+[; ;timer_manager.c: 22:     TMR0H = counter_high;
+[e = _TMR0H -> _counter_high `uc ]
+"23
+[; ;timer_manager.c: 23: }
+[e :UE 506 ]
 }

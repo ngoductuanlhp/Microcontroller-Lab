@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"38 ./config.h
-[c E4871 0 1 2 3 4 5 6 .. ]
-[n E4871 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
+"44 ./config.h
+[c E5325 0 1 2 3 4 5 6 .. ]
+[n E5325 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
 "12474 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12474: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -603,92 +603,131 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "26 ./config.h
+[; ;./config.h: 26: unsigned char decrease1 = 0;
 [p x OSC = INTIO7 ]
 "27
+[; ;./config.h: 27: unsigned char decrease2 = 0;
 [p x FCMEN = OFF ]
 "28
+[; ;./config.h: 28: 
 [p x IESO = OFF ]
 "29
+[; ;./config.h: 29: unsigned int counter_low = 0;
 [p x PWRT = OFF ]
 "30
+[; ;./config.h: 30: unsigned int counter_high = 0;
 [p x BOREN = OFF ]
 "31
+[; ;./config.h: 31: 
 [p x WDT = OFF ]
 "32
+[; ;./config.h: 32: unsigned int time_pressed1 = 1000 / 10;
 [p x MCLRE = ON ]
 "33
+[; ;./config.h: 33: unsigned int time_pressed2 = 5000 / 10;
 [p x LVP = OFF ]
 "34
+[; ;./config.h: 34: 
 [p x XINST = OFF ]
-"38
-[v _state `VE4871 ~T0 @X0 1 e ]
+"44
+[v _state `VE5325 ~T0 @X0 1 e ]
 [i _state
-. `E4871 0
+. `E5325 0
 ]
-"40
-[v _firstReadRA5 `uc ~T0 @X0 1 e ]
-[i _firstReadRA5
--> -> 1 `i `uc
-]
-"41
-[v _secondReadRA5 `uc ~T0 @X0 1 e ]
-[i _secondReadRA5
--> -> 1 `i `uc
-]
-"42
-[v _firstReadRB0 `uc ~T0 @X0 1 e ]
-[i _firstReadRB0
--> -> 1 `i `uc
-]
-"43
-[v _secondReadRB0 `uc ~T0 @X0 1 e ]
-[i _secondReadRB0
--> -> 1 `i `uc
-]
-"45
+"46
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"47
+"48
+[v _firstReadRA5 `uc ~T0 @X0 1 e ]
+[i _firstReadRA5
+-> -> 1 `i `uc
+]
+"49
+[v _secondReadRA5 `uc ~T0 @X0 1 e ]
+[i _secondReadRA5
+-> -> 1 `i `uc
+]
+"50
+[v _firstReadRB0 `uc ~T0 @X0 1 e ]
+[i _firstReadRB0
+-> -> 1 `i `uc
+]
+"51
+[v _secondReadRB0 `uc ~T0 @X0 1 e ]
+[i _secondReadRB0
+-> -> 1 `i `uc
+]
+"53
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"49
+"55
 [v _buttonRB0 `uc ~T0 @X0 1 e ]
 [i _buttonRB0
 -> -> 0 `i `uc
 ]
-"51
+"57
 [v _countRA5 `ui ~T0 @X0 1 e ]
 [i _countRA5
 -> -> 0 `i `ui
 ]
-"52
+"58
 [v _increase1 `uc ~T0 @X0 1 e ]
 [i _increase1
 -> -> 0 `i `uc
 ]
-"53
+"59
 [v _increase2 `uc ~T0 @X0 1 e ]
 [i _increase2
 -> -> 0 `i `uc
 ]
-"55
+"61
 [v _countRB0 `ui ~T0 @X0 1 e ]
 [i _countRB0
 -> -> 0 `i `ui
 ]
-"56
+"62
 [v _decrease1 `uc ~T0 @X0 1 e ]
 [i _decrease1
 -> -> 0 `i `uc
 ]
-"57
+"63
 [v _decrease2 `uc ~T0 @X0 1 e ]
 [i _decrease2
 -> -> 0 `i `uc
+]
+"65
+[v _counter_low `ui ~T0 @X0 1 e ]
+[i _counter_low
+-> -> 0 `i `ui
+]
+"66
+[v _counter_high `ui ~T0 @X0 1 e ]
+[i _counter_high
+-> -> 0 `i `ui
+]
+"68
+[v _time_pressed1 `ui ~T0 @X0 1 e ]
+[i _time_pressed1
+-> / -> 1000 `i -> 10 `i `ui
+]
+"69
+[v _time_pressed2 `ui ~T0 @X0 1 e ]
+[i _time_pressed2
+-> / -> 5000 `i -> 10 `i `ui
+]
+"71
+[v _time_interval1 `ui ~T0 @X0 1 e ]
+[i _time_interval1
+-> / -> 500 `i -> 10 `i `ui
+]
+"72
+[v _time_interval2 `ui ~T0 @X0 1 e ]
+[i _time_interval2
+-> / -> 100 `i -> 10 `i `ui
 ]
 "4 osc_manager.c
 [; ;osc_manager.c: 4: void osc_init() {
@@ -697,8 +736,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _osc_init ]
 [f ]
 "5
-[; ;osc_manager.c: 5:     OSCCON = 0b01110111;
-[e = _OSCCON -> -> 119 `i `uc ]
+[; ;osc_manager.c: 5:     OSCCON = 0b01100111;
+[e = _OSCCON -> -> 103 `i `uc ]
 "6
 [; ;osc_manager.c: 6:     OSCTUNE = 0b00001111;
 [e = _OSCTUNE -> -> 15 `i `uc ]

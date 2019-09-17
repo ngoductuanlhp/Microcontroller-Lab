@@ -2,6 +2,6 @@
 #include "config.h"
 
 void osc_init() {
-    OSCCON = 0b01110111;
+    OSCCON = 0b01100111;
     OSCTUNE = 0b00001111;
 }
