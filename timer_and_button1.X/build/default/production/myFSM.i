@@ -8407,6 +8407,21 @@ void handleButton();
 void osc_init();
 # 22 "./config.h" 2
 
+# 1 "./eusart.h" 1
+# 12 "./eusart.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 12 "./eusart.h" 2
+
+
+
+
+void eusart_init();
+uint8_t EUSART1_Read(void);
+void EUSART1_Write(uint8_t txData);
+char getch(void);
+void putch(char txData);
+# 23 "./config.h" 2
+
 
 
 
@@ -8419,14 +8434,7 @@ void osc_init();
 #pragma config MCLRE = ON
 #pragma config LVP = OFF
 #pragma config XINST = OFF
-
-
-
-
-
-
-
-
+# 46 "./config.h"
 enum State{INIT, INCREASE0, INCREASE1, INCREASE2, DECREASE0, DECREASE1, DECREASE2};
 volatile enum State state = INIT;
 
@@ -8460,18 +8468,41 @@ unsigned int time_interval2 = 100 / 10;
 # 2 "myFSM.c" 2
 
 
+# 1 "./SPI_LCD.h" 1
+# 60 "./SPI_LCD.h"
+    void LCDInit(void);
+# 69 "./SPI_LCD.h"
+    void InitBBSPI (void);
+# 78 "./SPI_LCD.h"
+    void SendByteBBSPI (unsigned char output);
+# 87 "./SPI_LCD.h"
+    void Port_BBSPIInit (unsigned char port_dir);
+# 97 "./SPI_LCD.h"
+    void WritePort_BBSPI (unsigned char port_add, unsigned char a);
+# 106 "./SPI_LCD.h"
+    void LCDPutChar(unsigned char);
+# 115 "./SPI_LCD.h"
+    void LCDPutInst(unsigned char);
+# 124 "./SPI_LCD.h"
+    void LCDPutStr(const char *);
+# 4 "myFSM.c" 2
+
+
 void FSM(){
     LATD = ledValue;
     switch(state) {
             case INIT:
                 if(countRA5 > 0) {
                     ledValue++;
+                    printf("Increase\n");
+                    LCDPutInst(0x80);
+                    LCDPutStr("Increase   ");
 
                     state = INCREASE0;
                 }
                 else if(countRB0 > 0) {
                     ledValue--;
-
+                    printf("Decrease\n");
                     state = DECREASE0;
                 }
                 break;

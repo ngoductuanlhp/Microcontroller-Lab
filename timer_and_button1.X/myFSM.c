@@ -1,5 +1,7 @@
 #include "myFSM.h"
 #include "config.h"
+#include "eusart.h"
+#include "SPI_LCD.h"
 
 void FSM(){
     LATD = ledValue;
@@ -7,12 +9,15 @@ void FSM(){
             case INIT:
                 if(countRA5 > 0) {
                     ledValue++;
-                    //printf("Increase\n");
+                    printf("Increase\n");
+                    mCURSOR_LINE1;
+                    LCDPutStr("Increase   ");
+                    //__delay_ms(300);
                     state = INCREASE0;
                 }
                 else if(countRB0 > 0) {
                     ledValue--;
-                    //printf("Decrease\n");
+                    printf("Decrease\n");
                     state = DECREASE0;
                 }
                 break;

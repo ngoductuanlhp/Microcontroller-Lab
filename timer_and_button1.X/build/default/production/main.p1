@@ -1,7 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"44 ./config.h
-[c E5325 0 1 2 3 4 5 6 .. ]
-[n E5325 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
+"47 ./config.h
+[; ;./config.h: 47: volatile enum State state = INIT;
+[c E5332 0 1 2 3 4 5 6 .. ]
+[n E5332 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
 [p mainexit ]
 "11 ./pin_manager.h
 [; ;./pin_manager.h: 11: void pin_init();
@@ -15,6 +16,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11 ./osc_manager.h
 [; ;./osc_manager.h: 11: void osc_init();
 [v _osc_init `(v ~T0 @X0 0 e? ]
+"16 ./eusart.h
+[; ;./eusart.h: 16: void eusart_init();
+[v _eusart_init `(v ~T0 @X0 0 e? ]
+"60 ./SPI_LCD.h
+[; ;./SPI_LCD.h: 60:     void LCDInit(void);
+[v _LCDInit `(v ~T0 @X0 0 ef ]
 "11 ./myFSM.h
 [; ;./myFSM.h: 11: void FSM();
 [v _FSM `(v ~T0 @X0 0 e? ]
@@ -612,166 +619,183 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"26 ./config.h
-[; ;./config.h: 26: unsigned char decrease1 = 0;
+"27 ./config.h
 [p x OSC = INTIO7 ]
-"27
-[; ;./config.h: 27: unsigned char decrease2 = 0;
-[p x FCMEN = OFF ]
 "28
-[; ;./config.h: 28: 
-[p x IESO = OFF ]
+[p x FCMEN = OFF ]
 "29
-[; ;./config.h: 29: unsigned int counter_low = 0;
-[p x PWRT = OFF ]
+[p x IESO = OFF ]
 "30
-[; ;./config.h: 30: unsigned int counter_high = 0;
-[p x BOREN = OFF ]
+[p x PWRT = OFF ]
 "31
-[; ;./config.h: 31: 
-[p x WDT = OFF ]
+[p x BOREN = OFF ]
 "32
-[; ;./config.h: 32: unsigned int time_pressed1 = 1000 / 10;
-[p x MCLRE = ON ]
+[p x WDT = OFF ]
 "33
-[; ;./config.h: 33: unsigned int time_pressed2 = 5000 / 10;
-[p x LVP = OFF ]
+[p x MCLRE = ON ]
 "34
-[; ;./config.h: 34: 
+[p x LVP = OFF ]
+"35
 [p x XINST = OFF ]
-"44
-[v _state `VE5325 ~T0 @X0 1 e ]
+"47
+[; ;./config.h: 47: volatile enum State state = INIT;
+[v _state `VE5332 ~T0 @X0 1 e ]
 [i _state
-. `E5325 0
+. `E5332 0
 ]
-"46
+"49
+[; ;./config.h: 49: unsigned char ledValue = 0;
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"48
+"51
+[; ;./config.h: 51: unsigned char firstReadRA5 = 1;
 [v _firstReadRA5 `uc ~T0 @X0 1 e ]
 [i _firstReadRA5
 -> -> 1 `i `uc
 ]
-"49
+"52
+[; ;./config.h: 52: unsigned char secondReadRA5 = 1;
 [v _secondReadRA5 `uc ~T0 @X0 1 e ]
 [i _secondReadRA5
 -> -> 1 `i `uc
 ]
-"50
+"53
+[; ;./config.h: 53: unsigned char firstReadRB0 = 1;
 [v _firstReadRB0 `uc ~T0 @X0 1 e ]
 [i _firstReadRB0
 -> -> 1 `i `uc
 ]
-"51
+"54
+[; ;./config.h: 54: unsigned char secondReadRB0 = 1;
 [v _secondReadRB0 `uc ~T0 @X0 1 e ]
 [i _secondReadRB0
 -> -> 1 `i `uc
 ]
-"53
+"56
+[; ;./config.h: 56: unsigned char buttonRA5 = 0;
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"55
+"58
+[; ;./config.h: 58: unsigned char buttonRB0 = 0;
 [v _buttonRB0 `uc ~T0 @X0 1 e ]
 [i _buttonRB0
 -> -> 0 `i `uc
 ]
-"57
+"60
+[; ;./config.h: 60: unsigned int countRA5 = 0;
 [v _countRA5 `ui ~T0 @X0 1 e ]
 [i _countRA5
 -> -> 0 `i `ui
 ]
-"58
+"61
+[; ;./config.h: 61: unsigned char increase1 = 0;
 [v _increase1 `uc ~T0 @X0 1 e ]
 [i _increase1
 -> -> 0 `i `uc
 ]
-"59
+"62
+[; ;./config.h: 62: unsigned char increase2 = 0;
 [v _increase2 `uc ~T0 @X0 1 e ]
 [i _increase2
 -> -> 0 `i `uc
 ]
-"61
+"64
+[; ;./config.h: 64: unsigned int countRB0 = 0;
 [v _countRB0 `ui ~T0 @X0 1 e ]
 [i _countRB0
 -> -> 0 `i `ui
 ]
-"62
+"65
+[; ;./config.h: 65: unsigned char decrease1 = 0;
 [v _decrease1 `uc ~T0 @X0 1 e ]
 [i _decrease1
 -> -> 0 `i `uc
 ]
-"63
+"66
+[; ;./config.h: 66: unsigned char decrease2 = 0;
 [v _decrease2 `uc ~T0 @X0 1 e ]
 [i _decrease2
 -> -> 0 `i `uc
 ]
-"65
+"68
+[; ;./config.h: 68: unsigned int counter_low = 0;
 [v _counter_low `ui ~T0 @X0 1 e ]
 [i _counter_low
 -> -> 0 `i `ui
 ]
-"66
+"69
+[; ;./config.h: 69: unsigned int counter_high = 0;
 [v _counter_high `ui ~T0 @X0 1 e ]
 [i _counter_high
 -> -> 0 `i `ui
 ]
-"68
+"71
+[; ;./config.h: 71: unsigned int time_pressed1 = 1000 / 10;
 [v _time_pressed1 `ui ~T0 @X0 1 e ]
 [i _time_pressed1
 -> / -> 1000 `i -> 10 `i `ui
 ]
-"69
+"72
+[; ;./config.h: 72: unsigned int time_pressed2 = 5000 / 10;
 [v _time_pressed2 `ui ~T0 @X0 1 e ]
 [i _time_pressed2
 -> / -> 5000 `i -> 10 `i `ui
 ]
-"71
+"74
+[; ;./config.h: 74: unsigned int time_interval1 = 500 / 10;
 [v _time_interval1 `ui ~T0 @X0 1 e ]
 [i _time_interval1
 -> / -> 500 `i -> 10 `i `ui
 ]
-"72
+"75
+[; ;./config.h: 75: unsigned int time_interval2 = 100 / 10;
 [v _time_interval2 `ui ~T0 @X0 1 e ]
 [i _time_interval2
 -> / -> 100 `i -> 10 `i `ui
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"9 main.c
-[; ;main.c: 9: void main(void) {
+"10 main.c
+[; ;main.c: 10: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"10
-[; ;main.c: 10:     pin_init();
-[e ( _pin_init ..  ]
 "11
-[; ;main.c: 11:     timer0_init();
-[e ( _timer0_init ..  ]
+[; ;main.c: 11:     pin_init();
+[e ( _pin_init ..  ]
 "12
-[; ;main.c: 12:     interrupt_init();
-[e ( _interrupt_init ..  ]
+[; ;main.c: 12:     timer0_init();
+[e ( _timer0_init ..  ]
 "13
-[; ;main.c: 13:     osc_init();
+[; ;main.c: 13:     interrupt_init();
+[e ( _interrupt_init ..  ]
+"14
+[; ;main.c: 14:     osc_init();
 [e ( _osc_init ..  ]
 "15
-[; ;main.c: 15:     while(1) {
+[; ;main.c: 15:     eusart_init();
+[e ( _eusart_init ..  ]
+"16
+[; ;main.c: 16:     LCDInit();
+[e ( _LCDInit ..  ]
+"17
+[; ;main.c: 17:     while(1) {
 [e :U 505 ]
 {
-"16
-[; ;main.c: 16:         FSM();
+"18
+[; ;main.c: 18:         FSM();
 [e ( _FSM ..  ]
-"17
-[; ;main.c: 17:     }
+"19
+[; ;main.c: 19:     }
 }
 [e :U 504 ]
 [e $U 505  ]
 [e :U 506 ]
-"18
-[; ;main.c: 18: }
+"20
+[; ;main.c: 20: }
 [e :UE 503 ]
 }

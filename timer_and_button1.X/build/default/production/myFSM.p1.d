@@ -6,4 +6,6 @@ interrupt_manager.h  \
 pin_manager.h  \
 timer_manager.h  \
 buttons.h  \
-osc_manager.h 
+osc_manager.h  \
+eusart.h  \
+SPI_LCD.h 

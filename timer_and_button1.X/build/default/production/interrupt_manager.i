@@ -8408,6 +8408,21 @@ void FSM();
 void osc_init();
 # 22 "./config.h" 2
 
+# 1 "./eusart.h" 1
+# 12 "./eusart.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 12 "./eusart.h" 2
+
+
+
+
+void eusart_init();
+uint8_t EUSART1_Read(void);
+void EUSART1_Write(uint8_t txData);
+char getch(void);
+void putch(char txData);
+# 23 "./config.h" 2
+
 
 
 
@@ -8420,14 +8435,7 @@ void osc_init();
 #pragma config MCLRE = ON
 #pragma config LVP = OFF
 #pragma config XINST = OFF
-
-
-
-
-
-
-
-
+# 46 "./config.h"
 enum State{INIT, INCREASE0, INCREASE1, INCREASE2, DECREASE0, DECREASE1, DECREASE2};
 volatile enum State state = INIT;
 
@@ -8464,6 +8472,7 @@ unsigned int time_interval2 = 100 / 10;
 void interrupt_init() {
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
 }
 
 void __attribute__((picinterrupt(("")))) myISR(void) {

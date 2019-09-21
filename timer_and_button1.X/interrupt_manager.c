@@ -5,6 +5,7 @@
 void interrupt_init() {
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
 }
 
 void __interrupt() myISR(void) {

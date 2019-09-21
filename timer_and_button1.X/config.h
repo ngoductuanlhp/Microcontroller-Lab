@@ -20,6 +20,7 @@ extern "C" {
 #include "buttons.h"
 #include "myFSM.h"
 #include "osc_manager.h"
+#include "eusart.h"
     
     // PRAGMA
 #ifdef _18F8722
@@ -33,6 +34,8 @@ extern "C" {
 #pragma config 	LVP = OFF
 #pragma config 	XINST = OFF
 #endif
+    
+#define _XTAL_FREQ  10000000
     
 #define TIME_INTERRUPT_MS 10
 #define TIME_INTERVAL1_MS 500

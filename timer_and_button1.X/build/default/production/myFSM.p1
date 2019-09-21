@@ -1,10 +1,19 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"44 ./config.h
-[c E5325 0 1 2 3 4 5 6 .. ]
-[n E5325 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
+"47 ./config.h
+[; ;./config.h: 47: volatile enum State state = INIT;
+[c E5332 0 1 2 3 4 5 6 .. ]
+[n E5332 State INIT INCREASE0 INCREASE1 INCREASE2 DECREASE0 DECREASE1 DECREASE2  ]
 "4815 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4815: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"111 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"115 ./SPI_LCD.h
+[; ;./SPI_LCD.h: 115:     void LCDPutInst(unsigned char);
+[v _LCDPutInst `(v ~T0 @X0 0 ef1`uc ]
+"124
+[; ;./SPI_LCD.h: 124:     void LCDPutStr(const char *);
+[v _LCDPutStr `(v ~T0 @X0 0 ef1`*Cuc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -599,433 +608,460 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"26 ./config.h
-[; ;./config.h: 26: unsigned char decrease1 = 0;
+"27 ./config.h
 [p x OSC = INTIO7 ]
-"27
-[; ;./config.h: 27: unsigned char decrease2 = 0;
-[p x FCMEN = OFF ]
 "28
-[; ;./config.h: 28: 
-[p x IESO = OFF ]
+[p x FCMEN = OFF ]
 "29
-[; ;./config.h: 29: unsigned int counter_low = 0;
-[p x PWRT = OFF ]
+[p x IESO = OFF ]
 "30
-[; ;./config.h: 30: unsigned int counter_high = 0;
-[p x BOREN = OFF ]
+[p x PWRT = OFF ]
 "31
-[; ;./config.h: 31: 
-[p x WDT = OFF ]
+[p x BOREN = OFF ]
 "32
-[; ;./config.h: 32: unsigned int time_pressed1 = 1000 / 10;
-[p x MCLRE = ON ]
+[p x WDT = OFF ]
 "33
-[; ;./config.h: 33: unsigned int time_pressed2 = 5000 / 10;
-[p x LVP = OFF ]
+[p x MCLRE = ON ]
 "34
-[; ;./config.h: 34: 
+[p x LVP = OFF ]
+"35
 [p x XINST = OFF ]
-"44
-[v _state `VE5325 ~T0 @X0 1 e ]
+"47
+[; ;./config.h: 47: volatile enum State state = INIT;
+[v _state `VE5332 ~T0 @X0 1 e ]
 [i _state
-. `E5325 0
+. `E5332 0
 ]
-"46
+"49
+[; ;./config.h: 49: unsigned char ledValue = 0;
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"48
+"51
+[; ;./config.h: 51: unsigned char firstReadRA5 = 1;
 [v _firstReadRA5 `uc ~T0 @X0 1 e ]
 [i _firstReadRA5
 -> -> 1 `i `uc
 ]
-"49
+"52
+[; ;./config.h: 52: unsigned char secondReadRA5 = 1;
 [v _secondReadRA5 `uc ~T0 @X0 1 e ]
 [i _secondReadRA5
 -> -> 1 `i `uc
 ]
-"50
+"53
+[; ;./config.h: 53: unsigned char firstReadRB0 = 1;
 [v _firstReadRB0 `uc ~T0 @X0 1 e ]
 [i _firstReadRB0
 -> -> 1 `i `uc
 ]
-"51
+"54
+[; ;./config.h: 54: unsigned char secondReadRB0 = 1;
 [v _secondReadRB0 `uc ~T0 @X0 1 e ]
 [i _secondReadRB0
 -> -> 1 `i `uc
 ]
-"53
+"56
+[; ;./config.h: 56: unsigned char buttonRA5 = 0;
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"55
+"58
+[; ;./config.h: 58: unsigned char buttonRB0 = 0;
 [v _buttonRB0 `uc ~T0 @X0 1 e ]
 [i _buttonRB0
 -> -> 0 `i `uc
 ]
-"57
+"60
+[; ;./config.h: 60: unsigned int countRA5 = 0;
 [v _countRA5 `ui ~T0 @X0 1 e ]
 [i _countRA5
 -> -> 0 `i `ui
 ]
-"58
+"61
+[; ;./config.h: 61: unsigned char increase1 = 0;
 [v _increase1 `uc ~T0 @X0 1 e ]
 [i _increase1
 -> -> 0 `i `uc
 ]
-"59
+"62
+[; ;./config.h: 62: unsigned char increase2 = 0;
 [v _increase2 `uc ~T0 @X0 1 e ]
 [i _increase2
 -> -> 0 `i `uc
 ]
-"61
+"64
+[; ;./config.h: 64: unsigned int countRB0 = 0;
 [v _countRB0 `ui ~T0 @X0 1 e ]
 [i _countRB0
 -> -> 0 `i `ui
 ]
-"62
+"65
+[; ;./config.h: 65: unsigned char decrease1 = 0;
 [v _decrease1 `uc ~T0 @X0 1 e ]
 [i _decrease1
 -> -> 0 `i `uc
 ]
-"63
+"66
+[; ;./config.h: 66: unsigned char decrease2 = 0;
 [v _decrease2 `uc ~T0 @X0 1 e ]
 [i _decrease2
 -> -> 0 `i `uc
 ]
-"65
+"68
+[; ;./config.h: 68: unsigned int counter_low = 0;
 [v _counter_low `ui ~T0 @X0 1 e ]
 [i _counter_low
 -> -> 0 `i `ui
 ]
-"66
+"69
+[; ;./config.h: 69: unsigned int counter_high = 0;
 [v _counter_high `ui ~T0 @X0 1 e ]
 [i _counter_high
 -> -> 0 `i `ui
 ]
-"68
+"71
+[; ;./config.h: 71: unsigned int time_pressed1 = 1000 / 10;
 [v _time_pressed1 `ui ~T0 @X0 1 e ]
 [i _time_pressed1
 -> / -> 1000 `i -> 10 `i `ui
 ]
-"69
+"72
+[; ;./config.h: 72: unsigned int time_pressed2 = 5000 / 10;
 [v _time_pressed2 `ui ~T0 @X0 1 e ]
 [i _time_pressed2
 -> / -> 5000 `i -> 10 `i `ui
 ]
-"71
+"74
+[; ;./config.h: 74: unsigned int time_interval1 = 500 / 10;
 [v _time_interval1 `ui ~T0 @X0 1 e ]
 [i _time_interval1
 -> / -> 500 `i -> 10 `i `ui
 ]
-"72
+"75
+[; ;./config.h: 75: unsigned int time_interval2 = 100 / 10;
 [v _time_interval2 `ui ~T0 @X0 1 e ]
 [i _time_interval2
 -> / -> 100 `i -> 10 `i `ui
 ]
-"4 myFSM.c
-[; ;myFSM.c: 4: void FSM(){
+"6 myFSM.c
+[; ;myFSM.c: 6: void FSM(){
 [v _FSM `(v ~T0 @X0 1 ef ]
 {
 [e :U _FSM ]
 [f ]
-"5
-[; ;myFSM.c: 5:     LATD = ledValue;
+"7
+[; ;myFSM.c: 7:     LATD = ledValue;
 [e = _LATD _ledValue ]
-"6
-[; ;myFSM.c: 6:     switch(state) {
+"8
+[; ;myFSM.c: 8:     switch(state) {
 [e $U 505  ]
 {
-"7
-[; ;myFSM.c: 7:             case INIT:
+"9
+[; ;myFSM.c: 9:             case INIT:
 [e :U 506 ]
-"8
-[; ;myFSM.c: 8:                 if(countRA5 > 0) {
+"10
+[; ;myFSM.c: 10:                 if(countRA5 > 0) {
 [e $ ! > _countRA5 -> -> 0 `i `ui 507  ]
 {
-"9
-[; ;myFSM.c: 9:                     ledValue++;
-[e ++ _ledValue -> -> 1 `i `uc ]
 "11
-[; ;myFSM.c: 11:                     state = INCREASE0;
-[e = _state . `E5325 1 ]
+[; ;myFSM.c: 11:                     ledValue++;
+[e ++ _ledValue -> -> 1 `i `uc ]
 "12
-[; ;myFSM.c: 12:                 }
-}
-[e $U 508  ]
+[; ;myFSM.c: 12:                     printf("Increase\n");
+[e ( _printf :s 1C ]
 "13
-[; ;myFSM.c: 13:                 else if(countRB0 > 0) {
-[e :U 507 ]
-[e $ ! > _countRB0 -> -> 0 `i `ui 509  ]
-{
+[; ;myFSM.c: 13:                     LCDPutInst(0x80);
+[e ( _LCDPutInst (1 -> -> 128 `i `uc ]
 "14
-[; ;myFSM.c: 14:                     ledValue--;
-[e -- _ledValue -> -> 1 `i `uc ]
+[; ;myFSM.c: 14:                     LCDPutStr("Increase   ");
+[e ( _LCDPutStr (1 :s 2C ]
 "16
-[; ;myFSM.c: 16:                     state = DECREASE0;
-[e = _state . `E5325 4 ]
+[; ;myFSM.c: 16:                     state = INCREASE0;
+[e = _state . `E5332 1 ]
 "17
 [; ;myFSM.c: 17:                 }
 }
+[e $U 508  ]
+"18
+[; ;myFSM.c: 18:                 else if(countRB0 > 0) {
+[e :U 507 ]
+[e $ ! > _countRB0 -> -> 0 `i `ui 509  ]
+{
+"19
+[; ;myFSM.c: 19:                     ledValue--;
+[e -- _ledValue -> -> 1 `i `uc ]
+"20
+[; ;myFSM.c: 20:                     printf("Decrease\n");
+[e ( _printf :s 3C ]
+"21
+[; ;myFSM.c: 21:                     state = DECREASE0;
+[e = _state . `E5332 4 ]
+"22
+[; ;myFSM.c: 22:                 }
+}
 [e :U 509 ]
 [e :U 508 ]
-"18
-[; ;myFSM.c: 18:                 break;
+"23
+[; ;myFSM.c: 23:                 break;
 [e $U 504  ]
-"19
-[; ;myFSM.c: 19:             case INCREASE0:
+"24
+[; ;myFSM.c: 24:             case INCREASE0:
 [e :U 510 ]
-"20
-[; ;myFSM.c: 20:                 if(countRA5 > time_pressed1)
+"25
+[; ;myFSM.c: 25:                 if(countRA5 > time_pressed1)
 [e $ ! > _countRA5 _time_pressed1 511  ]
-"21
-[; ;myFSM.c: 21:                     state = INCREASE1;
-[e = _state . `E5325 2 ]
+"26
+[; ;myFSM.c: 26:                     state = INCREASE1;
+[e = _state . `E5332 2 ]
 [e $U 512  ]
-"22
-[; ;myFSM.c: 22:                 else if (countRA5 == 0)
+"27
+[; ;myFSM.c: 27:                 else if (countRA5 == 0)
 [e :U 511 ]
 [e $ ! == _countRA5 -> -> 0 `i `ui 513  ]
-"23
-[; ;myFSM.c: 23:                     if(countRB0 > 0)
+"28
+[; ;myFSM.c: 28:                     if(countRB0 > 0)
 [e $ ! > _countRB0 -> -> 0 `i `ui 514  ]
-"24
-[; ;myFSM.c: 24:                         state = DECREASE0;
-[e = _state . `E5325 4 ]
+"29
+[; ;myFSM.c: 29:                         state = DECREASE0;
+[e = _state . `E5332 4 ]
 [e $U 515  ]
-"25
-[; ;myFSM.c: 25:                     else
+"30
+[; ;myFSM.c: 30:                     else
 [e :U 514 ]
-"26
-[; ;myFSM.c: 26:                         state = INIT;
-[e = _state . `E5325 0 ]
+"31
+[; ;myFSM.c: 31:                         state = INIT;
+[e = _state . `E5332 0 ]
 [e :U 515 ]
 [e :U 513 ]
 [e :U 512 ]
-"27
-[; ;myFSM.c: 27:                 break;
+"32
+[; ;myFSM.c: 32:                 break;
 [e $U 504  ]
-"28
-[; ;myFSM.c: 28:             case INCREASE1:
+"33
+[; ;myFSM.c: 33:             case INCREASE1:
 [e :U 516 ]
-"29
-[; ;myFSM.c: 29:                 if(increase1) {
+"34
+[; ;myFSM.c: 34:                 if(increase1) {
 [e $ ! != -> _increase1 `i -> 0 `i 517  ]
 {
-"30
-[; ;myFSM.c: 30:                     ledValue++;
+"35
+[; ;myFSM.c: 35:                     ledValue++;
 [e ++ _ledValue -> -> 1 `i `uc ]
-"32
-[; ;myFSM.c: 32:                     increase1 = 0;
+"37
+[; ;myFSM.c: 37:                     increase1 = 0;
 [e = _increase1 -> -> 0 `i `uc ]
-"33
-[; ;myFSM.c: 33:                 }
+"38
+[; ;myFSM.c: 38:                 }
 }
 [e :U 517 ]
-"34
-[; ;myFSM.c: 34:                 if(countRA5 > time_pressed2)
+"39
+[; ;myFSM.c: 39:                 if(countRA5 > time_pressed2)
 [e $ ! > _countRA5 _time_pressed2 518  ]
-"35
-[; ;myFSM.c: 35:                     state = INCREASE2;
-[e = _state . `E5325 3 ]
+"40
+[; ;myFSM.c: 40:                     state = INCREASE2;
+[e = _state . `E5332 3 ]
 [e $U 519  ]
-"36
-[; ;myFSM.c: 36:                 else if(countRA5 == 0)
+"41
+[; ;myFSM.c: 41:                 else if(countRA5 == 0)
 [e :U 518 ]
 [e $ ! == _countRA5 -> -> 0 `i `ui 520  ]
-"37
-[; ;myFSM.c: 37:                     if(countRB0 > 0)
+"42
+[; ;myFSM.c: 42:                     if(countRB0 > 0)
 [e $ ! > _countRB0 -> -> 0 `i `ui 521  ]
-"38
-[; ;myFSM.c: 38:                         state = DECREASE0;
-[e = _state . `E5325 4 ]
+"43
+[; ;myFSM.c: 43:                         state = DECREASE0;
+[e = _state . `E5332 4 ]
 [e $U 522  ]
-"39
-[; ;myFSM.c: 39:                     else
+"44
+[; ;myFSM.c: 44:                     else
 [e :U 521 ]
-"40
-[; ;myFSM.c: 40:                         state = INIT;
-[e = _state . `E5325 0 ]
+"45
+[; ;myFSM.c: 45:                         state = INIT;
+[e = _state . `E5332 0 ]
 [e :U 522 ]
 [e :U 520 ]
 [e :U 519 ]
-"41
-[; ;myFSM.c: 41:                 break;
+"46
+[; ;myFSM.c: 46:                 break;
 [e $U 504  ]
-"42
-[; ;myFSM.c: 42:             case INCREASE2:
+"47
+[; ;myFSM.c: 47:             case INCREASE2:
 [e :U 523 ]
-"43
-[; ;myFSM.c: 43:                 if(increase2) {
+"48
+[; ;myFSM.c: 48:                 if(increase2) {
 [e $ ! != -> _increase2 `i -> 0 `i 524  ]
 {
-"44
-[; ;myFSM.c: 44:                     ledValue++;
+"49
+[; ;myFSM.c: 49:                     ledValue++;
 [e ++ _ledValue -> -> 1 `i `uc ]
-"46
-[; ;myFSM.c: 46:                     increase2 = 0;
+"51
+[; ;myFSM.c: 51:                     increase2 = 0;
 [e = _increase2 -> -> 0 `i `uc ]
-"47
-[; ;myFSM.c: 47:                 }
+"52
+[; ;myFSM.c: 52:                 }
 }
 [e :U 524 ]
-"48
-[; ;myFSM.c: 48:                 if(countRA5 == 0)
+"53
+[; ;myFSM.c: 53:                 if(countRA5 == 0)
 [e $ ! == _countRA5 -> -> 0 `i `ui 525  ]
-"49
-[; ;myFSM.c: 49:                     if(countRB0 > 0)
+"54
+[; ;myFSM.c: 54:                     if(countRB0 > 0)
 [e $ ! > _countRB0 -> -> 0 `i `ui 526  ]
-"50
-[; ;myFSM.c: 50:                         state = DECREASE0;
-[e = _state . `E5325 4 ]
+"55
+[; ;myFSM.c: 55:                         state = DECREASE0;
+[e = _state . `E5332 4 ]
 [e $U 527  ]
-"51
-[; ;myFSM.c: 51:                     else
+"56
+[; ;myFSM.c: 56:                     else
 [e :U 526 ]
-"52
-[; ;myFSM.c: 52:                         state = INIT;
-[e = _state . `E5325 0 ]
+"57
+[; ;myFSM.c: 57:                         state = INIT;
+[e = _state . `E5332 0 ]
 [e :U 527 ]
 [e :U 525 ]
-"53
-[; ;myFSM.c: 53:                 break;
+"58
+[; ;myFSM.c: 58:                 break;
 [e $U 504  ]
-"54
-[; ;myFSM.c: 54:             case DECREASE0:
+"59
+[; ;myFSM.c: 59:             case DECREASE0:
 [e :U 528 ]
-"55
-[; ;myFSM.c: 55:                 if(countRB0 > time_pressed1)
+"60
+[; ;myFSM.c: 60:                 if(countRB0 > time_pressed1)
 [e $ ! > _countRB0 _time_pressed1 529  ]
-"56
-[; ;myFSM.c: 56:                     state = DECREASE1;
-[e = _state . `E5325 5 ]
+"61
+[; ;myFSM.c: 61:                     state = DECREASE1;
+[e = _state . `E5332 5 ]
 [e $U 530  ]
-"57
-[; ;myFSM.c: 57:                 else if (countRB0 == 0)
+"62
+[; ;myFSM.c: 62:                 else if (countRB0 == 0)
 [e :U 529 ]
 [e $ ! == _countRB0 -> -> 0 `i `ui 531  ]
-"58
-[; ;myFSM.c: 58:                     if(countRA5 > 0)
+"63
+[; ;myFSM.c: 63:                     if(countRA5 > 0)
 [e $ ! > _countRA5 -> -> 0 `i `ui 532  ]
-"59
-[; ;myFSM.c: 59:                         state = INCREASE0;
-[e = _state . `E5325 1 ]
+"64
+[; ;myFSM.c: 64:                         state = INCREASE0;
+[e = _state . `E5332 1 ]
 [e $U 533  ]
-"60
-[; ;myFSM.c: 60:                     else
+"65
+[; ;myFSM.c: 65:                     else
 [e :U 532 ]
-"61
-[; ;myFSM.c: 61:                         state = INIT;
-[e = _state . `E5325 0 ]
+"66
+[; ;myFSM.c: 66:                         state = INIT;
+[e = _state . `E5332 0 ]
 [e :U 533 ]
 [e :U 531 ]
 [e :U 530 ]
-"62
-[; ;myFSM.c: 62:                 break;
+"67
+[; ;myFSM.c: 67:                 break;
 [e $U 504  ]
-"63
-[; ;myFSM.c: 63:             case DECREASE1:
+"68
+[; ;myFSM.c: 68:             case DECREASE1:
 [e :U 534 ]
-"64
-[; ;myFSM.c: 64:                 if(decrease1) {
+"69
+[; ;myFSM.c: 69:                 if(decrease1) {
 [e $ ! != -> _decrease1 `i -> 0 `i 535  ]
 {
-"65
-[; ;myFSM.c: 65:                     ledValue--;
+"70
+[; ;myFSM.c: 70:                     ledValue--;
 [e -- _ledValue -> -> 1 `i `uc ]
-"67
-[; ;myFSM.c: 67:                     decrease1 = 0;
+"72
+[; ;myFSM.c: 72:                     decrease1 = 0;
 [e = _decrease1 -> -> 0 `i `uc ]
-"68
-[; ;myFSM.c: 68:                 }
+"73
+[; ;myFSM.c: 73:                 }
 }
 [e :U 535 ]
-"69
-[; ;myFSM.c: 69:                 if(countRB0 > time_pressed2)
+"74
+[; ;myFSM.c: 74:                 if(countRB0 > time_pressed2)
 [e $ ! > _countRB0 _time_pressed2 536  ]
-"70
-[; ;myFSM.c: 70:                     state = DECREASE2;
-[e = _state . `E5325 6 ]
+"75
+[; ;myFSM.c: 75:                     state = DECREASE2;
+[e = _state . `E5332 6 ]
 [e $U 537  ]
-"71
-[; ;myFSM.c: 71:                 else if(countRB0 == 0)
+"76
+[; ;myFSM.c: 76:                 else if(countRB0 == 0)
 [e :U 536 ]
 [e $ ! == _countRB0 -> -> 0 `i `ui 538  ]
-"72
-[; ;myFSM.c: 72:                     if(countRA5 > 0)
+"77
+[; ;myFSM.c: 77:                     if(countRA5 > 0)
 [e $ ! > _countRA5 -> -> 0 `i `ui 539  ]
-"73
-[; ;myFSM.c: 73:                         state = INCREASE0;
-[e = _state . `E5325 1 ]
+"78
+[; ;myFSM.c: 78:                         state = INCREASE0;
+[e = _state . `E5332 1 ]
 [e $U 540  ]
-"74
-[; ;myFSM.c: 74:                     else
+"79
+[; ;myFSM.c: 79:                     else
 [e :U 539 ]
-"75
-[; ;myFSM.c: 75:                         state = INIT;
-[e = _state . `E5325 0 ]
+"80
+[; ;myFSM.c: 80:                         state = INIT;
+[e = _state . `E5332 0 ]
 [e :U 540 ]
 [e :U 538 ]
 [e :U 537 ]
-"76
-[; ;myFSM.c: 76:                 break;
+"81
+[; ;myFSM.c: 81:                 break;
 [e $U 504  ]
-"77
-[; ;myFSM.c: 77:             case DECREASE2:
+"82
+[; ;myFSM.c: 82:             case DECREASE2:
 [e :U 541 ]
-"78
-[; ;myFSM.c: 78:                 if(decrease2) {
+"83
+[; ;myFSM.c: 83:                 if(decrease2) {
 [e $ ! != -> _decrease2 `i -> 0 `i 542  ]
 {
-"79
-[; ;myFSM.c: 79:                     ledValue--;
+"84
+[; ;myFSM.c: 84:                     ledValue--;
 [e -- _ledValue -> -> 1 `i `uc ]
-"81
-[; ;myFSM.c: 81:                     decrease2 = 0;
+"86
+[; ;myFSM.c: 86:                     decrease2 = 0;
 [e = _decrease2 -> -> 0 `i `uc ]
-"82
-[; ;myFSM.c: 82:                 }
+"87
+[; ;myFSM.c: 87:                 }
 }
 [e :U 542 ]
-"83
-[; ;myFSM.c: 83:                 if(countRB0 == 0)
+"88
+[; ;myFSM.c: 88:                 if(countRB0 == 0)
 [e $ ! == _countRB0 -> -> 0 `i `ui 543  ]
-"84
-[; ;myFSM.c: 84:                     if(countRA5 > 0)
+"89
+[; ;myFSM.c: 89:                     if(countRA5 > 0)
 [e $ ! > _countRA5 -> -> 0 `i `ui 544  ]
-"85
-[; ;myFSM.c: 85:                         state = INCREASE0;
-[e = _state . `E5325 1 ]
+"90
+[; ;myFSM.c: 90:                         state = INCREASE0;
+[e = _state . `E5332 1 ]
 [e $U 545  ]
-"86
-[; ;myFSM.c: 86:                     else
+"91
+[; ;myFSM.c: 91:                     else
 [e :U 544 ]
-"87
-[; ;myFSM.c: 87:                         state = INIT;
-[e = _state . `E5325 0 ]
+"92
+[; ;myFSM.c: 92:                         state = INIT;
+[e = _state . `E5332 0 ]
 [e :U 545 ]
 [e :U 543 ]
-"88
-[; ;myFSM.c: 88:                 break;
+"93
+[; ;myFSM.c: 93:                 break;
 [e $U 504  ]
-"89
-[; ;myFSM.c: 89:         }
+"94
+[; ;myFSM.c: 94:         }
 }
 [e $U 504  ]
 [e :U 505 ]
-[e [\ -> _state `ui , $ -> . `E5325 0 `ui 506
- , $ -> . `E5325 1 `ui 510
- , $ -> . `E5325 2 `ui 516
- , $ -> . `E5325 3 `ui 523
- , $ -> . `E5325 4 `ui 528
- , $ -> . `E5325 5 `ui 534
- , $ -> . `E5325 6 `ui 541
+[e [\ -> _state `ui , $ -> . `E5332 0 `ui 506
+ , $ -> . `E5332 1 `ui 510
+ , $ -> . `E5332 2 `ui 516
+ , $ -> . `E5332 3 `ui 523
+ , $ -> . `E5332 4 `ui 528
+ , $ -> . `E5332 5 `ui 534
+ , $ -> . `E5332 6 `ui 541
  504 ]
 [e :U 504 ]
-"90
-[; ;myFSM.c: 90: }
+"95
+[; ;myFSM.c: 95: }
 [e :UE 503 ]
 }
+[p f _printf 8388608 ]
+[a 2C 73 110 99 114 101 97 115 101 32 32 32 0 ]
+[a 1C 73 110 99 114 101 97 115 101 10 0 ]
+[a 3C 68 101 99 114 101 97 115 101 10 0 ]

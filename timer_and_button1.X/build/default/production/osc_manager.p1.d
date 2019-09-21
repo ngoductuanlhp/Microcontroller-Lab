@@ -6,4 +6,5 @@ interrupt_manager.h  \
 pin_manager.h  \
 timer_manager.h  \
 buttons.h  \
-myFSM.h 
+myFSM.h  \
+eusart.h 
