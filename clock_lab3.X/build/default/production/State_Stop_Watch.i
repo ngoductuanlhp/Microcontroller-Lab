@@ -8298,29 +8298,35 @@ void handleButton();
 #pragma config LVP = OFF
 #pragma config XINST = OFF
 # 48 "./mcc.h"
+typedef unsigned char tBYTE;
+typedef unsigned short int tHALFWORD;
+typedef unsigned int tWORD;
+
 enum State{STATE_CLOCK, STATE_SET_HOUR, STATE_SET_MINUTE, STATE_SET_SECOND, STATE_STOP_WATCH};
 
 volatile enum State state = STATE_CLOCK;
 
-unsigned short int counter_low = 0;
-unsigned short int counter_high = 0;
+tBYTE counter_low = 0;
+tBYTE counter_high = 0;
 
-unsigned char buttonRA5 = 0;
-unsigned char buttonRB0 = 0;
+tBYTE buttonRA5 = 0;
+tBYTE buttonRB0 = 0;
 
-unsigned char second_flag = 0;
-unsigned char hide_flag = 0;
-unsigned char ms_flag = 0;
+tBYTE second_flag = 0;
+tBYTE hide_flag = 0;
+tBYTE ms_flag = 0;
 
-unsigned char sec_changed_flag = 0;
-unsigned char min_changed_flag = 0;
-unsigned char hr_changed_flag = 0;
+tBYTE sec_changed_flag = 0;
+tBYTE min_changed_flag = 0;
+tBYTE hr_changed_flag = 0;
 
-unsigned int count = 0;
+tBYTE changed_state_flag = 1;
 
-unsigned char ledValue = 0;
+tWORD count = 0;
 
-volatile unsigned char hr = 0, min = 0, sec = 0;
+tBYTE ledValue = 0;
+
+volatile tBYTE hr = 0, min = 0, sec = 0;
 
 void SYSTEM_Initialize(void);
 
@@ -8340,12 +8346,12 @@ void disp_Clock_Hide(unsigned char state);
 # 16 "./State_Stop_Watch.h" 2
 
 
-volatile unsigned char min_sw = 0, sec_sw = 0, ms_sw = 0;
-unsigned char state_sw = 0;
+volatile tBYTE min_sw = 0, sec_sw = 0, ms_sw = 0;
+tBYTE state_sw = 0;
 
-unsigned char ms_sw_changed_flag = 0;
-unsigned char sec_sw_changed_flag = 0;
-unsigned char min_sw_changed_flag = 0;
+tBYTE ms_sw_changed_flag = 0;
+tBYTE sec_sw_changed_flag = 0;
+tBYTE min_sw_changed_flag = 0;
 
 void disp_Clock_SW();
 void handle_Time_SW(void);
@@ -8406,46 +8412,45 @@ void disp_Clock_SW() {
 }
 
 void state_stop_watch(void) {
-    LCDPutInst(0x80);
-    LCDPutStr("Stop W    RA5=->");
-    disp_Clock_SW();
-    LCDPutStr("        ");
-    while(state == STATE_STOP_WATCH) {
-        LATD = ledValue;
-        if(buttonRA5) {
-            state = STATE_CLOCK;
-            buttonRA5 = 0;
-            state_sw = 0;
-            min_sw = 0;
-            sec_sw = 0;
-            ms_sw = 0;
-        }
-        if(second_flag == 1) {
-            second_flag = 0;
-            sec++;
-            handle_Time();
-            ledValue = (ledValue == 0) ? 255 : 0;
-        }
-        switch(state_sw) {
-            case 0:
-                if(buttonRB0) {
-                    buttonRB0 = 0;
-                    state_sw = 1;
-                }
-                break;
-            case 1:
-                if(buttonRB0) {
-                    buttonRB0 = 0;
-                    state_sw = 0;
-                }
-                if(ms_flag) {
-                    ms_flag = 0;
-                    ms_sw++;
-                    handle_Time_SW();
-                    disp_Changed_SW();
-                }
-                break;
-        }
-
+    if(changed_state_flag) {
+        changed_state_flag = 0;
+        LCDPutInst(0x80);
+        LCDPutStr("Stop W    RA5=->");
+        disp_Clock_SW();
+        LCDPutStr("        ");
+    }
+    if(buttonRA5) {
+        state = STATE_CLOCK;
+        buttonRA5 = 0;
+        state_sw = 0;
+        min_sw = 0;
+        sec_sw = 0;
+        ms_sw = 0;
+    }
+    if(second_flag == 1) {
+        second_flag = 0;
+        sec++;
+        handle_Time();
+        ledValue = (ledValue == 0) ? 255 : 0;
+    }
+    switch(state_sw) {
+        case 0:
+            if(buttonRB0) {
+                buttonRB0 = 0;
+                state_sw = 1;
+            }
+            break;
+        case 1:
+            if(buttonRB0) {
+                buttonRB0 = 0;
+                state_sw = 0;
+            }
+            if(ms_flag) {
+                ms_flag = 0;
+                ms_sw++;
+                handle_Time_SW();
+                disp_Changed_SW();
+            }
+            break;
     }
 }

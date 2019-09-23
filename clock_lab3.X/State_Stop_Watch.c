@@ -53,46 +53,45 @@ void disp_Clock_SW() {
 }
 
 void state_stop_watch(void) {
-    mCURSOR_LINE1;
-    LCDPutStr("Stop W    RA5=->");
-    disp_Clock_SW();
-    LCDPutStr("        ");
-    while(state == STATE_STOP_WATCH) {
-        LATD = ledValue;
-        if(buttonRA5) {
-            state = STATE_CLOCK;
-            buttonRA5 = 0;
-            state_sw = 0;
-            min_sw = 0;
-            sec_sw = 0;
-            ms_sw = 0;
-        }
-        if(second_flag == 1) {
-            second_flag = 0;
-            sec++;
-            handle_Time();
-            ledValue = (ledValue == 0) ? 255 : 0;        
-        }
-        switch(state_sw) {
-            case 0:
-                if(buttonRB0) {
-                    buttonRB0 = 0;
-                    state_sw = 1;
-                }
-                break;
-            case 1:
-                if(buttonRB0) {
-                    buttonRB0 = 0;
-                    state_sw = 0;
-                }
-                if(ms_flag) {
-                    ms_flag = 0;
-                    ms_sw++;
-                    handle_Time_SW();
-                    disp_Changed_SW();      
-                }
-                break;
-        }
-        
+    if(changed_state_flag) {
+        changed_state_flag = 0;
+        mCURSOR_LINE1;
+        LCDPutStr("Stop W    RA5=->");
+        disp_Clock_SW();
+        LCDPutStr("        ");
+    }
+    if(buttonRA5) {
+        state = STATE_CLOCK;
+        buttonRA5 = 0;
+        state_sw = 0;
+        min_sw = 0;
+        sec_sw = 0;
+        ms_sw = 0;
+    }
+    if(second_flag == 1) {
+        second_flag = 0;
+        sec++;
+        handle_Time();
+        ledValue = (ledValue == 0) ? 255 : 0;        
+    }
+    switch(state_sw) {
+        case 0:
+            if(buttonRB0) {
+                buttonRB0 = 0;
+                state_sw = 1;
+            }
+            break;
+        case 1:
+            if(buttonRB0) {
+                buttonRB0 = 0;
+                state_sw = 0;
+            }
+            if(ms_flag) {
+                ms_flag = 0;
+                ms_sw++;
+                handle_Time_SW();
+                disp_Changed_SW();      
+            }
+            break;
     }
 }

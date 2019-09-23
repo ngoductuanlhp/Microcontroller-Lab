@@ -8297,29 +8297,35 @@ void handleButton();
 #pragma config LVP = OFF
 #pragma config XINST = OFF
 # 48 "./mcc.h"
+typedef unsigned char tBYTE;
+typedef unsigned short int tHALFWORD;
+typedef unsigned int tWORD;
+
 enum State{STATE_CLOCK, STATE_SET_HOUR, STATE_SET_MINUTE, STATE_SET_SECOND, STATE_STOP_WATCH};
 
 volatile enum State state = STATE_CLOCK;
 
-unsigned short int counter_low = 0;
-unsigned short int counter_high = 0;
+tBYTE counter_low = 0;
+tBYTE counter_high = 0;
 
-unsigned char buttonRA5 = 0;
-unsigned char buttonRB0 = 0;
+tBYTE buttonRA5 = 0;
+tBYTE buttonRB0 = 0;
 
-unsigned char second_flag = 0;
-unsigned char hide_flag = 0;
-unsigned char ms_flag = 0;
+tBYTE second_flag = 0;
+tBYTE hide_flag = 0;
+tBYTE ms_flag = 0;
 
-unsigned char sec_changed_flag = 0;
-unsigned char min_changed_flag = 0;
-unsigned char hr_changed_flag = 0;
+tBYTE sec_changed_flag = 0;
+tBYTE min_changed_flag = 0;
+tBYTE hr_changed_flag = 0;
 
-unsigned int count = 0;
+tBYTE changed_state_flag = 1;
 
-unsigned char ledValue = 0;
+tWORD count = 0;
 
-volatile unsigned char hr = 0, min = 0, sec = 0;
+tBYTE ledValue = 0;
+
+volatile tBYTE hr = 0, min = 0, sec = 0;
 
 void SYSTEM_Initialize(void);
 

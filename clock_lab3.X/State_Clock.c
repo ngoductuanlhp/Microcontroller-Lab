@@ -69,23 +69,17 @@ void disp_Clock_Hide(unsigned char state) {
 }
 
 void state_clock(void) {
-    // Display Clock text and Now/Next options on LCD
-    mCURSOR_LINE1;
-    LCDPutStr("Clock     RA5=->");
-    disp_Clock();
-    while(state == STATE_CLOCK) {
-        LATD = ledValue;
-        if(buttonRA5) {
-            buttonRA5 = 0;
-            state = STATE_SET_HOUR;
-            return;
-        }
-        if(second_flag == 1) {
-            second_flag = 0;
-            sec++;
-            handle_Time();
-            disp_Changed();
-            ledValue = (ledValue == 0) ? 255 : 0;        
-        }
+    if(changed_state_flag) {
+        changed_state_flag = 0;
+        mCURSOR_LINE1;
+        LCDPutStr("Clock     RA5=->");
+        disp_Clock();
+    }
+    if(second_flag == 1) {
+        second_flag = 0;
+        sec++;
+        handle_Time();
+        disp_Changed();
+        ledValue = (ledValue == 0) ? 255 : 0;        
     }
 }

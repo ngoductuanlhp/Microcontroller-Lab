@@ -9,6 +9,12 @@
 void main(void) {
     SYSTEM_Initialize();
     while(1) {
+        LATD = ledValue;
+        if(buttonRA5) {
+            buttonRA5 = 0;
+            state = (state + 1) % 5;
+            changed_state_flag = 1;
+        }
         switch(state) {
             case STATE_CLOCK: state_clock();
                 break;

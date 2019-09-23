@@ -4,18 +4,18 @@
 #define PRESSED 0
 #define RELEASE 1
 
-unsigned char firstReadRA5 = RELEASE;
-unsigned char secondReadRA5 = RELEASE;
-unsigned char firstReadRB0 = RELEASE;
-unsigned char secondReadRB0 = RELEASE;
+tBYTE firstReadRA5 = RELEASE;
+tBYTE secondReadRA5 = RELEASE;
+tBYTE firstReadRB0 = RELEASE;
+tBYTE secondReadRB0 = RELEASE;
 
-unsigned char stateRA5 = 0;
-unsigned int countRA5 = 0;
-unsigned int countRA5_1 = 0;
+tBYTE stateRA5 = 0;
+tWORD countRA5 = 0;
+tWORD countRA5_1 = 0;
 
-unsigned char stateRB0 = 0;
-unsigned int countRB0 = 0;
-unsigned int countRB0_1 = 0;
+tBYTE stateRB0 = 0;
+tWORD countRB0 = 0;
+tWORD countRB0_1 = 0;
 
 
 int readButtonRA5() {

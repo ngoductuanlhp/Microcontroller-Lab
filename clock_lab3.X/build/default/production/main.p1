@@ -1,26 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"50 ./mcc.h
-[; ;./mcc.h: 50: volatile enum State state = STATE_CLOCK;
-[c E5028 0 1 2 3 4 .. ]
-[n E5028 State STATE_CLOCK STATE_SET_HOUR STATE_SET_MINUTE STATE_SET_SECOND STATE_STOP_WATCH  ]
+"54 ./mcc.h
+[; ;./mcc.h: 54: volatile enum State state = STATE_CLOCK;
+[c E5031 0 1 2 3 4 .. ]
+[n E5031 State STATE_CLOCK STATE_SET_HOUR STATE_SET_MINUTE STATE_SET_SECOND STATE_STOP_WATCH  ]
 [p mainexit ]
-"72
-[; ;./mcc.h: 72: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"74
-[; ;./mcc.h: 74: void state_clock(void);
-[v _state_clock `(v ~T0 @X0 0 ef ]
-"75
-[; ;./mcc.h: 75: void state_set_hour(void);
-[v _state_set_hour `(v ~T0 @X0 0 ef ]
-"76
-[; ;./mcc.h: 76: void state_set_minute(void);
-[v _state_set_minute `(v ~T0 @X0 0 ef ]
-"77
-[; ;./mcc.h: 77: void state_set_second(void);
-[v _state_set_second `(v ~T0 @X0 0 ef ]
 "78
-[; ;./mcc.h: 78: void state_stop_watch(void);
+[; ;./mcc.h: 78: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"4815 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4815: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"80 ./mcc.h
+[; ;./mcc.h: 80: void state_clock(void);
+[v _state_clock `(v ~T0 @X0 0 ef ]
+"81
+[; ;./mcc.h: 81: void state_set_hour(void);
+[v _state_set_hour `(v ~T0 @X0 0 ef ]
+"82
+[; ;./mcc.h: 82: void state_set_minute(void);
+[v _state_set_minute `(v ~T0 @X0 0 ef ]
+"83
+[; ;./mcc.h: 83: void state_set_second(void);
+[v _state_set_second `(v ~T0 @X0 0 ef ]
+"84
+[; ;./mcc.h: 84: void state_stop_watch(void);
 [v _state_stop_watch `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
@@ -634,86 +637,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LVP = OFF ]
 "30
 [p x XINST = OFF ]
-"50
-[; ;./mcc.h: 50: volatile enum State state = STATE_CLOCK;
-[v _state `VE5028 ~T0 @X0 1 e ]
+"54
+[; ;./mcc.h: 54: volatile enum State state = STATE_CLOCK;
+[v _state `VE5031 ~T0 @X0 1 e ]
 [i _state
-. `E5028 0
+. `E5031 0
 ]
-"52
-[; ;./mcc.h: 52: unsigned short int counter_low = 0;
-[v _counter_low `us ~T0 @X0 1 e ]
+"56
+[; ;./mcc.h: 56: tBYTE counter_low = 0;
+[v _counter_low `uc ~T0 @X0 1 e ]
 [i _counter_low
--> -> 0 `i `us
+-> -> 0 `i `uc
 ]
-"53
-[; ;./mcc.h: 53: unsigned short int counter_high = 0;
-[v _counter_high `us ~T0 @X0 1 e ]
+"57
+[; ;./mcc.h: 57: tBYTE counter_high = 0;
+[v _counter_high `uc ~T0 @X0 1 e ]
 [i _counter_high
--> -> 0 `i `us
+-> -> 0 `i `uc
 ]
-"55
-[; ;./mcc.h: 55: unsigned char buttonRA5 = 0;
+"59
+[; ;./mcc.h: 59: tBYTE buttonRA5 = 0;
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"56
-[; ;./mcc.h: 56: unsigned char buttonRB0 = 0;
+"60
+[; ;./mcc.h: 60: tBYTE buttonRB0 = 0;
 [v _buttonRB0 `uc ~T0 @X0 1 e ]
 [i _buttonRB0
 -> -> 0 `i `uc
 ]
-"58
-[; ;./mcc.h: 58: unsigned char second_flag = 0;
+"62
+[; ;./mcc.h: 62: tBYTE second_flag = 0;
 [v _second_flag `uc ~T0 @X0 1 e ]
 [i _second_flag
 -> -> 0 `i `uc
 ]
-"59
-[; ;./mcc.h: 59: unsigned char hide_flag = 0;
+"63
+[; ;./mcc.h: 63: tBYTE hide_flag = 0;
 [v _hide_flag `uc ~T0 @X0 1 e ]
 [i _hide_flag
 -> -> 0 `i `uc
 ]
-"60
-[; ;./mcc.h: 60: unsigned char ms_flag = 0;
+"64
+[; ;./mcc.h: 64: tBYTE ms_flag = 0;
 [v _ms_flag `uc ~T0 @X0 1 e ]
 [i _ms_flag
 -> -> 0 `i `uc
 ]
-"62
-[; ;./mcc.h: 62: unsigned char sec_changed_flag = 0;
+"66
+[; ;./mcc.h: 66: tBYTE sec_changed_flag = 0;
 [v _sec_changed_flag `uc ~T0 @X0 1 e ]
 [i _sec_changed_flag
 -> -> 0 `i `uc
 ]
-"63
-[; ;./mcc.h: 63: unsigned char min_changed_flag = 0;
+"67
+[; ;./mcc.h: 67: tBYTE min_changed_flag = 0;
 [v _min_changed_flag `uc ~T0 @X0 1 e ]
 [i _min_changed_flag
 -> -> 0 `i `uc
 ]
-"64
-[; ;./mcc.h: 64: unsigned char hr_changed_flag = 0;
+"68
+[; ;./mcc.h: 68: tBYTE hr_changed_flag = 0;
 [v _hr_changed_flag `uc ~T0 @X0 1 e ]
 [i _hr_changed_flag
 -> -> 0 `i `uc
 ]
-"66
-[; ;./mcc.h: 66: unsigned int count = 0;
+"70
+[; ;./mcc.h: 70: tBYTE changed_state_flag = 1;
+[v _changed_state_flag `uc ~T0 @X0 1 e ]
+[i _changed_state_flag
+-> -> 1 `i `uc
+]
+"72
+[; ;./mcc.h: 72: tWORD count = 0;
 [v _count `ui ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `ui
 ]
-"68
-[; ;./mcc.h: 68: unsigned char ledValue = 0;
+"74
+[; ;./mcc.h: 74: tBYTE ledValue = 0;
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"70
-[; ;./mcc.h: 70: volatile unsigned char hr = 0, min = 0, sec = 0;
+"76
+[; ;./mcc.h: 76: volatile tBYTE hr = 0, min = 0, sec = 0;
 [v _hr `Vuc ~T0 @X0 1 e ]
 [i _hr
 -> -> 0 `i `uc
@@ -741,73 +750,93 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 503 ]
 {
 "12
-[; ;main.c: 12:         switch(state) {
-[e $U 506  ]
-{
+[; ;main.c: 12:         LATD = ledValue;
+[e = _LATD _ledValue ]
 "13
-[; ;main.c: 13:             case STATE_CLOCK: state_clock();
-[e :U 507 ]
-[e ( _state_clock ..  ]
+[; ;main.c: 13:         if(buttonRA5) {
+[e $ ! != -> _buttonRA5 `i -> 0 `i 505  ]
+{
 "14
-[; ;main.c: 14:                 break;
-[e $U 505  ]
+[; ;main.c: 14:             buttonRA5 = 0;
+[e = _buttonRA5 -> -> 0 `i `uc ]
 "15
-[; ;main.c: 15:             case STATE_SET_HOUR: state_set_hour();
-[e :U 508 ]
-[e ( _state_set_hour ..  ]
+[; ;main.c: 15:             state = (state + 1) % 5;
+[e = _state -> % + -> _state `ui -> -> 1 `i `ui -> -> 5 `i `ui `E5031 ]
 "16
-[; ;main.c: 16:                 break;
-[e $U 505  ]
+[; ;main.c: 16:             changed_state_flag = 1;
+[e = _changed_state_flag -> -> 1 `i `uc ]
 "17
-[; ;main.c: 17:             case STATE_SET_MINUTE: state_set_minute();
-[e :U 509 ]
-[e ( _state_set_minute ..  ]
+[; ;main.c: 17:         }
+}
+[e :U 505 ]
 "18
-[; ;main.c: 18:                 break;
-[e $U 505  ]
+[; ;main.c: 18:         switch(state) {
+[e $U 507  ]
+{
 "19
-[; ;main.c: 19:             case STATE_SET_SECOND: state_set_second();
-[e :U 510 ]
-[e ( _state_set_second ..  ]
+[; ;main.c: 19:             case STATE_CLOCK: state_clock();
+[e :U 508 ]
+[e ( _state_clock ..  ]
 "20
 [; ;main.c: 20:                 break;
-[e $U 505  ]
+[e $U 506  ]
 "21
-[; ;main.c: 21:             case STATE_STOP_WATCH: state_stop_watch();
-[e :U 511 ]
-[e ( _state_stop_watch ..  ]
+[; ;main.c: 21:             case STATE_SET_HOUR: state_set_hour();
+[e :U 509 ]
+[e ( _state_set_hour ..  ]
 "22
 [; ;main.c: 22:                 break;
-[e $U 505  ]
+[e $U 506  ]
 "23
-[; ;main.c: 23:             default: state_clock();
-[e :U 512 ]
-[e ( _state_clock ..  ]
+[; ;main.c: 23:             case STATE_SET_MINUTE: state_set_minute();
+[e :U 510 ]
+[e ( _state_set_minute ..  ]
 "24
 [; ;main.c: 24:                 break;
-[e $U 505  ]
+[e $U 506  ]
 "25
-[; ;main.c: 25:         }
-}
-[e $U 505  ]
-[e :U 506 ]
-[e [\ -> _state `ui , $ -> . `E5028 0 `ui 507
- , $ -> . `E5028 1 `ui 508
- , $ -> . `E5028 2 `ui 509
- , $ -> . `E5028 3 `ui 510
- , $ -> . `E5028 4 `ui 511
- 512 ]
-[e :U 505 ]
+[; ;main.c: 25:             case STATE_SET_SECOND: state_set_second();
+[e :U 511 ]
+[e ( _state_set_second ..  ]
 "26
-[; ;main.c: 26:     }
+[; ;main.c: 26:                 break;
+[e $U 506  ]
+"27
+[; ;main.c: 27:             case STATE_STOP_WATCH: state_stop_watch();
+[e :U 512 ]
+[e ( _state_stop_watch ..  ]
+"28
+[; ;main.c: 28:                 break;
+[e $U 506  ]
+"29
+[; ;main.c: 29:             default: state_clock();
+[e :U 513 ]
+[e ( _state_clock ..  ]
+"30
+[; ;main.c: 30:                 break;
+[e $U 506  ]
+"31
+[; ;main.c: 31:         }
+}
+[e $U 506  ]
+[e :U 507 ]
+[e [\ -> _state `ui , $ -> . `E5031 0 `ui 508
+ , $ -> . `E5031 1 `ui 509
+ , $ -> . `E5031 2 `ui 510
+ , $ -> . `E5031 3 `ui 511
+ , $ -> . `E5031 4 `ui 512
+ 513 ]
+[e :U 506 ]
+"32
+[; ;main.c: 32:     }
 }
 [e :U 502 ]
 [e $U 503  ]
 [e :U 504 ]
-"27
-[; ;main.c: 27:     return;
+"33
+[; ;main.c: 33:     return;
 [e $UE 501  ]
-"28
-[; ;main.c: 28: }
+"34
+[; ;main.c: 34: }
 [e :UE 501 ]
 }

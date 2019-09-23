@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"50 ./mcc.h
-[; ;./mcc.h: 50: volatile enum State state = STATE_CLOCK;
-[c E5028 0 1 2 3 4 .. ]
-[n E5028 State STATE_CLOCK STATE_SET_HOUR STATE_SET_MINUTE STATE_SET_SECOND STATE_STOP_WATCH  ]
+"54 ./mcc.h
+[; ;./mcc.h: 54: volatile enum State state = STATE_CLOCK;
+[c E5031 0 1 2 3 4 .. ]
+[n E5031 State STATE_CLOCK STATE_SET_HOUR STATE_SET_MINUTE STATE_SET_SECOND STATE_STOP_WATCH  ]
 "13118 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13118:     struct {
 [s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -645,86 +645,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LVP = OFF ]
 "30
 [p x XINST = OFF ]
-"50
-[; ;./mcc.h: 50: volatile enum State state = STATE_CLOCK;
-[v _state `VE5028 ~T0 @X0 1 e ]
+"54
+[; ;./mcc.h: 54: volatile enum State state = STATE_CLOCK;
+[v _state `VE5031 ~T0 @X0 1 e ]
 [i _state
-. `E5028 0
+. `E5031 0
 ]
-"52
-[; ;./mcc.h: 52: unsigned short int counter_low = 0;
-[v _counter_low `us ~T0 @X0 1 e ]
+"56
+[; ;./mcc.h: 56: tBYTE counter_low = 0;
+[v _counter_low `uc ~T0 @X0 1 e ]
 [i _counter_low
--> -> 0 `i `us
+-> -> 0 `i `uc
 ]
-"53
-[; ;./mcc.h: 53: unsigned short int counter_high = 0;
-[v _counter_high `us ~T0 @X0 1 e ]
+"57
+[; ;./mcc.h: 57: tBYTE counter_high = 0;
+[v _counter_high `uc ~T0 @X0 1 e ]
 [i _counter_high
--> -> 0 `i `us
+-> -> 0 `i `uc
 ]
-"55
-[; ;./mcc.h: 55: unsigned char buttonRA5 = 0;
+"59
+[; ;./mcc.h: 59: tBYTE buttonRA5 = 0;
 [v _buttonRA5 `uc ~T0 @X0 1 e ]
 [i _buttonRA5
 -> -> 0 `i `uc
 ]
-"56
-[; ;./mcc.h: 56: unsigned char buttonRB0 = 0;
+"60
+[; ;./mcc.h: 60: tBYTE buttonRB0 = 0;
 [v _buttonRB0 `uc ~T0 @X0 1 e ]
 [i _buttonRB0
 -> -> 0 `i `uc
 ]
-"58
-[; ;./mcc.h: 58: unsigned char second_flag = 0;
+"62
+[; ;./mcc.h: 62: tBYTE second_flag = 0;
 [v _second_flag `uc ~T0 @X0 1 e ]
 [i _second_flag
 -> -> 0 `i `uc
 ]
-"59
-[; ;./mcc.h: 59: unsigned char hide_flag = 0;
+"63
+[; ;./mcc.h: 63: tBYTE hide_flag = 0;
 [v _hide_flag `uc ~T0 @X0 1 e ]
 [i _hide_flag
 -> -> 0 `i `uc
 ]
-"60
-[; ;./mcc.h: 60: unsigned char ms_flag = 0;
+"64
+[; ;./mcc.h: 64: tBYTE ms_flag = 0;
 [v _ms_flag `uc ~T0 @X0 1 e ]
 [i _ms_flag
 -> -> 0 `i `uc
 ]
-"62
-[; ;./mcc.h: 62: unsigned char sec_changed_flag = 0;
+"66
+[; ;./mcc.h: 66: tBYTE sec_changed_flag = 0;
 [v _sec_changed_flag `uc ~T0 @X0 1 e ]
 [i _sec_changed_flag
 -> -> 0 `i `uc
 ]
-"63
-[; ;./mcc.h: 63: unsigned char min_changed_flag = 0;
+"67
+[; ;./mcc.h: 67: tBYTE min_changed_flag = 0;
 [v _min_changed_flag `uc ~T0 @X0 1 e ]
 [i _min_changed_flag
 -> -> 0 `i `uc
 ]
-"64
-[; ;./mcc.h: 64: unsigned char hr_changed_flag = 0;
+"68
+[; ;./mcc.h: 68: tBYTE hr_changed_flag = 0;
 [v _hr_changed_flag `uc ~T0 @X0 1 e ]
 [i _hr_changed_flag
 -> -> 0 `i `uc
 ]
-"66
-[; ;./mcc.h: 66: unsigned int count = 0;
+"70
+[; ;./mcc.h: 70: tBYTE changed_state_flag = 1;
+[v _changed_state_flag `uc ~T0 @X0 1 e ]
+[i _changed_state_flag
+-> -> 1 `i `uc
+]
+"72
+[; ;./mcc.h: 72: tWORD count = 0;
 [v _count `ui ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `ui
 ]
-"68
-[; ;./mcc.h: 68: unsigned char ledValue = 0;
+"74
+[; ;./mcc.h: 74: tBYTE ledValue = 0;
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"70
-[; ;./mcc.h: 70: volatile unsigned char hr = 0, min = 0, sec = 0;
+"76
+[; ;./mcc.h: 76: volatile tBYTE hr = 0, min = 0, sec = 0;
 [v _hr `Vuc ~T0 @X0 1 e ]
 [i _hr
 -> -> 0 `i `uc
@@ -781,10 +787,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "16
 [; ;interrupt_manager.c: 16:         TMR0L = counter_low;
-[e = _TMR0L -> _counter_low `uc ]
+[e = _TMR0L _counter_low ]
 "17
 [; ;interrupt_manager.c: 17:         TMR0H = counter_high;
-[e = _TMR0H -> _counter_high `uc ]
+[e = _TMR0H _counter_high ]
 "18
 [; ;interrupt_manager.c: 18:         handleButton();
 [e ( _handleButton ..  ]
@@ -809,8 +815,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 504 ]
 "25
-[; ;interrupt_manager.c: 25:         if(count == 800 / 10) {
-[e $ ! == _count -> / -> 800 `i -> 10 `i `ui 505  ]
+[; ;interrupt_manager.c: 25:         if(count == 700 / 10) {
+[e $ ! == _count -> / -> 700 `i -> 10 `i `ui 505  ]
 {
 "26
 [; ;interrupt_manager.c: 26:             hide_flag = 1;
