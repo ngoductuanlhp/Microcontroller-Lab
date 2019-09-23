@@ -11,9 +11,9 @@
       <itemPath>osc_manager.h</itemPath>
       <itemPath>SPI_LCD.h</itemPath>
       <itemPath>State_Clock.h</itemPath>
-      <itemPath>State_Mod.h</itemPath>
       <itemPath>State_Stop_Watch.h</itemPath>
       <itemPath>buttons.h</itemPath>
+      <itemPath>State_Set.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -30,9 +30,9 @@
       <itemPath>SPI_LCD.c</itemPath>
       <itemPath>mcc.c</itemPath>
       <itemPath>State_Clock.c</itemPath>
-      <itemPath>State_Mod.c</itemPath>
       <itemPath>State_Stop_Watch.c</itemPath>
       <itemPath>buttons.c</itemPath>
+      <itemPath>State_Set.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

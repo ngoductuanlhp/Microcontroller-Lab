@@ -4,16 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/State_Stop_Watch.h</file>
+            <file>file:/E:/MPLAPXProjects/clock_lab3.X/mcc.c</file>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/SPI_LCD.h</file>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/main.c</file>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/State_Clock.c</file>
-            <file>file:/E:/MPLAPXProjects/clock_lab3.X/buttons.c</file>
+            <file>file:/E:/MPLAPXProjects/clock_lab3.X/State_Set.h</file>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/pin_manager.c</file>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/mcc.h</file>
-            <file>file:/E:/MPLAPXProjects/clock_lab3.X/interrupt_manager.c</file>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/State_Stop_Watch.c</file>
             <file>file:/E:/MPLAPXProjects/clock_lab3.X/SPI_LCD.c</file>
-            <file>file:/E:/MPLAPXProjects/clock_lab3.X/State_Mod.c</file>
+            <file>file:/E:/MPLAPXProjects/clock_lab3.X/State_Clock.h</file>
+            <file>file:/E:/MPLAPXProjects/clock_lab3.X/State_Set.c</file>
         </group>
     </open-files>
 </project-private>

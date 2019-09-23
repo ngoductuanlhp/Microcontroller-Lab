@@ -8298,7 +8298,7 @@ void handleButton();
 #pragma config LVP = OFF
 #pragma config XINST = OFF
 # 48 "./mcc.h"
-enum State{STATE_CLOCK, STATE_MOD_HOUR, STATE_MOD_MINUTE, STATE_MOD_SECOND, STATE_STOP_WATCH};
+enum State{STATE_CLOCK, STATE_SET_HOUR, STATE_SET_MINUTE, STATE_SET_SECOND, STATE_STOP_WATCH};
 
 volatile enum State state = STATE_CLOCK;
 
@@ -8312,29 +8312,85 @@ unsigned char second_flag = 0;
 unsigned char hide_flag = 0;
 unsigned char ms_flag = 0;
 
+unsigned char sec_changed_flag = 0;
+unsigned char min_changed_flag = 0;
+unsigned char hr_changed_flag = 0;
+
 unsigned int count = 0;
 
 unsigned char ledValue = 0;
 
-volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+volatile unsigned char hr = 0, min = 0, sec = 0;
 
 void SYSTEM_Initialize(void);
 
 void state_clock(void);
-void state_mod_hour(void);
-void state_mod_minute(void);
-void state_mod_second(void);
+void state_set_hour(void);
+void state_set_minute(void);
+void state_set_second(void);
 void state_stop_watch(void);
 # 15 "./State_Stop_Watch.h" 2
 
+# 1 "./State_Clock.h" 1
+# 10 "./State_Clock.h"
+void disp_Clock (void);
+void handle_Time (void);
+void disp_Changed(void);
+void disp_Clock_Hide(unsigned char state);
+# 16 "./State_Stop_Watch.h" 2
 
-volatile unsigned char hr_sw = 0, min_sw = 0, sec_sw = 0, ms_sw = 0;
+
+volatile unsigned char min_sw = 0, sec_sw = 0, ms_sw = 0;
 unsigned char state_sw = 0;
 
+unsigned char ms_sw_changed_flag = 0;
+unsigned char sec_sw_changed_flag = 0;
+unsigned char min_sw_changed_flag = 0;
+
 void disp_Clock_SW();
+void handle_Time_SW(void);
+void disp_Changed_SW(void);
 # 1 "State_Stop_Watch.c" 2
 
 
+
+void disp_Changed_SW(void) {
+    if(ms_sw_changed_flag) {
+        ms_sw_changed_flag = 0;
+        LCDMoveCursor(1, 6);
+        LCDPutChar(ms_sw/10+'0');
+        LCDPutChar(ms_sw%10+'0');
+    }
+    if(sec_sw_changed_flag) {
+        sec_changed_flag = 0;
+        LCDMoveCursor(1, 3);
+        LCDPutChar(sec_sw/10+'0');
+        LCDPutChar(sec_sw%10+'0');
+    }
+    if(min_sw_changed_flag) {
+        min_changed_flag = 0;
+        LCDMoveCursor(1, 0);
+        LCDPutChar(min_sw/10+'0');
+        LCDPutChar(min_sw%10+'0');
+    }
+}
+
+void handle_Time_SW(void) {
+    ms_sw_changed_flag = 1;
+    if (ms_sw > 99) {
+        ms_sw = 0;
+        sec_sw++;
+        sec_sw_changed_flag = 1;
+    }
+    if (sec_sw > 59) {
+        sec_sw = 0;
+        min_sw ++;
+        min_sw_changed_flag = 1;
+    }
+    if (min_sw > 59) {
+        min_sw = 0;
+    }
+}
 
 void disp_Clock_SW() {
 
@@ -8345,23 +8401,30 @@ void disp_Clock_SW() {
     LCDPutChar(sec_sw/10+'0');
     LCDPutChar(sec_sw%10+'0');
     LCDPutChar(':');
+    LCDPutChar(ms_sw/10+'0');
     LCDPutChar(ms_sw%10+'0');
 }
 
 void state_stop_watch(void) {
     LCDPutInst(0x80);
-    LCDPutStr("Stop W  RA5=Next");
+    LCDPutStr("Stop W    RA5=->");
     disp_Clock_SW();
     LCDPutStr("        ");
     while(state == STATE_STOP_WATCH) {
+        LATD = ledValue;
         if(buttonRA5) {
             state = STATE_CLOCK;
             buttonRA5 = 0;
             state_sw = 0;
-            hr_sw = 0;
             min_sw = 0;
             sec_sw = 0;
             ms_sw = 0;
+        }
+        if(second_flag == 1) {
+            second_flag = 0;
+            sec++;
+            handle_Time();
+            ledValue = (ledValue == 0) ? 255 : 0;
         }
         switch(state_sw) {
             case 0:
@@ -8376,35 +8439,10 @@ void state_stop_watch(void) {
                     state_sw = 0;
                 }
                 if(ms_flag) {
-                    ms_sw++;
                     ms_flag = 0;
-                    LCDMoveCursor(1, 6);
-                    LCDPutChar(ms_sw%10+'0');
-                    if(ms_sw > 9) {
-                        ms_sw = 0;
-                        sec_sw++;
-                        LCDMoveCursor(1, 6);
-                        LCDPutChar(ms_sw%10+'0');
-                        LCDMoveCursor(1, 3);
-                        LCDPutChar(sec_sw/10+'0');
-                        LCDPutChar(sec_sw%10+'0');
-                    }
-                    if(sec_sw > 59) {
-                        sec_sw = 0;
-                        min_sw++;
-                        LCDMoveCursor(1, 3);
-                        LCDPutChar(sec_sw/10+'0');
-                        LCDPutChar(sec_sw%10+'0');
-                        LCDMoveCursor(1, 0);
-                        LCDPutChar(min_sw/10+'0');
-                        LCDPutChar(min_sw%10+'0');
-                    }
-                    if(min_sw > 59) {
-                        min_sw = 0;
-                        LCDMoveCursor(1, 0);
-                        LCDPutChar(min_sw/10+'0');
-                        LCDPutChar(min_sw%10+'0');
-                    }
+                    ms_sw++;
+                    handle_Time_SW();
+                    disp_Changed_SW();
                 }
                 break;
         }

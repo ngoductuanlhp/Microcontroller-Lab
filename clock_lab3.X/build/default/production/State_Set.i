@@ -1,4 +1,4 @@
-# 1 "mcc.c"
+# 1 "State_Set.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc.c" 2
+# 1 "State_Set.c" 2
+# 1 "./State_Set.h" 1
+# 15 "./State_Set.h"
 # 1 "./mcc.h" 1
 # 10 "./mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -8327,14 +8329,106 @@ void state_set_hour(void);
 void state_set_minute(void);
 void state_set_second(void);
 void state_stop_watch(void);
-# 1 "mcc.c" 2
+# 15 "./State_Set.h" 2
+# 1 "State_Set.c" 2
 
+# 1 "./State_Clock.h" 1
+# 10 "./State_Clock.h"
+void disp_Clock (void);
+void handle_Time (void);
+void disp_Changed(void);
+void disp_Clock_Hide(unsigned char state);
+# 2 "State_Set.c" 2
+# 49 "State_Set.c"
+void state_set_hour(void) {
+    LCDPutInst(0x80);
+    LCDPutStr("Set hour  RA5=->");
+    disp_Clock();
+    while(state == STATE_SET_HOUR) {
+        LATD = ledValue;
+        if(buttonRA5) {
+            state = STATE_SET_MINUTE;
+            buttonRA5 = 0;
+            return;
+        }
+        if(second_flag) {
+            second_flag = 0;
+            sec++;
+            hr_changed_flag = 1;
+            handle_Time();
+            disp_Changed();
+            ledValue = (ledValue == 0) ? 255 : 0;
+        }
+        if(buttonRB0) {
+            buttonRB0 = 0;
+            hr++;
+            hr_changed_flag = 1;
+            handle_Time();
+            disp_Changed();
+        }
+        if(hide_flag) {
+            hide_flag = 0;
+            disp_Clock_Hide(state);
+        }
+    }
+}
 
-void SYSTEM_Initialize(void)
-{
-    osc_init();
-    pin_init();
-    interrupt_init();
-    timer0_init();
-    LCDInit();
+void state_set_minute(void) {
+    LCDPutInst(0x80);
+    LCDPutStr("Set min   RA5=->");
+    disp_Clock();
+    while(state == STATE_SET_MINUTE) {
+        if(buttonRA5) {
+            state = STATE_SET_SECOND;
+            buttonRA5 = 0;
+        }
+        if(second_flag) {
+            second_flag = 0;
+            sec++;
+            min_changed_flag = 1;
+            handle_Time();
+            disp_Changed();
+            ledValue = (ledValue == 0) ? 255 : 0;
+        }
+        if(buttonRB0) {
+            buttonRB0 = 0;
+            min++;
+            min_changed_flag = 1;
+            handle_Time();
+            disp_Changed();
+        }
+        if(hide_flag) {
+            hide_flag = 0;
+            disp_Clock_Hide(state);
+        }
+    }
+}
+
+void state_set_second(void) {
+    LCDPutInst(0x80);
+    LCDPutStr("Set sec   RA5=->");
+    disp_Clock();
+    while(state == STATE_SET_SECOND) {
+        if(buttonRA5) {
+            state = STATE_STOP_WATCH;
+            buttonRA5 = 0;
+        }
+        if(second_flag) {
+            second_flag = 0;
+            sec++;
+            handle_Time();
+            disp_Changed();
+            ledValue = (ledValue == 0) ? 255 : 0;
+        }
+        if(buttonRB0) {
+            buttonRB0 = 0;
+            sec++;
+            handle_Time();
+            disp_Changed();
+        }
+        if(hide_flag) {
+            hide_flag = 0;
+            disp_Clock_Hide(state);
+        }
+    }
 }

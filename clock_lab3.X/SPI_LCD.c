@@ -108,7 +108,7 @@ void SendByteBBSPI (unsigned char output)
             input = input << 1;          // shift input 1 bit to the left
         LCD_SCLK = 1;                           // set the SCLK pin
         NOP();NOP();NOP();NOP();NOP();NOP();    // produces ~50% duty cycle clock
-        NOP();NOP();NOP();NOP();NOP();NOP();
+        //NOP();NOP();NOP();NOP();NOP();NOP();
         LCD_SCLK = 0;                           // clear the SCLK pin
         output <<= 1;                           // shift output 1 bit to the left
     }
@@ -158,15 +158,27 @@ void WritePort_BBSPI (unsigned char port_add, unsigned char a)
 * DESCRIPTION:  Writes character to LCD at current cursor position
 ********************************************************************/
 
+//void LCDPutChar (unsigned char ch)
+//{
+//    __delay_ms(LCD_delay);
+//    WritePort_BBSPI (PORTA_ADD, data);        // prepare to send data to LCD
+//    __delay_ms(1);
+//    WritePort_BBSPI (PORTB_ADD, ch);          // write the character to be displayed
+//    __delay_ms(1);
+//    WritePort_BBSPI (PORTA_ADD, send_data);   // send data to LCD
+//    __delay_ms(1);
+//    WritePort_BBSPI (PORTA_ADD, 0x00);        // stop sending data to LCD
+//}
+
 void LCDPutChar (unsigned char ch)
 {
-    __delay_ms(LCD_delay);
+    __delay_us(100);
     WritePort_BBSPI (PORTA_ADD, data);        // prepare to send data to LCD
-    __delay_ms(1);
+    __delay_us(10);
     WritePort_BBSPI (PORTB_ADD, ch);          // write the character to be displayed
-    __delay_ms(1);
+    __delay_us(10);
     WritePort_BBSPI (PORTA_ADD, send_data);   // send data to LCD
-    __delay_ms(1);
+    __delay_us(10);
     WritePort_BBSPI (PORTA_ADD, 0x00);        // stop sending data to LCD
 }
 
@@ -177,15 +189,27 @@ void LCDPutChar (unsigned char ch)
 * DESCRIPTION:  Writes character to LCD instruction register
 *******************************************************************/
 
+//void LCDPutInst (unsigned char ch)
+//{
+//    __delay_ms(LCD_delay);
+//    WritePort_BBSPI (PORTA_ADD, instr);       // prepare to send instruction to LCD
+//    __delay_ms(1);
+//    WritePort_BBSPI (PORTB_ADD, ch);          // write the instruction to be sent to LCD
+//    __delay_ms(1);
+//    WritePort_BBSPI (PORTA_ADD,send_instr);   // send instruction to LCD
+//    __delay_ms(1);
+//    WritePort_BBSPI (PORTA_ADD, 0x00);        // stop sending instruction to LCD
+//}
+
 void LCDPutInst (unsigned char ch)
 {
-    __delay_ms(LCD_delay);
+    __delay_us(100);
     WritePort_BBSPI (PORTA_ADD, instr);       // prepare to send instruction to LCD
-    __delay_ms(1);
+    __delay_us(10);
     WritePort_BBSPI (PORTB_ADD, ch);          // write the instruction to be sent to LCD
-    __delay_ms(1);
+    __delay_us(10);
     WritePort_BBSPI (PORTA_ADD,send_instr);   // send instruction to LCD
-    __delay_ms(1);
+    __delay_us(10);
     WritePort_BBSPI (PORTA_ADD, 0x00);        // stop sending instruction to LCD
 }
 

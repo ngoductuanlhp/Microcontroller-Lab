@@ -6,79 +6,79 @@
 "50 E:\MPLAPXProjects\clock_lab3.X/mcc.h
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 [e E5028 State `uc
 STATE_CLOCK 0
-STATE_MOD_HOUR 1
-STATE_MOD_MINUTE 2
-STATE_MOD_SECOND 3
+STATE_SET_HOUR 1
+STATE_SET_MINUTE 2
+STATE_SET_SECOND 3
 STATE_STOP_WATCH 4
 ]
 "21 E:\MPLAPXProjects\clock_lab3.X\buttons.c
@@ -155,33 +155,39 @@ STATE_STOP_WATCH 4
 [v _Port_BBSPIInit Port_BBSPIInit `(v  1 e 1 0 ]
 "145
 [v _WritePort_BBSPI WritePort_BBSPI `(v  1 e 1 0 ]
-"161
+"173
 [v _LCDPutChar LCDPutChar `(v  1 e 1 0 ]
-"180
-[v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
-"199
-[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
 "204
+[v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
+"223
+[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
+"228
 [v _LCDMoveCursor LCDMoveCursor `(v  1 e 1 0 ]
-"209
+"233
 [v _LCDPrint LCDPrint `(v  1 e 1 0 ]
-"4 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
+"3 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
+[v _disp_Changed disp_Changed `(v  1 e 1 0 ]
+"24
 [v _handle_Time handle_Time `(v  1 e 1 0 ]
-"33
+"41
 [v _disp_Clock disp_Clock `(v  1 e 1 0 ]
-"52
+"55
 [v _disp_Clock_Hide disp_Clock_Hide `(v  1 e 1 0 ]
-"68
+"71
 [v _state_clock state_clock `(v  1 e 1 0 ]
-"6 E:\MPLAPXProjects\clock_lab3.X\State_Mod.c
-[v _state_mod_hour state_mod_hour `(v  1 e 1 0 ]
-"44
-[v _state_mod_minute state_mod_minute `(v  1 e 1 0 ]
-"80
-[v _state_mod_second state_mod_second `(v  1 e 1 0 ]
+"49 E:\MPLAPXProjects\clock_lab3.X\State_Set.c
+[v _state_set_hour state_set_hour `(v  1 e 1 0 ]
+"82
+[v _state_set_minute state_set_minute `(v  1 e 1 0 ]
+"113
+[v _state_set_second state_set_second `(v  1 e 1 0 ]
 "4 E:\MPLAPXProjects\clock_lab3.X\State_Stop_Watch.c
+[v _disp_Changed_SW disp_Changed_SW `(v  1 e 1 0 ]
+"25
+[v _handle_Time_SW handle_Time_SW `(v  1 e 1 0 ]
+"42
 [v _disp_Clock_SW disp_Clock_SW `(v  1 e 1 0 ]
-"16
+"55
 [v _state_stop_watch state_stop_watch `(v  1 e 1 0 ]
 "5 E:\MPLAPXProjects\clock_lab3.X\timer0_manager.c
 [v _preCalculate preCalculate `(v  1 e 1 0 ]
@@ -204,21 +210,31 @@ STATE_STOP_WATCH 4
 "60
 [v _ms_flag ms_flag `uc  1 e 1 0 ]
 "62
-[v _count count `ui  1 e 2 0 ]
+[v _sec_changed_flag sec_changed_flag `uc  1 e 1 0 ]
+"63
+[v _min_changed_flag min_changed_flag `uc  1 e 1 0 ]
 "64
-[v _ledValue ledValue `uc  1 e 1 0 ]
+[v _hr_changed_flag hr_changed_flag `uc  1 e 1 0 ]
 "66
+[v _count count `ui  1 e 2 0 ]
+"68
+[v _ledValue ledValue `uc  1 e 1 0 ]
+"70
 [v _hr hr `VEuc  1 e 1 0 ]
 [v _min min `VEuc  1 e 1 0 ]
 [v _sec sec `VEuc  1 e 1 0 ]
-[v _timeset timeset `VEuc  1 e 1 0 ]
-"17 E:\MPLAPXProjects\clock_lab3.X/State_Stop_Watch.h
-[v _hr_sw hr_sw `VEuc  1 e 1 0 ]
+"18 E:\MPLAPXProjects\clock_lab3.X/State_Stop_Watch.h
 [v _min_sw min_sw `VEuc  1 e 1 0 ]
 [v _sec_sw sec_sw `VEuc  1 e 1 0 ]
 [v _ms_sw ms_sw `VEuc  1 e 1 0 ]
-"18
+"19
 [v _state_sw state_sw `uc  1 e 1 0 ]
+"21
+[v _ms_sw_changed_flag ms_sw_changed_flag `uc  1 e 1 0 ]
+"22
+[v _sec_sw_changed_flag sec_sw_changed_flag `uc  1 e 1 0 ]
+"23
+[v _min_sw_changed_flag min_sw_changed_flag `uc  1 e 1 0 ]
 "7 E:\MPLAPXProjects\clock_lab3.X\buttons.c
 [v _firstReadRA5 firstReadRA5 `uc  1 e 1 0 ]
 "8
@@ -239,7 +255,7 @@ STATE_STOP_WATCH 4
 [v _countRB0 countRB0 `ui  1 e 2 0 ]
 "18
 [v _countRB0_1 countRB0_1 `ui  1 e 2 0 ]
-[s S414 . 1 `uc 1 RA0 1 0 :1:0 
+[s S424 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -249,29 +265,29 @@ STATE_STOP_WATCH 4
 `uc 1 RA7 1 0 :1:7 
 ]
 "2684 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
-[s S819 . 1 `uc 1 . 1 0 :2:0 
+[s S810 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S825 . 1 `uc 1 AN0 1 0 :1:0 
+[s S816 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S832 . 1 `uc 1 . 1 0 :5:0 
+[s S823 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S835 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S826 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S839 . 1 `S414 1 . 1 0 `S819 1 . 1 0 `S825 1 . 1 0 `S832 1 . 1 0 `S835 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES839  1 e 1 @3968 ]
-[s S875 . 1 `uc 1 RB0 1 0 :1:0 
+[u S830 . 1 `S424 1 . 1 0 `S810 1 . 1 0 `S816 1 . 1 0 `S823 1 . 1 0 `S826 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES830  1 e 1 @3968 ]
+[s S866 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -281,7 +297,7 @@ STATE_STOP_WATCH 4
 `uc 1 RB7 1 0 :1:7 
 ]
 "2833
-[s S884 . 1 `uc 1 INT0 1 0 :1:0 
+[s S875 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -290,24 +306,24 @@ STATE_STOP_WATCH 4
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S893 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S884 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ECCP2 1 0 :1:3 
 ]
-[s S897 . 1 `uc 1 . 1 0 :3:0 
+[s S888 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2 1 0 :1:3 
 ]
-[s S900 . 1 `uc 1 . 1 0 :3:0 
+[s S891 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 P2A 1 0 :1:3 
 ]
-[s S903 . 1 `uc 1 . 1 0 :3:0 
+[s S894 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S906 . 1 `S875 1 . 1 0 `S884 1 . 1 0 `S893 1 . 1 0 `S897 1 . 1 0 `S900 1 . 1 0 `S903 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES906  1 e 1 @3969 ]
+[u S897 . 1 `S866 1 . 1 0 `S875 1 . 1 0 `S884 1 . 1 0 `S888 1 . 1 0 `S891 1 . 1 0 `S894 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES897  1 e 1 @3969 ]
 "4479
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S485 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S495 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -317,7 +333,7 @@ STATE_STOP_WATCH 4
 `uc 1 LATA7 1 0 :1:7 
 ]
 "4506
-[s S494 . 1 `uc 1 LA0 1 0 :1:0 
+[s S504 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -326,13 +342,13 @@ STATE_STOP_WATCH 4
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S503 . 1 `S485 1 . 1 0 `S494 1 . 1 0 ]
-[v _LATAbits LATAbits `VES503  1 e 1 @3977 ]
+[u S513 . 1 `S495 1 . 1 0 `S504 1 . 1 0 ]
+[v _LATAbits LATAbits `VES513  1 e 1 @3977 ]
 "4591
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "4703
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S525 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S535 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -342,7 +358,7 @@ STATE_STOP_WATCH 4
 `uc 1 LATC7 1 0 :1:7 
 ]
 "4730
-[s S534 . 1 `uc 1 LC0 1 0 :1:0 
+[s S544 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -351,11 +367,11 @@ STATE_STOP_WATCH 4
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S543 . 1 `S525 1 . 1 0 `S534 1 . 1 0 ]
-[v _LATCbits LATCbits `VES543  1 e 1 @3979 ]
+[u S553 . 1 `S535 1 . 1 0 `S544 1 . 1 0 ]
+[v _LATCbits LATCbits `VES553  1 e 1 @3979 ]
 "4815
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S343 . 1 `uc 1 LATF0 1 0 :1:0 
+[s S353 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -365,7 +381,7 @@ STATE_STOP_WATCH 4
 `uc 1 LATF7 1 0 :1:7 
 ]
 "5066
-[s S352 . 1 `uc 1 LF0 1 0 :1:0 
+[s S362 . 1 `uc 1 LF0 1 0 :1:0 
 `uc 1 LF1 1 0 :1:1 
 `uc 1 LF2 1 0 :1:2 
 `uc 1 LF3 1 0 :1:3 
@@ -374,11 +390,11 @@ STATE_STOP_WATCH 4
 `uc 1 LF6 1 0 :1:6 
 `uc 1 LF7 1 0 :1:7 
 ]
-[u S361 . 1 `S343 1 . 1 0 `S352 1 . 1 0 ]
-[v _LATFbits LATFbits `VES361  1 e 1 @3982 ]
+[u S371 . 1 `S353 1 . 1 0 `S362 1 . 1 0 ]
+[v _LATFbits LATFbits `VES371  1 e 1 @3982 ]
 "5457
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S405 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S415 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -388,13 +404,13 @@ STATE_STOP_WATCH 4
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "5489
-[u S423 . 1 `S405 1 . 1 0 `S414 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES423  1 e 1 @3986 ]
+[u S433 . 1 `S415 1 . 1 0 `S424 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES433  1 e 1 @3986 ]
 "5679
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "5901
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S445 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S455 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -404,7 +420,7 @@ STATE_STOP_WATCH 4
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "5933
-[s S454 . 1 `uc 1 RC0 1 0 :1:0 
+[s S464 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -413,11 +429,11 @@ STATE_STOP_WATCH 4
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S463 . 1 `S445 1 . 1 0 `S454 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES463  1 e 1 @3988 ]
+[u S473 . 1 `S455 1 . 1 0 `S464 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES473  1 e 1 @3988 ]
 "6123
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S303 . 1 `uc 1 TRISF0 1 0 :1:0 
+[s S313 . 1 `uc 1 TRISF0 1 0 :1:0 
 `uc 1 TRISF1 1 0 :1:1 
 `uc 1 TRISF2 1 0 :1:2 
 `uc 1 TRISF3 1 0 :1:3 
@@ -427,7 +443,7 @@ STATE_STOP_WATCH 4
 `uc 1 TRISF7 1 0 :1:7 
 ]
 "6599
-[s S312 . 1 `uc 1 RF0 1 0 :1:0 
+[s S322 . 1 `uc 1 RF0 1 0 :1:0 
 `uc 1 RF1 1 0 :1:1 
 `uc 1 RF2 1 0 :1:2 
 `uc 1 RF3 1 0 :1:3 
@@ -436,15 +452,15 @@ STATE_STOP_WATCH 4
 `uc 1 RF6 1 0 :1:6 
 `uc 1 RF7 1 0 :1:7 
 ]
-[u S321 . 1 `S303 1 . 1 0 `S312 1 . 1 0 ]
-[v _TRISFbits TRISFbits `VES321  1 e 1 @3991 ]
+[u S331 . 1 `S313 1 . 1 0 `S322 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES331  1 e 1 @3991 ]
 "10174
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "12474
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "12557
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S185 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S189 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -452,18 +468,18 @@ STATE_STOP_WATCH 4
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "12578
-[s S192 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S196 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 ]
-[u S197 . 1 `S185 1 . 1 0 `S192 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES197  1 e 1 @4053 ]
+[u S201 . 1 `S189 1 . 1 0 `S196 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES201  1 e 1 @4053 ]
 "12640
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "12647
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S79 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S81 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -473,7 +489,7 @@ STATE_STOP_WATCH 4
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "13144
-[s S88 . 1 `uc 1 . 1 0 :1:0 
+[s S90 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -482,12 +498,12 @@ STATE_STOP_WATCH 4
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S97 . 1 `uc 1 . 1 0 :6:0 
+[s S99 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S101 . 1 `S79 1 . 1 0 `S88 1 . 1 0 `S97 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES101  1 e 1 @4082 ]
+[u S103 . 1 `S81 1 . 1 0 `S90 1 . 1 0 `S99 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES103  1 e 1 @4082 ]
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
 "19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
@@ -503,75 +519,84 @@ STATE_STOP_WATCH 4
 {
 "28
 } 0
-"16 E:\MPLAPXProjects\clock_lab3.X\State_Stop_Watch.c
+"55 E:\MPLAPXProjects\clock_lab3.X\State_Stop_Watch.c
 [v _state_stop_watch state_stop_watch `(v  1 e 1 0 ]
 {
-"78
+"98
 } 0
-"4
+"25
+[v _handle_Time_SW handle_Time_SW `(v  1 e 1 0 ]
+{
+"40
+} 0
+"42
 [v _disp_Clock_SW disp_Clock_SW `(v  1 e 1 0 ]
 {
-"14
+"53
 } 0
-"80 E:\MPLAPXProjects\clock_lab3.X\State_Mod.c
-[v _state_mod_second state_mod_second `(v  1 e 1 0 ]
+"4
+[v _disp_Changed_SW disp_Changed_SW `(v  1 e 1 0 ]
+{
+"23
+} 0
+"113 E:\MPLAPXProjects\clock_lab3.X\State_Set.c
+[v _state_set_second state_set_second `(v  1 e 1 0 ]
+{
+"140
+} 0
+"82
+[v _state_set_minute state_set_minute `(v  1 e 1 0 ]
 {
 "111
 } 0
-"44
-[v _state_mod_minute state_mod_minute `(v  1 e 1 0 ]
+"49
+[v _state_set_hour state_set_hour `(v  1 e 1 0 ]
 {
-"78
+"80
 } 0
-"6
-[v _state_mod_hour state_mod_hour `(v  1 e 1 0 ]
-{
-"42
-} 0
-"52 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
+"55 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
 [v _disp_Clock_Hide disp_Clock_Hide `(v  1 e 1 0 ]
 {
 [v disp_Clock_Hide@state state `uc  1 a 1 wreg ]
 [v disp_Clock_Hide@state state `uc  1 a 1 wreg ]
-[v disp_Clock_Hide@state state `uc  1 a 1 26 ]
-"66
+[v disp_Clock_Hide@state state `uc  1 a 1 25 ]
+"69
 } 0
-"209 E:\MPLAPXProjects\clock_lab3.X\SPI_LCD.c
+"233 E:\MPLAPXProjects\clock_lab3.X\SPI_LCD.c
 [v _LCDPrint LCDPrint `(v  1 e 1 0 ]
 {
 [v LCDPrint@line line `uc  1 a 1 wreg ]
 [v LCDPrint@line line `uc  1 a 1 wreg ]
-[v LCDPrint@pos pos `uc  1 p 1 20 ]
-[v LCDPrint@ptr ptr `*.32Cuc  1 p 2 21 ]
-[v LCDPrint@line line `uc  1 a 1 23 ]
-"214
+[v LCDPrint@pos pos `uc  1 p 1 19 ]
+[v LCDPrint@ptr ptr `*.32Cuc  1 p 2 20 ]
+[v LCDPrint@line line `uc  1 a 1 22 ]
+"238
 } 0
-"68 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
+"71 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
 [v _state_clock state_clock `(v  1 e 1 0 ]
 {
-"90
+"91
 } 0
-"4
+"24
 [v _handle_Time handle_Time `(v  1 e 1 0 ]
 {
-"31
+"39
 } 0
-"204 E:\MPLAPXProjects\clock_lab3.X\SPI_LCD.c
-[v _LCDMoveCursor LCDMoveCursor `(v  1 e 1 0 ]
-{
-[v LCDMoveCursor@line line `uc  1 a 1 wreg ]
-"205
-[v LCDMoveCursor@position position `uc  1 a 1 19 ]
-"204
-[v LCDMoveCursor@line line `uc  1 a 1 wreg ]
-[v LCDMoveCursor@pos pos `uc  1 p 1 15 ]
-[v LCDMoveCursor@line line `uc  1 a 1 16 ]
-"207
-} 0
-"33 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
+"41
 [v _disp_Clock disp_Clock `(v  1 e 1 0 ]
 {
-"50
+"53
+} 0
+"223 E:\MPLAPXProjects\clock_lab3.X\SPI_LCD.c
+[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
+{
+[v LCDPutStr@ptr ptr `*.32Cuc  1 p 2 14 ]
+"226
+} 0
+"3 E:\MPLAPXProjects\clock_lab3.X\State_Clock.c
+[v _disp_Changed disp_Changed `(v  1 e 1 0 ]
+{
+"22
 } 0
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -584,20 +609,26 @@ STATE_STOP_WATCH 4
 [v ___awmod@divisor divisor `i  1 p 2 10 ]
 "34
 } 0
-"199 E:\MPLAPXProjects\clock_lab3.X\SPI_LCD.c
-[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
-{
-[v LCDPutStr@ptr ptr `*.32Cuc  1 p 2 15 ]
-"202
-} 0
-"161
+"173 E:\MPLAPXProjects\clock_lab3.X\SPI_LCD.c
 [v _LCDPutChar LCDPutChar `(v  1 e 1 0 ]
 {
 [v LCDPutChar@ch ch `uc  1 a 1 wreg ]
 [v LCDPutChar@ch ch `uc  1 a 1 wreg ]
-"163
-[v LCDPutChar@ch ch `uc  1 a 1 14 ]
-"171
+"175
+[v LCDPutChar@ch ch `uc  1 a 1 13 ]
+"183
+} 0
+"228
+[v _LCDMoveCursor LCDMoveCursor `(v  1 e 1 0 ]
+{
+[v LCDMoveCursor@line line `uc  1 a 1 wreg ]
+"229
+[v LCDMoveCursor@position position `uc  1 a 1 18 ]
+"228
+[v LCDMoveCursor@line line `uc  1 a 1 wreg ]
+[v LCDMoveCursor@pos pos `uc  1 p 1 14 ]
+[v LCDMoveCursor@line line `uc  1 a 1 15 ]
+"231
 } 0
 "3 E:\MPLAPXProjects\clock_lab3.X\mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -629,9 +660,9 @@ STATE_STOP_WATCH 4
 [v powf@t_h t_h `f  1 a 4 104 ]
 [v powf@t_l t_l `f  1 a 4 52 ]
 [v powf@s_l s_l `f  1 a 4 48 ]
-[u S1429 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1461 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "58
-[v powf@__xc8_float_word __xc8_float_word `S1429  1 a 4 184 ]
+[v powf@__xc8_float_word __xc8_float_word `S1461  1 a 4 184 ]
 "54
 [v powf@z z `f  1 a 4 180 ]
 "55
@@ -697,9 +728,9 @@ STATE_STOP_WATCH 4
 "26
 [v sqrtf@t t `l  1 a 4 20 ]
 [v sqrtf@q q `l  1 a 4 16 ]
-[u S1429 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1461 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "28
-[v sqrtf@__xc8_float_word __xc8_float_word `S1429  1 a 4 12 ]
+[v sqrtf@__xc8_float_word __xc8_float_word `S1461  1 a 4 12 ]
 "26
 [v sqrtf@i i `l  1 a 4 8 ]
 [v sqrtf@s s `l  1 a 4 4 ]
@@ -710,9 +741,9 @@ STATE_STOP_WATCH 4
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nanf.c
 [v _nanf nanf `(f  1 e 4 0 ]
 {
-[u S1429 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1461 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v nanf@u u `S1429  1 a 4 12 ]
+[v nanf@u u `S1461  1 a 4 12 ]
 "4
 [v nanf@s s `*.32Cuc  1 p 2 8 ]
 "9
@@ -729,9 +760,9 @@ STATE_STOP_WATCH 4
 {
 "7
 [v scalbnf@y y `f  1 a 4 63 ]
-[u S1429 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1461 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v scalbnf@u u `S1429  1 a 4 59 ]
+[v scalbnf@u u `S1461  1 a 4 59 ]
 "4
 [v scalbnf@x x `f  1 p 4 49 ]
 [v scalbnf@n n `i  1 p 2 53 ]
@@ -740,17 +771,17 @@ STATE_STOP_WATCH 4
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1294 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1326 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1299 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1302 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1294 1 fAsBytes 4 0 `S1299 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1302  1 a 4 43 ]
+[s S1331 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1334 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1326 1 fAsBytes 4 0 `S1331 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1334  1 a 4 43 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 37 ]
-[s S1370 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1402 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1373 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1370 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1373  1 a 2 47 ]
+[u S1405 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1402 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1405  1 a 2 47 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 42 ]
 "11
@@ -765,13 +796,13 @@ STATE_STOP_WATCH 4
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
 [v _fabsf fabsf `(f  1 e 4 0 ]
 {
-[u S1429 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1461 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v fabsf@u u `S1429  1 a 4 12 ]
+[v fabsf@u u `S1461  1 a 4 12 ]
 "4
 [v fabsf@x x `f  1 p 4 8 ]
 "5
-[v fabsf@F463 F463 `S1429  1 s 4 F463 ]
+[v fabsf@F463 F463 `S1461  1 s 4 F463 ]
 "9
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
@@ -890,14 +921,14 @@ STATE_STOP_WATCH 4
 [v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 11 ]
 "134
 } 0
-"180
+"204
 [v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
 {
 [v LCDPutInst@ch ch `uc  1 a 1 wreg ]
 [v LCDPutInst@ch ch `uc  1 a 1 wreg ]
-"182
-[v LCDPutInst@ch ch `uc  1 a 1 14 ]
-"190
+"206
+[v LCDPutInst@ch ch `uc  1 a 1 13 ]
+"214
 } 0
 "145
 [v _WritePort_BBSPI WritePort_BBSPI `(v  1 e 1 0 ]

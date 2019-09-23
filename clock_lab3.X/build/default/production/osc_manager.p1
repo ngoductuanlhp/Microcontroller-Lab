@@ -2,7 +2,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50 ./mcc.h
 [; ;./mcc.h: 50: volatile enum State state = STATE_CLOCK;
 [c E5028 0 1 2 3 4 .. ]
-[n E5028 State STATE_CLOCK STATE_MOD_HOUR STATE_MOD_MINUTE STATE_MOD_SECOND STATE_STOP_WATCH  ]
+[n E5028 State STATE_CLOCK STATE_SET_HOUR STATE_SET_MINUTE STATE_SET_SECOND STATE_STOP_WATCH  ]
 "12474 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12474: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -667,19 +667,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "62
-[; ;./mcc.h: 62: unsigned int count = 0;
+[; ;./mcc.h: 62: unsigned char sec_changed_flag = 0;
+[v _sec_changed_flag `uc ~T0 @X0 1 e ]
+[i _sec_changed_flag
+-> -> 0 `i `uc
+]
+"63
+[; ;./mcc.h: 63: unsigned char min_changed_flag = 0;
+[v _min_changed_flag `uc ~T0 @X0 1 e ]
+[i _min_changed_flag
+-> -> 0 `i `uc
+]
+"64
+[; ;./mcc.h: 64: unsigned char hr_changed_flag = 0;
+[v _hr_changed_flag `uc ~T0 @X0 1 e ]
+[i _hr_changed_flag
+-> -> 0 `i `uc
+]
+"66
+[; ;./mcc.h: 66: unsigned int count = 0;
 [v _count `ui ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `ui
 ]
-"64
-[; ;./mcc.h: 64: unsigned char ledValue = 0;
+"68
+[; ;./mcc.h: 68: unsigned char ledValue = 0;
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"66
-[; ;./mcc.h: 66: volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+"70
+[; ;./mcc.h: 70: volatile unsigned char hr = 0, min = 0, sec = 0;
 [v _hr `Vuc ~T0 @X0 1 e ]
 [i _hr
 -> -> 0 `i `uc
@@ -690,10 +708,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _sec `Vuc ~T0 @X0 1 e ]
 [i _sec
--> -> 0 `i `uc
-]
-[v _timeset `Vuc ~T0 @X0 1 e ]
-[i _timeset
 -> -> 0 `i `uc
 ]
 "4 osc_manager.c

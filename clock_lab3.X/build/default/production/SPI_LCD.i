@@ -8298,7 +8298,7 @@ void handleButton();
 #pragma config LVP = OFF
 #pragma config XINST = OFF
 # 48 "./mcc.h"
-enum State{STATE_CLOCK, STATE_MOD_HOUR, STATE_MOD_MINUTE, STATE_MOD_SECOND, STATE_STOP_WATCH};
+enum State{STATE_CLOCK, STATE_SET_HOUR, STATE_SET_MINUTE, STATE_SET_SECOND, STATE_STOP_WATCH};
 
 volatile enum State state = STATE_CLOCK;
 
@@ -8312,18 +8312,22 @@ unsigned char second_flag = 0;
 unsigned char hide_flag = 0;
 unsigned char ms_flag = 0;
 
+unsigned char sec_changed_flag = 0;
+unsigned char min_changed_flag = 0;
+unsigned char hr_changed_flag = 0;
+
 unsigned int count = 0;
 
 unsigned char ledValue = 0;
 
-volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+volatile unsigned char hr = 0, min = 0, sec = 0;
 
 void SYSTEM_Initialize(void);
 
 void state_clock(void);
-void state_mod_hour(void);
-void state_mod_minute(void);
-void state_mod_second(void);
+void state_set_hour(void);
+void state_set_minute(void);
+void state_set_second(void);
 void state_stop_watch(void);
 # 37 "SPI_LCD.c" 2
 # 46 "SPI_LCD.c"
@@ -8332,12 +8336,12 @@ void LCDInit (void)
     InitBBSPI();
     TRISFbits.TRISF6 = 0;
     LATFbits.LATF6 = 0;
-    _delay((unsigned long)((2)*(10000000/4000.0)));
+    _delay((unsigned long)((5)*(8000000/4000.0)));
     LATFbits.LATF6 = 1;
     Port_BBSPIInit (0x00);
     Port_BBSPIInit (0x01);
     WritePort_BBSPI (0x12, 0);
-    _delay((unsigned long)((15)*(10000000/4000.0)));
+    _delay((unsigned long)((15)*(8000000/4000.0)));
     LCDPutInst(0x32);
     LCDPutInst(0x3C);
     LCDPutInst(0x0C);
@@ -8377,7 +8381,7 @@ void SendByteBBSPI (unsigned char output)
             input = input << 1;
         LATCbits.LATC3 = 1;
         __nop();__nop();__nop();__nop();__nop();__nop();
-        __nop();__nop();__nop();__nop();__nop();__nop();
+
         LATCbits.LATC3 = 0;
         output <<= 1;
     }
@@ -8403,31 +8407,31 @@ void WritePort_BBSPI (unsigned char port_add, unsigned char a)
     SendByteBBSPI(a);
     LATAbits.LATA2 = 1;
 }
-# 161 "SPI_LCD.c"
+# 173 "SPI_LCD.c"
 void LCDPutChar (unsigned char ch)
 {
-    _delay((unsigned long)((2)*(10000000/4000.0)));
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x80);
-    _delay((unsigned long)((1)*(10000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x13, ch);
-    _delay((unsigned long)((1)*(10000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0xC0);
-    _delay((unsigned long)((1)*(10000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x00);
 }
-# 180 "SPI_LCD.c"
+# 204 "SPI_LCD.c"
 void LCDPutInst (unsigned char ch)
 {
-    _delay((unsigned long)((2)*(10000000/4000.0)));
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x00);
-    _delay((unsigned long)((1)*(10000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x13, ch);
-    _delay((unsigned long)((1)*(10000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12,0x40);
-    _delay((unsigned long)((1)*(10000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x00);
 }
-# 199 "SPI_LCD.c"
+# 223 "SPI_LCD.c"
 void LCDPutStr (const char *ptr)
 {
     while(*ptr) LCDPutChar(*(ptr++));

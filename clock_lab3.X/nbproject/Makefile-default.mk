@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c interrupt_manager.c timer0_manager.c pin_manager.c osc_manager.c SPI_LCD.c mcc.c State_Clock.c State_Mod.c State_Stop_Watch.c buttons.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c interrupt_manager.c timer0_manager.c pin_manager.c osc_manager.c SPI_LCD.c mcc.c State_Clock.c State_Stop_Watch.c buttons.c State_Set.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/interrupt_manager.p1 ${OBJECTDIR}/timer0_manager.p1 ${OBJECTDIR}/pin_manager.p1 ${OBJECTDIR}/osc_manager.p1 ${OBJECTDIR}/SPI_LCD.p1 ${OBJECTDIR}/mcc.p1 ${OBJECTDIR}/State_Clock.p1 ${OBJECTDIR}/State_Mod.p1 ${OBJECTDIR}/State_Stop_Watch.p1 ${OBJECTDIR}/buttons.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/interrupt_manager.p1.d ${OBJECTDIR}/timer0_manager.p1.d ${OBJECTDIR}/pin_manager.p1.d ${OBJECTDIR}/osc_manager.p1.d ${OBJECTDIR}/SPI_LCD.p1.d ${OBJECTDIR}/mcc.p1.d ${OBJECTDIR}/State_Clock.p1.d ${OBJECTDIR}/State_Mod.p1.d ${OBJECTDIR}/State_Stop_Watch.p1.d ${OBJECTDIR}/buttons.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/interrupt_manager.p1 ${OBJECTDIR}/timer0_manager.p1 ${OBJECTDIR}/pin_manager.p1 ${OBJECTDIR}/osc_manager.p1 ${OBJECTDIR}/SPI_LCD.p1 ${OBJECTDIR}/mcc.p1 ${OBJECTDIR}/State_Clock.p1 ${OBJECTDIR}/State_Stop_Watch.p1 ${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/State_Set.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/interrupt_manager.p1.d ${OBJECTDIR}/timer0_manager.p1.d ${OBJECTDIR}/pin_manager.p1.d ${OBJECTDIR}/osc_manager.p1.d ${OBJECTDIR}/SPI_LCD.p1.d ${OBJECTDIR}/mcc.p1.d ${OBJECTDIR}/State_Clock.p1.d ${OBJECTDIR}/State_Stop_Watch.p1.d ${OBJECTDIR}/buttons.p1.d ${OBJECTDIR}/State_Set.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/interrupt_manager.p1 ${OBJECTDIR}/timer0_manager.p1 ${OBJECTDIR}/pin_manager.p1 ${OBJECTDIR}/osc_manager.p1 ${OBJECTDIR}/SPI_LCD.p1 ${OBJECTDIR}/mcc.p1 ${OBJECTDIR}/State_Clock.p1 ${OBJECTDIR}/State_Mod.p1 ${OBJECTDIR}/State_Stop_Watch.p1 ${OBJECTDIR}/buttons.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/interrupt_manager.p1 ${OBJECTDIR}/timer0_manager.p1 ${OBJECTDIR}/pin_manager.p1 ${OBJECTDIR}/osc_manager.p1 ${OBJECTDIR}/SPI_LCD.p1 ${OBJECTDIR}/mcc.p1 ${OBJECTDIR}/State_Clock.p1 ${OBJECTDIR}/State_Stop_Watch.p1 ${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/State_Set.p1
 
 # Source Files
-SOURCEFILES=main.c interrupt_manager.c timer0_manager.c pin_manager.c osc_manager.c SPI_LCD.c mcc.c State_Clock.c State_Mod.c State_Stop_Watch.c buttons.c
+SOURCEFILES=main.c interrupt_manager.c timer0_manager.c pin_manager.c osc_manager.c SPI_LCD.c mcc.c State_Clock.c State_Stop_Watch.c buttons.c State_Set.c
 
 
 
@@ -158,14 +158,6 @@ ${OBJECTDIR}/State_Clock.p1: State_Clock.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/State_Clock.d ${OBJECTDIR}/State_Clock.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/State_Clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/State_Mod.p1: State_Mod.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/State_Mod.p1.d 
-	@${RM} ${OBJECTDIR}/State_Mod.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/State_Mod.p1 State_Mod.c 
-	@-${MV} ${OBJECTDIR}/State_Mod.d ${OBJECTDIR}/State_Mod.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/State_Mod.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/State_Stop_Watch.p1: State_Stop_Watch.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/State_Stop_Watch.p1.d 
@@ -181,6 +173,14 @@ ${OBJECTDIR}/buttons.p1: buttons.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/buttons.p1 buttons.c 
 	@-${MV} ${OBJECTDIR}/buttons.d ${OBJECTDIR}/buttons.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/buttons.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/State_Set.p1: State_Set.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/State_Set.p1.d 
+	@${RM} ${OBJECTDIR}/State_Set.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/State_Set.p1 State_Set.c 
+	@-${MV} ${OBJECTDIR}/State_Set.d ${OBJECTDIR}/State_Set.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/State_Set.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
@@ -247,14 +247,6 @@ ${OBJECTDIR}/State_Clock.p1: State_Clock.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/State_Clock.d ${OBJECTDIR}/State_Clock.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/State_Clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/State_Mod.p1: State_Mod.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/State_Mod.p1.d 
-	@${RM} ${OBJECTDIR}/State_Mod.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/State_Mod.p1 State_Mod.c 
-	@-${MV} ${OBJECTDIR}/State_Mod.d ${OBJECTDIR}/State_Mod.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/State_Mod.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/State_Stop_Watch.p1: State_Stop_Watch.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/State_Stop_Watch.p1.d 
@@ -270,6 +262,14 @@ ${OBJECTDIR}/buttons.p1: buttons.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/buttons.p1 buttons.c 
 	@-${MV} ${OBJECTDIR}/buttons.d ${OBJECTDIR}/buttons.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/buttons.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/State_Set.p1: State_Set.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/State_Set.p1.d 
+	@${RM} ${OBJECTDIR}/State_Set.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/State_Set.p1 State_Set.c 
+	@-${MV} ${OBJECTDIR}/State_Set.d ${OBJECTDIR}/State_Set.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/State_Set.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

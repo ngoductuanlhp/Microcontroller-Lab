@@ -3,9 +3,9 @@
 #include <math.h>
 
 void preCalculate() {
-    T0CON = 0b11000111;
+    T0CON = 0b11000100;
     int count = TIME_INTERRUPT_MS * 2 * pow(10,3);
-    int count_scaled = count / 256;
+    int count_scaled = count / 32;
     if(count_scaled < 256) {
         counter_low = 255 - count_scaled;
     } else {

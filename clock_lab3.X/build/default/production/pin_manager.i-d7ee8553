@@ -1,4 +1,4 @@
-# 1 "State_Mod.c"
+# 1 "pin_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "State_Mod.c" 2
-# 1 "./State_Mod.h" 1
-# 15 "./State_Mod.h"
+# 1 "pin_manager.c" 2
 # 1 "./mcc.h" 1
 # 10 "./mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -8298,7 +8296,7 @@ void handleButton();
 #pragma config LVP = OFF
 #pragma config XINST = OFF
 # 48 "./mcc.h"
-enum State{STATE_CLOCK, STATE_MOD_HOUR, STATE_MOD_MINUTE, STATE_MOD_SECOND, STATE_STOP_WATCH};
+enum State{STATE_CLOCK, STATE_SET_HOUR, STATE_SET_MINUTE, STATE_SET_SECOND, STATE_STOP_WATCH};
 
 volatile enum State state = STATE_CLOCK;
 
@@ -8312,135 +8310,47 @@ unsigned char second_flag = 0;
 unsigned char hide_flag = 0;
 unsigned char ms_flag = 0;
 
+unsigned char sec_changed_flag = 0;
+unsigned char min_changed_flag = 0;
+unsigned char hr_changed_flag = 0;
+
 unsigned int count = 0;
 
 unsigned char ledValue = 0;
 
-volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+volatile unsigned char hr = 0, min = 0, sec = 0;
 
 void SYSTEM_Initialize(void);
 
 void state_clock(void);
-void state_mod_hour(void);
-void state_mod_minute(void);
-void state_mod_second(void);
+void state_set_hour(void);
+void state_set_minute(void);
+void state_set_second(void);
 void state_stop_watch(void);
-# 15 "./State_Mod.h" 2
-# 1 "State_Mod.c" 2
+# 1 "pin_manager.c" 2
 
-# 1 "./State_Clock.h" 1
-# 11 "./State_Clock.h"
-void disp_Clock (void);
-void handle_Time (void);
-void disp_Clock_Hide(unsigned char state);
-# 2 "State_Mod.c" 2
+
+
+void pin_init() {
+    TRISD = 0x00;
+    LATD = 0x00;
 
 
 
 
-void state_mod_hour(void) {
-    LCDPutInst(0x80);
-    LCDPutStr("Mod H   RA5=Next");
-    disp_Clock();
-    while(state == STATE_MOD_HOUR) {
-        LATD = ledValue;
-        if(buttonRA5) {
-            state = STATE_MOD_MINUTE;
-            buttonRA5 = 0;
-            return;
-        }
-        if(second_flag) {
-            second_flag = 0;
-            sec++;
-            LCDMoveCursor(1, 6);
-            LCDPutChar(sec/10+'0');
-            LCDPutChar(sec%10+'0');
-            LCDMoveCursor(1, 0);
-            LCDPutChar(hr/10+'0');
-            LCDPutChar(hr%10+'0');
-            handle_Time();
-            ledValue = (ledValue == 0) ? 255 : 0;
-        }
-        if(buttonRB0) {
-            buttonRB0 = 0;
-            hr++;
-            LCDMoveCursor(1, 0);
-            LCDPutChar(hr/10+'0');
-            LCDPutChar(hr%10+'0');
-            handle_Time();
-        }
-        if(hide_flag) {
-            hide_flag = 0;
-            disp_Clock_Hide(state);
-        }
-    }
-}
 
-void state_mod_minute(void) {
-    LCDPutInst(0x80);
-    LCDPutStr("Mod M   RA5=Next");
-    disp_Clock();
-    while(state == STATE_MOD_MINUTE) {
-        if(buttonRA5) {
-            state = STATE_MOD_SECOND;
-            buttonRA5 = 0;
-        }
-        if(second_flag) {
-            second_flag = 0;
-            sec++;
-            LCDMoveCursor(1, 6);
-            LCDPutChar(sec/10+'0');
-            LCDPutChar(sec%10+'0');
-            LCDMoveCursor(1, 3);
-            LCDPutChar(min/10+'0');
-            LCDPutChar(min%10+'0');
-            handle_Time();
-            ledValue = (ledValue == 0) ? 255 : 0;
-        }
-        if(buttonRB0) {
-            buttonRB0 = 0;
-            min++;
-            LCDMoveCursor(1, 3);
-            LCDPutChar(min/10+'0');
-            LCDPutChar(min%10+'0');
-            handle_Time();
-        }
-        if(hide_flag) {
-            hide_flag = 0;
-            disp_Clock_Hide(state);
-        }
-    }
-}
 
-void state_mod_second(void) {
-    LCDPutInst(0x80);
-    LCDPutStr("Mod S   RA5=Next");
-    disp_Clock();
-    while(state == STATE_MOD_SECOND) {
-        if(buttonRA5) {
-            state = STATE_STOP_WATCH;
-            buttonRA5 = 0;
-        }
-        if(second_flag) {
-            second_flag = 0;
-            sec++;
-            LCDMoveCursor(1, 6);
-            LCDPutChar(sec/10+'0');
-            LCDPutChar(sec%10+'0');
-            handle_Time();
-            ledValue = (ledValue == 0) ? 255 : 0;
-        }
-        if(buttonRB0) {
-            buttonRB0 = 0;
-            sec++;
-            LCDMoveCursor(1, 6);
-            LCDPutChar(sec/10+'0');
-            LCDPutChar(sec%10+'0');
-            handle_Time();
-        }
-        if(hide_flag) {
-            hide_flag = 0;
-            disp_Clock_Hide(state);
-        }
-    }
+
+    LATA = 0x00;
+    TRISA = 0xF3;
+
+
+    LATB = 0x00;
+    TRISB = 0xFF;
+
+
+
+    LATC = 0x00;
+    TRISC = 0xD7;
+    ADCON1 = 0b00001111;
 }

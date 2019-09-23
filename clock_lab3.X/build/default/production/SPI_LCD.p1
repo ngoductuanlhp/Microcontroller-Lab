@@ -2,7 +2,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50 ./mcc.h
 [; ;./mcc.h: 50: volatile enum State state = STATE_CLOCK;
 [c E5028 0 1 2 3 4 .. ]
-[n E5028 State STATE_CLOCK STATE_MOD_HOUR STATE_MOD_MINUTE STATE_MOD_SECOND STATE_STOP_WATCH  ]
+[n E5028 State STATE_CLOCK STATE_SET_HOUR STATE_SET_MINUTE STATE_SET_SECOND STATE_STOP_WATCH  ]
 "67 ./SPI_LCD.h
 [; ;./SPI_LCD.h: 67:     void InitBBSPI (void);
 [v _InitBBSPI `(v ~T0 @X0 0 ef ]
@@ -773,19 +773,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "62
-[; ;./mcc.h: 62: unsigned int count = 0;
+[; ;./mcc.h: 62: unsigned char sec_changed_flag = 0;
+[v _sec_changed_flag `uc ~T0 @X0 1 e ]
+[i _sec_changed_flag
+-> -> 0 `i `uc
+]
+"63
+[; ;./mcc.h: 63: unsigned char min_changed_flag = 0;
+[v _min_changed_flag `uc ~T0 @X0 1 e ]
+[i _min_changed_flag
+-> -> 0 `i `uc
+]
+"64
+[; ;./mcc.h: 64: unsigned char hr_changed_flag = 0;
+[v _hr_changed_flag `uc ~T0 @X0 1 e ]
+[i _hr_changed_flag
+-> -> 0 `i `uc
+]
+"66
+[; ;./mcc.h: 66: unsigned int count = 0;
 [v _count `ui ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `ui
 ]
-"64
-[; ;./mcc.h: 64: unsigned char ledValue = 0;
+"68
+[; ;./mcc.h: 68: unsigned char ledValue = 0;
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"66
-[; ;./mcc.h: 66: volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+"70
+[; ;./mcc.h: 70: volatile unsigned char hr = 0, min = 0, sec = 0;
 [v _hr `Vuc ~T0 @X0 1 e ]
 [i _hr
 -> -> 0 `i `uc
@@ -796,10 +814,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _sec `Vuc ~T0 @X0 1 e ]
 [i _sec
--> -> 0 `i `uc
-]
-[v _timeset `Vuc ~T0 @X0 1 e ]
-[i _timeset
 -> -> 0 `i `uc
 ]
 "46 SPI_LCD.c
@@ -820,8 +834,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_LCD.c: 50:     LATFbits.LATF6 = 0;
 [e = . . _LATFbits 0 6 -> -> 0 `i `uc ]
 "51
-[; ;SPI_LCD.c: 51:     _delay((unsigned long)((2)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+[; ;SPI_LCD.c: 51:     _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "52
 [; ;SPI_LCD.c: 52:     LATFbits.LATF6 = 1;
 [e = . . _LATFbits 0 6 -> -> 1 `i `uc ]
@@ -835,8 +849,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_LCD.c: 55:     WritePort_BBSPI (0x12, 0);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
 "56
-[; ;SPI_LCD.c: 56:     _delay((unsigned long)((15)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+[; ;SPI_LCD.c: 56:     _delay((unsigned long)((15)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "57
 [; ;SPI_LCD.c: 57:     LCDPutInst(0x32);
 [e ( _LCDPutInst (1 -> -> 50 `i `uc ]
@@ -961,14 +975,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( ___nop ..  ]
 [e ( ___nop ..  ]
 [e ( ___nop ..  ]
-"111
-[; ;SPI_LCD.c: 111:         __nop();__nop();__nop();__nop();__nop();__nop();
-[e ( ___nop ..  ]
-[e ( ___nop ..  ]
-[e ( ___nop ..  ]
-[e ( ___nop ..  ]
-[e ( ___nop ..  ]
-[e ( ___nop ..  ]
 "112
 [; ;SPI_LCD.c: 112:         LATCbits.LATC3 = 0;
 [e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
@@ -1051,134 +1057,134 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_LCD.c: 152: }
 [e :UE 512 ]
 }
-"161
-[; ;SPI_LCD.c: 161: void LCDPutChar (unsigned char ch)
+"173
+[; ;SPI_LCD.c: 173: void LCDPutChar (unsigned char ch)
 [v _LCDPutChar `(v ~T0 @X0 1 ef1`uc ]
-"162
-[; ;SPI_LCD.c: 162: {
+"174
+[; ;SPI_LCD.c: 174: {
 {
 [e :U _LCDPutChar ]
-"161
-[; ;SPI_LCD.c: 161: void LCDPutChar (unsigned char ch)
+"173
+[; ;SPI_LCD.c: 173: void LCDPutChar (unsigned char ch)
 [v _ch `uc ~T0 @X0 1 r1 ]
-"162
-[; ;SPI_LCD.c: 162: {
+"174
+[; ;SPI_LCD.c: 174: {
 [f ]
-"163
-[; ;SPI_LCD.c: 163:     _delay((unsigned long)((2)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"164
-[; ;SPI_LCD.c: 164:     WritePort_BBSPI (0x12, 0x80);
+"175
+[; ;SPI_LCD.c: 175:     _delay((unsigned long)((100)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"176
+[; ;SPI_LCD.c: 176:     WritePort_BBSPI (0x12, 0x80);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 128 `i `uc ]
-"165
-[; ;SPI_LCD.c: 165:     _delay((unsigned long)((1)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"166
-[; ;SPI_LCD.c: 166:     WritePort_BBSPI (0x13, ch);
+"177
+[; ;SPI_LCD.c: 177:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"178
+[; ;SPI_LCD.c: 178:     WritePort_BBSPI (0x13, ch);
 [e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
-"167
-[; ;SPI_LCD.c: 167:     _delay((unsigned long)((1)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"168
-[; ;SPI_LCD.c: 168:     WritePort_BBSPI (0x12, 0xC0);
+"179
+[; ;SPI_LCD.c: 179:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"180
+[; ;SPI_LCD.c: 180:     WritePort_BBSPI (0x12, 0xC0);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 192 `i `uc ]
-"169
-[; ;SPI_LCD.c: 169:     _delay((unsigned long)((1)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"170
-[; ;SPI_LCD.c: 170:     WritePort_BBSPI (0x12, 0x00);
+"181
+[; ;SPI_LCD.c: 181:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"182
+[; ;SPI_LCD.c: 182:     WritePort_BBSPI (0x12, 0x00);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
-"171
-[; ;SPI_LCD.c: 171: }
+"183
+[; ;SPI_LCD.c: 183: }
 [e :UE 513 ]
 }
-"180
-[; ;SPI_LCD.c: 180: void LCDPutInst (unsigned char ch)
+"204
+[; ;SPI_LCD.c: 204: void LCDPutInst (unsigned char ch)
 [v _LCDPutInst `(v ~T0 @X0 1 ef1`uc ]
-"181
-[; ;SPI_LCD.c: 181: {
+"205
+[; ;SPI_LCD.c: 205: {
 {
 [e :U _LCDPutInst ]
-"180
-[; ;SPI_LCD.c: 180: void LCDPutInst (unsigned char ch)
+"204
+[; ;SPI_LCD.c: 204: void LCDPutInst (unsigned char ch)
 [v _ch `uc ~T0 @X0 1 r1 ]
-"181
-[; ;SPI_LCD.c: 181: {
+"205
+[; ;SPI_LCD.c: 205: {
 [f ]
-"182
-[; ;SPI_LCD.c: 182:     _delay((unsigned long)((2)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"183
-[; ;SPI_LCD.c: 183:     WritePort_BBSPI (0x12, 0x00);
+"206
+[; ;SPI_LCD.c: 206:     _delay((unsigned long)((100)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"207
+[; ;SPI_LCD.c: 207:     WritePort_BBSPI (0x12, 0x00);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
-"184
-[; ;SPI_LCD.c: 184:     _delay((unsigned long)((1)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"185
-[; ;SPI_LCD.c: 185:     WritePort_BBSPI (0x13, ch);
+"208
+[; ;SPI_LCD.c: 208:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"209
+[; ;SPI_LCD.c: 209:     WritePort_BBSPI (0x13, ch);
 [e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
-"186
-[; ;SPI_LCD.c: 186:     _delay((unsigned long)((1)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"187
-[; ;SPI_LCD.c: 187:     WritePort_BBSPI (0x12,0x40);
+"210
+[; ;SPI_LCD.c: 210:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"211
+[; ;SPI_LCD.c: 211:     WritePort_BBSPI (0x12,0x40);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 64 `i `uc ]
-"188
-[; ;SPI_LCD.c: 188:     _delay((unsigned long)((1)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"189
-[; ;SPI_LCD.c: 189:     WritePort_BBSPI (0x12, 0x00);
+"212
+[; ;SPI_LCD.c: 212:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"213
+[; ;SPI_LCD.c: 213:     WritePort_BBSPI (0x12, 0x00);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
-"190
-[; ;SPI_LCD.c: 190: }
+"214
+[; ;SPI_LCD.c: 214: }
 [e :UE 514 ]
 }
-"199
-[; ;SPI_LCD.c: 199: void LCDPutStr (const char *ptr)
+"223
+[; ;SPI_LCD.c: 223: void LCDPutStr (const char *ptr)
 [v _LCDPutStr `(v ~T0 @X0 1 ef1`*Cuc ]
-"200
-[; ;SPI_LCD.c: 200: {
+"224
+[; ;SPI_LCD.c: 224: {
 {
 [e :U _LCDPutStr ]
-"199
-[; ;SPI_LCD.c: 199: void LCDPutStr (const char *ptr)
+"223
+[; ;SPI_LCD.c: 223: void LCDPutStr (const char *ptr)
 [v _ptr `*Cuc ~T0 @X0 1 r1 ]
-"200
-[; ;SPI_LCD.c: 200: {
+"224
+[; ;SPI_LCD.c: 224: {
 [f ]
-"201
-[; ;SPI_LCD.c: 201:     while(*ptr) LCDPutChar(*(ptr++));
+"225
+[; ;SPI_LCD.c: 225:     while(*ptr) LCDPutChar(*(ptr++));
 [e $U 516  ]
 [e :U 517 ]
 [e ( _LCDPutChar (1 -> *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x `uc ]
 [e :U 516 ]
 [e $ != -> *U _ptr `i -> 0 `i 517  ]
 [e :U 518 ]
-"202
-[; ;SPI_LCD.c: 202: }
+"226
+[; ;SPI_LCD.c: 226: }
 [e :UE 515 ]
 }
-"204
-[; ;SPI_LCD.c: 204: void LCDMoveCursor(unsigned char line, unsigned char pos) {
+"228
+[; ;SPI_LCD.c: 228: void LCDMoveCursor(unsigned char line, unsigned char pos) {
 [v _LCDMoveCursor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _LCDMoveCursor ]
 [v _line `uc ~T0 @X0 1 r1 ]
 [v _pos `uc ~T0 @X0 1 r2 ]
 [f ]
-"205
-[; ;SPI_LCD.c: 205:     unsigned char position = (line == 0) ? (128 + pos) : (192 + pos);
+"229
+[; ;SPI_LCD.c: 229:     unsigned char position = (line == 0) ? (128 + pos) : (192 + pos);
 [v _position `uc ~T0 @X0 1 a ]
 [e = _position -> ? == -> _line `i -> 0 `i : + -> 128 `i -> _pos `i + -> 192 `i -> _pos `i `uc ]
-"206
-[; ;SPI_LCD.c: 206:     LCDPutInst(position);
+"230
+[; ;SPI_LCD.c: 230:     LCDPutInst(position);
 [e ( _LCDPutInst (1 _position ]
-"207
-[; ;SPI_LCD.c: 207: }
+"231
+[; ;SPI_LCD.c: 231: }
 [e :UE 519 ]
 }
-"209
-[; ;SPI_LCD.c: 209: void LCDPrint(unsigned char line, unsigned char pos, const char *ptr) {
+"233
+[; ;SPI_LCD.c: 233: void LCDPrint(unsigned char line, unsigned char pos, const char *ptr) {
 [v _LCDPrint `(v ~T0 @X0 1 ef3`uc`uc`*Cuc ]
 {
 [e :U _LCDPrint ]
@@ -1186,20 +1192,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _pos `uc ~T0 @X0 1 r2 ]
 [v _ptr `*Cuc ~T0 @X0 1 r3 ]
 [f ]
-"210
-[; ;SPI_LCD.c: 210:     if(line <0 || line > 2 || pos < 0 || pos > 15)
+"234
+[; ;SPI_LCD.c: 234:     if(line <0 || line > 2 || pos < 0 || pos > 15)
 [e $ ! || || || < -> _line `i -> 0 `i > -> _line `i -> 2 `i < -> _pos `i -> 0 `i > -> _pos `i -> 15 `i 521  ]
-"211
-[; ;SPI_LCD.c: 211:         return;
+"235
+[; ;SPI_LCD.c: 235:         return;
 [e $UE 520  ]
 [e :U 521 ]
-"212
-[; ;SPI_LCD.c: 212:     LCDMoveCursor(line, pos);
+"236
+[; ;SPI_LCD.c: 236:     LCDMoveCursor(line, pos);
 [e ( _LCDMoveCursor (2 , _line _pos ]
-"213
-[; ;SPI_LCD.c: 213:     LCDPutStr(ptr);
+"237
+[; ;SPI_LCD.c: 237:     LCDPutStr(ptr);
 [e ( _LCDPutStr (1 _ptr ]
-"214
-[; ;SPI_LCD.c: 214: }
+"238
+[; ;SPI_LCD.c: 238: }
 [e :UE 520 ]
 }

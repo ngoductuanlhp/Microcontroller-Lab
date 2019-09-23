@@ -7,9 +7,9 @@ extern "C" {
 
 #include "mcc.h"
 
-    
 void disp_Clock (void);
 void handle_Time (void);
+void disp_Changed(void);
 void disp_Clock_Hide(unsigned char state);
 
 #ifdef	__cplusplus

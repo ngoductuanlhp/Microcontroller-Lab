@@ -2,7 +2,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50 ./mcc.h
 [; ;./mcc.h: 50: volatile enum State state = STATE_CLOCK;
 [c E5028 0 1 2 3 4 .. ]
-[n E5028 State STATE_CLOCK STATE_MOD_HOUR STATE_MOD_MINUTE STATE_MOD_SECOND STATE_STOP_WATCH  ]
+[n E5028 State STATE_CLOCK STATE_SET_HOUR STATE_SET_MINUTE STATE_SET_SECOND STATE_STOP_WATCH  ]
 "12557 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12557: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
 [v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
@@ -692,19 +692,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "62
-[; ;./mcc.h: 62: unsigned int count = 0;
+[; ;./mcc.h: 62: unsigned char sec_changed_flag = 0;
+[v _sec_changed_flag `uc ~T0 @X0 1 e ]
+[i _sec_changed_flag
+-> -> 0 `i `uc
+]
+"63
+[; ;./mcc.h: 63: unsigned char min_changed_flag = 0;
+[v _min_changed_flag `uc ~T0 @X0 1 e ]
+[i _min_changed_flag
+-> -> 0 `i `uc
+]
+"64
+[; ;./mcc.h: 64: unsigned char hr_changed_flag = 0;
+[v _hr_changed_flag `uc ~T0 @X0 1 e ]
+[i _hr_changed_flag
+-> -> 0 `i `uc
+]
+"66
+[; ;./mcc.h: 66: unsigned int count = 0;
 [v _count `ui ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `ui
 ]
-"64
-[; ;./mcc.h: 64: unsigned char ledValue = 0;
+"68
+[; ;./mcc.h: 68: unsigned char ledValue = 0;
 [v _ledValue `uc ~T0 @X0 1 e ]
 [i _ledValue
 -> -> 0 `i `uc
 ]
-"66
-[; ;./mcc.h: 66: volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+"70
+[; ;./mcc.h: 70: volatile unsigned char hr = 0, min = 0, sec = 0;
 [v _hr `Vuc ~T0 @X0 1 e ]
 [i _hr
 -> -> 0 `i `uc
@@ -717,10 +735,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _sec
 -> -> 0 `i `uc
 ]
-[v _timeset `Vuc ~T0 @X0 1 e ]
-[i _timeset
--> -> 0 `i `uc
-]
 "5 timer0_manager.c
 [; ;timer0_manager.c: 5: void preCalculate() {
 [v _preCalculate `(v ~T0 @X0 1 ef ]
@@ -728,16 +742,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _preCalculate ]
 [f ]
 "6
-[; ;timer0_manager.c: 6:     T0CON = 0b11000111;
-[e = _T0CON -> -> 199 `i `uc ]
+[; ;timer0_manager.c: 6:     T0CON = 0b11000100;
+[e = _T0CON -> -> 196 `i `uc ]
 "7
 [; ;timer0_manager.c: 7:     int count = 10 * 2 * powf(10,3);
 [v _count `i ~T0 @X0 1 a ]
 [e = _count -> * -> * -> 10 `i -> 2 `i `f ( _powf (2 , -> -> 10 `i `f -> -> 3 `i `f `i ]
 "8
-[; ;timer0_manager.c: 8:     int count_scaled = count / 256;
+[; ;timer0_manager.c: 8:     int count_scaled = count / 32;
 [v _count_scaled `i ~T0 @X0 1 a ]
-[e = _count_scaled / _count -> 256 `i ]
+[e = _count_scaled / _count -> 32 `i ]
 "9
 [; ;timer0_manager.c: 9:     if(count_scaled < 256) {
 [e $ ! < _count_scaled -> 256 `i 502  ]

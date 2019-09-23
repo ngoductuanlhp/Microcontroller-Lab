@@ -8304,7 +8304,7 @@ void handleButton();
 #pragma config LVP = OFF
 #pragma config XINST = OFF
 # 48 "./mcc.h"
-enum State{STATE_CLOCK, STATE_MOD_HOUR, STATE_MOD_MINUTE, STATE_MOD_SECOND, STATE_STOP_WATCH};
+enum State{STATE_CLOCK, STATE_SET_HOUR, STATE_SET_MINUTE, STATE_SET_SECOND, STATE_STOP_WATCH};
 
 volatile enum State state = STATE_CLOCK;
 
@@ -8318,56 +8318,68 @@ unsigned char second_flag = 0;
 unsigned char hide_flag = 0;
 unsigned char ms_flag = 0;
 
+unsigned char sec_changed_flag = 0;
+unsigned char min_changed_flag = 0;
+unsigned char hr_changed_flag = 0;
+
 unsigned int count = 0;
 
 unsigned char ledValue = 0;
 
-volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+volatile unsigned char hr = 0, min = 0, sec = 0;
 
 void SYSTEM_Initialize(void);
 
 void state_clock(void);
-void state_mod_hour(void);
-void state_mod_minute(void);
-void state_mod_second(void);
+void state_set_hour(void);
+void state_set_minute(void);
+void state_set_second(void);
 void state_stop_watch(void);
 # 8 "./State_Clock.h" 2
 
 
-
 void disp_Clock (void);
 void handle_Time (void);
+void disp_Changed(void);
 void disp_Clock_Hide(unsigned char state);
 # 1 "State_Clock.c" 2
 
 
-
-void handle_Time(void) {
-    if (sec > 59) {
-        sec = 0;
-        min++;
+void disp_Changed(void) {
+    if(sec_changed_flag) {
+        sec_changed_flag = 0;
         LCDMoveCursor(1, 6);
         LCDPutChar(sec/10+'0');
         LCDPutChar(sec%10+'0');
+    }
+    if(min_changed_flag) {
+        min_changed_flag = 0;
         LCDMoveCursor(1, 3);
         LCDPutChar(min/10+'0');
         LCDPutChar(min%10+'0');
+    }
+    if(hr_changed_flag) {
+        hr_changed_flag = 0;
+        LCDMoveCursor(1, 0);
+        LCDPutChar(hr/10+'0');
+        LCDPutChar(hr%10+'0');
+    }
+}
+
+void handle_Time(void) {
+    sec_changed_flag = 1;
+    if (sec > 59) {
+        sec = 0;
+        min++;
+        min_changed_flag = 1;
     }
     if (min > 59) {
         min = 0;
         hr++;
-        LCDMoveCursor(1, 3);
-        LCDPutChar(min/10+'0');
-        LCDPutChar(min%10+'0');
-        LCDMoveCursor(1, 0);
-        LCDPutChar(hr/10+'0');
-        LCDPutChar(hr%10+'0');
+        hr_changed_flag = 1;
     }
     if (hr > 23 ) {
         hr = 0;
-        LCDMoveCursor(1, 0);
-        LCDPutChar(hr/10+'0');
-        LCDPutChar(hr%10+'0');
     }
 }
 
@@ -8383,22 +8395,17 @@ void disp_Clock (void) {
     LCDPutChar(sec/10+'0');
     LCDPutChar(sec%10+'0');
     LCDPutStr("       ");
-
-
-
-
-
 }
 
 void disp_Clock_Hide(unsigned char state) {
     switch(state) {
-        case STATE_MOD_HOUR:
+        case STATE_SET_HOUR:
             LCDPrint(1, 0, "  ");
             break;
-        case STATE_MOD_MINUTE:
+        case STATE_SET_MINUTE:
             LCDPrint(1, 3, "  ");
             break;
-        case STATE_MOD_SECOND:
+        case STATE_SET_SECOND:
             LCDPrint(1, 6, "  ");
             break;
         default:
@@ -8409,23 +8416,21 @@ void disp_Clock_Hide(unsigned char state) {
 void state_clock(void) {
 
     LCDPutInst(0x80);
-    LCDPutStr("Clock   RA5=Next");
+    LCDPutStr("Clock     RA5=->");
     disp_Clock();
     while(state == STATE_CLOCK) {
         LATD = ledValue;
         if(buttonRA5) {
             buttonRA5 = 0;
-            state = STATE_MOD_HOUR;
+            state = STATE_SET_HOUR;
             return;
         }
         if(second_flag == 1) {
-            sec++;
-            LCDMoveCursor(1, 6);
-            LCDPutChar(sec/10+'0');
-            LCDPutChar(sec%10+'0');
-            handle_Time();
-            ledValue = (ledValue == 0) ? 255 : 0;
             second_flag = 0;
+            sec++;
+            handle_Time();
+            disp_Changed();
+            ledValue = (ledValue == 0) ? 255 : 0;
         }
     }
 }

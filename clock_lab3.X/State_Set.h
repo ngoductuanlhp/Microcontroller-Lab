@@ -13,6 +13,10 @@ extern "C" {
 #endif
 
 #include "mcc.h"
+    
+#define SET_HR "hr "
+#define SET_MIN "min"
+#define SET_SEC "sec"
 
 
 #ifdef	__cplusplus

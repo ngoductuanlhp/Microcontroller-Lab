@@ -1,6 +1,6 @@
-build/default/production/State_Mod.p1:  \
-State_Mod.c  \
-State_Mod.h  \
+build/default/production/State_Set.p1:  \
+State_Set.c  \
+State_Set.h  \
 mcc.h  \
 interrupt_manager.h  \
 osc_manager.h  \

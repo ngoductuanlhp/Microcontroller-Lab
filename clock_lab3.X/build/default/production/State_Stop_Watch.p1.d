@@ -7,4 +7,5 @@ osc_manager.h  \
 pin_manager.h  \
 timer0_manager.h  \
 SPI_LCD.h  \
-buttons.h 
+buttons.h  \
+State_Clock.h 

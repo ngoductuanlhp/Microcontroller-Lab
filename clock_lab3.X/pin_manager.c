@@ -22,5 +22,5 @@ void pin_init() {
 
     LATC = 0x00;
     TRISC = 0xD7;
-    ADCON1 = 0b00001111; //DON'T KNOW WHY BUT IT WORKS
+    ADCON1 = 0b00001111;
 }

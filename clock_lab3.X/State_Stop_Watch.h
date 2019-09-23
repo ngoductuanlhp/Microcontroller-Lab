@@ -13,11 +13,18 @@ extern "C" {
 #endif
 
 #include "mcc.h"
+#include "State_Clock.h"
     
-volatile unsigned char hr_sw = 0, min_sw = 0, sec_sw = 0, ms_sw = 0;
+volatile unsigned char min_sw = 0, sec_sw = 0, ms_sw = 0;
 unsigned char state_sw = 0;
 
+unsigned char ms_sw_changed_flag = 0;
+unsigned char sec_sw_changed_flag = 0;
+unsigned char min_sw_changed_flag = 0;
+
 void disp_Clock_SW();
+void handle_Time_SW(void);
+void disp_Changed_SW(void);
 
 #ifdef	__cplusplus
 }

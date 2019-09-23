@@ -12,11 +12,11 @@ void main(void) {
         switch(state) {
             case STATE_CLOCK: state_clock();
                 break;
-            case STATE_MOD_HOUR: state_mod_hour();
+            case STATE_SET_HOUR: state_set_hour();
                 break;
-            case STATE_MOD_MINUTE: state_mod_minute();
+            case STATE_SET_MINUTE: state_set_minute();
                 break;
-            case STATE_MOD_SECOND: state_mod_second();
+            case STATE_SET_SECOND: state_set_second();
                 break;
             case STATE_STOP_WATCH: state_stop_watch();
                 break;

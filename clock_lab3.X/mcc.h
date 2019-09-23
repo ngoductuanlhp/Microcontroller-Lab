@@ -30,13 +30,13 @@
 #pragma config 	XINST = OFF
 #endif
 
-#define _XTAL_FREQ  10000000
+#define _XTAL_FREQ  8000000
 
 #define TIME_INTERRUPT_MS 10
 
 #define TIME_INTERVAL_1S 1000 / TIME_INTERRUPT_MS
 
-#define TIME_INTERVAL_100MS 100 / TIME_INTERRUPT_MS
+#define TIME_INTERVAL_10MS 10 / TIME_INTERRUPT_MS
 
 #define TIME_INTERVAL1_MS 500 / TIME_INTERRUPT_MS
 #define TIME_INTERVAL2_MS 100 / TIME_INTERRUPT_MS
@@ -45,7 +45,7 @@
 
 #define HIDE_INTERVAL 800 / TIME_INTERRUPT_MS
 
-enum State{STATE_CLOCK, STATE_MOD_HOUR, STATE_MOD_MINUTE, STATE_MOD_SECOND, STATE_STOP_WATCH};
+enum State{STATE_CLOCK, STATE_SET_HOUR, STATE_SET_MINUTE, STATE_SET_SECOND, STATE_STOP_WATCH};
 
 volatile enum State state = STATE_CLOCK;
 
@@ -59,18 +59,22 @@ unsigned char second_flag = 0;
 unsigned char hide_flag = 0;
 unsigned char ms_flag = 0;
 
+unsigned char sec_changed_flag = 0;
+unsigned char min_changed_flag = 0;
+unsigned char hr_changed_flag = 0;
+
 unsigned int count = 0;
 
 unsigned char ledValue = 0;
 
-volatile unsigned char hr = 0, min = 0, sec = 0, timeset = 0;
+volatile unsigned char hr = 0, min = 0, sec = 0;
 
 void SYSTEM_Initialize(void);
 
 void state_clock(void);
-void state_mod_hour(void);
-void state_mod_minute(void);
-void state_mod_second(void);
+void state_set_hour(void);
+void state_set_minute(void);
+void state_set_second(void);
 void state_stop_watch(void);
 #endif	/* MCC_H */
 

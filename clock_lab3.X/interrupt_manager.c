@@ -18,7 +18,7 @@ void __interrupt() myISR(void) {
         handleButton();
         count++;
         count1++;
-        if(count1 == TIME_INTERVAL_100MS) {
+        if(count1 == TIME_INTERVAL_10MS) {
             ms_flag = 1;
             count1 = 0;
         }
