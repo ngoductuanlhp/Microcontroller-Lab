@@ -12,6 +12,14 @@ void pin_initialize(void) {
     //LED
     LATD = 0x00;
     TRISD = 0x00;
+    
+    LATA = 0x00;
+    TRISA = 0xF3;
+//    ANSELA = 0x0B;
+
+    LATB = 0x00;
+    TRISB = 0xFF;
+
 }
 
 void interrupt_initialize(void) {

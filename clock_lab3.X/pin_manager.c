@@ -20,7 +20,4 @@ void pin_init() {
 //    ANSELB = 0x3E;
 //    WPUB = 0x00;
 
-    LATC = 0x00;
-    TRISC = 0xD7;
-    ADCON1 = 0b00001111;
 }

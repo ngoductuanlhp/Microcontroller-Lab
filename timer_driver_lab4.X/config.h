@@ -30,7 +30,11 @@ typedef struct {
     FUNCTION_PTR func_ptr;
     void* data_p;
 } queue_node;
+
 char value = 0;
+
+char RA5_pressed = 0;
+char RB0_pressed = 0;
 
 #endif	/* CONFIG_H */
 

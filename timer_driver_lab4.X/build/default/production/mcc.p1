@@ -27,6 +27,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6123
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6123: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"4479
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4479: extern volatile unsigned char LATA __attribute__((address(0xF89)));
+[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"5457
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5457: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"4591
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4591: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
+[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
+"5679
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5679: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
 "13118
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13118:     struct {
 [s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -643,10 +655,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"33 ./config.h
-[; ;./config.h: 33: char value = 0;
+"34 ./config.h
+[; ;./config.h: 34: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
+-> -> 0 `i `uc
+]
+"36
+[; ;./config.h: 36: char RA5_pressed = 0;
+[v _RA5_pressed `uc ~T0 @X0 1 e ]
+[i _RA5_pressed
+-> -> 0 `i `uc
+]
+"37
+[; ;./config.h: 37: char RB0_pressed = 0;
+[v _RB0_pressed `uc ~T0 @X0 1 e ]
+[i _RB0_pressed
 -> -> 0 `i `uc
 ]
 "13 ./ready_queue.h
@@ -664,14 +688,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _rear
 -U -> 1 `i
 ]
-"22 ./task.h
-[; ;./task.h: 22: task_struct task_list[20];
+"23 ./task.h
+[; ;./task.h: 23: task_struct task_list[20];
 [v _task_list `S501 ~T0 @X0 -> 20 `i e ]
-"23
-[; ;./task.h: 23: char num_task;
-[v _num_task `uc ~T0 @X0 1 e ]
 "24
-[; ;./task.h: 24: signed int head;
+[; ;./task.h: 24: char num_task;
+[v _num_task `uc ~T0 @X0 1 e ]
+"25
+[; ;./task.h: 25: signed int head;
 [v _head `i ~T0 @X0 1 e ]
 "17 ./clock.h
 [; ;./clock.h: 17: unsigned long int time_ms;
@@ -710,48 +734,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14
 [; ;mcc.c: 14:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"15
-[; ;mcc.c: 15: }
+"16
+[; ;mcc.c: 16:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"17
+[; ;mcc.c: 17:     TRISA = 0xF3;
+[e = _TRISA -> -> 243 `i `uc ]
+"20
+[; ;mcc.c: 20:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
+"21
+[; ;mcc.c: 21:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
+"23
+[; ;mcc.c: 23: }
 [e :UE 504 ]
 }
-"17
-[; ;mcc.c: 17: void interrupt_initialize(void) {
+"25
+[; ;mcc.c: 25: void interrupt_initialize(void) {
 [v _interrupt_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _interrupt_initialize ]
 [f ]
-"18
-[; ;mcc.c: 18:     INTCONbits.GIE = 1;
+"26
+[; ;mcc.c: 26:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"19
-[; ;mcc.c: 19:     INTCONbits.PEIE = 1;
+"27
+[; ;mcc.c: 27:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"20
-[; ;mcc.c: 20: }
+"28
+[; ;mcc.c: 28: }
 [e :UE 505 ]
 }
-"22
-[; ;mcc.c: 22: void system_initialize(void) {
+"30
+[; ;mcc.c: 30: void system_initialize(void) {
 [v _system_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _system_initialize ]
 [f ]
-"23
-[; ;mcc.c: 23:     osc_initialize();
+"31
+[; ;mcc.c: 31:     osc_initialize();
 [e ( _osc_initialize ..  ]
-"24
-[; ;mcc.c: 24:     pin_initialize();
+"32
+[; ;mcc.c: 32:     pin_initialize();
 [e ( _pin_initialize ..  ]
-"25
-[; ;mcc.c: 25:     interrupt_initialize();
+"33
+[; ;mcc.c: 33:     interrupt_initialize();
 [e ( _interrupt_initialize ..  ]
-"26
-[; ;mcc.c: 26:     start_timer(0);
+"34
+[; ;mcc.c: 34:     start_timer(0);
 [e ( _start_timer (1 -> -> 0 `i `uc ]
-"27
-[; ;mcc.c: 27:     start_timer(1);
+"35
+[; ;mcc.c: 35:     start_timer(1);
 [e ( _start_timer (1 -> -> 1 `i `uc ]
-"28
-[; ;mcc.c: 28: }
+"36
+[; ;mcc.c: 36: }
 [e :UE 506 ]
 }

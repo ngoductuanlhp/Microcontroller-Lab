@@ -9,6 +9,7 @@ char isFullList() {
 }
 
 void initializeTaskList() {
+    queueInitialize();
     for(int i = 0; i < MAX_SIZE; i++) {
         task_list[i].delay_t = 0;
         task_list[i].period_t = 0;
@@ -21,13 +22,18 @@ void initializeTaskList() {
 }
 
 char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data) {
-    if(isFullList())
+    if(isFullList()) {
         return ERROR_VAL;
+        
+    }
+        
     char idx;
     for(idx = 0; idx < MAX_SIZE; idx++) {
         if(task_list[idx].func_ptr == ((void*)0))
             break;
     }
+    if(period == 5500)
+        value = 0xF1;
     if(idx == MAX_SIZE)
         return ERROR_VAL;
     task_list[idx].delay_t = delay;
@@ -35,6 +41,7 @@ char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data) {
     task_list[idx].func_ptr = ptr;
     task_list[idx].data_p = data;
     num_task++;
+
     if(head == NULL_VAL || (head != NULL_VAL && task_list[head].delay_t > task_list[idx].delay_t)) {
         task_list[idx].next = head;
         head = idx;

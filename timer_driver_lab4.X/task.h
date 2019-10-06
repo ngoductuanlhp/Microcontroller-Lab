@@ -10,6 +10,7 @@
 
 #include "config.h"
 #include "ready_queue.h"
+#include <xc.h>
 
 //typedef struct {
 //    tWORD delay_t;

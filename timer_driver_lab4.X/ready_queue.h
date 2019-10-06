@@ -14,6 +14,7 @@ queue_node ready_queue[MAX_SIZE];
 int front = -1;
 int rear = -1;
 
+void queueInitialize(void);
 char enqueue(FUNCTION_PTR ptr, void* data);
 queue_node dequeue();
 char isEmptyQueue();

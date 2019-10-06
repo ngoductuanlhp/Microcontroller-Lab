@@ -1,5 +1,12 @@
 #include "ready_queue.h"
 
+void queueInitialize(void) {
+    for(int i = 0; i< MAX_SIZE; i++) {
+        ready_queue[i].data_p = ((void*)0);
+        ready_queue[i].func_ptr = ((void*)0);
+    }
+}
+
 char getSizeQueue() {
     return (rear - front + 1 + MAX_SIZE) % MAX_SIZE;
 }
