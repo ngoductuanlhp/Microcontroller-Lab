@@ -26,6 +26,10 @@ typedef struct {
     void* data_p;
 } task_struct;
 
+typedef struct {
+    FUNCTION_PTR func_ptr;
+    void* data_p;
+} queue_node;
 char value = 0;
 
 #endif	/* CONFIG_H */

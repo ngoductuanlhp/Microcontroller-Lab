@@ -10,12 +10,12 @@
 
 #include "config.h"
 
-FUNCTION_PTR ready_queue[MAX_SIZE];
+queue_node ready_queue[MAX_SIZE];
 int front = -1;
 int rear = -1;
 
-char enqueue(FUNCTION_PTR ptr);
-FUNCTION_PTR dequeue();
+char enqueue(FUNCTION_PTR ptr, void* data);
+queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
 

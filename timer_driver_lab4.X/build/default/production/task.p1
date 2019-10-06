@@ -1,38 +1,40 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F16 `(v ~T0 @X0 0 t? ]
+"29 ./config.h
+[; ;./config.h: 29: typedef struct {
+[s S2 `*F16 1 `*v 1 ]
+[n S2 . func_ptr data_p ]
 [v F10 `(v ~T0 @X0 0 t? ]
-"21 ./config.h
+"21
 [; ;./config.h: 21: typedef struct {
 [s S1 `ul 1 `ul 1 `*F10 1 `i 1 `*v 1 ]
 [n S1 . delay_t period_t func_ptr next data_p ]
-[v F49 `(v ~T0 @X0 0 t? ]
-[v F52 `(v ~T0 @X0 0 t? ]
+[v F53 `(v ~T0 @X0 0 t? ]
 [v F56 `(v ~T0 @X0 0 t? ]
 [v F60 `(v ~T0 @X0 0 t? ]
-[v F68 `(v ~T0 @X0 0 t? ]
-[v F70 `(v ~T0 @X0 0 t? ]
-[v F20 `(v ~T0 @X0 0 t? ]
-"17 ./ready_queue.h
-[; ;./ready_queue.h: 17: char enqueue(FUNCTION_PTR ptr);
-[v _enqueue `(uc ~T0 @X0 0 ef1`*F20 ]
-[v F80 `(v ~T0 @X0 0 t? ]
+[v F64 `(v ~T0 @X0 0 t? ]
+[v F72 `(v ~T0 @X0 0 t? ]
+[v F74 `(v ~T0 @X0 0 t? ]
 [v F24 `(v ~T0 @X0 0 t? ]
+"17 ./ready_queue.h
+[; ;./ready_queue.h: 17: char enqueue(FUNCTION_PTR ptr, void* data);
+[v _enqueue `(uc ~T0 @X0 0 ef2`*F24`*v ]
 "18
-[; ;./ready_queue.h: 18: FUNCTION_PTR dequeue();
-[v _dequeue `(*F24 ~T0 @X0 0 e? ]
-[v F83 `(v ~T0 @X0 0 t? ]
+[; ;./ready_queue.h: 18: queue_node dequeue();
+[v _dequeue `(S2 ~T0 @X0 0 e? ]
+[v F85 `(v ~T0 @X0 0 t? ]
 "19
 [; ;./ready_queue.h: 19: char isEmptyQueue();
 [v _isEmptyQueue `(uc ~T0 @X0 0 e? ]
-"29 ./config.h
-[; ;./config.h: 29: char value = 0;
+"33 ./config.h
+[; ;./config.h: 33: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
 "13 ./ready_queue.h
-[; ;./ready_queue.h: 13: FUNCTION_PTR ready_queue[20];
-[v _ready_queue `*F16 ~T0 @X0 -> 20 `i e ]
+[; ;./ready_queue.h: 13: queue_node ready_queue[20];
+[v _ready_queue `S2 ~T0 @X0 -> 20 `i e ]
 "14
 [; ;./ready_queue.h: 14: int front = -1;
 [v _front `i ~T0 @X0 1 e ]
@@ -63,10 +65,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4
 [; ;task.c: 4:     return num_task == 0 ? 1 : 0;
 [e ) -> ? == -> _num_task `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
-[e $UE 2  ]
+[e $UE 3  ]
 "5
 [; ;task.c: 5: }
-[e :UE 2 ]
+[e :UE 3 ]
 }
 "7
 [; ;task.c: 7: char isFullList() {
@@ -77,10 +79,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8
 [; ;task.c: 8:     return num_task == 20 ? 1 : 0;
 [e ) -> ? == -> _num_task `i -> 20 `i : -> 1 `i -> 0 `i `uc ]
-[e $UE 3  ]
+[e $UE 4  ]
 "9
 [; ;task.c: 9: }
-[e :UE 3 ]
+[e :UE 4 ]
 }
 "11
 [; ;task.c: 11: void initializeTaskList() {
@@ -93,9 +95,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 20 `i 5  ]
-[e $U 6  ]
-[e :U 5 ]
+[e $ < _i -> 20 `i 6  ]
+[e $U 7  ]
+[e :U 6 ]
 {
 "13
 [; ;task.c: 13:         task_list[i].delay_t = 0;
@@ -105,7 +107,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul ]
 "15
 [; ;task.c: 15:         task_list[i].func_ptr = ((void*)0);
-[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F49 ]
+[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F53 ]
 "16
 [; ;task.c: 16:         task_list[i].data_p = ((void*)0);
 [e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 4 -> -> 0 `i `*v ]
@@ -116,8 +118,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;task.c: 18:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 20 `i 5  ]
-[e :U 6 ]
+[e $ < _i -> 20 `i 6  ]
+[e :U 7 ]
 }
 "19
 [; ;task.c: 19:     num_task = 0;
@@ -127,26 +129,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _head -> 105 `i ]
 "21
 [; ;task.c: 21: }
-[e :UE 4 ]
+[e :UE 5 ]
 }
 "23
 [; ;task.c: 23: char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data) {
-[v _addTask `(uc ~T0 @X0 1 ef4`ul`ul`*F52`*v ]
+[v _addTask `(uc ~T0 @X0 1 ef4`ul`ul`*F56`*v ]
 {
 [e :U _addTask ]
 [v _period `ul ~T0 @X0 1 r1 ]
 [v _delay `ul ~T0 @X0 1 r2 ]
-[v _ptr `*F56 ~T0 @X0 1 r3 ]
+[v _ptr `*F60 ~T0 @X0 1 r3 ]
 [v _data `*v ~T0 @X0 1 r4 ]
 [f ]
 "24
 [; ;task.c: 24:     if(isFullList())
-[e $ ! != -> ( _isFullList ..  `i -> 0 `i 9  ]
+[e $ ! != -> ( _isFullList ..  `i -> 0 `i 10  ]
 "25
 [; ;task.c: 25:         return 109;
 [e ) -> -> 109 `i `uc ]
-[e $UE 8  ]
-[e :U 9 ]
+[e $UE 9  ]
+[e :U 10 ]
 "26
 [; ;task.c: 26:     char idx;
 [v _idx `uc ~T0 @X0 1 a ]
@@ -154,32 +156,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;task.c: 27:     for(idx = 0; idx < 20; idx++) {
 {
 [e = _idx -> -> 0 `i `uc ]
-[e $ < -> _idx `i -> 20 `i 10  ]
-[e $U 11  ]
-[e :U 10 ]
+[e $ < -> _idx `i -> 20 `i 11  ]
+[e $U 12  ]
+[e :U 11 ]
 {
 "28
 [; ;task.c: 28:         if(task_list[idx].func_ptr == ((void*)0))
-[e $ ! == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F60 13  ]
+[e $ ! == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F64 14  ]
 "29
 [; ;task.c: 29:             break;
-[e $U 11  ]
-[e :U 13 ]
+[e $U 12  ]
+[e :U 14 ]
 "30
 [; ;task.c: 30:     }
 }
 [e ++ _idx -> -> 1 `i `uc ]
-[e $ < -> _idx `i -> 20 `i 10  ]
-[e :U 11 ]
+[e $ < -> _idx `i -> 20 `i 11  ]
+[e :U 12 ]
 }
 "31
 [; ;task.c: 31:     if(idx == 20)
-[e $ ! == -> _idx `i -> 20 `i 14  ]
+[e $ ! == -> _idx `i -> 20 `i 15  ]
 "32
 [; ;task.c: 32:         return 109;
 [e ) -> -> 109 `i `uc ]
-[e $UE 8  ]
-[e :U 14 ]
+[e $UE 9  ]
+[e :U 15 ]
 "33
 [; ;task.c: 33:     task_list[idx].delay_t = delay;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 _delay ]
@@ -197,7 +199,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _num_task -> -> 1 `i `uc ]
 "38
 [; ;task.c: 38:     if(head == 105 || (head != 105 && task_list[head].delay_t > task_list[idx].delay_t)) {
-[e $ ! || == _head -> 105 `i && != _head -> 105 `i > . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 15  ]
+[e $ ! || == _head -> 105 `i && != _head -> 105 `i > . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 16  ]
 {
 "39
 [; ;task.c: 39:         task_list[idx].next = head;
@@ -208,10 +210,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "41
 [; ;task.c: 41:     }
 }
-[e $U 16  ]
+[e $U 17  ]
 "42
 [; ;task.c: 42:     else {
-[e :U 15 ]
+[e :U 16 ]
 {
 "43
 [; ;task.c: 43:         delay = delay - task_list[head].delay_t;
@@ -226,8 +228,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _prev _head ]
 "46
 [; ;task.c: 46:         while(cur != 105 && task_list[cur].delay_t <= delay) {
-[e $U 17  ]
-[e :U 18 ]
+[e $U 18  ]
+[e :U 19 ]
 {
 "47
 [; ;task.c: 47:             delay = delay - task_list[cur].delay_t;
@@ -241,11 +243,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50
 [; ;task.c: 50:         }
 }
-[e :U 17 ]
+[e :U 18 ]
 "46
 [; ;task.c: 46:         while(cur != 105 && task_list[cur].delay_t <= delay) {
-[e $ && != _cur -> 105 `i <= . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 _delay 18  ]
-[e :U 19 ]
+[e $ && != _cur -> 105 `i <= . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 _delay 19  ]
+[e :U 20 ]
 "51
 [; ;task.c: 51:         task_list[prev].next = idx;
 [e = . *U + &U _task_list * -> -> _prev `ui `ux -> -> # *U &U _task_list `ui `ux 3 -> _idx `i ]
@@ -258,21 +260,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54
 [; ;task.c: 54:     }
 }
-[e :U 16 ]
+[e :U 17 ]
 "55
 [; ;task.c: 55:     if(task_list[idx].next != 105)
-[e $ ! != . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i 20  ]
+[e $ ! != . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i 21  ]
 "56
 [; ;task.c: 56:         task_list[task_list[idx].next].delay_t = task_list[task_list[idx].next].delay_t - delay;
 [e = . *U + &U _task_list * -> -> . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 - . *U + &U _task_list * -> -> . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 _delay ]
-[e :U 20 ]
+[e :U 21 ]
 "57
 [; ;task.c: 57:     return idx;
 [e ) _idx ]
-[e $UE 8  ]
+[e $UE 9  ]
 "58
 [; ;task.c: 58: }
-[e :UE 8 ]
+[e :UE 9 ]
 }
 "60
 [; ;task.c: 60: char removeTask(char idx) {
@@ -283,12 +285,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "61
 [; ;task.c: 61:     if(isEmptyList() || task_list[idx].func_ptr == ((void*)0))
-[e $ ! || != -> ( _isEmptyList ..  `i -> 0 `i == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F68 22  ]
+[e $ ! || != -> ( _isEmptyList ..  `i -> 0 `i == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F72 23  ]
 "62
 [; ;task.c: 62:         return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 21  ]
-[e :U 22 ]
+[e $UE 22  ]
+[e :U 23 ]
 "63
 [; ;task.c: 63:     task_list[idx].delay_t = 0;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 -> -> -> 0 `i `l `ul ]
@@ -297,7 +299,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul ]
 "65
 [; ;task.c: 65:     task_list[idx].func_ptr = ((void*)0);
-[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F70 ]
+[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F74 ]
 "66
 [; ;task.c: 66:     task_list[idx].data_p = ((void*)0);
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 4 -> -> 0 `i `*v ]
@@ -306,7 +308,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e -- _num_task -> -> 1 `i `uc ]
 "68
 [; ;task.c: 68:     if(idx == head) {
-[e $ ! == -> _idx `i _head 23  ]
+[e $ ! == -> _idx `i _head 24  ]
 {
 "69
 [; ;task.c: 69:         head = task_list[idx].next;
@@ -317,10 +319,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71
 [; ;task.c: 71:     }
 }
-[e $U 24  ]
+[e $U 25  ]
 "72
 [; ;task.c: 72:     else {
-[e :U 23 ]
+[e :U 24 ]
 {
 "73
 [; ;task.c: 73:         char pos = head;
@@ -328,8 +330,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _pos -> _head `uc ]
 "74
 [; ;task.c: 74:         while(task_list[pos].next != 105 && task_list[pos].next != idx) {
-[e $U 25  ]
-[e :U 26 ]
+[e $U 26  ]
+[e :U 27 ]
 {
 "75
 [; ;task.c: 75:             pos = task_list[pos].next;
@@ -337,11 +339,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "76
 [; ;task.c: 76:         }
 }
-[e :U 25 ]
+[e :U 26 ]
 "74
 [; ;task.c: 74:         while(task_list[pos].next != 105 && task_list[pos].next != idx) {
-[e $ && != . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i != . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 -> _idx `i 26  ]
-[e :U 27 ]
+[e $ && != . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i != . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 -> _idx `i 27  ]
+[e :U 28 ]
 "77
 [; ;task.c: 77:         task_list[pos].next = task_list[idx].next;
 [e = . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 ]
@@ -351,14 +353,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79
 [; ;task.c: 79:     }
 }
-[e :U 24 ]
+[e :U 25 ]
 "81
 [; ;task.c: 81:     return 1;
 [e ) -> -> 1 `i `uc ]
-[e $UE 21  ]
+[e $UE 22  ]
 "82
 [; ;task.c: 82: }
-[e :UE 21 ]
+[e :UE 22 ]
 }
 "84
 [; ;task.c: 84: void handleListHead() {
@@ -368,29 +370,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "85
 [; ;task.c: 85:     if(head == 105)
-[e $ ! == _head -> 105 `i 29  ]
+[e $ ! == _head -> 105 `i 30  ]
 "86
 [; ;task.c: 86:         return;
-[e $UE 28  ]
-[e :U 29 ]
+[e $UE 29  ]
+[e :U 30 ]
 "87
 [; ;task.c: 87:     while(task_list[head].delay_t == 0) {
-[e $U 30  ]
-[e :U 31 ]
+[e $U 31  ]
+[e :U 32 ]
 {
 "88
 [; ;task.c: 88:         int pos = head;
 [v _pos `i ~T0 @X0 1 a ]
 [e = _pos _head ]
 "89
-[; ;task.c: 89:         enqueue(task_list[pos].func_ptr);
-[e ( _enqueue (1 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 2 ]
+[; ;task.c: 89:         enqueue(task_list[pos].func_ptr, task_list[pos].data_p);
+[e ( _enqueue (2 , . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 2 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 4 ]
 "90
 [; ;task.c: 90:         head = task_list[pos].next;
 [e = _head . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 ]
 "91
 [; ;task.c: 91:         if(task_list[pos].period_t == 0) {
-[e $ ! == . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul 33  ]
+[e $ ! == . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul 34  ]
 {
 "92
 [; ;task.c: 92:             removeTask(pos);
@@ -398,17 +400,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "93
 [; ;task.c: 93:         }
 }
-[e $U 34  ]
+[e $U 35  ]
 "94
 [; ;task.c: 94:         else {
-[e :U 33 ]
+[e :U 34 ]
 {
 "95
 [; ;task.c: 95:             task_list[pos].delay_t = task_list[pos].period_t;
 [e = . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 1 ]
 "96
 [; ;task.c: 96:             if(head == 105 || (head != 105 && task_list[head].delay_t > task_list[pos].delay_t)) {
-[e $ ! || == _head -> 105 `i && != _head -> 105 `i > . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 35  ]
+[e $ ! || == _head -> 105 `i && != _head -> 105 `i > . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 36  ]
 {
 "97
 [; ;task.c: 97:                 task_list[pos].next = head;
@@ -419,8 +421,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99
 [; ;task.c: 99:             } else {
 }
-[e $U 36  ]
-[e :U 35 ]
+[e $U 37  ]
+[e :U 36 ]
 {
 "100
 [; ;task.c: 100:                 task_list[pos].delay_t = task_list[pos].delay_t - task_list[head].delay_t;
@@ -435,8 +437,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _prev _head ]
 "103
 [; ;task.c: 103:                 while(cur != 105 && task_list[cur].delay_t <= task_list[pos].delay_t) {
-[e $U 37  ]
-[e :U 38 ]
+[e $U 38  ]
+[e :U 39 ]
 {
 "104
 [; ;task.c: 104:                     task_list[pos].delay_t -= task_list[cur].delay_t;
@@ -450,11 +452,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "107
 [; ;task.c: 107:                 }
 }
-[e :U 37 ]
+[e :U 38 ]
 "103
 [; ;task.c: 103:                 while(cur != 105 && task_list[cur].delay_t <= task_list[pos].delay_t) {
-[e $ && != _cur -> 105 `i <= . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 38  ]
-[e :U 39 ]
+[e $ && != _cur -> 105 `i <= . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 39  ]
+[e :U 40 ]
 "108
 [; ;task.c: 108:                 task_list[prev].next = pos;
 [e = . *U + &U _task_list * -> -> _prev `ui `ux -> -> # *U &U _task_list `ui `ux 3 _pos ]
@@ -464,32 +466,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 "110
 [; ;task.c: 110:             }
 }
-[e :U 36 ]
+[e :U 37 ]
 "111
 [; ;task.c: 111:             if(task_list[pos].next != 105)
-[e $ ! != . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i 40  ]
+[e $ ! != . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i 41  ]
 "112
 [; ;task.c: 112:                 task_list[task_list[pos].next].delay_t -= task_list[pos].delay_t;
 [e =- . *U + &U _task_list * -> -> . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
-[e :U 40 ]
+[e :U 41 ]
 "113
 [; ;task.c: 113:         }
 }
-[e :U 34 ]
+[e :U 35 ]
 "114
 [; ;task.c: 114:     }
 }
-[e :U 30 ]
+[e :U 31 ]
 "87
 [; ;task.c: 87:     while(task_list[head].delay_t == 0) {
-[e $ == . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 -> -> -> 0 `i `l `ul 31  ]
-[e :U 32 ]
+[e $ == . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 -> -> -> 0 `i `l `ul 32  ]
+[e :U 33 ]
 "115
 [; ;task.c: 115:     task_list[head].delay_t-= 10;
 [e =- . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 -> -> -> 10 `i `l `ul ]
 "116
 [; ;task.c: 116: }
-[e :UE 28 ]
+[e :UE 29 ]
 }
 "118
 [; ;task.c: 118: void selectReadyTask() {
@@ -499,29 +501,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "119
 [; ;task.c: 119:     while(!isEmptyQueue()) {
-[e $U 42  ]
-[e :U 43 ]
+[e $U 43  ]
+[e :U 44 ]
 {
 "120
-[; ;task.c: 120:         FUNCTION_PTR ptr = dequeue();
-[v _ptr `*F80 ~T0 @X0 1 a ]
-[e = _ptr ( _dequeue ..  ]
+[; ;task.c: 120:         queue_node node = dequeue();
+[v _node `S2 ~T0 @X0 1 a ]
+[e = _node ( _dequeue ..  ]
 "121
-[; ;task.c: 121:         if( ptr != ((void*)0))
-[e $ ! != _ptr -> -> -> 0 `i `*v `*F83 45  ]
+[; ;task.c: 121:         if(node.func_ptr != ((void*)0))
+[e $ ! != . _node 0 -> -> -> 0 `i `*v `*F85 46  ]
 "122
-[; ;task.c: 122:             (ptr)();
-[e ( *U _ptr ..  ]
-[e :U 45 ]
+[; ;task.c: 122:             (node.func_ptr)(node.data_p);
+[e ( *U . _node 0 . _node 1 ]
+[e :U 46 ]
 "123
 [; ;task.c: 123:     }
 }
-[e :U 42 ]
+[e :U 43 ]
 "119
 [; ;task.c: 119:     while(!isEmptyQueue()) {
-[e $ ! != -> ( _isEmptyQueue ..  `i -> 0 `i 43  ]
-[e :U 44 ]
+[e $ ! != -> ( _isEmptyQueue ..  `i -> 0 `i 44  ]
+[e :U 45 ]
 "124
 [; ;task.c: 124: }
-[e :UE 41 ]
+[e :UE 42 ]
 }

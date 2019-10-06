@@ -7787,17 +7787,21 @@ typedef struct {
     void* data_p;
 } task_struct;
 
+typedef struct {
+    FUNCTION_PTR func_ptr;
+    void* data_p;
+} queue_node;
 char value = 0;
 # 11 "./task.h" 2
 
 # 1 "./ready_queue.h" 1
 # 13 "./ready_queue.h"
-FUNCTION_PTR ready_queue[20];
+queue_node ready_queue[20];
 int front = -1;
 int rear = -1;
 
-char enqueue(FUNCTION_PTR ptr);
-FUNCTION_PTR dequeue();
+char enqueue(FUNCTION_PTR ptr, void* data);
+queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
 # 12 "./task.h" 2

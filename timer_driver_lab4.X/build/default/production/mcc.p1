@@ -1,7 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F4558 `(v ~T0 @X0 0 t? ]
+"29 ./config.h
+[; ;./config.h: 29: typedef struct {
+[s S502 `*F4558 1 `*v 1 ]
+[n S502 . func_ptr data_p ]
 [v F4552 `(v ~T0 @X0 0 t? ]
-"21 ./config.h
+"21
 [; ;./config.h: 21: typedef struct {
 [s S501 `ul 1 `ul 1 `*F4552 1 `i 1 `*v 1 ]
 [n S501 . delay_t period_t func_ptr next data_p ]
@@ -639,15 +643,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"29 ./config.h
-[; ;./config.h: 29: char value = 0;
+"33 ./config.h
+[; ;./config.h: 33: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
 "13 ./ready_queue.h
-[; ;./ready_queue.h: 13: FUNCTION_PTR ready_queue[20];
-[v _ready_queue `*F4558 ~T0 @X0 -> 20 `i e ]
+[; ;./ready_queue.h: 13: queue_node ready_queue[20];
+[v _ready_queue `S502 ~T0 @X0 -> 20 `i e ]
 "14
 [; ;./ready_queue.h: 14: int front = -1;
 [v _front `i ~T0 @X0 1 e ]
@@ -683,7 +687,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _OSCCON -> -> 112 `i `uc ]
 "5
 [; ;mcc.c: 5: }
-[e :UE 502 ]
+[e :UE 503 ]
 }
 "7
 [; ;mcc.c: 7: void pin_initialize(void) {
@@ -708,7 +712,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _TRISD -> -> 0 `i `uc ]
 "15
 [; ;mcc.c: 15: }
-[e :UE 503 ]
+[e :UE 504 ]
 }
 "17
 [; ;mcc.c: 17: void interrupt_initialize(void) {
@@ -724,7 +728,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "20
 [; ;mcc.c: 20: }
-[e :UE 504 ]
+[e :UE 505 ]
 }
 "22
 [; ;mcc.c: 22: void system_initialize(void) {
@@ -749,5 +753,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _start_timer (1 -> -> 1 `i `uc ]
 "28
 [; ;mcc.c: 28: }
-[e :UE 505 ]
+[e :UE 506 ]
 }

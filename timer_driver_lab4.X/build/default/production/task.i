@@ -23,17 +23,21 @@ typedef struct {
     void* data_p;
 } task_struct;
 
+typedef struct {
+    FUNCTION_PTR func_ptr;
+    void* data_p;
+} queue_node;
 char value = 0;
 # 11 "./task.h" 2
 
 # 1 "./ready_queue.h" 1
 # 13 "./ready_queue.h"
-FUNCTION_PTR ready_queue[20];
+queue_node ready_queue[20];
 int front = -1;
 int rear = -1;
 
-char enqueue(FUNCTION_PTR ptr);
-FUNCTION_PTR dequeue();
+char enqueue(FUNCTION_PTR ptr, void* data);
+queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
 # 12 "./task.h" 2
@@ -138,7 +142,7 @@ void handleListHead() {
         return;
     while(task_list[head].delay_t == 0) {
         int pos = head;
-        enqueue(task_list[pos].func_ptr);
+        enqueue(task_list[pos].func_ptr, task_list[pos].data_p);
         head = task_list[pos].next;
         if(task_list[pos].period_t == 0) {
             removeTask(pos);
@@ -169,8 +173,8 @@ void handleListHead() {
 
 void selectReadyTask() {
     while(!isEmptyQueue()) {
-        FUNCTION_PTR ptr = dequeue();
-        if( ptr != ((void*)0))
-            (ptr)();
+        queue_node node = dequeue();
+        if(node.func_ptr != ((void*)0))
+            (node.func_ptr)(node.data_p);
     }
 }

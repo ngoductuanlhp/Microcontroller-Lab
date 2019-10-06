@@ -1,18 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F16 `(v ~T0 @X0 0 t? ]
-[v F31 `(v ~T0 @X0 0 t? ]
-[v F33 `(v ~T0 @X0 0 t? ]
-[v F39 `(v ~T0 @X0 0 t? ]
-[v F40 `(v ~T0 @X0 0 t? ]
 "29 ./config.h
-[; ;./config.h: 29: char value = 0;
+[; ;./config.h: 29: typedef struct {
+[s S2 `*F16 1 `*v 1 ]
+[n S2 . func_ptr data_p ]
+[v F35 `(v ~T0 @X0 0 t? ]
+[v F37 `(v ~T0 @X0 0 t? ]
+[v F44 `(v ~T0 @X0 0 t? ]
+"33 ./config.h
+[; ;./config.h: 33: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
 "13 ./ready_queue.h
-[; ;./ready_queue.h: 13: FUNCTION_PTR ready_queue[20];
-[v _ready_queue `*F16 ~T0 @X0 -> 20 `i e ]
+[; ;./ready_queue.h: 13: queue_node ready_queue[20];
+[v _ready_queue `S2 ~T0 @X0 -> 20 `i e ]
 "14
 [; ;./ready_queue.h: 14: int front = -1;
 [v _front `i ~T0 @X0 1 e ]
@@ -34,10 +37,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4
 [; ;ready_queue.c: 4:     return (rear - front + 1 + 20) % 20;
 [e ) -> % + + - _rear _front -> 1 `i -> 20 `i -> 20 `i `uc ]
-[e $UE 2  ]
+[e $UE 3  ]
 "5
 [; ;ready_queue.c: 5: }
-[e :UE 2 ]
+[e :UE 3 ]
 }
 "7
 [; ;ready_queue.c: 7: char isFullQueue() {
@@ -48,10 +51,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8
 [; ;ready_queue.c: 8:     return getSizeQueue() >= 20 ? 1 : 0;
 [e ) -> ? >= -> ( _getSizeQueue ..  `i -> 20 `i : -> 1 `i -> 0 `i `uc ]
-[e $UE 3  ]
+[e $UE 4  ]
 "9
 [; ;ready_queue.c: 9: }
-[e :UE 3 ]
+[e :UE 4 ]
 }
 "11
 [; ;ready_queue.c: 11: char isEmptyQueue() {
@@ -61,82 +64,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "12
 [; ;ready_queue.c: 12:     if(front == -1)
-[e $ ! == _front -U -> 1 `i 5  ]
+[e $ ! == _front -U -> 1 `i 6  ]
 "13
 [; ;ready_queue.c: 13:         return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 4  ]
-[e :U 5 ]
+[e $UE 5  ]
+[e :U 6 ]
 "14
 [; ;ready_queue.c: 14:     return getSizeQueue() == 0 ? 1 : 0;
 [e ) -> ? == -> ( _getSizeQueue ..  `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
-[e $UE 4  ]
+[e $UE 5  ]
 "15
 [; ;ready_queue.c: 15: }
-[e :UE 4 ]
+[e :UE 5 ]
 }
 "17
-[; ;ready_queue.c: 17: char enqueue(FUNCTION_PTR ptr) {
-[v _enqueue `(uc ~T0 @X0 1 ef1`*F31 ]
+[; ;ready_queue.c: 17: char enqueue(FUNCTION_PTR ptr, void* data) {
+[v _enqueue `(uc ~T0 @X0 1 ef2`*F35`*v ]
 {
 [e :U _enqueue ]
-[v _ptr `*F33 ~T0 @X0 1 r1 ]
+[v _ptr `*F37 ~T0 @X0 1 r1 ]
+[v _data `*v ~T0 @X0 1 r2 ]
 [f ]
 "18
 [; ;ready_queue.c: 18:     if(isFullQueue())
-[e $ ! != -> ( _isFullQueue ..  `i -> 0 `i 7  ]
+[e $ ! != -> ( _isFullQueue ..  `i -> 0 `i 8  ]
 "19
 [; ;ready_queue.c: 19:         return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 6  ]
-[e :U 7 ]
+[e $UE 7  ]
+[e :U 8 ]
 "20
 [; ;ready_queue.c: 20:     if(front == -1)
-[e $ ! == _front -U -> 1 `i 8  ]
+[e $ ! == _front -U -> 1 `i 9  ]
 "21
 [; ;ready_queue.c: 21:         front = 0;
 [e = _front -> 0 `i ]
-[e :U 8 ]
+[e :U 9 ]
 "22
 [; ;ready_queue.c: 22:     rear = (rear + 1) % 20;
 [e = _rear % + _rear -> 1 `i -> 20 `i ]
 "23
-[; ;ready_queue.c: 23:     ready_queue[rear] = ptr;
-[e = *U + &U _ready_queue * -> -> _rear `ui `ux -> -> # *U &U _ready_queue `ui `ux _ptr ]
+[; ;ready_queue.c: 23:     ready_queue[rear].func_ptr = ptr;
+[e = . *U + &U _ready_queue * -> -> _rear `ui `ux -> -> # *U &U _ready_queue `ui `ux 0 _ptr ]
 "24
-[; ;ready_queue.c: 24:     return 1;
-[e ) -> -> 1 `i `uc ]
-[e $UE 6  ]
+[; ;ready_queue.c: 24:     ready_queue[rear].data_p = data;
+[e = . *U + &U _ready_queue * -> -> _rear `ui `ux -> -> # *U &U _ready_queue `ui `ux 1 _data ]
 "25
-[; ;ready_queue.c: 25: }
-[e :UE 6 ]
+[; ;ready_queue.c: 25:     return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 7  ]
+"26
+[; ;ready_queue.c: 26: }
+[e :UE 7 ]
 }
-"27
-[; ;ready_queue.c: 27: FUNCTION_PTR dequeue() {
-[v _dequeue `(*F39 ~T0 @X0 1 ef ]
+"28
+[; ;ready_queue.c: 28: queue_node dequeue() {
+[v _dequeue `(S2 ~T0 @X0 1 ef ]
 {
 [e :U _dequeue ]
 [f ]
-"28
-[; ;ready_queue.c: 28:     if(isEmptyQueue())
-[e $ ! != -> ( _isEmptyQueue ..  `i -> 0 `i 10  ]
 "29
-[; ;ready_queue.c: 29:         return ((void*)0);
-[e ) -> -> -> 0 `i `*v `*F40 ]
-[e $UE 9  ]
-[e :U 10 ]
+[; ;ready_queue.c: 29:     queue_node temp;
+[v _temp `S2 ~T0 @X0 1 a ]
 "30
-[; ;ready_queue.c: 30:     int idx = front;
+[; ;ready_queue.c: 30:     temp.func_ptr = ((void*)0);
+[e = . _temp 0 -> -> -> 0 `i `*v `*F44 ]
+"31
+[; ;ready_queue.c: 31:     temp.data_p = ((void*)0);
+[e = . _temp 1 -> -> 0 `i `*v ]
+"32
+[; ;ready_queue.c: 32:     if(isEmptyQueue())
+[e $ ! != -> ( _isEmptyQueue ..  `i -> 0 `i 11  ]
+"33
+[; ;ready_queue.c: 33:         return temp;
+[e ) _temp ]
+[e $UE 10  ]
+[e :U 11 ]
+"34
+[; ;ready_queue.c: 34:     int idx = front;
 [v _idx `i ~T0 @X0 1 a ]
 [e = _idx _front ]
-"31
-[; ;ready_queue.c: 31:     front = (front + 1) % 20;
+"35
+[; ;ready_queue.c: 35:     front = (front + 1) % 20;
 [e = _front % + _front -> 1 `i -> 20 `i ]
-"32
-[; ;ready_queue.c: 32:     return ready_queue[idx];
-[e ) *U + &U _ready_queue * -> -> _idx `ui `ux -> -> # *U &U _ready_queue `ui `ux ]
-[e $UE 9  ]
-"33
-[; ;ready_queue.c: 33: }
-[e :UE 9 ]
+"36
+[; ;ready_queue.c: 36:     temp = ready_queue[idx];
+[e = _temp *U + &U _ready_queue * -> -> _idx `ui `ux -> -> # *U &U _ready_queue `ui `ux ]
+"37
+[; ;ready_queue.c: 37:     return temp;
+[e ) _temp ]
+[e $UE 10  ]
+"38
+[; ;ready_queue.c: 38: }
+[e :UE 10 ]
 }
