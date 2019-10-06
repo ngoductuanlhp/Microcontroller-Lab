@@ -12,6 +12,8 @@
 #define NULL_VAL 105
 #define ERROR_VAL 109
 
+#define _XTAL_FREQ  8000000
+
 #define INTERRUPT_INTERVAL 10
 
 typedef char tBYTE;

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\timer_driver_lab4.X.production.sym \
   --cmf=dist/default/production\timer_driver_lab4.X.production.cmf -z \
-  -Q18F8722 -oC:\Users\Tuan\AppData\Local\Temp\s38k.2 \
+  -Q18F8722 -oC:\Users\Tuan\AppData\Local\Temp\s3d8.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/timer_driver_lab4.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0290h-0F5Fh -pstack=STACK -ACODE=00h-01FFFFh \
@@ -27,7 +27,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Tuan\AppData\Local\Temp\s38k.o \
+  C:\Users\Tuan\AppData\Local\Temp\s3d8.o \
   dist/default/production\timer_driver_lab4.X.production.o 
 
 Object code version is 3.11
@@ -40,7 +40,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Tuan\AppData\Local\Temp\s38k.o
+C:\Users\Tuan\AppData\Local\Temp\s3d8.o
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -249,10 +249,13 @@ UNUSED ADDRESS RANGES
 _ADCON1                        (abs)        000FC1
 _INTCONbits                    (abs)        000FF2
 _LATA                          (abs)        000F89
+_LATAbits                      (abs)        000F89
 _LATB                          (abs)        000F8A
 _LATC                          (abs)        000F8B
+_LATCbits                      (abs)        000F8B
 _LATD                          (abs)        000F8C
 _LATDbits                      (abs)        000F8C
+_LATFbits                      (abs)        000F8E
 _LED_state                     bssCOMRAM    00002E
 _OSCCON                        (abs)        000FD3
 _PIE1bits                      (abs)        000F9D
@@ -267,9 +270,12 @@ _TMR0L                         (abs)        000FD6
 _TMR1H                         (abs)        000FCF
 _TMR1L                         (abs)        000FCE
 _TRISA                         (abs)        000F92
+_TRISAbits                     (abs)        000F92
 _TRISB                         (abs)        000F93
 _TRISC                         (abs)        000F94
+_TRISCbits                     (abs)        000F94
 _TRISD                         (abs)        000F95
+_TRISFbits                     (abs)        000F97
 __CFG_BOREN$OFF                (abs)        000000
 __CFG_FCMEN$OFF                (abs)        000000
 __CFG_IESO$OFF                 (abs)        000000
@@ -616,9 +622,9 @@ _firstReadRB0                  dataCOMRAM   000055
 _front                         dataCOMRAM   000052
 _getSizeQueue                  text15       00159C
 _handleListHead                text20       000012
-_handleListHead$1389           cstackCOMRAM 00001B
-_handleListHead$1390           cstackCOMRAM 00001E
-_handleListHead$1391           cstackCOMRAM 000020
+_handleListHead$1754           cstackCOMRAM 00001B
+_handleListHead$1755           cstackCOMRAM 00001E
+_handleListHead$1756           cstackCOMRAM 000020
 _head                          bssBANK0     000095
 _initializeTaskList            text3        000EDE
 _interrupt_initialize          text7        0016D8

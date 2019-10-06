@@ -73,12 +73,6 @@ void blink_LED(void* data) {
 
 void main(void) {
     system_initialize();
-//    int idx0 = register_timer(1000, 0, blink_LED0, ((void*)0));
-//    int idx1 = register_timer(1000, 200, blink_LED1, ((void*)0));
-//    int idx2 = register_timer(3000, 400, blink_LED2, ((void*)0));
-//    int idx3 = register_timer(9000, 400, blink_LED3, ((void*)0));
-//    int idx4 = register_timer(15000, 200, blink_LED4, ((void*)0));
-//    int idx5 = register_timer(100, 10000, blink_LED5, ((void*)0));
     char idx0 = register_timer(1000, 0, blink_LED, 0);
     char idx1 = register_timer(1000, 200, blink_LED, 1);
     char idx2 = register_timer(3000, 400, blink_LED, 2);

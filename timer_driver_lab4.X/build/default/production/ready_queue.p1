@@ -1,27 +1,27 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F16 `(v ~T0 @X0 0 t? ]
-"29 ./config.h
-[; ;./config.h: 29: typedef struct {
+"31 ./config.h
+[; ;./config.h: 31: typedef struct {
 [s S2 `*F16 1 `*v 1 ]
 [n S2 . func_ptr data_p ]
 [v F37 `(v ~T0 @X0 0 t? ]
 [v F43 `(v ~T0 @X0 0 t? ]
 [v F45 `(v ~T0 @X0 0 t? ]
 [v F52 `(v ~T0 @X0 0 t? ]
-"34 ./config.h
-[; ;./config.h: 34: char value = 0;
+"36 ./config.h
+[; ;./config.h: 36: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"36
-[; ;./config.h: 36: char RA5_pressed = 0;
+"38
+[; ;./config.h: 38: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"37
-[; ;./config.h: 37: char RB0_pressed = 0;
+"39
+[; ;./config.h: 39: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc

@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F16 `(v ~T0 @X0 0 t? ]
-"29 ./config.h
-[; ;./config.h: 29: typedef struct {
+"31 ./config.h
+[; ;./config.h: 31: typedef struct {
 [s S2 `*F16 1 `*v 1 ]
 [n S2 . func_ptr data_p ]
 [v F10 `(v ~T0 @X0 0 t? ]
-"21
-[; ;./config.h: 21: typedef struct {
+"23
+[; ;./config.h: 23: typedef struct {
 [s S1 `ul 1 `ul 1 `*F10 1 `i 1 `*v 1 ]
 [n S1 . delay_t period_t func_ptr next data_p ]
 "17 ./ready_queue.h
@@ -29,20 +29,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./ready_queue.h: 20: char isEmptyQueue();
 [v _isEmptyQueue `(uc ~T0 @X0 0 e? ]
-"34 ./config.h
-[; ;./config.h: 34: char value = 0;
+"36 ./config.h
+[; ;./config.h: 36: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"36
-[; ;./config.h: 36: char RA5_pressed = 0;
+"38
+[; ;./config.h: 38: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"37
-[; ;./config.h: 37: char RB0_pressed = 0;
+"39
+[; ;./config.h: 39: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc

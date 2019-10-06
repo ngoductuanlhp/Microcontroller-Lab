@@ -10,7 +10,7 @@
 # 1 "./ready_queue.h" 1
 # 11 "./ready_queue.h"
 # 1 "./config.h" 1
-# 17 "./config.h"
+# 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)();
@@ -32,8 +32,7 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
-# 11 "./ready_queue.h" 2
-
+# 12 "./ready_queue.h" 2
 
 queue_node ready_queue[20];
 int front = -1;
@@ -44,8 +43,7 @@ char enqueue(FUNCTION_PTR ptr, void* data);
 queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
-# 1 "ready_queue.c" 2
-
+# 2 "ready_queue.c" 2
 
 void queueInitialize(void) {
     for(int i = 0; i< 20; i++) {

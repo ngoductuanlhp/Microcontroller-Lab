@@ -1,4 +1,4 @@
-# 1 "buttons.c"
+# 1 "lcd.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,33 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "buttons.c" 2
-# 1 "./buttons.h" 1
-# 11 "./buttons.h"
-# 1 "./config.h" 1
-# 19 "./config.h"
-typedef char tBYTE;
-typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)();
+# 1 "lcd.c" 2
+# 36 "lcd.c"
+# 1 "./lcd.h" 1
 
-typedef struct {
-    tWORD delay_t;
-    tWORD period_t;
-    FUNCTION_PTR func_ptr;
-    int next;
-    void* data_p;
-} task_struct;
 
-typedef struct {
-    FUNCTION_PTR func_ptr;
-    void* data_p;
-} queue_node;
 
-char value = 0;
-
-char RA5_pressed = 0;
-char RB0_pressed = 0;
-# 12 "./buttons.h" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -7791,73 +7770,168 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 13 "./buttons.h" 2
+# 4 "./lcd.h" 2
 
-int readButtonRA5();
-int readButtonRB0();
-void handleButton();
-# 2 "buttons.c" 2
+# 1 "./config.h" 1
+# 19 "./config.h"
+typedef char tBYTE;
+typedef unsigned long int tWORD;
+typedef void (*FUNCTION_PTR)();
 
+typedef struct {
+    tWORD delay_t;
+    tWORD period_t;
+    FUNCTION_PTR func_ptr;
+    int next;
+    void* data_p;
+} task_struct;
 
+typedef struct {
+    FUNCTION_PTR func_ptr;
+    void* data_p;
+} queue_node;
 
+char value = 0;
 
-tBYTE firstReadRA5 = 1;
-tBYTE secondReadRA5 = 1;
-tBYTE firstReadRB0 = 1;
-tBYTE secondReadRB0 = 1;
+char RA5_pressed = 0;
+char RB0_pressed = 0;
+# 5 "./lcd.h" 2
+# 58 "./lcd.h"
+    void LCDInit(void);
+# 67 "./lcd.h"
+    void InitBBSPI (void);
+# 76 "./lcd.h"
+    void SendByteBBSPI (unsigned char output);
+# 85 "./lcd.h"
+    void Port_BBSPIInit (unsigned char port_dir);
+# 95 "./lcd.h"
+    void WritePort_BBSPI (unsigned char port_add, unsigned char a);
+# 104 "./lcd.h"
+    void LCDPutChar(unsigned char);
+# 113 "./lcd.h"
+    void LCDPutInst(unsigned char);
+# 122 "./lcd.h"
+    void LCDPutStr(const char *);
 
-tBYTE stateRA5 = 0;
-tWORD countRA5 = 0;
-tWORD countRA5_1 = 0;
+    void LCDMoveCursor(unsigned char line, unsigned char pos);
 
-tBYTE stateRB0 = 0;
-tWORD countRB0 = 0;
-tWORD countRB0_1 = 0;
+    void LCDPrint(unsigned char line, unsigned char pos, const char *ptr);
+# 36 "lcd.c" 2
+# 45 "lcd.c"
+void LCDInit (void)
+{
+    InitBBSPI();
+    TRISFbits.TRISF6 = 0;
+    LATFbits.LATF6 = 0;
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    LATFbits.LATF6 = 1;
+    Port_BBSPIInit (0x00);
+    Port_BBSPIInit (0x01);
+    WritePort_BBSPI (0x12, 0);
+    _delay((unsigned long)((15)*(8000000/4000.0)));
+    LCDPutInst(0x32);
+    LCDPutInst(0x3C);
+    LCDPutInst(0x0C);
+    LCDPutInst(0x01);
+    LCDPutInst(0x06);
+}
+# 70 "lcd.c"
+void InitBBSPI (void)
+{
+    TRISAbits.TRISA2 = 0;
+    TRISCbits.TRISC4 = 1;
+    TRISCbits.TRISC5 = 0;
+    TRISCbits.TRISC3 = 0;
 
+    LATAbits.LATA2 = 1;
+    LATCbits.LATC4 = 1;
+    LATCbits.LATC5 = 0;
+    LATCbits.LATC3 = 0;
+}
+# 91 "lcd.c"
+void SendByteBBSPI (unsigned char output)
+{
+    unsigned char bitcount;
+    unsigned char input = output;
 
-int readButtonRA5() {
-    firstReadRA5 = secondReadRA5;
-    secondReadRA5 = PORTAbits.RA5;
-    if(secondReadRA5 == firstReadRA5) {
-        return (secondReadRA5 == 0) ? 2 : 1;
+    for(bitcount=0;bitcount<8;bitcount++)
+    {
+
+        if(output & 0x80)
+            LATCbits.LATC5 = 1;
+        else
+            LATCbits.LATC5 = 0;
+
+        if (LATCbits.LATC4)
+            input = (input << 1) | 0x1;
+        else
+            input = input << 1;
+        LATCbits.LATC3 = 1;
+        __nop();__nop();__nop();__nop();__nop();__nop();
+
+        LATCbits.LATC3 = 0;
+        output <<= 1;
     }
-    return 0;
+}
+# 123 "lcd.c"
+void Port_BBSPIInit (unsigned char port_dir)
+{
+
+
+
+    LATAbits.LATA2 = 0;
+    SendByteBBSPI(0x40);
+    SendByteBBSPI(port_dir);
+    SendByteBBSPI(0x00);
+    LATAbits.LATA2 = 1;
+}
+# 144 "lcd.c"
+void WritePort_BBSPI (unsigned char port_add, unsigned char a)
+{
+    LATAbits.LATA2 = 0;
+    SendByteBBSPI(0x40);
+    SendByteBBSPI(port_add);
+    SendByteBBSPI(a);
+    LATAbits.LATA2 = 1;
+}
+# 172 "lcd.c"
+void LCDPutChar (unsigned char ch)
+{
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x12, 0x80);
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x13, ch);
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x12, 0xC0);
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x12, 0x00);
+}
+# 203 "lcd.c"
+void LCDPutInst (unsigned char ch)
+{
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x12, 0x00);
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x13, ch);
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x12,0x40);
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    WritePort_BBSPI (0x12, 0x00);
+}
+# 222 "lcd.c"
+void LCDPutStr (const char *ptr)
+{
+    while(*ptr) LCDPutChar(*(ptr++));
 }
 
-int readButtonRB0() {
-    firstReadRB0 = secondReadRB0;
-    secondReadRB0 = PORTBbits.RB0;
-    if(secondReadRB0 == firstReadRB0) {
-        return (secondReadRB0 == 0) ? 2 : 1;
-    }
-    return 0;
+void LCDMoveCursor(unsigned char line, unsigned char pos) {
+    unsigned char position = (line == 0) ? (128 + pos) : (192 + pos);
+    LCDPutInst(position);
 }
 
-void handleButton() {
-    int checkRA5 = readButtonRA5();
-    int checkRB0 = readButtonRB0();
-    switch(stateRA5) {
-        case 0:
-            if(checkRA5 == 2) {
-                stateRA5 = 1;
-                RA5_pressed = 1;
-            }
-            break;
-        case 1:
-            if(checkRA5 == 1)
-                stateRA5 = 0;
-            break;
-    }
-    switch(stateRB0) {
-        case 0:
-            if(checkRB0 == 2) {
-                stateRB0 = 1;
-                RB0_pressed = 1;
-            }
-            break;
-        case 1:
-            if(checkRB0 == 1)
-                stateRB0 = 0;
-            break;
-    }
+void LCDPrint(unsigned char line, unsigned char pos, const char *ptr) {
+    if(line <0 || line > 2 || pos < 0 || pos > 15)
+        return;
+    LCDMoveCursor(line, pos);
+    LCDPutStr(ptr);
 }

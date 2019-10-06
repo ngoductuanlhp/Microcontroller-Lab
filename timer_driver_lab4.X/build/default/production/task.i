@@ -10,7 +10,7 @@
 # 1 "./task.h" 1
 # 11 "./task.h"
 # 1 "./config.h" 1
-# 17 "./config.h"
+# 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)();
@@ -32,8 +32,7 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
-# 11 "./task.h" 2
-
+# 12 "./task.h" 2
 # 1 "./ready_queue.h" 1
 # 13 "./ready_queue.h"
 queue_node ready_queue[20];
@@ -45,8 +44,7 @@ char enqueue(FUNCTION_PTR ptr, void* data);
 queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
-# 12 "./task.h" 2
-
+# 13 "./task.h" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -7805,7 +7803,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 13 "./task.h" 2
+# 14 "./task.h" 2
 # 23 "./task.h"
 task_struct task_list[20];
 char num_task;
@@ -7818,8 +7816,7 @@ char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data);
 char removeTask(char idx);
 void handleListHead();
 void selectReadyTask();
-# 1 "task.c" 2
-
+# 2 "task.c" 2
 
 char isEmptyList() {
     return num_task == 0 ? 1 : 0;

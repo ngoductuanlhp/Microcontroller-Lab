@@ -10,6 +10,7 @@
       <itemPath>task.h</itemPath>
       <itemPath>clock.h</itemPath>
       <itemPath>buttons.h</itemPath>
+      <itemPath>lcd.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +25,7 @@
       <itemPath>task.c</itemPath>
       <itemPath>clock.c</itemPath>
       <itemPath>buttons.c</itemPath>
+      <itemPath>lcd.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

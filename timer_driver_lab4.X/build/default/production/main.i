@@ -7787,14 +7787,13 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 11 "./mcc.h" 2
-
+# 12 "./mcc.h" 2
 # 1 "./clock.h" 1
 # 12 "./clock.h"
 # 1 "./task.h" 1
 # 11 "./task.h"
 # 1 "./config.h" 1
-# 17 "./config.h"
+# 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)();
@@ -7816,8 +7815,7 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
-# 11 "./task.h" 2
-
+# 12 "./task.h" 2
 # 1 "./ready_queue.h" 1
 # 13 "./ready_queue.h"
 queue_node ready_queue[20];
@@ -7829,7 +7827,7 @@ char enqueue(FUNCTION_PTR ptr, void* data);
 queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
-# 12 "./task.h" 2
+# 13 "./task.h" 2
 # 23 "./task.h"
 task_struct task_list[20];
 char num_task;
@@ -7842,8 +7840,7 @@ char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data);
 char removeTask(char idx);
 void handleListHead();
 void selectReadyTask();
-# 12 "./clock.h" 2
-
+# 13 "./clock.h" 2
 
 
 
@@ -7857,12 +7854,10 @@ int remove_timer(char id);
 int stop_timer(void);
 int timer_ISR();
 void dispatch(void);
-# 12 "./mcc.h" 2
-
+# 13 "./mcc.h" 2
 
 void system_initialize(void);
-# 20 "main.c" 2
-
+# 21 "main.c" 2
 
 int LED_state[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 

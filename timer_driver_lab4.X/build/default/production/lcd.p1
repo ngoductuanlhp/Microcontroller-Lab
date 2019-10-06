@@ -1,80 +1,113 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"2649 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2649:     struct {
-[s S120 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S120 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"2659
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2659:     struct {
-[s S121 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S121 . . VREFM VREFP T0CKI LVDIN ]
-"2666
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2666:     struct {
-[s S122 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S122 . AN0 AN1 AN2 AN3 . AN4 ]
-"2674
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2674:     struct {
-[s S123 :5 `uc 1 :1 `uc 1 ]
-[n S123 . . HLVDIN ]
-"2678
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2678:     struct {
-[s S124 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S124 . ULPWUIN . RJPU ]
-"2648
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2648: typedef union {
-[u S119 `S120 1 `S121 1 `S122 1 `S123 1 `S124 1 ]
-[n S119 . . . . . . ]
-"2684
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2684: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS119 ~T0 @X0 0 e@3968 ]
-"2795
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2795:     struct {
-[s S126 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S126 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"2805
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2805:     struct {
-[s S127 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S127 . INT0 INT1 INT2 INT3 KBI0 KBI1 KBI2 KBI3 ]
-"2815
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2815:     struct {
-[s S128 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S128 . FLT0 . ECCP2 ]
-"2820
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2820:     struct {
-[s S129 :3 `uc 1 :1 `uc 1 ]
-[n S129 . . CCP2 ]
-"2824
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2824:     struct {
-[s S130 :3 `uc 1 :1 `uc 1 ]
-[n S130 . . P2A ]
-"2828
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2828:     struct {
-[s S131 :3 `uc 1 :1 `uc 1 ]
-[n S131 . . CCP2_PA2 ]
-"2794
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2794: typedef union {
-[u S125 `S126 1 `S127 1 `S128 1 `S129 1 `S130 1 `S131 1 ]
-[n S125 . . . . . . . ]
-"2833
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2833: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS125 ~T0 @X0 0 e@3969 ]
-"36 ./config.h
-[; ;./config.h: 36: char value = 0;
-[v _value `uc ~T0 @X0 1 e ]
-[i _value
--> -> 0 `i `uc
-]
-"38
-[; ;./config.h: 38: char RA5_pressed = 0;
-[v _RA5_pressed `uc ~T0 @X0 1 e ]
-[i _RA5_pressed
--> -> 0 `i `uc
-]
-"39
-[; ;./config.h: 39: char RB0_pressed = 0;
-[v _RB0_pressed `uc ~T0 @X0 1 e ]
-[i _RB0_pressed
--> -> 0 `i `uc
-]
+"67 ./lcd.h
+[; ;./lcd.h: 67:     void InitBBSPI (void);
+[v _InitBBSPI `(v ~T0 @X0 0 ef ]
+"6578 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6578:     struct {
+[s S242 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S242 . TRISF0 TRISF1 TRISF2 TRISF3 TRISF4 TRISF5 TRISF6 TRISF7 ]
+"6588
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6588:     struct {
+[s S243 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S243 . RF0 RF1 RF2 RF3 RF4 RF5 RF6 RF7 ]
+"6577
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6577: typedef union {
+[u S241 `S242 1 `S243 1 ]
+[n S241 . . . ]
+"6599
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 6599: extern volatile TRISFbits_t TRISFbits __attribute__((address(0xF97)));
+[v _TRISFbits `VS241 ~T0 @X0 0 e@3991 ]
+"5045
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5045:     struct {
+[s S200 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S200 . LATF0 LATF1 LATF2 LATF3 LATF4 LATF5 LATF6 LATF7 ]
+"5055
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5055:     struct {
+[s S201 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S201 . LF0 LF1 LF2 LF3 LF4 LF5 LF6 LF7 ]
+"5044
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5044: typedef union {
+[u S199 `S200 1 `S201 1 ]
+[n S199 . . . ]
+"5066
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5066: extern volatile LATFbits_t LATFbits __attribute__((address(0xF8E)));
+[v _LATFbits `VS199 ~T0 @X0 0 e@3982 ]
+[v F4536 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF4536 ~T0 @X0 0 e ]
+[p i __delay ]
+"85 ./lcd.h
+[; ;./lcd.h: 85:     void Port_BBSPIInit (unsigned char port_dir);
+[v _Port_BBSPIInit `(v ~T0 @X0 0 ef1`uc ]
+"95
+[; ;./lcd.h: 95:     void WritePort_BBSPI (unsigned char port_add, unsigned char a);
+[v _WritePort_BBSPI `(v ~T0 @X0 0 ef2`uc`uc ]
+"113
+[; ;./lcd.h: 113:     void LCDPutInst(unsigned char);
+[v _LCDPutInst `(v ~T0 @X0 0 ef1`uc ]
+"5468 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5468:     struct {
+[s S212 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S212 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"5478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5478:     struct {
+[s S213 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S213 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"5467
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5467: typedef union {
+[u S211 `S212 1 `S213 1 ]
+[n S211 . . . ]
+"5489
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5489: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
+[v _TRISAbits `VS211 ~T0 @X0 0 e@3986 ]
+"5912
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5912:     struct {
+[s S224 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S224 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"5922
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5922:     struct {
+[s S225 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S225 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"5911
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5911: typedef union {
+[u S223 `S224 1 `S225 1 ]
+[n S223 . . . ]
+"5933
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 5933: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS223 ~T0 @X0 0 e@3988 ]
+"4485
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4485:     struct {
+[s S185 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"4495
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4495:     struct {
+[s S186 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S186 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
+"4484
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4484: typedef union {
+[u S184 `S185 1 `S186 1 ]
+[n S184 . . . ]
+"4506
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4506: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
+[v _LATAbits `VS184 ~T0 @X0 0 e@3977 ]
+"4709
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4709:     struct {
+[s S191 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S191 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"4719
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4719:     struct {
+[s S192 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S192 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"4708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4708: typedef union {
+[u S190 `S191 1 `S192 1 ]
+[n S190 . . . ]
+"4730
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4730: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
+[v _LATCbits `VS190 ~T0 @X0 0 e@3979 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -669,237 +702,414 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"6 buttons.c
-[; ;buttons.c: 6: tBYTE firstReadRA5 = 1;
-[v _firstReadRA5 `uc ~T0 @X0 1 e ]
-[i _firstReadRA5
--> -> 1 `i `uc
-]
-"7
-[; ;buttons.c: 7: tBYTE secondReadRA5 = 1;
-[v _secondReadRA5 `uc ~T0 @X0 1 e ]
-[i _secondReadRA5
--> -> 1 `i `uc
-]
-"8
-[; ;buttons.c: 8: tBYTE firstReadRB0 = 1;
-[v _firstReadRB0 `uc ~T0 @X0 1 e ]
-[i _firstReadRB0
--> -> 1 `i `uc
-]
-"9
-[; ;buttons.c: 9: tBYTE secondReadRB0 = 1;
-[v _secondReadRB0 `uc ~T0 @X0 1 e ]
-[i _secondReadRB0
--> -> 1 `i `uc
-]
-"11
-[; ;buttons.c: 11: tBYTE stateRA5 = 0;
-[v _stateRA5 `uc ~T0 @X0 1 e ]
-[i _stateRA5
+"36 ./config.h
+[; ;./config.h: 36: char value = 0;
+[v _value `uc ~T0 @X0 1 e ]
+[i _value
 -> -> 0 `i `uc
 ]
-"12
-[; ;buttons.c: 12: tWORD countRA5 = 0;
-[v _countRA5 `ul ~T0 @X0 1 e ]
-[i _countRA5
--> -> -> 0 `i `l `ul
-]
-"13
-[; ;buttons.c: 13: tWORD countRA5_1 = 0;
-[v _countRA5_1 `ul ~T0 @X0 1 e ]
-[i _countRA5_1
--> -> -> 0 `i `l `ul
-]
-"15
-[; ;buttons.c: 15: tBYTE stateRB0 = 0;
-[v _stateRB0 `uc ~T0 @X0 1 e ]
-[i _stateRB0
+"38
+[; ;./config.h: 38: char RA5_pressed = 0;
+[v _RA5_pressed `uc ~T0 @X0 1 e ]
+[i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"16
-[; ;buttons.c: 16: tWORD countRB0 = 0;
-[v _countRB0 `ul ~T0 @X0 1 e ]
-[i _countRB0
--> -> -> 0 `i `l `ul
+"39
+[; ;./config.h: 39: char RB0_pressed = 0;
+[v _RB0_pressed `uc ~T0 @X0 1 e ]
+[i _RB0_pressed
+-> -> 0 `i `uc
 ]
-"17
-[; ;buttons.c: 17: tWORD countRB0_1 = 0;
-[v _countRB0_1 `ul ~T0 @X0 1 e ]
-[i _countRB0_1
--> -> -> 0 `i `l `ul
-]
-"20
-[; ;buttons.c: 20: int readButtonRA5() {
-[v _readButtonRA5 `(i ~T0 @X0 1 ef ]
+"45 lcd.c
+[; ;lcd.c: 45: void LCDInit (void)
+[v _LCDInit `(v ~T0 @X0 1 ef ]
+"46
+[; ;lcd.c: 46: {
 {
-[e :U _readButtonRA5 ]
+[e :U _LCDInit ]
 [f ]
-"21
-[; ;buttons.c: 21:     firstReadRA5 = secondReadRA5;
-[e = _firstReadRA5 _secondReadRA5 ]
-"22
-[; ;buttons.c: 22:     secondReadRA5 = PORTAbits.RA5;
-[e = _secondReadRA5 -> . . _PORTAbits 0 5 `uc ]
-"23
-[; ;buttons.c: 23:     if(secondReadRA5 == firstReadRA5) {
-[e $ ! == -> _secondReadRA5 `i -> _firstReadRA5 `i 504  ]
-{
-"24
-[; ;buttons.c: 24:         return (secondReadRA5 == 0) ? 2 : 1;
-[e ) ? == -> _secondReadRA5 `i -> 0 `i : -> 2 `i -> 1 `i ]
-[e $UE 503  ]
-"25
-[; ;buttons.c: 25:     }
-}
-[e :U 504 ]
-"26
-[; ;buttons.c: 26:     return 0;
-[e ) -> 0 `i ]
-[e $UE 503  ]
-"27
-[; ;buttons.c: 27: }
+"47
+[; ;lcd.c: 47:     InitBBSPI();
+[e ( _InitBBSPI ..  ]
+"48
+[; ;lcd.c: 48:     TRISFbits.TRISF6 = 0;
+[e = . . _TRISFbits 0 6 -> -> 0 `i `uc ]
+"49
+[; ;lcd.c: 49:     LATFbits.LATF6 = 0;
+[e = . . _LATFbits 0 6 -> -> 0 `i `uc ]
+"50
+[; ;lcd.c: 50:     _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"51
+[; ;lcd.c: 51:     LATFbits.LATF6 = 1;
+[e = . . _LATFbits 0 6 -> -> 1 `i `uc ]
+"52
+[; ;lcd.c: 52:     Port_BBSPIInit (0x00);
+[e ( _Port_BBSPIInit (1 -> -> 0 `i `uc ]
+"53
+[; ;lcd.c: 53:     Port_BBSPIInit (0x01);
+[e ( _Port_BBSPIInit (1 -> -> 1 `i `uc ]
+"54
+[; ;lcd.c: 54:     WritePort_BBSPI (0x12, 0);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+"55
+[; ;lcd.c: 55:     _delay((unsigned long)((15)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"56
+[; ;lcd.c: 56:     LCDPutInst(0x32);
+[e ( _LCDPutInst (1 -> -> 50 `i `uc ]
+"57
+[; ;lcd.c: 57:     LCDPutInst(0x3C);
+[e ( _LCDPutInst (1 -> -> 60 `i `uc ]
+"58
+[; ;lcd.c: 58:     LCDPutInst(0x0C);
+[e ( _LCDPutInst (1 -> -> 12 `i `uc ]
+"59
+[; ;lcd.c: 59:     LCDPutInst(0x01);
+[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
+"60
+[; ;lcd.c: 60:     LCDPutInst(0x06);
+[e ( _LCDPutInst (1 -> -> 6 `i `uc ]
+"61
+[; ;lcd.c: 61: }
 [e :UE 503 ]
 }
-"29
-[; ;buttons.c: 29: int readButtonRB0() {
-[v _readButtonRB0 `(i ~T0 @X0 1 ef ]
+"70
+[; ;lcd.c: 70: void InitBBSPI (void)
+[v _InitBBSPI `(v ~T0 @X0 1 ef ]
+"71
+[; ;lcd.c: 71: {
 {
-[e :U _readButtonRB0 ]
+[e :U _InitBBSPI ]
 [f ]
-"30
-[; ;buttons.c: 30:     firstReadRB0 = secondReadRB0;
-[e = _firstReadRB0 _secondReadRB0 ]
-"31
-[; ;buttons.c: 31:     secondReadRB0 = PORTBbits.RB0;
-[e = _secondReadRB0 -> . . _PORTBbits 0 0 `uc ]
-"32
-[; ;buttons.c: 32:     if(secondReadRB0 == firstReadRB0) {
-[e $ ! == -> _secondReadRB0 `i -> _firstReadRB0 `i 506  ]
-{
-"33
-[; ;buttons.c: 33:         return (secondReadRB0 == 0) ? 2 : 1;
-[e ) ? == -> _secondReadRB0 `i -> 0 `i : -> 2 `i -> 1 `i ]
-[e $UE 505  ]
-"34
-[; ;buttons.c: 34:     }
+"72
+[; ;lcd.c: 72:     TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+"73
+[; ;lcd.c: 73:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+"74
+[; ;lcd.c: 74:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"75
+[; ;lcd.c: 75:     TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;lcd.c: 77:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"78
+[; ;lcd.c: 78:     LATCbits.LATC4 = 1;
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"79
+[; ;lcd.c: 79:     LATCbits.LATC5 = 0;
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+"80
+[; ;lcd.c: 80:     LATCbits.LATC3 = 0;
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"81
+[; ;lcd.c: 81: }
+[e :UE 504 ]
 }
+"91
+[; ;lcd.c: 91: void SendByteBBSPI (unsigned char output)
+[v _SendByteBBSPI `(v ~T0 @X0 1 ef1`uc ]
+"92
+[; ;lcd.c: 92: {
+{
+[e :U _SendByteBBSPI ]
+"91
+[; ;lcd.c: 91: void SendByteBBSPI (unsigned char output)
+[v _output `uc ~T0 @X0 1 r1 ]
+"92
+[; ;lcd.c: 92: {
+[f ]
+"93
+[; ;lcd.c: 93:     unsigned char bitcount;
+[v _bitcount `uc ~T0 @X0 1 a ]
+"94
+[; ;lcd.c: 94:     unsigned char input = output;
+[v _input `uc ~T0 @X0 1 a ]
+[e = _input _output ]
+"96
+[; ;lcd.c: 96:     for(bitcount=0;bitcount<8;bitcount++)
+{
+[e = _bitcount -> -> 0 `i `uc ]
+[e $ < -> _bitcount `i -> 8 `i 506  ]
+[e $U 507  ]
 [e :U 506 ]
-"35
-[; ;buttons.c: 35:     return 0;
-[e ) -> 0 `i ]
-[e $UE 505  ]
-"36
-[; ;buttons.c: 36: }
+"97
+[; ;lcd.c: 97:     {
+{
+"99
+[; ;lcd.c: 99:         if(output & 0x80)
+[e $ ! != & -> _output `i -> 128 `i -> 0 `i 509  ]
+"100
+[; ;lcd.c: 100:             LATCbits.LATC5 = 1;
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[e $U 510  ]
+"101
+[; ;lcd.c: 101:         else
+[e :U 509 ]
+"102
+[; ;lcd.c: 102:             LATCbits.LATC5 = 0;
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[e :U 510 ]
+"104
+[; ;lcd.c: 104:         if (LATCbits.LATC4)
+[e $ ! != -> . . _LATCbits 0 4 `i -> 0 `i 511  ]
+"105
+[; ;lcd.c: 105:             input = (input << 1) | 0x1;
+[e = _input -> | << -> _input `i -> 1 `i -> 1 `i `uc ]
+[e $U 512  ]
+"106
+[; ;lcd.c: 106:         else
+[e :U 511 ]
+"107
+[; ;lcd.c: 107:             input = input << 1;
+[e = _input -> << -> _input `i -> 1 `i `uc ]
+[e :U 512 ]
+"108
+[; ;lcd.c: 108:         LATCbits.LATC3 = 1;
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+"109
+[; ;lcd.c: 109:         __nop();__nop();__nop();__nop();__nop();__nop();
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+"111
+[; ;lcd.c: 111:         LATCbits.LATC3 = 0;
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"112
+[; ;lcd.c: 112:         output <<= 1;
+[e =<< _output -> -> 1 `i `uc ]
+"113
+[; ;lcd.c: 113:     }
+}
+[e ++ _bitcount -> -> 1 `i `uc ]
+[e $ < -> _bitcount `i -> 8 `i 506  ]
+[e :U 507 ]
+}
+"114
+[; ;lcd.c: 114: }
 [e :UE 505 ]
 }
-"38
-[; ;buttons.c: 38: void handleButton() {
-[v _handleButton `(v ~T0 @X0 1 ef ]
+"123
+[; ;lcd.c: 123: void Port_BBSPIInit (unsigned char port_dir)
+[v _Port_BBSPIInit `(v ~T0 @X0 1 ef1`uc ]
+"124
+[; ;lcd.c: 124: {
 {
-[e :U _handleButton ]
+[e :U _Port_BBSPIInit ]
+"123
+[; ;lcd.c: 123: void Port_BBSPIInit (unsigned char port_dir)
+[v _port_dir `uc ~T0 @X0 1 r1 ]
+"124
+[; ;lcd.c: 124: {
 [f ]
-"39
-[; ;buttons.c: 39:     int checkRA5 = readButtonRA5();
-[v _checkRA5 `i ~T0 @X0 1 a ]
-[e = _checkRA5 ( _readButtonRA5 ..  ]
-"40
-[; ;buttons.c: 40:     int checkRB0 = readButtonRB0();
-[v _checkRB0 `i ~T0 @X0 1 a ]
-[e = _checkRB0 ( _readButtonRB0 ..  ]
-"41
-[; ;buttons.c: 41:     switch(stateRA5) {
-[e $U 509  ]
-{
-"42
-[; ;buttons.c: 42:         case 0:
-[e :U 510 ]
-"43
-[; ;buttons.c: 43:             if(checkRA5 == 2) {
-[e $ ! == _checkRA5 -> 2 `i 511  ]
-{
-"44
-[; ;buttons.c: 44:                 stateRA5 = 1;
-[e = _stateRA5 -> -> 1 `i `uc ]
-"45
-[; ;buttons.c: 45:                 RA5_pressed = 1;
-[e = _RA5_pressed -> -> 1 `i `uc ]
-"46
-[; ;buttons.c: 46:             }
+"128
+[; ;lcd.c: 128:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"129
+[; ;lcd.c: 129:     SendByteBBSPI(0x40);
+[e ( _SendByteBBSPI (1 -> -> 64 `i `uc ]
+"130
+[; ;lcd.c: 130:     SendByteBBSPI(port_dir);
+[e ( _SendByteBBSPI (1 _port_dir ]
+"131
+[; ;lcd.c: 131:     SendByteBBSPI(0x00);
+[e ( _SendByteBBSPI (1 -> -> 0 `i `uc ]
+"132
+[; ;lcd.c: 132:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"133
+[; ;lcd.c: 133: }
+[e :UE 513 ]
 }
-[e :U 511 ]
-"47
-[; ;buttons.c: 47:             break;
-[e $U 508  ]
-"48
-[; ;buttons.c: 48:         case 1:
-[e :U 512 ]
-"49
-[; ;buttons.c: 49:             if(checkRA5 == 1)
-[e $ ! == _checkRA5 -> 1 `i 513  ]
-"50
-[; ;buttons.c: 50:                 stateRA5 = 0;
-[e = _stateRA5 -> -> 0 `i `uc ]
-[e :U 513 ]
-"51
-[; ;buttons.c: 51:             break;
-[e $U 508  ]
-"52
-[; ;buttons.c: 52:     }
-}
-[e $U 508  ]
-[e :U 509 ]
-[e [\ -> _stateRA5 `i , $ -> 0 `i 510
- , $ -> 1 `i 512
- 508 ]
-[e :U 508 ]
-"53
-[; ;buttons.c: 53:     switch(stateRB0) {
-[e $U 515  ]
+"144
+[; ;lcd.c: 144: void WritePort_BBSPI (unsigned char port_add, unsigned char a)
+[v _WritePort_BBSPI `(v ~T0 @X0 1 ef2`uc`uc ]
+"145
+[; ;lcd.c: 145: {
 {
-"54
-[; ;buttons.c: 54:         case 0:
-[e :U 516 ]
-"55
-[; ;buttons.c: 55:             if(checkRB0 == 2) {
-[e $ ! == _checkRB0 -> 2 `i 517  ]
-{
-"56
-[; ;buttons.c: 56:                 stateRB0 = 1;
-[e = _stateRB0 -> -> 1 `i `uc ]
-"57
-[; ;buttons.c: 57:                 RB0_pressed = 1;
-[e = _RB0_pressed -> -> 1 `i `uc ]
-"58
-[; ;buttons.c: 58:             }
+[e :U _WritePort_BBSPI ]
+"144
+[; ;lcd.c: 144: void WritePort_BBSPI (unsigned char port_add, unsigned char a)
+[v _port_add `uc ~T0 @X0 1 r1 ]
+[v _a `uc ~T0 @X0 1 r2 ]
+"145
+[; ;lcd.c: 145: {
+[f ]
+"146
+[; ;lcd.c: 146:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"147
+[; ;lcd.c: 147:     SendByteBBSPI(0x40);
+[e ( _SendByteBBSPI (1 -> -> 64 `i `uc ]
+"148
+[; ;lcd.c: 148:     SendByteBBSPI(port_add);
+[e ( _SendByteBBSPI (1 _port_add ]
+"149
+[; ;lcd.c: 149:     SendByteBBSPI(a);
+[e ( _SendByteBBSPI (1 _a ]
+"150
+[; ;lcd.c: 150:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"151
+[; ;lcd.c: 151: }
+[e :UE 514 ]
 }
-[e :U 517 ]
-"59
-[; ;buttons.c: 59:             break;
-[e $U 514  ]
-"60
-[; ;buttons.c: 60:         case 1:
-[e :U 518 ]
-"61
-[; ;buttons.c: 61:             if(checkRB0 == 1)
-[e $ ! == _checkRB0 -> 1 `i 519  ]
-"62
-[; ;buttons.c: 62:                 stateRB0 = 0;
-[e = _stateRB0 -> -> 0 `i `uc ]
+"172
+[; ;lcd.c: 172: void LCDPutChar (unsigned char ch)
+[v _LCDPutChar `(v ~T0 @X0 1 ef1`uc ]
+"173
+[; ;lcd.c: 173: {
+{
+[e :U _LCDPutChar ]
+"172
+[; ;lcd.c: 172: void LCDPutChar (unsigned char ch)
+[v _ch `uc ~T0 @X0 1 r1 ]
+"173
+[; ;lcd.c: 173: {
+[f ]
+"174
+[; ;lcd.c: 174:     _delay((unsigned long)((100)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"175
+[; ;lcd.c: 175:     WritePort_BBSPI (0x12, 0x80);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 128 `i `uc ]
+"176
+[; ;lcd.c: 176:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"177
+[; ;lcd.c: 177:     WritePort_BBSPI (0x13, ch);
+[e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
+"178
+[; ;lcd.c: 178:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"179
+[; ;lcd.c: 179:     WritePort_BBSPI (0x12, 0xC0);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 192 `i `uc ]
+"180
+[; ;lcd.c: 180:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"181
+[; ;lcd.c: 181:     WritePort_BBSPI (0x12, 0x00);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+"182
+[; ;lcd.c: 182: }
+[e :UE 515 ]
+}
+"203
+[; ;lcd.c: 203: void LCDPutInst (unsigned char ch)
+[v _LCDPutInst `(v ~T0 @X0 1 ef1`uc ]
+"204
+[; ;lcd.c: 204: {
+{
+[e :U _LCDPutInst ]
+"203
+[; ;lcd.c: 203: void LCDPutInst (unsigned char ch)
+[v _ch `uc ~T0 @X0 1 r1 ]
+"204
+[; ;lcd.c: 204: {
+[f ]
+"205
+[; ;lcd.c: 205:     _delay((unsigned long)((100)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"206
+[; ;lcd.c: 206:     WritePort_BBSPI (0x12, 0x00);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+"207
+[; ;lcd.c: 207:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"208
+[; ;lcd.c: 208:     WritePort_BBSPI (0x13, ch);
+[e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
+"209
+[; ;lcd.c: 209:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"210
+[; ;lcd.c: 210:     WritePort_BBSPI (0x12,0x40);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 64 `i `uc ]
+"211
+[; ;lcd.c: 211:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"212
+[; ;lcd.c: 212:     WritePort_BBSPI (0x12, 0x00);
+[e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+"213
+[; ;lcd.c: 213: }
+[e :UE 516 ]
+}
+"222
+[; ;lcd.c: 222: void LCDPutStr (const char *ptr)
+[v _LCDPutStr `(v ~T0 @X0 1 ef1`*Cuc ]
+"223
+[; ;lcd.c: 223: {
+{
+[e :U _LCDPutStr ]
+"222
+[; ;lcd.c: 222: void LCDPutStr (const char *ptr)
+[v _ptr `*Cuc ~T0 @X0 1 r1 ]
+"223
+[; ;lcd.c: 223: {
+[f ]
+"224
+[; ;lcd.c: 224:     while(*ptr) LCDPutChar(*(ptr++));
+[e $U 518  ]
 [e :U 519 ]
-"63
-[; ;buttons.c: 63:             break;
-[e $U 514  ]
-"64
-[; ;buttons.c: 64:     }
+[e ( _LCDPutChar (1 -> *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x `uc ]
+[e :U 518 ]
+[e $ != -> *U _ptr `i -> 0 `i 519  ]
+[e :U 520 ]
+"225
+[; ;lcd.c: 225: }
+[e :UE 517 ]
 }
-[e $U 514  ]
-[e :U 515 ]
-[e [\ -> _stateRB0 `i , $ -> 0 `i 516
- , $ -> 1 `i 518
- 514 ]
-[e :U 514 ]
-"65
-[; ;buttons.c: 65: }
-[e :UE 507 ]
+"227
+[; ;lcd.c: 227: void LCDMoveCursor(unsigned char line, unsigned char pos) {
+[v _LCDMoveCursor `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _LCDMoveCursor ]
+[v _line `uc ~T0 @X0 1 r1 ]
+[v _pos `uc ~T0 @X0 1 r2 ]
+[f ]
+"228
+[; ;lcd.c: 228:     unsigned char position = (line == 0) ? (128 + pos) : (192 + pos);
+[v _position `uc ~T0 @X0 1 a ]
+[e = _position -> ? == -> _line `i -> 0 `i : + -> 128 `i -> _pos `i + -> 192 `i -> _pos `i `uc ]
+"229
+[; ;lcd.c: 229:     LCDPutInst(position);
+[e ( _LCDPutInst (1 _position ]
+"230
+[; ;lcd.c: 230: }
+[e :UE 521 ]
+}
+"232
+[; ;lcd.c: 232: void LCDPrint(unsigned char line, unsigned char pos, const char *ptr) {
+[v _LCDPrint `(v ~T0 @X0 1 ef3`uc`uc`*Cuc ]
+{
+[e :U _LCDPrint ]
+[v _line `uc ~T0 @X0 1 r1 ]
+[v _pos `uc ~T0 @X0 1 r2 ]
+[v _ptr `*Cuc ~T0 @X0 1 r3 ]
+[f ]
+"233
+[; ;lcd.c: 233:     if(line <0 || line > 2 || pos < 0 || pos > 15)
+[e $ ! || || || < -> _line `i -> 0 `i > -> _line `i -> 2 `i < -> _pos `i -> 0 `i > -> _pos `i -> 15 `i 523  ]
+"234
+[; ;lcd.c: 234:         return;
+[e $UE 522  ]
+[e :U 523 ]
+"235
+[; ;lcd.c: 235:     LCDMoveCursor(line, pos);
+[e ( _LCDMoveCursor (2 , _line _pos ]
+"236
+[; ;lcd.c: 236:     LCDPutStr(ptr);
+[e ( _LCDPutStr (1 _ptr ]
+"237
+[; ;lcd.c: 237: }
+[e :UE 522 ]
 }
