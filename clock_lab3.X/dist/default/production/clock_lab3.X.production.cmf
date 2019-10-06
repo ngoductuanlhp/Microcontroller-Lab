@@ -72,7 +72,7 @@ smallconst SMALLCONST 0 1000 1000 DC 1
 idataBANK0 CODE 0 655C 655C 5 1
 dataBANK0 BANK0 1 D1 D1 5 1
 bssCOMRAM COMRAM 1 4F 4F 8 1
-$C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+$C:\Users\Tuan\AppData\Local\Temp\s748.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -131,7 +131,7 @@ MEDIUMCONST 11000-1FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\clock_lab3.X.production.o
-8 intcode CODE >20935:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
+8 intcode CODE >20935:C:\Users\Tuan\AppData\Local\Temp\s748.s
 8 intcode CODE >13:E:\MPLAPXProjects\clock_lab3.X\interrupt_manager.c
 6168 text48 CODE >21:E:\MPLAPXProjects\clock_lab3.X\buttons.c
 6168 text48 CODE >22:E:\MPLAPXProjects\clock_lab3.X\buttons.c
@@ -1262,40 +1262,40 @@ $dist/default/production\clock_lab3.X.production.o
 5C12 text0 CODE >27:E:\MPLAPXProjects\clock_lab3.X\main.c
 5C16 text0 CODE >28:E:\MPLAPXProjects\clock_lab3.X\main.c
 5C1A text0 CODE >31:E:\MPLAPXProjects\clock_lab3.X\main.c
-6338 cinit CODE >5050:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6338 cinit CODE >5052:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6338 cinit CODE >5055:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6338 cinit CODE >5195:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-633A cinit CODE >5196:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-633C cinit CODE >5197:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-633E cinit CODE >5198:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6340 cinit CODE >5199:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6342 cinit CODE >5200:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6344 cinit CODE >5201:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6348 cinit CODE >5202:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-634C cinit CODE >5203:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-634C cinit CODE >5204:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-634E cinit CODE >5205:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6352 cinit CODE >5206:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6354 cinit CODE >5207:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6356 cinit CODE >5208:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6358 cinit CODE >5212:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-635C cinit CODE >5213:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-635E cinit CODE >5214:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-635E cinit CODE >5215:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6360 cinit CODE >5216:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6362 cinit CODE >5217:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6364 cinit CODE >5220:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6368 cinit CODE >5221:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-636A cinit CODE >5222:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-636A cinit CODE >5223:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-636C cinit CODE >5224:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-636E cinit CODE >5225:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6370 cinit CODE >5231:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6370 cinit CODE >5233:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6372 cinit CODE >5234:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6374 cinit CODE >5235:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
-6376 cinit CODE >5236:C:\Users\Tuan\AppData\Local\Temp\s2p4.s
+6338 cinit CODE >5050:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6338 cinit CODE >5052:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6338 cinit CODE >5055:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6338 cinit CODE >5195:C:\Users\Tuan\AppData\Local\Temp\s748.s
+633A cinit CODE >5196:C:\Users\Tuan\AppData\Local\Temp\s748.s
+633C cinit CODE >5197:C:\Users\Tuan\AppData\Local\Temp\s748.s
+633E cinit CODE >5198:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6340 cinit CODE >5199:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6342 cinit CODE >5200:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6344 cinit CODE >5201:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6348 cinit CODE >5202:C:\Users\Tuan\AppData\Local\Temp\s748.s
+634C cinit CODE >5203:C:\Users\Tuan\AppData\Local\Temp\s748.s
+634C cinit CODE >5204:C:\Users\Tuan\AppData\Local\Temp\s748.s
+634E cinit CODE >5205:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6352 cinit CODE >5206:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6354 cinit CODE >5207:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6356 cinit CODE >5208:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6358 cinit CODE >5212:C:\Users\Tuan\AppData\Local\Temp\s748.s
+635C cinit CODE >5213:C:\Users\Tuan\AppData\Local\Temp\s748.s
+635E cinit CODE >5214:C:\Users\Tuan\AppData\Local\Temp\s748.s
+635E cinit CODE >5215:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6360 cinit CODE >5216:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6362 cinit CODE >5217:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6364 cinit CODE >5220:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6368 cinit CODE >5221:C:\Users\Tuan\AppData\Local\Temp\s748.s
+636A cinit CODE >5222:C:\Users\Tuan\AppData\Local\Temp\s748.s
+636A cinit CODE >5223:C:\Users\Tuan\AppData\Local\Temp\s748.s
+636C cinit CODE >5224:C:\Users\Tuan\AppData\Local\Temp\s748.s
+636E cinit CODE >5225:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6370 cinit CODE >5231:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6370 cinit CODE >5233:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6372 cinit CODE >5234:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6374 cinit CODE >5235:C:\Users\Tuan\AppData\Local\Temp\s748.s
+6376 cinit CODE >5236:C:\Users\Tuan\AppData\Local\Temp\s748.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1327,7 +1327,7 @@ __size_of_pin_init 0 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\clock_lab3.X.production.o
 _counter_high CF 0 BANK0 1 bssBANK0 dist/default/production\clock_lab3.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\clock_lab3.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Tuan\AppData\Local\Temp\s748.o
 __end_of_InitBBSPI 653E 0 CODE 0 text44 dist/default/production\clock_lab3.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\clock_lab3.X.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
@@ -1345,7 +1345,7 @@ _LATA F89 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 _LATB F8A 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 _LATC F8B 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+___sp 0 0 STACK 2 stack C:\Users\Tuan\AppData\Local\Temp\s748.o
 _dp_h 1009 0 SMALLCONST 0 smallconst dist/default/production\clock_lab3.X.production.o
 _dp_l 1001 0 SMALLCONST 0 smallconst dist/default/production\clock_lab3.X.production.o
 _main 5BAE 0 CODE 0 text0 dist/default/production\clock_lab3.X.production.o
@@ -1354,7 +1354,7 @@ _powf 10DC 0 CODE 0 text22 dist/default/production\clock_lab3.X.production.o
 btemp 57 0 COMRAM 1 temp dist/default/production\clock_lab3.X.production.o
 nanf@s 9 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
 nanf@u D 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
-start E 0 CODE 0 init C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+start E 0 CODE 0 init C:\Users\Tuan\AppData\Local\Temp\s748.o
 _state_set_minute 5A3E 0 CODE 0 text6 dist/default/production\clock_lab3.X.production.o
 ___flmul@aexp 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
 ___flmul@bexp 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
@@ -1412,11 +1412,11 @@ _osc_init 6556 0 CODE 0 text37 dist/default/production\clock_lab3.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 __end_of_WritePort_BBSPI 6516 0 CODE 0 text42 dist/default/production\clock_lab3.X.production.o
 __end_of_LCDPrint 63B8 0 CODE 0 text9 dist/default/production\clock_lab3.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s2p4.o
-intlevel0 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s2p4.o
-intlevel1 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s2p4.o
-intlevel2 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s2p4.o
-intlevel3 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+__accesstop 60 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s748.o
+intlevel0 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s748.o
+intlevel1 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s748.o
+intlevel2 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s748.o
+intlevel3 0 0 CODE 0 text C:\Users\Tuan\AppData\Local\Temp\s748.o
 SendByteBBSPI@output 9 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\clock_lab3.X.production.o
 _pin_init 649C 0 CODE 0 text36 dist/default/production\clock_lab3.X.production.o
@@ -1437,8 +1437,8 @@ LCDMoveCursor@pos F 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X
 preCalculate@count A7 0 BANK0 1 cstackBANK0 dist/default/production\clock_lab3.X.production.o
 _ADCON1 FC1 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 ___awdiv@dividend 9 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\Tuan\AppData\Local\Temp\s2p4.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\Tuan\AppData\Local\Temp\s748.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\Tuan\AppData\Local\Temp\s748.o
 _state_set_hour$1025 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
 __end_of_disp_Clock_Hide 5F7C 0 CODE 0 text8 dist/default/production\clock_lab3.X.production.o
 _handleButton 4C54 0 CODE 0 text46 dist/default/production\clock_lab3.X.production.o
@@ -1575,7 +1575,7 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production\clock_lab3.X.production.o
 __size_of___xxtofl 0 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\clock_lab3.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\clock_lab3.X.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\Tuan\AppData\Local\Temp\s748.o
 __end_ofsqrtf@tiny 1015 0 SMALLCONST 0 smallconst dist/default/production\clock_lab3.X.production.o
 ___xxtofl@arg 13 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
 ___xxtofl@exp 12 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
@@ -1822,8 +1822,8 @@ _scalbnf 4ED8 0 CODE 0 text26 dist/default/production\clock_lab3.X.production.o
 __size_of_LCDMoveCursor 0 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 SendByteBBSPI@bitcount A 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
 powf@yisint 150 0 BANK1 1 cstackBANK1 dist/default/production\clock_lab3.X.production.o
-stackhi F5F 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s2p4.o
-stacklo 1BC 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+stackhi F5F 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s748.o
+stacklo 1BC 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s748.o
 __size_of_SendByteBBSPI 0 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\clock_lab3.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\clock_lab3.X.production.o
@@ -1930,7 +1930,7 @@ __Ltext44 0 0 ABS 0 text44 dist/default/production\clock_lab3.X.production.o
 __Ltext46 0 0 ABS 0 text46 dist/default/production\clock_lab3.X.production.o
 __Ltext47 0 0 ABS 0 text47 dist/default/production\clock_lab3.X.production.o
 __Ltext48 0 0 ABS 0 text48 dist/default/production\clock_lab3.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\Tuan\AppData\Local\Temp\s748.o
 WritePort_BBSPI@a C 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
 __size_of_preCalculate 0 0 ABS 0 - dist/default/production\clock_lab3.X.production.o
 ?_scalbnf 32 0 COMRAM 1 cstackCOMRAM dist/default/production\clock_lab3.X.production.o
@@ -2025,7 +2025,7 @@ _ms_sw 4F 0 COMRAM 1 bssCOMRAM dist/default/production\clock_lab3.X.production.o
 _myISR 8 0 CODE 0 intcode dist/default/production\clock_lab3.X.production.o
 _sqrtf 3B0E 0 CODE 0 text23 dist/default/production\clock_lab3.X.production.o
 _state 56 0 COMRAM 1 bssCOMRAM dist/default/production\clock_lab3.X.production.o
-___extmem_base 20000 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s2p4.o
+___extmem_base 20000 0 ABS 0 - C:\Users\Tuan\AppData\Local\Temp\s748.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\clock_lab3.X.production.o
 _preCalculate$1821 A3 0 BANK0 1 cstackBANK0 dist/default/production\clock_lab3.X.production.o
 _hide_flag CB 0 BANK0 1 bssBANK0 dist/default/production\clock_lab3.X.production.o

@@ -13,13 +13,14 @@ void initializeTaskList() {
         task_list[i].delay_t = 0;
         task_list[i].period_t = 0;
         task_list[i].func_ptr = ((void*)0);
+        task_list[i].data_p = ((void*)0);
         task_list[i].next = NULL_VAL;
     }
     num_task = 0;
     head = NULL_VAL;
 }
 
-char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr) {
+char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data) {
     if(isFullList())
         return ERROR_VAL;
     char idx;
@@ -29,17 +30,14 @@ char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr) {
     }
     if(idx == MAX_SIZE)
         return ERROR_VAL;
-//    char idx = num_task;
-//    while(task_list[idx].func_ptr != ((void*)0))
-//        idx = (idx + 1) % MAX_SIZE;
     task_list[idx].delay_t = delay;
     task_list[idx].period_t = period;
     task_list[idx].func_ptr = ptr;
+    task_list[idx].data_p = data;
     num_task++;
     if(head == NULL_VAL || (head != NULL_VAL && task_list[head].delay_t > task_list[idx].delay_t)) {
         task_list[idx].next = head;
         head = idx;
-        //value =0xFF;
     }
     else {
         delay = delay - task_list[head].delay_t;
@@ -65,10 +63,11 @@ char removeTask(char idx) {
     task_list[idx].delay_t = 0;
     task_list[idx].period_t = 0;
     task_list[idx].func_ptr = ((void*)0);
+    task_list[idx].data_p = ((void*)0);
     num_task--;
     if(idx == head) {
         head = task_list[idx].next;
-        task_list[idx].next = -1;
+        task_list[idx].next = NULL_VAL;
     }
     else {
         char pos = head;
@@ -76,7 +75,7 @@ char removeTask(char idx) {
             pos = task_list[pos].next;
         }
         task_list[pos].next = task_list[idx].next;
-        task_list[idx].next = -1;
+        task_list[idx].next = NULL_VAL;
     }
     
     return 1;
@@ -85,14 +84,6 @@ char removeTask(char idx) {
 void handleListHead() {
     if(head == NULL_VAL)
         return;
-    //value =0x01;
-    //task_list[head].delay_t-= INTERRUPT_INTERVAL;
-//    if(task_list[head].delay_t == 0) {
-//        //value =0x03;
-//        enqueue(task_list[head].func_ptr);
-//        task_list[head].delay_t = task_list[head].period_t;
-//    }
-//    task_list[head].delay_t-= INTERRUPT_INTERVAL;
     while(task_list[head].delay_t == 0) {
         int pos = head;
         enqueue(task_list[pos].func_ptr);       
@@ -110,7 +101,7 @@ void handleListHead() {
                 int cur = task_list[head].next;
                 int prev = head;
                 while(cur != NULL_VAL && task_list[cur].delay_t <= task_list[pos].delay_t) {
-                    task_list[pos].delay_t = task_list[pos].delay_t - task_list[cur].delay_t;
+                    task_list[pos].delay_t -= task_list[cur].delay_t;
                     prev = cur;
                     cur = task_list[cur].next;
                 }
@@ -118,7 +109,7 @@ void handleListHead() {
                 task_list[pos].next = cur;
             }
             if(task_list[pos].next != NULL_VAL)
-                task_list[task_list[pos].next].delay_t =  task_list[task_list[pos].next].delay_t - task_list[pos].delay_t;
+                task_list[task_list[pos].next].delay_t -= task_list[pos].delay_t;
         }
     }
     task_list[head].delay_t-= INTERRUPT_INTERVAL;

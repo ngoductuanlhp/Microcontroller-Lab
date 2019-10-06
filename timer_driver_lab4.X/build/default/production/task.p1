@@ -1,38 +1,38 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F8 `(v ~T0 @X0 0 t? ]
-[v F23 `(v ~T0 @X0 0 t? ]
-"14 ./task.h
-[; ;./task.h: 14: typedef struct {
-[s S1 `ul 1 `ul 1 `*F23 1 `i 1 ]
-[n S1 . delay_t period_t func_ptr next ]
-[v F47 `(v ~T0 @X0 0 t? ]
-[v F50 `(v ~T0 @X0 0 t? ]
-[v F54 `(v ~T0 @X0 0 t? ]
-[v F57 `(v ~T0 @X0 0 t? ]
-[v F65 `(v ~T0 @X0 0 t? ]
-[v F67 `(v ~T0 @X0 0 t? ]
-[v F12 `(v ~T0 @X0 0 t? ]
+[v F16 `(v ~T0 @X0 0 t? ]
+[v F10 `(v ~T0 @X0 0 t? ]
+"21 ./config.h
+[; ;./config.h: 21: typedef struct {
+[s S1 `ul 1 `ul 1 `*F10 1 `i 1 `*v 1 ]
+[n S1 . delay_t period_t func_ptr next data_p ]
+[v F49 `(v ~T0 @X0 0 t? ]
+[v F52 `(v ~T0 @X0 0 t? ]
+[v F56 `(v ~T0 @X0 0 t? ]
+[v F60 `(v ~T0 @X0 0 t? ]
+[v F68 `(v ~T0 @X0 0 t? ]
+[v F70 `(v ~T0 @X0 0 t? ]
+[v F20 `(v ~T0 @X0 0 t? ]
 "17 ./ready_queue.h
 [; ;./ready_queue.h: 17: char enqueue(FUNCTION_PTR ptr);
-[v _enqueue `(uc ~T0 @X0 0 ef1`*F12 ]
-[v F77 `(v ~T0 @X0 0 t? ]
-[v F16 `(v ~T0 @X0 0 t? ]
+[v _enqueue `(uc ~T0 @X0 0 ef1`*F20 ]
+[v F80 `(v ~T0 @X0 0 t? ]
+[v F24 `(v ~T0 @X0 0 t? ]
 "18
 [; ;./ready_queue.h: 18: FUNCTION_PTR dequeue();
-[v _dequeue `(*F16 ~T0 @X0 0 e? ]
-[v F80 `(v ~T0 @X0 0 t? ]
+[v _dequeue `(*F24 ~T0 @X0 0 e? ]
+[v F83 `(v ~T0 @X0 0 t? ]
 "19
 [; ;./ready_queue.h: 19: char isEmptyQueue();
 [v _isEmptyQueue `(uc ~T0 @X0 0 e? ]
-"21 ./config.h
-[; ;./config.h: 21: char value = 0;
+"29 ./config.h
+[; ;./config.h: 29: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
 "13 ./ready_queue.h
 [; ;./ready_queue.h: 13: FUNCTION_PTR ready_queue[20];
-[v _ready_queue `*F8 ~T0 @X0 -> 20 `i e ]
+[v _ready_queue `*F16 ~T0 @X0 -> 20 `i e ]
 "14
 [; ;./ready_queue.h: 14: int front = -1;
 [v _front `i ~T0 @X0 1 e ]
@@ -45,14 +45,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _rear
 -U -> 1 `i
 ]
-"21 ./task.h
-[; ;./task.h: 21: task_struct task_list[20];
+"22 ./task.h
+[; ;./task.h: 22: task_struct task_list[20];
 [v _task_list `S1 ~T0 @X0 -> 20 `i e ]
-"22
-[; ;./task.h: 22: char num_task;
-[v _num_task `uc ~T0 @X0 1 e ]
 "23
-[; ;./task.h: 23: signed int head;
+[; ;./task.h: 23: char num_task;
+[v _num_task `uc ~T0 @X0 1 e ]
+"24
+[; ;./task.h: 24: signed int head;
 [v _head `i ~T0 @X0 1 e ]
 "3 task.c
 [; ;task.c: 3: char isEmptyList() {
@@ -105,413 +105,423 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul ]
 "15
 [; ;task.c: 15:         task_list[i].func_ptr = ((void*)0);
-[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F47 ]
+[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F49 ]
 "16
-[; ;task.c: 16:         task_list[i].next = 105;
-[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i ]
+[; ;task.c: 16:         task_list[i].data_p = ((void*)0);
+[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 4 -> -> 0 `i `*v ]
 "17
-[; ;task.c: 17:     }
+[; ;task.c: 17:         task_list[i].next = 105;
+[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i ]
+"18
+[; ;task.c: 18:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 20 `i 5  ]
 [e :U 6 ]
 }
-"18
-[; ;task.c: 18:     num_task = 0;
-[e = _num_task -> -> 0 `i `uc ]
 "19
-[; ;task.c: 19:     head = 105;
-[e = _head -> 105 `i ]
+[; ;task.c: 19:     num_task = 0;
+[e = _num_task -> -> 0 `i `uc ]
 "20
-[; ;task.c: 20: }
+[; ;task.c: 20:     head = 105;
+[e = _head -> 105 `i ]
+"21
+[; ;task.c: 21: }
 [e :UE 4 ]
 }
-"22
-[; ;task.c: 22: char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr) {
-[v _addTask `(uc ~T0 @X0 1 ef3`ul`ul`*F50 ]
+"23
+[; ;task.c: 23: char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data) {
+[v _addTask `(uc ~T0 @X0 1 ef4`ul`ul`*F52`*v ]
 {
 [e :U _addTask ]
 [v _period `ul ~T0 @X0 1 r1 ]
 [v _delay `ul ~T0 @X0 1 r2 ]
-[v _ptr `*F54 ~T0 @X0 1 r3 ]
+[v _ptr `*F56 ~T0 @X0 1 r3 ]
+[v _data `*v ~T0 @X0 1 r4 ]
 [f ]
-"23
-[; ;task.c: 23:     if(isFullList())
-[e $ ! != -> ( _isFullList ..  `i -> 0 `i 9  ]
 "24
-[; ;task.c: 24:         return 109;
+[; ;task.c: 24:     if(isFullList())
+[e $ ! != -> ( _isFullList ..  `i -> 0 `i 9  ]
+"25
+[; ;task.c: 25:         return 109;
 [e ) -> -> 109 `i `uc ]
 [e $UE 8  ]
 [e :U 9 ]
-"25
-[; ;task.c: 25:     char idx;
-[v _idx `uc ~T0 @X0 1 a ]
 "26
-[; ;task.c: 26:     for(idx = 0; idx < 20; idx++) {
+[; ;task.c: 26:     char idx;
+[v _idx `uc ~T0 @X0 1 a ]
+"27
+[; ;task.c: 27:     for(idx = 0; idx < 20; idx++) {
 {
 [e = _idx -> -> 0 `i `uc ]
 [e $ < -> _idx `i -> 20 `i 10  ]
 [e $U 11  ]
 [e :U 10 ]
 {
-"27
-[; ;task.c: 27:         if(task_list[idx].func_ptr == ((void*)0))
-[e $ ! == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F57 13  ]
 "28
-[; ;task.c: 28:             break;
+[; ;task.c: 28:         if(task_list[idx].func_ptr == ((void*)0))
+[e $ ! == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F60 13  ]
+"29
+[; ;task.c: 29:             break;
 [e $U 11  ]
 [e :U 13 ]
-"29
-[; ;task.c: 29:     }
+"30
+[; ;task.c: 30:     }
 }
 [e ++ _idx -> -> 1 `i `uc ]
 [e $ < -> _idx `i -> 20 `i 10  ]
 [e :U 11 ]
 }
-"30
-[; ;task.c: 30:     if(idx == 20)
-[e $ ! == -> _idx `i -> 20 `i 14  ]
 "31
-[; ;task.c: 31:         return 109;
+[; ;task.c: 31:     if(idx == 20)
+[e $ ! == -> _idx `i -> 20 `i 14  ]
+"32
+[; ;task.c: 32:         return 109;
 [e ) -> -> 109 `i `uc ]
 [e $UE 8  ]
 [e :U 14 ]
-"35
-[; ;task.c: 35:     task_list[idx].delay_t = delay;
+"33
+[; ;task.c: 33:     task_list[idx].delay_t = delay;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 _delay ]
-"36
-[; ;task.c: 36:     task_list[idx].period_t = period;
+"34
+[; ;task.c: 34:     task_list[idx].period_t = period;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 1 _period ]
-"37
-[; ;task.c: 37:     task_list[idx].func_ptr = ptr;
+"35
+[; ;task.c: 35:     task_list[idx].func_ptr = ptr;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 _ptr ]
-"38
-[; ;task.c: 38:     num_task++;
+"36
+[; ;task.c: 36:     task_list[idx].data_p = data;
+[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 4 _data ]
+"37
+[; ;task.c: 37:     num_task++;
 [e ++ _num_task -> -> 1 `i `uc ]
-"39
-[; ;task.c: 39:     if(head == 105 || (head != 105 && task_list[head].delay_t > task_list[idx].delay_t)) {
+"38
+[; ;task.c: 38:     if(head == 105 || (head != 105 && task_list[head].delay_t > task_list[idx].delay_t)) {
 [e $ ! || == _head -> 105 `i && != _head -> 105 `i > . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 15  ]
 {
-"40
-[; ;task.c: 40:         task_list[idx].next = head;
+"39
+[; ;task.c: 39:         task_list[idx].next = head;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 _head ]
-"41
-[; ;task.c: 41:         head = idx;
+"40
+[; ;task.c: 40:         head = idx;
 [e = _head -> _idx `i ]
-"43
-[; ;task.c: 43:     }
+"41
+[; ;task.c: 41:     }
 }
 [e $U 16  ]
-"44
-[; ;task.c: 44:     else {
+"42
+[; ;task.c: 42:     else {
 [e :U 15 ]
 {
-"45
-[; ;task.c: 45:         delay = delay - task_list[head].delay_t;
+"43
+[; ;task.c: 43:         delay = delay - task_list[head].delay_t;
 [e = _delay - _delay . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
-"46
-[; ;task.c: 46:         int cur = task_list[head].next;
+"44
+[; ;task.c: 44:         int cur = task_list[head].next;
 [v _cur `i ~T0 @X0 1 a ]
 [e = _cur . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 3 ]
-"47
-[; ;task.c: 47:         int prev = head;
+"45
+[; ;task.c: 45:         int prev = head;
 [v _prev `i ~T0 @X0 1 a ]
 [e = _prev _head ]
-"48
-[; ;task.c: 48:         while(cur != 105 && task_list[cur].delay_t <= delay) {
+"46
+[; ;task.c: 46:         while(cur != 105 && task_list[cur].delay_t <= delay) {
 [e $U 17  ]
 [e :U 18 ]
 {
-"49
-[; ;task.c: 49:             delay = delay - task_list[cur].delay_t;
+"47
+[; ;task.c: 47:             delay = delay - task_list[cur].delay_t;
 [e = _delay - _delay . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
-"50
-[; ;task.c: 50:             prev = cur;
+"48
+[; ;task.c: 48:             prev = cur;
 [e = _prev _cur ]
-"51
-[; ;task.c: 51:             cur = task_list[cur].next;
+"49
+[; ;task.c: 49:             cur = task_list[cur].next;
 [e = _cur . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 3 ]
-"52
-[; ;task.c: 52:         }
+"50
+[; ;task.c: 50:         }
 }
 [e :U 17 ]
-"48
-[; ;task.c: 48:         while(cur != 105 && task_list[cur].delay_t <= delay) {
+"46
+[; ;task.c: 46:         while(cur != 105 && task_list[cur].delay_t <= delay) {
 [e $ && != _cur -> 105 `i <= . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 _delay 18  ]
 [e :U 19 ]
-"53
-[; ;task.c: 53:         task_list[prev].next = idx;
+"51
+[; ;task.c: 51:         task_list[prev].next = idx;
 [e = . *U + &U _task_list * -> -> _prev `ui `ux -> -> # *U &U _task_list `ui `ux 3 -> _idx `i ]
-"54
-[; ;task.c: 54:         task_list[idx].next = cur;
+"52
+[; ;task.c: 52:         task_list[idx].next = cur;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 _cur ]
-"55
-[; ;task.c: 55:         task_list[idx].delay_t = delay;
+"53
+[; ;task.c: 53:         task_list[idx].delay_t = delay;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 _delay ]
-"56
-[; ;task.c: 56:     }
+"54
+[; ;task.c: 54:     }
 }
 [e :U 16 ]
-"57
-[; ;task.c: 57:     if(task_list[idx].next != 105)
+"55
+[; ;task.c: 55:     if(task_list[idx].next != 105)
 [e $ ! != . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i 20  ]
-"58
-[; ;task.c: 58:         task_list[task_list[idx].next].delay_t = task_list[task_list[idx].next].delay_t - delay;
+"56
+[; ;task.c: 56:         task_list[task_list[idx].next].delay_t = task_list[task_list[idx].next].delay_t - delay;
 [e = . *U + &U _task_list * -> -> . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 - . *U + &U _task_list * -> -> . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 _delay ]
 [e :U 20 ]
-"59
-[; ;task.c: 59:     return idx;
+"57
+[; ;task.c: 57:     return idx;
 [e ) _idx ]
 [e $UE 8  ]
-"60
-[; ;task.c: 60: }
+"58
+[; ;task.c: 58: }
 [e :UE 8 ]
 }
-"62
-[; ;task.c: 62: char removeTask(char idx) {
+"60
+[; ;task.c: 60: char removeTask(char idx) {
 [v _removeTask `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _removeTask ]
 [v _idx `uc ~T0 @X0 1 r1 ]
 [f ]
-"63
-[; ;task.c: 63:     if(isEmptyList() || task_list[idx].func_ptr == ((void*)0))
-[e $ ! || != -> ( _isEmptyList ..  `i -> 0 `i == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F65 22  ]
-"64
-[; ;task.c: 64:         return 0;
+"61
+[; ;task.c: 61:     if(isEmptyList() || task_list[idx].func_ptr == ((void*)0))
+[e $ ! || != -> ( _isEmptyList ..  `i -> 0 `i == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F68 22  ]
+"62
+[; ;task.c: 62:         return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 21  ]
 [e :U 22 ]
-"65
-[; ;task.c: 65:     task_list[idx].delay_t = 0;
+"63
+[; ;task.c: 63:     task_list[idx].delay_t = 0;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 0 -> -> -> 0 `i `l `ul ]
-"66
-[; ;task.c: 66:     task_list[idx].period_t = 0;
+"64
+[; ;task.c: 64:     task_list[idx].period_t = 0;
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul ]
+"65
+[; ;task.c: 65:     task_list[idx].func_ptr = ((void*)0);
+[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F70 ]
+"66
+[; ;task.c: 66:     task_list[idx].data_p = ((void*)0);
+[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 4 -> -> 0 `i `*v ]
 "67
-[; ;task.c: 67:     task_list[idx].func_ptr = ((void*)0);
-[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F67 ]
-"68
-[; ;task.c: 68:     num_task--;
+[; ;task.c: 67:     num_task--;
 [e -- _num_task -> -> 1 `i `uc ]
-"69
-[; ;task.c: 69:     if(idx == head) {
+"68
+[; ;task.c: 68:     if(idx == head) {
 [e $ ! == -> _idx `i _head 23  ]
 {
-"70
-[; ;task.c: 70:         head = task_list[idx].next;
+"69
+[; ;task.c: 69:         head = task_list[idx].next;
 [e = _head . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 ]
+"70
+[; ;task.c: 70:         task_list[idx].next = 105;
+[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i ]
 "71
-[; ;task.c: 71:         task_list[idx].next = -1;
-[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 -U -> 1 `i ]
-"72
-[; ;task.c: 72:     }
+[; ;task.c: 71:     }
 }
 [e $U 24  ]
-"73
-[; ;task.c: 73:     else {
+"72
+[; ;task.c: 72:     else {
 [e :U 23 ]
 {
-"74
-[; ;task.c: 74:         char pos = head;
+"73
+[; ;task.c: 73:         char pos = head;
 [v _pos `uc ~T0 @X0 1 a ]
 [e = _pos -> _head `uc ]
-"75
-[; ;task.c: 75:         while(task_list[pos].next != 105 && task_list[pos].next != idx) {
+"74
+[; ;task.c: 74:         while(task_list[pos].next != 105 && task_list[pos].next != idx) {
 [e $U 25  ]
 [e :U 26 ]
 {
-"76
-[; ;task.c: 76:             pos = task_list[pos].next;
+"75
+[; ;task.c: 75:             pos = task_list[pos].next;
 [e = _pos -> . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 `uc ]
-"77
-[; ;task.c: 77:         }
+"76
+[; ;task.c: 76:         }
 }
 [e :U 25 ]
-"75
-[; ;task.c: 75:         while(task_list[pos].next != 105 && task_list[pos].next != idx) {
+"74
+[; ;task.c: 74:         while(task_list[pos].next != 105 && task_list[pos].next != idx) {
 [e $ && != . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i != . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 -> _idx `i 26  ]
 [e :U 27 ]
-"78
-[; ;task.c: 78:         task_list[pos].next = task_list[idx].next;
+"77
+[; ;task.c: 77:         task_list[pos].next = task_list[idx].next;
 [e = . *U + &U _task_list * -> _pos `ux -> -> # *U &U _task_list `ui `ux 3 . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 ]
+"78
+[; ;task.c: 78:         task_list[idx].next = 105;
+[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i ]
 "79
-[; ;task.c: 79:         task_list[idx].next = -1;
-[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 3 -U -> 1 `i ]
-"80
-[; ;task.c: 80:     }
+[; ;task.c: 79:     }
 }
 [e :U 24 ]
-"82
-[; ;task.c: 82:     return 1;
+"81
+[; ;task.c: 81:     return 1;
 [e ) -> -> 1 `i `uc ]
 [e $UE 21  ]
-"83
-[; ;task.c: 83: }
+"82
+[; ;task.c: 82: }
 [e :UE 21 ]
 }
-"85
-[; ;task.c: 85: void handleListHead() {
+"84
+[; ;task.c: 84: void handleListHead() {
 [v _handleListHead `(v ~T0 @X0 1 ef ]
 {
 [e :U _handleListHead ]
 [f ]
-"86
-[; ;task.c: 86:     if(head == 105)
+"85
+[; ;task.c: 85:     if(head == 105)
 [e $ ! == _head -> 105 `i 29  ]
-"87
-[; ;task.c: 87:         return;
+"86
+[; ;task.c: 86:         return;
 [e $UE 28  ]
 [e :U 29 ]
-"96
-[; ;task.c: 96:     while(task_list[head].delay_t == 0) {
+"87
+[; ;task.c: 87:     while(task_list[head].delay_t == 0) {
 [e $U 30  ]
 [e :U 31 ]
 {
-"97
-[; ;task.c: 97:         int pos = head;
+"88
+[; ;task.c: 88:         int pos = head;
 [v _pos `i ~T0 @X0 1 a ]
 [e = _pos _head ]
-"98
-[; ;task.c: 98:         enqueue(task_list[pos].func_ptr);
+"89
+[; ;task.c: 89:         enqueue(task_list[pos].func_ptr);
 [e ( _enqueue (1 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 2 ]
-"99
-[; ;task.c: 99:         head = task_list[pos].next;
+"90
+[; ;task.c: 90:         head = task_list[pos].next;
 [e = _head . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 ]
-"100
-[; ;task.c: 100:         if(task_list[pos].period_t == 0) {
+"91
+[; ;task.c: 91:         if(task_list[pos].period_t == 0) {
 [e $ ! == . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul 33  ]
 {
-"101
-[; ;task.c: 101:             removeTask(pos);
+"92
+[; ;task.c: 92:             removeTask(pos);
 [e ( _removeTask (1 -> _pos `uc ]
-"102
-[; ;task.c: 102:         }
+"93
+[; ;task.c: 93:         }
 }
 [e $U 34  ]
-"103
-[; ;task.c: 103:         else {
+"94
+[; ;task.c: 94:         else {
 [e :U 33 ]
 {
-"104
-[; ;task.c: 104:             task_list[pos].delay_t = task_list[pos].period_t;
+"95
+[; ;task.c: 95:             task_list[pos].delay_t = task_list[pos].period_t;
 [e = . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 1 ]
-"105
-[; ;task.c: 105:             if(head == 105 || (head != 105 && task_list[head].delay_t > task_list[pos].delay_t)) {
+"96
+[; ;task.c: 96:             if(head == 105 || (head != 105 && task_list[head].delay_t > task_list[pos].delay_t)) {
 [e $ ! || == _head -> 105 `i && != _head -> 105 `i > . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 35  ]
 {
-"106
-[; ;task.c: 106:                 task_list[pos].next = head;
+"97
+[; ;task.c: 97:                 task_list[pos].next = head;
 [e = . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 _head ]
-"107
-[; ;task.c: 107:                 head = pos;
+"98
+[; ;task.c: 98:                 head = pos;
 [e = _head _pos ]
-"108
-[; ;task.c: 108:             } else {
+"99
+[; ;task.c: 99:             } else {
 }
 [e $U 36  ]
 [e :U 35 ]
 {
-"109
-[; ;task.c: 109:                 task_list[pos].delay_t = task_list[pos].delay_t - task_list[head].delay_t;
+"100
+[; ;task.c: 100:                 task_list[pos].delay_t = task_list[pos].delay_t - task_list[head].delay_t;
 [e = . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 - . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
-"110
-[; ;task.c: 110:                 int cur = task_list[head].next;
+"101
+[; ;task.c: 101:                 int cur = task_list[head].next;
 [v _cur `i ~T0 @X0 1 a ]
 [e = _cur . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 3 ]
-"111
-[; ;task.c: 111:                 int prev = head;
+"102
+[; ;task.c: 102:                 int prev = head;
 [v _prev `i ~T0 @X0 1 a ]
 [e = _prev _head ]
-"112
-[; ;task.c: 112:                 while(cur != 105 && task_list[cur].delay_t <= task_list[pos].delay_t) {
+"103
+[; ;task.c: 103:                 while(cur != 105 && task_list[cur].delay_t <= task_list[pos].delay_t) {
 [e $U 37  ]
 [e :U 38 ]
 {
-"113
-[; ;task.c: 113:                     task_list[pos].delay_t = task_list[pos].delay_t - task_list[cur].delay_t;
-[e = . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 - . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
-"114
-[; ;task.c: 114:                     prev = cur;
+"104
+[; ;task.c: 104:                     task_list[pos].delay_t -= task_list[cur].delay_t;
+[e =- . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
+"105
+[; ;task.c: 105:                     prev = cur;
 [e = _prev _cur ]
-"115
-[; ;task.c: 115:                     cur = task_list[cur].next;
+"106
+[; ;task.c: 106:                     cur = task_list[cur].next;
 [e = _cur . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 3 ]
-"116
-[; ;task.c: 116:                 }
+"107
+[; ;task.c: 107:                 }
 }
 [e :U 37 ]
-"112
-[; ;task.c: 112:                 while(cur != 105 && task_list[cur].delay_t <= task_list[pos].delay_t) {
+"103
+[; ;task.c: 103:                 while(cur != 105 && task_list[cur].delay_t <= task_list[pos].delay_t) {
 [e $ && != _cur -> 105 `i <= . *U + &U _task_list * -> -> _cur `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 38  ]
 [e :U 39 ]
-"117
-[; ;task.c: 117:                 task_list[prev].next = pos;
+"108
+[; ;task.c: 108:                 task_list[prev].next = pos;
 [e = . *U + &U _task_list * -> -> _prev `ui `ux -> -> # *U &U _task_list `ui `ux 3 _pos ]
-"118
-[; ;task.c: 118:                 task_list[pos].next = cur;
+"109
+[; ;task.c: 109:                 task_list[pos].next = cur;
 [e = . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 _cur ]
-"119
-[; ;task.c: 119:             }
+"110
+[; ;task.c: 110:             }
 }
 [e :U 36 ]
-"120
-[; ;task.c: 120:             if(task_list[pos].next != 105)
+"111
+[; ;task.c: 111:             if(task_list[pos].next != 105)
 [e $ ! != . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 -> 105 `i 40  ]
-"121
-[; ;task.c: 121:                 task_list[task_list[pos].next].delay_t = task_list[task_list[pos].next].delay_t - task_list[pos].delay_t;
-[e = . *U + &U _task_list * -> -> . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 - . *U + &U _task_list * -> -> . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
+"112
+[; ;task.c: 112:                 task_list[task_list[pos].next].delay_t -= task_list[pos].delay_t;
+[e =- . *U + &U _task_list * -> -> . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 3 `ui `ux -> -> # *U &U _task_list `ui `ux 0 . *U + &U _task_list * -> -> _pos `ui `ux -> -> # *U &U _task_list `ui `ux 0 ]
 [e :U 40 ]
-"122
-[; ;task.c: 122:         }
+"113
+[; ;task.c: 113:         }
 }
 [e :U 34 ]
-"123
-[; ;task.c: 123:     }
+"114
+[; ;task.c: 114:     }
 }
 [e :U 30 ]
-"96
-[; ;task.c: 96:     while(task_list[head].delay_t == 0) {
+"87
+[; ;task.c: 87:     while(task_list[head].delay_t == 0) {
 [e $ == . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 -> -> -> 0 `i `l `ul 31  ]
 [e :U 32 ]
-"124
-[; ;task.c: 124:     task_list[head].delay_t-= 10;
+"115
+[; ;task.c: 115:     task_list[head].delay_t-= 10;
 [e =- . *U + &U _task_list * -> -> _head `ui `ux -> -> # *U &U _task_list `ui `ux 0 -> -> -> 10 `i `l `ul ]
-"125
-[; ;task.c: 125: }
+"116
+[; ;task.c: 116: }
 [e :UE 28 ]
 }
-"127
-[; ;task.c: 127: void selectReadyTask() {
+"118
+[; ;task.c: 118: void selectReadyTask() {
 [v _selectReadyTask `(v ~T0 @X0 1 ef ]
 {
 [e :U _selectReadyTask ]
 [f ]
-"128
-[; ;task.c: 128:     while(!isEmptyQueue()) {
+"119
+[; ;task.c: 119:     while(!isEmptyQueue()) {
 [e $U 42  ]
 [e :U 43 ]
 {
-"129
-[; ;task.c: 129:         FUNCTION_PTR ptr = dequeue();
-[v _ptr `*F77 ~T0 @X0 1 a ]
+"120
+[; ;task.c: 120:         FUNCTION_PTR ptr = dequeue();
+[v _ptr `*F80 ~T0 @X0 1 a ]
 [e = _ptr ( _dequeue ..  ]
-"130
-[; ;task.c: 130:         if( ptr != ((void*)0))
-[e $ ! != _ptr -> -> -> 0 `i `*v `*F80 45  ]
-"131
-[; ;task.c: 131:             (ptr)();
+"121
+[; ;task.c: 121:         if( ptr != ((void*)0))
+[e $ ! != _ptr -> -> -> 0 `i `*v `*F83 45  ]
+"122
+[; ;task.c: 122:             (ptr)();
 [e ( *U _ptr ..  ]
 [e :U 45 ]
-"132
-[; ;task.c: 132:     }
+"123
+[; ;task.c: 123:     }
 }
 [e :U 42 ]
-"128
-[; ;task.c: 128:     while(!isEmptyQueue()) {
+"119
+[; ;task.c: 119:     while(!isEmptyQueue()) {
 [e $ ! != -> ( _isEmptyQueue ..  `i -> 0 `i 43  ]
 [e :U 44 ]
-"133
-[; ;task.c: 133: }
+"124
+[; ;task.c: 124: }
 [e :UE 41 ]
 }

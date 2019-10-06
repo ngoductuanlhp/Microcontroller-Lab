@@ -1,18 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F8 `(v ~T0 @X0 0 t? ]
-[v F23 `(v ~T0 @X0 0 t? ]
-[v F25 `(v ~T0 @X0 0 t? ]
+[v F16 `(v ~T0 @X0 0 t? ]
 [v F31 `(v ~T0 @X0 0 t? ]
-[v F32 `(v ~T0 @X0 0 t? ]
-"21 ./config.h
-[; ;./config.h: 21: char value = 0;
+[v F33 `(v ~T0 @X0 0 t? ]
+[v F39 `(v ~T0 @X0 0 t? ]
+[v F40 `(v ~T0 @X0 0 t? ]
+"29 ./config.h
+[; ;./config.h: 29: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
 "13 ./ready_queue.h
 [; ;./ready_queue.h: 13: FUNCTION_PTR ready_queue[20];
-[v _ready_queue `*F8 ~T0 @X0 -> 20 `i e ]
+[v _ready_queue `*F16 ~T0 @X0 -> 20 `i e ]
 "14
 [; ;./ready_queue.h: 14: int front = -1;
 [v _front `i ~T0 @X0 1 e ]
@@ -34,10 +34,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4
 [; ;ready_queue.c: 4:     return (rear - front + 1 + 20) % 20;
 [e ) -> % + + - _rear _front -> 1 `i -> 20 `i -> 20 `i `uc ]
-[e $UE 1  ]
+[e $UE 2  ]
 "5
 [; ;ready_queue.c: 5: }
-[e :UE 1 ]
+[e :UE 2 ]
 }
 "7
 [; ;ready_queue.c: 7: char isFullQueue() {
@@ -48,10 +48,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8
 [; ;ready_queue.c: 8:     return getSizeQueue() >= 20 ? 1 : 0;
 [e ) -> ? >= -> ( _getSizeQueue ..  `i -> 20 `i : -> 1 `i -> 0 `i `uc ]
-[e $UE 2  ]
+[e $UE 3  ]
 "9
 [; ;ready_queue.c: 9: }
-[e :UE 2 ]
+[e :UE 3 ]
 }
 "11
 [; ;ready_queue.c: 11: char isEmptyQueue() {
@@ -61,42 +61,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "12
 [; ;ready_queue.c: 12:     if(front == -1)
-[e $ ! == _front -U -> 1 `i 4  ]
+[e $ ! == _front -U -> 1 `i 5  ]
 "13
 [; ;ready_queue.c: 13:         return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 3  ]
-[e :U 4 ]
+[e $UE 4  ]
+[e :U 5 ]
 "14
 [; ;ready_queue.c: 14:     return getSizeQueue() == 0 ? 1 : 0;
 [e ) -> ? == -> ( _getSizeQueue ..  `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
-[e $UE 3  ]
+[e $UE 4  ]
 "15
 [; ;ready_queue.c: 15: }
-[e :UE 3 ]
+[e :UE 4 ]
 }
 "17
 [; ;ready_queue.c: 17: char enqueue(FUNCTION_PTR ptr) {
-[v _enqueue `(uc ~T0 @X0 1 ef1`*F23 ]
+[v _enqueue `(uc ~T0 @X0 1 ef1`*F31 ]
 {
 [e :U _enqueue ]
-[v _ptr `*F25 ~T0 @X0 1 r1 ]
+[v _ptr `*F33 ~T0 @X0 1 r1 ]
 [f ]
 "18
 [; ;ready_queue.c: 18:     if(isFullQueue())
-[e $ ! != -> ( _isFullQueue ..  `i -> 0 `i 6  ]
+[e $ ! != -> ( _isFullQueue ..  `i -> 0 `i 7  ]
 "19
 [; ;ready_queue.c: 19:         return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 5  ]
-[e :U 6 ]
+[e $UE 6  ]
+[e :U 7 ]
 "20
 [; ;ready_queue.c: 20:     if(front == -1)
-[e $ ! == _front -U -> 1 `i 7  ]
+[e $ ! == _front -U -> 1 `i 8  ]
 "21
 [; ;ready_queue.c: 21:         front = 0;
 [e = _front -> 0 `i ]
-[e :U 7 ]
+[e :U 8 ]
 "22
 [; ;ready_queue.c: 22:     rear = (rear + 1) % 20;
 [e = _rear % + _rear -> 1 `i -> 20 `i ]
@@ -106,25 +106,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;ready_queue.c: 24:     return 1;
 [e ) -> -> 1 `i `uc ]
-[e $UE 5  ]
+[e $UE 6  ]
 "25
 [; ;ready_queue.c: 25: }
-[e :UE 5 ]
+[e :UE 6 ]
 }
 "27
 [; ;ready_queue.c: 27: FUNCTION_PTR dequeue() {
-[v _dequeue `(*F31 ~T0 @X0 1 ef ]
+[v _dequeue `(*F39 ~T0 @X0 1 ef ]
 {
 [e :U _dequeue ]
 [f ]
 "28
 [; ;ready_queue.c: 28:     if(isEmptyQueue())
-[e $ ! != -> ( _isEmptyQueue ..  `i -> 0 `i 9  ]
+[e $ ! != -> ( _isEmptyQueue ..  `i -> 0 `i 10  ]
 "29
 [; ;ready_queue.c: 29:         return ((void*)0);
-[e ) -> -> -> 0 `i `*v `*F32 ]
-[e $UE 8  ]
-[e :U 9 ]
+[e ) -> -> -> 0 `i `*v `*F40 ]
+[e $UE 9  ]
+[e :U 10 ]
 "30
 [; ;ready_queue.c: 30:     int idx = front;
 [v _idx `i ~T0 @X0 1 a ]
@@ -135,8 +135,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [; ;ready_queue.c: 32:     return ready_queue[idx];
 [e ) *U + &U _ready_queue * -> -> _idx `ui `ux -> -> # *U &U _ready_queue `ui `ux ]
-[e $UE 8  ]
+[e $UE 9  ]
 "33
 [; ;ready_queue.c: 33: }
-[e :UE 8 ]
+[e :UE 9 ]
 }

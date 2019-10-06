@@ -15,6 +15,14 @@ typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)();
 
+typedef struct {
+    tWORD delay_t;
+    tWORD period_t;
+    FUNCTION_PTR func_ptr;
+    int next;
+    void* data_p;
+} task_struct;
+
 char value = 0;
 # 11 "./task.h" 2
 
@@ -29,15 +37,7 @@ FUNCTION_PTR dequeue();
 char isEmptyQueue();
 char isFullQueue();
 # 12 "./task.h" 2
-
-
-typedef struct {
-    tWORD delay_t;
-    tWORD period_t;
-    FUNCTION_PTR func_ptr;
-    int next;
-} task_struct;
-
+# 22 "./task.h"
 task_struct task_list[20];
 char num_task;
 signed int head;
@@ -45,7 +45,7 @@ signed int head;
 void initializeTaskList();
 char isEmptyList();
 char isFullList();
-char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr);
+char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data);
 char removeTask(char idx);
 void handleListHead();
 void selectReadyTask();
@@ -65,13 +65,14 @@ void initializeTaskList() {
         task_list[i].delay_t = 0;
         task_list[i].period_t = 0;
         task_list[i].func_ptr = ((void*)0);
+        task_list[i].data_p = ((void*)0);
         task_list[i].next = 105;
     }
     num_task = 0;
     head = 105;
 }
 
-char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr) {
+char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data) {
     if(isFullList())
         return 109;
     char idx;
@@ -81,17 +82,14 @@ char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr) {
     }
     if(idx == 20)
         return 109;
-
-
-
     task_list[idx].delay_t = delay;
     task_list[idx].period_t = period;
     task_list[idx].func_ptr = ptr;
+    task_list[idx].data_p = data;
     num_task++;
     if(head == 105 || (head != 105 && task_list[head].delay_t > task_list[idx].delay_t)) {
         task_list[idx].next = head;
         head = idx;
-
     }
     else {
         delay = delay - task_list[head].delay_t;
@@ -117,10 +115,11 @@ char removeTask(char idx) {
     task_list[idx].delay_t = 0;
     task_list[idx].period_t = 0;
     task_list[idx].func_ptr = ((void*)0);
+    task_list[idx].data_p = ((void*)0);
     num_task--;
     if(idx == head) {
         head = task_list[idx].next;
-        task_list[idx].next = -1;
+        task_list[idx].next = 105;
     }
     else {
         char pos = head;
@@ -128,7 +127,7 @@ char removeTask(char idx) {
             pos = task_list[pos].next;
         }
         task_list[pos].next = task_list[idx].next;
-        task_list[idx].next = -1;
+        task_list[idx].next = 105;
     }
 
     return 1;
@@ -137,7 +136,6 @@ char removeTask(char idx) {
 void handleListHead() {
     if(head == 105)
         return;
-# 96 "task.c"
     while(task_list[head].delay_t == 0) {
         int pos = head;
         enqueue(task_list[pos].func_ptr);
@@ -155,7 +153,7 @@ void handleListHead() {
                 int cur = task_list[head].next;
                 int prev = head;
                 while(cur != 105 && task_list[cur].delay_t <= task_list[pos].delay_t) {
-                    task_list[pos].delay_t = task_list[pos].delay_t - task_list[cur].delay_t;
+                    task_list[pos].delay_t -= task_list[cur].delay_t;
                     prev = cur;
                     cur = task_list[cur].next;
                 }
@@ -163,7 +161,7 @@ void handleListHead() {
                 task_list[pos].next = cur;
             }
             if(task_list[pos].next != 105)
-                task_list[task_list[pos].next].delay_t = task_list[task_list[pos].next].delay_t - task_list[pos].delay_t;
+                task_list[task_list[pos].next].delay_t -= task_list[pos].delay_t;
         }
     }
     task_list[head].delay_t-= 10;

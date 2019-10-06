@@ -1,10 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F4550 `(v ~T0 @X0 0 t? ]
-[v F4565 `(v ~T0 @X0 0 t? ]
-"14 ./task.h
-[; ;./task.h: 14: typedef struct {
-[s S501 `ul 1 `ul 1 `*F4565 1 `i 1 ]
-[n S501 . delay_t period_t func_ptr next ]
+[v F4558 `(v ~T0 @X0 0 t? ]
+[v F4552 `(v ~T0 @X0 0 t? ]
+"21 ./config.h
+[; ;./config.h: 21: typedef struct {
+[s S501 `ul 1 `ul 1 `*F4552 1 `i 1 `*v 1 ]
+[n S501 . delay_t period_t func_ptr next data_p ]
 "12474 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12474: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -639,15 +639,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"21 ./config.h
-[; ;./config.h: 21: char value = 0;
+"29 ./config.h
+[; ;./config.h: 29: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
 "13 ./ready_queue.h
 [; ;./ready_queue.h: 13: FUNCTION_PTR ready_queue[20];
-[v _ready_queue `*F4550 ~T0 @X0 -> 20 `i e ]
+[v _ready_queue `*F4558 ~T0 @X0 -> 20 `i e ]
 "14
 [; ;./ready_queue.h: 14: int front = -1;
 [v _front `i ~T0 @X0 1 e ]
@@ -660,14 +660,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _rear
 -U -> 1 `i
 ]
-"21 ./task.h
-[; ;./task.h: 21: task_struct task_list[20];
+"22 ./task.h
+[; ;./task.h: 22: task_struct task_list[20];
 [v _task_list `S501 ~T0 @X0 -> 20 `i e ]
-"22
-[; ;./task.h: 22: char num_task;
-[v _num_task `uc ~T0 @X0 1 e ]
 "23
-[; ;./task.h: 23: signed int head;
+[; ;./task.h: 23: char num_task;
+[v _num_task `uc ~T0 @X0 1 e ]
+"24
+[; ;./task.h: 24: signed int head;
 [v _head `i ~T0 @X0 1 e ]
 "17 ./clock.h
 [; ;./clock.h: 17: unsigned long int time_ms;

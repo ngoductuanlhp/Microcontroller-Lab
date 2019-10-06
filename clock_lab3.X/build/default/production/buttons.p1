@@ -772,61 +772,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "7 buttons.c
-[; ;buttons.c: 7: unsigned char firstReadRA5 = 1;
+[; ;buttons.c: 7: tBYTE firstReadRA5 = 1;
 [v _firstReadRA5 `uc ~T0 @X0 1 e ]
 [i _firstReadRA5
 -> -> 1 `i `uc
 ]
 "8
-[; ;buttons.c: 8: unsigned char secondReadRA5 = 1;
+[; ;buttons.c: 8: tBYTE secondReadRA5 = 1;
 [v _secondReadRA5 `uc ~T0 @X0 1 e ]
 [i _secondReadRA5
 -> -> 1 `i `uc
 ]
 "9
-[; ;buttons.c: 9: unsigned char firstReadRB0 = 1;
+[; ;buttons.c: 9: tBYTE firstReadRB0 = 1;
 [v _firstReadRB0 `uc ~T0 @X0 1 e ]
 [i _firstReadRB0
 -> -> 1 `i `uc
 ]
 "10
-[; ;buttons.c: 10: unsigned char secondReadRB0 = 1;
+[; ;buttons.c: 10: tBYTE secondReadRB0 = 1;
 [v _secondReadRB0 `uc ~T0 @X0 1 e ]
 [i _secondReadRB0
 -> -> 1 `i `uc
 ]
 "12
-[; ;buttons.c: 12: unsigned char stateRA5 = 0;
+[; ;buttons.c: 12: tBYTE stateRA5 = 0;
 [v _stateRA5 `uc ~T0 @X0 1 e ]
 [i _stateRA5
 -> -> 0 `i `uc
 ]
 "13
-[; ;buttons.c: 13: unsigned int countRA5 = 0;
+[; ;buttons.c: 13: tWORD countRA5 = 0;
 [v _countRA5 `ui ~T0 @X0 1 e ]
 [i _countRA5
 -> -> 0 `i `ui
 ]
 "14
-[; ;buttons.c: 14: unsigned int countRA5_1 = 0;
+[; ;buttons.c: 14: tWORD countRA5_1 = 0;
 [v _countRA5_1 `ui ~T0 @X0 1 e ]
 [i _countRA5_1
 -> -> 0 `i `ui
 ]
 "16
-[; ;buttons.c: 16: unsigned char stateRB0 = 0;
+[; ;buttons.c: 16: tBYTE stateRB0 = 0;
 [v _stateRB0 `uc ~T0 @X0 1 e ]
 [i _stateRB0
 -> -> 0 `i `uc
 ]
 "17
-[; ;buttons.c: 17: unsigned int countRB0 = 0;
+[; ;buttons.c: 17: tWORD countRB0 = 0;
 [v _countRB0 `ui ~T0 @X0 1 e ]
 [i _countRB0
 -> -> 0 `i `ui
 ]
 "18
-[; ;buttons.c: 18: unsigned int countRB0_1 = 0;
+[; ;buttons.c: 18: tWORD countRB0_1 = 0;
 [v _countRB0_1 `ui ~T0 @X0 1 e ]
 [i _countRB0_1
 -> -> 0 `i `ui

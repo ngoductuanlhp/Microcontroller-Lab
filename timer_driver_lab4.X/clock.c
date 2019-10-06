@@ -36,7 +36,7 @@ unsigned long int get_time(void) {
 }
 
 char register_timer(unsigned long int period, unsigned long int delay, FUNCTION_PTR callback, void *data) {
-    return addTask(period, delay, callback);
+    return addTask(period, delay, callback, data);
 }
 
 int remove_timer(char id) {

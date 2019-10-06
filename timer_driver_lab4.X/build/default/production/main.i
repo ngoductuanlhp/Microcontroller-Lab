@@ -7799,6 +7799,14 @@ typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)();
 
+typedef struct {
+    tWORD delay_t;
+    tWORD period_t;
+    FUNCTION_PTR func_ptr;
+    int next;
+    void* data_p;
+} task_struct;
+
 char value = 0;
 # 11 "./task.h" 2
 
@@ -7813,15 +7821,7 @@ FUNCTION_PTR dequeue();
 char isEmptyQueue();
 char isFullQueue();
 # 12 "./task.h" 2
-
-
-typedef struct {
-    tWORD delay_t;
-    tWORD period_t;
-    FUNCTION_PTR func_ptr;
-    int next;
-} task_struct;
-
+# 22 "./task.h"
 task_struct task_list[20];
 char num_task;
 signed int head;
@@ -7829,7 +7829,7 @@ signed int head;
 void initializeTaskList();
 char isEmptyList();
 char isFullList();
-char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr);
+char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data);
 char removeTask(char idx);
 void handleListHead();
 void selectReadyTask();

@@ -8340,18 +8340,18 @@ void state_stop_watch(void);
 
 
 
-unsigned char firstReadRA5 = 1;
-unsigned char secondReadRA5 = 1;
-unsigned char firstReadRB0 = 1;
-unsigned char secondReadRB0 = 1;
+tBYTE firstReadRA5 = 1;
+tBYTE secondReadRA5 = 1;
+tBYTE firstReadRB0 = 1;
+tBYTE secondReadRB0 = 1;
 
-unsigned char stateRA5 = 0;
-unsigned int countRA5 = 0;
-unsigned int countRA5_1 = 0;
+tBYTE stateRA5 = 0;
+tWORD countRA5 = 0;
+tWORD countRA5_1 = 0;
 
-unsigned char stateRB0 = 0;
-unsigned int countRB0 = 0;
-unsigned int countRB0_1 = 0;
+tBYTE stateRB0 = 0;
+tWORD countRB0 = 0;
+tWORD countRB0_1 = 0;
 
 
 int readButtonRA5() {
