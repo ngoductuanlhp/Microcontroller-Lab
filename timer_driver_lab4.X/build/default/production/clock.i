@@ -7774,7 +7774,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)();
+typedef void (*FUNCTION_PTR)(void*);
 
 typedef struct {
     tWORD delay_t;
@@ -7788,6 +7788,8 @@ typedef struct {
     FUNCTION_PTR func_ptr;
     void* data_p;
 } queue_node;
+
+char task_id[20] = {0};
 
 char value = 0;
 
@@ -7806,10 +7808,11 @@ queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
 # 13 "./task.h" 2
-# 23 "./task.h"
+
+
 task_struct task_list[20];
 char num_task;
-signed int head;
+char head;
 
 void initializeTaskList();
 char isEmptyList();
@@ -7823,11 +7826,14 @@ void selectReadyTask();
 
 
 
-unsigned long int time_ms;
+
+
+tWORD time_ms;
+tWORD prev_time_ms = 0;
 
 int start_timer(char timer_vaddr);
-unsigned long int get_time(void);
-char register_timer(unsigned long int period, unsigned long int delay, FUNCTION_PTR callback, void* data);
+tWORD get_time(void);
+char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data);
 int remove_timer(char id);
 int stop_timer(void);
 int timer_ISR();
@@ -7880,6 +7886,8 @@ int remove_timer(char id) {
 int stop_timer(void) {
     INTCONbits.TMR0IE = 0;
     INTCONbits.TMR0IF = 0;
+    PIE1bits.TMR1IE = 0;
+    PIR1bits.TMR1IF = 0;
     time_ms = 0;
     return 0;
 }
@@ -7895,11 +7903,6 @@ void __attribute__((picinterrupt(("")))) timer_interrupt(void) {
         TMR1H = 0xB1;
         TMR1L = 0xE0;
         handleListHead();
-        count++;
-        if(count == 100) {
-            count = 0;
-
-        }
     }
 }
 

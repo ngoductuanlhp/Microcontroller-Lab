@@ -703,19 +703,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "36 ./config.h
-[; ;./config.h: 36: char value = 0;
+[; ;./config.h: 36: char task_id[20] = {0};
+[v _task_id `uc ~T0 @X0 -> 20 `i e ]
+[i _task_id
+:U ..
+-> -> 0 `i `uc
+..
+]
+"38
+[; ;./config.h: 38: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"38
-[; ;./config.h: 38: char RA5_pressed = 0;
+"40
+[; ;./config.h: 40: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"39
-[; ;./config.h: 39: char RB0_pressed = 0;
+"41
+[; ;./config.h: 41: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc
@@ -975,26 +983,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lcd.c: 173: {
 [f ]
 "174
-[; ;lcd.c: 174:     _delay((unsigned long)((100)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 174:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "175
 [; ;lcd.c: 175:     WritePort_BBSPI (0x12, 0x80);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 128 `i `uc ]
 "176
-[; ;lcd.c: 176:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 176:     _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "177
 [; ;lcd.c: 177:     WritePort_BBSPI (0x13, ch);
 [e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
 "178
-[; ;lcd.c: 178:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 178:     _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "179
 [; ;lcd.c: 179:     WritePort_BBSPI (0x12, 0xC0);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 192 `i `uc ]
 "180
-[; ;lcd.c: 180:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 180:     _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "181
 [; ;lcd.c: 181:     WritePort_BBSPI (0x12, 0x00);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
@@ -1016,26 +1024,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lcd.c: 204: {
 [f ]
 "205
-[; ;lcd.c: 205:     _delay((unsigned long)((100)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 205:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "206
 [; ;lcd.c: 206:     WritePort_BBSPI (0x12, 0x00);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
 "207
-[; ;lcd.c: 207:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 207:     _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "208
 [; ;lcd.c: 208:     WritePort_BBSPI (0x13, ch);
 [e ( _WritePort_BBSPI (2 , -> -> 19 `i `uc _ch ]
 "209
-[; ;lcd.c: 209:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 209:     _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "210
 [; ;lcd.c: 210:     WritePort_BBSPI (0x12,0x40);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 64 `i `uc ]
 "211
-[; ;lcd.c: 211:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 211:     _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "212
 [; ;lcd.c: 212:     WritePort_BBSPI (0x12, 0x00);
 [e ( _WritePort_BBSPI (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
@@ -1112,4 +1120,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "237
 [; ;lcd.c: 237: }
 [e :UE 522 ]
+}
+"239
+[; ;lcd.c: 239: void LCDPrintChar(unsigned char line, unsigned char pos, unsigned char ch) {
+[v _LCDPrintChar `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+{
+[e :U _LCDPrintChar ]
+[v _line `uc ~T0 @X0 1 r1 ]
+[v _pos `uc ~T0 @X0 1 r2 ]
+[v _ch `uc ~T0 @X0 1 r3 ]
+[f ]
+"240
+[; ;lcd.c: 240:     if(line <0 || line > 2 || pos < 0 || pos > 15)
+[e $ ! || || || < -> _line `i -> 0 `i > -> _line `i -> 2 `i < -> _pos `i -> 0 `i > -> _pos `i -> 15 `i 525  ]
+"241
+[; ;lcd.c: 241:         return;
+[e $UE 524  ]
+[e :U 525 ]
+"242
+[; ;lcd.c: 242:     LCDMoveCursor(line, pos);
+[e ( _LCDMoveCursor (2 , _line _pos ]
+"243
+[; ;lcd.c: 243:     LCDPutChar(ch);
+[e ( _LCDPutChar (1 _ch ]
+"244
+[; ;lcd.c: 244: }
+[e :UE 524 ]
 }

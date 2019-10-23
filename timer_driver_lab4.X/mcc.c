@@ -1,7 +1,7 @@
 #include "mcc.h"
 
 void osc_initialize(void) {
-    OSCCON = 0x70;
+    OSCCON = 0x70; //Fosc = 8MHz
 }
 
 void pin_initialize(void) {
@@ -31,6 +31,7 @@ void system_initialize(void) {
     osc_initialize();
     pin_initialize();
     interrupt_initialize();
+    mOPEN_LCD;
     start_timer(0);
     start_timer(1);
 }

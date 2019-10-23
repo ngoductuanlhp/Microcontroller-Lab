@@ -3,10 +3,14 @@
 [d edition pro ]
 [d chip 18F8722 ]
 [d frameptr 4065 ]
-"20 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\buttons.c
+"20 E:\MPLAPXProjects\timer_driver_lab4.X\buttons.c
 [v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
 "29
 [v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
+"38
+[v _handleButton handleButton `(v  1 e 1 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 [v i2___awmod __awmod `(i  1 e 2 0 ]
@@ -22,6 +26,8 @@
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -37,15 +43,21 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"5 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\clock.c
+"5 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _start_timer start_timer `(i  1 e 2 0 ]
+"34
+[v _get_time get_time `(ul  1 e 4 0 ]
 "38
 [v _register_timer register_timer `(uc  1 e 1 0 ]
-"53
+"42
+[v _remove_timer remove_timer `(i  1 e 2 0 ]
+"55
 [v _timer_interrupt timer_interrupt `IIH(v  1 e 1 0 ]
-"72
+"69
 [v _dispatch dispatch `(v  1 e 1 0 ]
-"70 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\lcd.c
+"45 E:\MPLAPXProjects\timer_driver_lab4.X\lcd.c
+[v _LCDInit LCDInit `(v  1 e 1 0 ]
+"70
 [v _InitBBSPI InitBBSPI `(v  1 e 1 0 ]
 "91
 [v _SendByteBBSPI SendByteBBSPI `(v  1 e 1 0 ]
@@ -61,11 +73,17 @@
 [v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
 "227
 [v _LCDMoveCursor LCDMoveCursor `(v  1 e 1 0 ]
-"51 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\main.c
-[v _blink_LED blink_LED `(v  1 e 1 0 ]
-"74
+"232
+[v _LCDPrint LCDPrint `(v  1 e 1 0 ]
+"239
+[v _LCDPrintChar LCDPrintChar `(v  1 e 1 0 ]
+"29 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
+[v _blinking_LED blinking_LED `(v  1 e 1 0 ]
+"52
+[v _printTime_ms printTime_ms `(v  1 e 1 0 ]
+"63
 [v _main main `(v  1 e 1 0 ]
-"3 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\mcc.c
+"3 E:\MPLAPXProjects\timer_driver_lab4.X\mcc.c
 [v _osc_initialize osc_initialize `(v  1 e 1 0 ]
 "7
 [v _pin_initialize pin_initialize `(v  1 e 1 0 ]
@@ -73,7 +91,7 @@
 [v _interrupt_initialize interrupt_initialize `(v  1 e 1 0 ]
 "30
 [v _system_initialize system_initialize `(v  1 e 1 0 ]
-"3 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\ready_queue.c
+"3 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
 [v _queueInitialize queueInitialize `(v  1 e 1 0 ]
 "10
 [v _getSizeQueue getSizeQueue `(uc  1 e 1 0 ]
@@ -84,47 +102,49 @@
 [v _isEmptyQueue isEmptyQueue `(uc  1 e 1 0 ]
 "24
 [v _enqueue enqueue `(uc  1 e 1 0 ]
-"31 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X/config.h
+"31 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
 [s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.39v 1 data_p 2 3 ]
-"35 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\ready_queue.c
+"35 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
 [v _dequeue dequeue `(S25  1 e 5 0 ]
-"3 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\task.c
+"3 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
 [v _isEmptyList isEmptyList `(uc  1 e 1 0 ]
+[v i2_isEmptyList isEmptyList `(uc  1 e 1 0 ]
 "7
 [v _isFullList isFullList `(uc  1 e 1 0 ]
 "11
 [v _initializeTaskList initializeTaskList `(v  1 e 1 0 ]
 "24
 [v _addTask addTask `(uc  1 e 1 0 ]
-"67
+"63
 [v _removeTask removeTask `(uc  1 e 1 0 ]
-"91
+[v i2_removeTask removeTask `(uc  1 e 1 0 ]
+"86
 [v _handleListHead handleListHead `(v  1 e 1 0 ]
-"125
+"123
 [v _selectReadyTask selectReadyTask `(v  1 e 1 0 ]
-"17 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X/clock.h
+"19 E:\MPLAPXProjects\timer_driver_lab4.X/clock.h
 [v _time_ms time_ms `ul  1 e 4 0 ]
-"36 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X/config.h
-[v _value value `uc  1 e 1 0 ]
-"38
+"36 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
+[v _task_id task_id `[20]uc  1 e 20 0 ]
+"40
 [v _RA5_pressed RA5_pressed `uc  1 e 1 0 ]
-"39
+"41
 [v _RB0_pressed RB0_pressed `uc  1 e 1 0 ]
 [s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.39v 1 data_p 2 3 ]
-"13 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X/ready_queue.h
+"13 E:\MPLAPXProjects\timer_driver_lab4.X/ready_queue.h
 [v _ready_queue ready_queue `[20]S25  1 e 100 0 ]
 "14
 [v _front front `i  1 e 2 0 ]
 "15
 [v _rear rear `i  1 e 2 0 ]
-[s S29 . 15 `ul 1 delay_t 4 0 `ul 1 period_t 4 4 `*.38(v 1 func_ptr 3 8 `i 1 next 2 11 `*.39v 1 data_p 2 13 ]
-"23 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X/task.h
-[v _task_list task_list `[20]S29  1 e 300 0 ]
-"24
+[s S33 . 15 `ul 1 delay_t 4 0 `ul 1 period_t 4 4 `*.38(v 1 func_ptr 3 8 `i 1 next 2 11 `*.39v 1 data_p 2 13 ]
+"15 E:\MPLAPXProjects\timer_driver_lab4.X/task.h
+[v _task_list task_list `[20]S33  1 e 300 0 ]
+"16
 [v _num_task num_task `uc  1 e 1 0 ]
-"25
-[v _head head `i  1 e 2 0 ]
-"6 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\buttons.c
+"17
+[v _head head `uc  1 e 1 0 ]
+"6 E:\MPLAPXProjects\timer_driver_lab4.X\buttons.c
 [v _firstReadRA5 firstReadRA5 `uc  1 e 1 0 ]
 "7
 [v _secondReadRA5 secondReadRA5 `uc  1 e 1 0 ]
@@ -136,7 +156,7 @@
 [v _stateRA5 stateRA5 `uc  1 e 1 0 ]
 "15
 [v _stateRB0 stateRB0 `uc  1 e 1 0 ]
-[s S513 . 1 `uc 1 RA0 1 0 :1:0 
+[s S590 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -146,29 +166,29 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "2684 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
-[s S522 . 1 `uc 1 . 1 0 :2:0 
+[s S599 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S528 . 1 `uc 1 AN0 1 0 :1:0 
+[s S605 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S535 . 1 `uc 1 . 1 0 :5:0 
+[s S612 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S538 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S615 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S542 . 1 `S513 1 . 1 0 `S522 1 . 1 0 `S528 1 . 1 0 `S535 1 . 1 0 `S538 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES542  1 e 1 @3968 ]
-[s S578 . 1 `uc 1 RB0 1 0 :1:0 
+[u S619 . 1 `S590 1 . 1 0 `S599 1 . 1 0 `S605 1 . 1 0 `S612 1 . 1 0 `S615 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES619  1 e 1 @3968 ]
+[s S655 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -178,7 +198,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "2833
-[s S587 . 1 `uc 1 INT0 1 0 :1:0 
+[s S664 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -187,24 +207,24 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S596 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S673 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ECCP2 1 0 :1:3 
 ]
-[s S600 . 1 `uc 1 . 1 0 :3:0 
+[s S677 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2 1 0 :1:3 
 ]
-[s S603 . 1 `uc 1 . 1 0 :3:0 
+[s S680 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 P2A 1 0 :1:3 
 ]
-[s S606 . 1 `uc 1 . 1 0 :3:0 
+[s S683 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S609 . 1 `S578 1 . 1 0 `S587 1 . 1 0 `S596 1 . 1 0 `S600 1 . 1 0 `S603 1 . 1 0 `S606 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES609  1 e 1 @3969 ]
+[u S686 . 1 `S655 1 . 1 0 `S664 1 . 1 0 `S673 1 . 1 0 `S677 1 . 1 0 `S680 1 . 1 0 `S683 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES686  1 e 1 @3969 ]
 "4479
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S870 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S949 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -214,7 +234,7 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "4506
-[s S879 . 1 `uc 1 LA0 1 0 :1:0 
+[s S958 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -223,13 +243,13 @@
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S888 . 1 `S870 1 . 1 0 `S879 1 . 1 0 ]
-[v _LATAbits LATAbits `VES888  1 e 1 @3977 ]
+[u S967 . 1 `S949 1 . 1 0 `S958 1 . 1 0 ]
+[v _LATAbits LATAbits `VES967  1 e 1 @3977 ]
 "4591
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "4703
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S910 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S989 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -239,7 +259,7 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "4730
-[s S919 . 1 `uc 1 LC0 1 0 :1:0 
+[s S998 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -248,11 +268,11 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S928 . 1 `S910 1 . 1 0 `S919 1 . 1 0 ]
-[v _LATCbits LATCbits `VES928  1 e 1 @3979 ]
+[u S1007 . 1 `S989 1 . 1 0 `S998 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1007  1 e 1 @3979 ]
 "4815
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S35 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S43 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -262,7 +282,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "4842
-[s S44 . 1 `uc 1 LD0 1 0 :1:0 
+[s S52 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -271,9 +291,9 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S53 . 1 `S35 1 . 1 0 `S44 1 . 1 0 ]
-[v _LATDbits LATDbits `VES53  1 e 1 @3980 ]
-[s S728 . 1 `uc 1 LATF0 1 0 :1:0 
+[u S61 . 1 `S43 1 . 1 0 `S52 1 . 1 0 ]
+[v _LATDbits LATDbits `VES61  1 e 1 @3980 ]
+[s S807 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -283,7 +303,7 @@
 `uc 1 LATF7 1 0 :1:7 
 ]
 "5066
-[s S737 . 1 `uc 1 LF0 1 0 :1:0 
+[s S816 . 1 `uc 1 LF0 1 0 :1:0 
 `uc 1 LF1 1 0 :1:1 
 `uc 1 LF2 1 0 :1:2 
 `uc 1 LF3 1 0 :1:3 
@@ -292,11 +312,11 @@
 `uc 1 LF6 1 0 :1:6 
 `uc 1 LF7 1 0 :1:7 
 ]
-[u S746 . 1 `S728 1 . 1 0 `S737 1 . 1 0 ]
-[v _LATFbits LATFbits `VES746  1 e 1 @3982 ]
+[u S825 . 1 `S807 1 . 1 0 `S816 1 . 1 0 ]
+[v _LATFbits LATFbits `VES825  1 e 1 @3982 ]
 "5457
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S790 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S869 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -306,13 +326,13 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "5489
-[u S808 . 1 `S790 1 . 1 0 `S513 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES808  1 e 1 @3986 ]
+[u S887 . 1 `S869 1 . 1 0 `S590 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES887  1 e 1 @3986 ]
 "5679
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "5901
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S830 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S909 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -322,7 +342,7 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "5933
-[s S839 . 1 `uc 1 RC0 1 0 :1:0 
+[s S918 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -331,11 +351,11 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S848 . 1 `S830 1 . 1 0 `S839 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES848  1 e 1 @3988 ]
+[u S927 . 1 `S909 1 . 1 0 `S918 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES927  1 e 1 @3988 ]
 "6123
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S688 . 1 `uc 1 TRISF0 1 0 :1:0 
+[s S767 . 1 `uc 1 TRISF0 1 0 :1:0 
 `uc 1 TRISF1 1 0 :1:1 
 `uc 1 TRISF2 1 0 :1:2 
 `uc 1 TRISF3 1 0 :1:3 
@@ -345,7 +365,7 @@
 `uc 1 TRISF7 1 0 :1:7 
 ]
 "6599
-[s S697 . 1 `uc 1 RF0 1 0 :1:0 
+[s S776 . 1 `uc 1 RF0 1 0 :1:0 
 `uc 1 RF1 1 0 :1:1 
 `uc 1 RF2 1 0 :1:2 
 `uc 1 RF3 1 0 :1:3 
@@ -354,9 +374,9 @@
 `uc 1 RF6 1 0 :1:6 
 `uc 1 RF7 1 0 :1:7 
 ]
-[u S706 . 1 `S688 1 . 1 0 `S697 1 . 1 0 ]
-[v _TRISFbits TRISFbits `VES706  1 e 1 @3991 ]
-[s S383 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S785 . 1 `S767 1 . 1 0 `S776 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES785  1 e 1 @3991 ]
+[s S454 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -366,14 +386,14 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "7532
-[s S392 . 1 `uc 1 . 1 0 :3:0 
+[s S463 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIE 1 0 :1:3 
 `uc 1 TXIE 1 0 :1:4 
 `uc 1 RCIE 1 0 :1:5 
 ]
-[u S397 . 1 `S383 1 . 1 0 `S392 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES397  1 e 1 @3997 ]
-[s S415 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S468 . 1 `S454 1 . 1 0 `S463 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES468  1 e 1 @3997 ]
+[s S486 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -383,13 +403,13 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "7615
-[s S424 . 1 `uc 1 . 1 0 :3:0 
+[s S495 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S429 . 1 `S415 1 . 1 0 `S424 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES429  1 e 1 @3998 ]
+[u S500 . 1 `S486 1 . 1 0 `S495 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES500  1 e 1 @3998 ]
 "10174
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "11908
@@ -404,7 +424,7 @@
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
 "12640
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
-[s S164 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S198 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -414,7 +434,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "13144
-[s S173 . 1 `uc 1 . 1 0 :1:0 
+[s S207 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -423,27 +443,27 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S182 . 1 `uc 1 . 1 0 :6:0 
+[s S216 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S186 . 1 `S164 1 . 1 0 `S173 1 . 1 0 `S182 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES186  1 e 1 @4082 ]
-"3 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\clock.c
-[v _count count `i  1 e 2 0 ]
-"22 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\main.c
+[u S220 . 1 `S198 1 . 1 0 `S207 1 . 1 0 `S216 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES220  1 e 1 @4082 ]
+"24 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
 [v _LED_state LED_state `[8]i  1 e 16 0 ]
-"74
+"26
+[v _remove_task_counter remove_task_counter `i  1 e 2 0 ]
+"63
 [v _main main `(v  1 e 1 0 ]
 {
-"96
+"94
 } 0
-"30 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\mcc.c
+"30 E:\MPLAPXProjects\timer_driver_lab4.X\mcc.c
 [v _system_initialize system_initialize `(v  1 e 1 0 ]
 {
-"36
+"37
 } 0
-"5 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\clock.c
+"5 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _start_timer start_timer `(i  1 e 2 0 ]
 {
 [v start_timer@timer_vaddr timer_vaddr `uc  1 a 1 wreg ]
@@ -451,21 +471,21 @@
 [v start_timer@timer_vaddr timer_vaddr `uc  1 a 1 12 ]
 "32
 } 0
-"11 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\task.c
+"11 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
 [v _initializeTaskList initializeTaskList `(v  1 e 1 0 ]
 {
 "13
 [v initializeTaskList@i i `i  1 a 2 8 ]
 "22
 } 0
-"3 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\ready_queue.c
+"3 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
 [v _queueInitialize queueInitialize `(v  1 e 1 0 ]
 {
 "4
 [v queueInitialize@i i `i  1 a 2 6 ]
 "8
 } 0
-"7 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\mcc.c
+"7 E:\MPLAPXProjects\timer_driver_lab4.X\mcc.c
 [v _pin_initialize pin_initialize `(v  1 e 1 0 ]
 {
 "23
@@ -480,51 +500,176 @@
 {
 "28
 } 0
-"38 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\clock.c
+"45 E:\MPLAPXProjects\timer_driver_lab4.X\lcd.c
+[v _LCDInit LCDInit `(v  1 e 1 0 ]
+{
+"61
+} 0
+"123
+[v _Port_BBSPIInit Port_BBSPIInit `(v  1 e 1 0 ]
+{
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 wreg ]
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 wreg ]
+"128
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 3 ]
+"133
+} 0
+"70
+[v _InitBBSPI InitBBSPI `(v  1 e 1 0 ]
+{
+"81
+} 0
+"42 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
+[v _remove_timer remove_timer `(i  1 e 2 0 ]
+{
+[v remove_timer@id id `uc  1 a 1 wreg ]
+[v remove_timer@id id `uc  1 a 1 wreg ]
+[v remove_timer@id id `uc  1 a 1 6 ]
+"44
+} 0
+"63 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
+[v _removeTask removeTask `(uc  1 e 1 0 ]
+{
+[v removeTask@idx idx `uc  1 a 1 wreg ]
+"76
+[v removeTask@pos pos `uc  1 a 1 4 ]
+"63
+[v removeTask@idx idx `uc  1 a 1 wreg ]
+[v removeTask@idx idx `uc  1 a 1 5 ]
+"84
+} 0
+"3
+[v _isEmptyList isEmptyList `(uc  1 e 1 0 ]
+{
+"5
+} 0
+"38 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _register_timer register_timer `(uc  1 e 1 0 ]
 {
-[v register_timer@period period `ul  1 p 4 32 ]
-[v register_timer@delay delay `ul  1 p 4 36 ]
-[v register_timer@callback callback `*.38(v  1 p 3 40 ]
-[v register_timer@data data `*.39v  1 p 2 43 ]
+[v register_timer@period period `ul  1 p 4 38 ]
+[v register_timer@delay delay `ul  1 p 4 42 ]
+[v register_timer@callback callback `*.38(v  1 p 3 46 ]
+[v register_timer@data data `*.39v  1 p 2 49 ]
 "40
 } 0
-"24 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\task.c
+"24 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
 [v _addTask addTask `(uc  1 e 1 0 ]
 {
-"51
-[v addTask@cur cur `i  1 a 2 29 ]
-"52
-[v addTask@prev prev `i  1 a 2 27 ]
-"30
-[v addTask@idx idx `uc  1 a 1 31 ]
+"46
+[v addTask@cur cur `i  1 a 2 35 ]
+"47
+[v addTask@prev prev `i  1 a 2 31 ]
+"39
+[v addTask@sum sum `i  1 a 2 33 ]
+"27
+[v addTask@idx idx `uc  1 a 1 37 ]
 "24
 [v addTask@period period `ul  1 p 4 6 ]
 [v addTask@delay delay `ul  1 p 4 10 ]
 [v addTask@ptr ptr `*.38(v  1 p 3 14 ]
 [v addTask@data data `*.39v  1 p 2 17 ]
-"65
+"61
 } 0
 "7
 [v _isFullList isFullList `(uc  1 e 1 0 ]
 {
 "9
 } 0
-"72 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\clock.c
+"69 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _dispatch dispatch `(v  1 e 1 0 ]
 {
-"74
+"71
 } 0
-"125 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\task.c
+"123 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
 [v _selectReadyTask selectReadyTask `(v  1 e 1 0 ]
 {
-"127
-[v selectReadyTask@node node `S25  1 a 5 20 ]
-"131
+"125
+[v selectReadyTask@node node `S25  1 a 5 22 ]
+"129
 } 0
-"31 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X/config.h
+"29 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
+[v _blinking_LED blinking_LED `(v  1 e 1 0 ]
+{
+"30
+[v blinking_LED@idx idx `uc  1 a 1 20 ]
+"29
+[v blinking_LED@idx_ptr idx_ptr `*.39v  1 p 2 14 ]
+"50
+} 0
+"38 E:\MPLAPXProjects\timer_driver_lab4.X\buttons.c
+[v _handleButton handleButton `(v  1 e 1 0 ]
+{
+"40
+[v handleButton@checkRB0 checkRB0 `i  1 a 2 20 ]
+"39
+[v handleButton@checkRA5 checkRA5 `i  1 a 2 18 ]
+"38
+[v handleButton@data_ptr data_ptr `*.39v  1 p 2 14 ]
+"65
+} 0
+"52 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
+[v _printTime_ms printTime_ms `(v  1 e 1 0 ]
+{
+"56
+[v printTime_ms@temp temp `uc  1 a 1 16 ]
+"53
+[v printTime_ms@current_time current_time `ul  1 a 4 18 ]
+"54
+[v printTime_ms@i i `uc  1 a 1 17 ]
+"52
+[v printTime_ms@data_ptr data_ptr `*.39v  1 p 2 14 ]
+"61
+} 0
+"34 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
+[v _get_time get_time `(ul  1 e 4 0 ]
+{
+"36
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"10
+[v ___llmod@counter counter `uc  1 a 1 8 ]
+"7
+[v ___llmod@dividend dividend `ul  1 p 4 0 ]
+[v ___llmod@divisor divisor `ul  1 p 4 4 ]
+"25
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 12 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
+"30
+} 0
+"239 E:\MPLAPXProjects\timer_driver_lab4.X\lcd.c
+[v _LCDPrintChar LCDPrintChar `(v  1 e 1 0 ]
+{
+[v LCDPrintChar@line line `uc  1 a 1 wreg ]
+[v LCDPrintChar@line line `uc  1 a 1 wreg ]
+[v LCDPrintChar@pos pos `uc  1 p 1 11 ]
+[v LCDPrintChar@ch ch `uc  1 p 1 12 ]
+[v LCDPrintChar@line line `uc  1 a 1 13 ]
+"244
+} 0
+"29 E:\MPLAPXProjects\timer_driver_lab4.X\buttons.c
+[v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
+{
+"36
+} 0
+"20
+[v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
+{
+"27
+} 0
+"31 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
 [s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.39v 1 data_p 2 3 ]
-"35 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\ready_queue.c
+"35 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
 [v _dequeue dequeue `(S25  1 e 5 0 ]
 {
 "36
@@ -564,48 +709,109 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"51 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\main.c
-[v _blink_LED blink_LED `(v  1 e 1 0 ]
+"232 E:\MPLAPXProjects\timer_driver_lab4.X\lcd.c
+[v _LCDPrint LCDPrint `(v  1 e 1 0 ]
 {
-"52
-[v blink_LED@idx idx `uc  1 a 1 6 ]
-"51
-[v blink_LED@data data `*.39v  1 p 2 0 ]
-"72
+[v LCDPrint@line line `uc  1 a 1 wreg ]
+[v LCDPrint@line line `uc  1 a 1 wreg ]
+[v LCDPrint@pos pos `uc  1 p 1 11 ]
+[v LCDPrint@ptr ptr `*.32Cuc  1 p 2 12 ]
+[v LCDPrint@line line `uc  1 a 1 14 ]
+"237
 } 0
-"53 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\clock.c
+"222
+[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
+{
+[v LCDPutStr@ptr ptr `*.32Cuc  1 p 2 6 ]
+"225
+} 0
+"172
+[v _LCDPutChar LCDPutChar `(v  1 e 1 0 ]
+{
+[v LCDPutChar@ch ch `uc  1 a 1 wreg ]
+[v LCDPutChar@ch ch `uc  1 a 1 wreg ]
+"174
+[v LCDPutChar@ch ch `uc  1 a 1 5 ]
+"182
+} 0
+"227
+[v _LCDMoveCursor LCDMoveCursor `(v  1 e 1 0 ]
+{
+[v LCDMoveCursor@line line `uc  1 a 1 wreg ]
+"228
+[v LCDMoveCursor@position position `uc  1 a 1 10 ]
+"227
+[v LCDMoveCursor@line line `uc  1 a 1 wreg ]
+[v LCDMoveCursor@pos pos `uc  1 p 1 6 ]
+[v LCDMoveCursor@line line `uc  1 a 1 7 ]
+"230
+} 0
+"203
+[v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
+{
+[v LCDPutInst@ch ch `uc  1 a 1 wreg ]
+[v LCDPutInst@ch ch `uc  1 a 1 wreg ]
+"205
+[v LCDPutInst@ch ch `uc  1 a 1 5 ]
+"213
+} 0
+"144
+[v _WritePort_BBSPI WritePort_BBSPI `(v  1 e 1 0 ]
+{
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 wreg ]
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 wreg ]
+[v WritePort_BBSPI@a a `uc  1 p 1 3 ]
+"146
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 4 ]
+"151
+} 0
+"91
+[v _SendByteBBSPI SendByteBBSPI `(v  1 e 1 0 ]
+{
+[v SendByteBBSPI@output output `uc  1 a 1 wreg ]
+"94
+[v SendByteBBSPI@input input `uc  1 a 1 2 ]
+"93
+[v SendByteBBSPI@bitcount bitcount `uc  1 a 1 1 ]
+"91
+[v SendByteBBSPI@output output `uc  1 a 1 wreg ]
+"94
+[v SendByteBBSPI@output output `uc  1 a 1 0 ]
+"114
+} 0
+"55 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _timer_interrupt timer_interrupt `IIH(v  1 e 1 0 ]
 {
-"70
+"67
 } 0
-"91 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\task.c
+"86 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
 [v _handleListHead handleListHead `(v  1 e 1 0 ]
 {
-"108
-[v handleListHead@cur cur `i  1 a 2 35 ]
-"109
-[v handleListHead@prev prev `i  1 a 2 33 ]
-"95
-[v handleListHead@pos pos `i  1 a 2 37 ]
-"123
+"104
+[v handleListHead@cur cur `i  1 a 2 41 ]
+"105
+[v handleListHead@prev prev `i  1 a 2 37 ]
+"98
+[v handleListHead@sum sum `i  1 a 2 39 ]
+"90
+[v handleListHead@pos pos `i  1 a 2 43 ]
+"121
 } 0
-"67
-[v _removeTask removeTask `(uc  1 e 1 0 ]
+"63
+[v i2_removeTask removeTask `(uc  1 e 1 0 ]
 {
-[v removeTask@idx idx `uc  1 a 1 wreg ]
-"80
-[v removeTask@pos pos `uc  1 a 1 4 ]
-"67
-[v removeTask@idx idx `uc  1 a 1 wreg ]
-[v removeTask@idx idx `uc  1 a 1 5 ]
-"89
+[v i2removeTask@idx idx `uc  1 a 1 wreg ]
+[v i2removeTask@pos removeTask `uc  1 a 1 4 ]
+[v i2removeTask@idx idx `uc  1 a 1 wreg ]
+[v i2removeTask@idx idx `uc  1 a 1 5 ]
+"84
 } 0
 "3
-[v _isEmptyList isEmptyList `(uc  1 e 1 0 ]
+[v i2_isEmptyList isEmptyList `(uc  1 e 1 0 ]
 {
 "5
 } 0
-"24 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\ready_queue.c
+"24 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
 [v _enqueue enqueue `(uc  1 e 1 0 ]
 {
 [v enqueue@ptr ptr `*.38(v  1 p 3 9 ]
@@ -620,7 +826,7 @@
 [v i2___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"14 C:\Users\Tuan\Desktop\Microcontroller-Lab-master\Microcontroller-Lab-master\timer_driver_lab4.X\ready_queue.c
+"14 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
 [v _isFullQueue isFullQueue `(uc  1 e 1 0 ]
 {
 "16

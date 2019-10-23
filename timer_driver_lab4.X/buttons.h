@@ -13,7 +13,7 @@
 
 int readButtonRA5();
 int readButtonRB0();
-void handleButton();
+void handleButton(void* data_ptr);
 
 #endif	/* BUTTONS_H */
 

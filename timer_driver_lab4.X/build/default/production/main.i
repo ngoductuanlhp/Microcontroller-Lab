@@ -7796,7 +7796,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)();
+typedef void (*FUNCTION_PTR)(void*);
 
 typedef struct {
     tWORD delay_t;
@@ -7810,6 +7810,8 @@ typedef struct {
     FUNCTION_PTR func_ptr;
     void* data_p;
 } queue_node;
+
+char task_id[20] = {0};
 
 char value = 0;
 
@@ -7828,10 +7830,11 @@ queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
 # 13 "./task.h" 2
-# 23 "./task.h"
+
+
 task_struct task_list[20];
 char num_task;
-signed int head;
+char head;
 
 void initializeTaskList();
 char isEmptyList();
@@ -7845,51 +7848,63 @@ void selectReadyTask();
 
 
 
-unsigned long int time_ms;
+
+
+tWORD time_ms;
+tWORD prev_time_ms = 0;
 
 int start_timer(char timer_vaddr);
-unsigned long int get_time(void);
-char register_timer(unsigned long int period, unsigned long int delay, FUNCTION_PTR callback, void* data);
+tWORD get_time(void);
+char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data);
 int remove_timer(char id);
 int stop_timer(void);
 int timer_ISR();
 void dispatch(void);
 # 13 "./mcc.h" 2
+# 1 "./lcd.h" 1
+# 58 "./lcd.h"
+    void LCDInit(void);
+# 67 "./lcd.h"
+    void InitBBSPI (void);
+# 76 "./lcd.h"
+    void SendByteBBSPI (unsigned char output);
+# 85 "./lcd.h"
+    void Port_BBSPIInit (unsigned char port_dir);
+# 95 "./lcd.h"
+    void WritePort_BBSPI (unsigned char port_add, unsigned char a);
+# 104 "./lcd.h"
+    void LCDPutChar(unsigned char);
+# 113 "./lcd.h"
+    void LCDPutInst(unsigned char);
+# 122 "./lcd.h"
+    void LCDPutStr(const char *);
+
+    void LCDMoveCursor(unsigned char line, unsigned char pos);
+
+    void LCDPrint(unsigned char line, unsigned char pos, const char *ptr);
+
+    void LCDPrintChar(unsigned char line, unsigned char pos, unsigned char ch);
+# 14 "./mcc.h" 2
+# 1 "./buttons.h" 1
+# 14 "./buttons.h"
+int readButtonRA5();
+int readButtonRB0();
+void handleButton(void* data_ptr);
+# 15 "./mcc.h" 2
+
 
 void system_initialize(void);
 # 21 "main.c" 2
 
-int LED_state[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
-void blink_LED0() {
-    LED_state[0] = !LED_state[0];
-    LATDbits.LATD0 = LED_state[0];
-}
 
-void blink_LED1() {
-    LED_state[1] = !LED_state[1];
-    LATDbits.LATD1 = LED_state[1];
-}
+int LED_state[8] = {0};
 
-void blink_LED2() {
-    LED_state[2] = !LED_state[2];
-    LATDbits.LATD2 = LED_state[2];
-}
-void blink_LED3() {
-    LED_state[3] = !LED_state[3];
-    LATDbits.LATD3 = LED_state[3];
-}
-void blink_LED4() {
-    LED_state[4] = !LED_state[4];
-    LATDbits.LATD4 = LED_state[4];
-}
-void blink_LED5() {
-    LED_state[5] = !LED_state[5];
-    LATDbits.LATD5 = LED_state[5];
-}
+int remove_task_counter = 0;
 
-void blink_LED(void* data) {
-    char idx = (char)data;
+
+void blinking_LED(void *idx_ptr) {
+    char idx = (char)idx_ptr;
     LED_state[idx] = !LED_state[idx];
     switch(idx) {
         case 0: LATDbits.LATD0 = LED_state[idx];
@@ -7911,26 +7926,46 @@ void blink_LED(void* data) {
     }
 }
 
+void printTime_ms(void* data_ptr) {
+    tWORD current_time = get_time();
+    char i = 2;
+    while(current_time > 0 && i < 10) {
+        char temp = current_time % 10 + '0';
+        LCDPrintChar(1, 15 - i, temp);
+        current_time/= 10;
+        i++;
+    }
+}
+
 void main(void) {
     system_initialize();
 
+    task_id[0] = register_timer(500, 0, blinking_LED, 0);
+    task_id[1] = register_timer(1000, 200, blinking_LED, 1);
+    task_id[2] = register_timer(3000, 4000, blinking_LED, 2);
+    task_id[3] = register_timer(9000, 60, blinking_LED, 3);
+    task_id[4] = register_timer(5500, 100, blinking_LED, 4);
+    task_id[5] = register_timer(3000, 8000, blinking_LED, 5);
+    task_id[6] = register_timer(100, 400, blinking_LED, 6);
+    task_id[7] = register_timer(100, 400, blinking_LED, 7);
 
+    task_id[8] = register_timer(50, 0, printTime_ms, ((void*)0));
+    task_id[9] = register_timer(10, 70, handleButton, ((void*)0));
 
-
-
-
-    char idx0 = register_timer(1000, 0, blink_LED, 0);
-    char idx1 = register_timer(1000, 200, blink_LED, 1);
-    char idx2 = register_timer(3000, 400, blink_LED, 2);
-    char idx3 = register_timer(9000, 400, blink_LED, 3);
-    char idx4 = register_timer(5500, 400, blink_LED, 4);
-    char idx5 = register_timer(3000, 400, blink_LED, 5);
-    char idx6 = register_timer(2000, 400, blink_LED, 6);
-    char idx7 = register_timer(2000, 400, blink_LED, 7);
-
+    LCDPrint(0, 0, "Lab 4    1710364");
+    LCDPrint(1, 0, "Time");
+    LCDPrint(1, 14, "ms");
     while(1) {
         dispatch();
-
+        if(RA5_pressed == 1) {
+            RA5_pressed = 0;
+            printTime_ms(((void*)0));
+        }
+        if(RB0_pressed == 1) {
+            RB0_pressed = 0;
+            remove_timer(remove_task_counter);
+            remove_task_counter = (remove_task_counter + 1) % 20;
+        }
     }
     return;
 }

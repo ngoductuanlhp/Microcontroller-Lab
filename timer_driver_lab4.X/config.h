@@ -18,7 +18,7 @@
 
 typedef char tBYTE;
 typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)();
+typedef void (*FUNCTION_PTR)(void*);
 
 typedef struct {
     tWORD delay_t;
@@ -32,6 +32,8 @@ typedef struct {
     FUNCTION_PTR func_ptr;
     void* data_p;
 } queue_node;
+
+char task_id[MAX_SIZE] = {0};
 
 char value = 0;
 

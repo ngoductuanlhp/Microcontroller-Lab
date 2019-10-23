@@ -124,6 +124,8 @@
     void LCDMoveCursor(unsigned char line, unsigned char pos);
     
     void LCDPrint(unsigned char line, unsigned char pos, const char *ptr);
+    
+    void LCDPrintChar(unsigned char line, unsigned char pos, unsigned char ch);
 
 // Common legacy macros
 #define LCDHome()           LCDPutInst(LCD_HOME)            // legacy support

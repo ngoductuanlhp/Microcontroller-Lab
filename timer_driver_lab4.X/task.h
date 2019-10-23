@@ -12,17 +12,9 @@
 #include "ready_queue.h"
 #include <xc.h>
 
-//typedef struct {
-//    tWORD delay_t;
-//    tWORD period_t;
-//    FUNCTION_PTR func_ptr;
-//    int next;
-//    void* data_p;
-//} task_struct;
-
 task_struct task_list[MAX_SIZE];
 char num_task;
-signed int head;
+char head;
 
 void initializeTaskList();
 char isEmptyList();

@@ -7776,7 +7776,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)();
+typedef void (*FUNCTION_PTR)(void*);
 
 typedef struct {
     tWORD delay_t;
@@ -7790,6 +7790,8 @@ typedef struct {
     FUNCTION_PTR func_ptr;
     void* data_p;
 } queue_node;
+
+char task_id[20] = {0};
 
 char value = 0;
 
@@ -7816,6 +7818,8 @@ char RB0_pressed = 0;
     void LCDMoveCursor(unsigned char line, unsigned char pos);
 
     void LCDPrint(unsigned char line, unsigned char pos, const char *ptr);
+
+    void LCDPrintChar(unsigned char line, unsigned char pos, unsigned char ch);
 # 36 "lcd.c" 2
 # 45 "lcd.c"
 void LCDInit (void)
@@ -7897,25 +7901,25 @@ void WritePort_BBSPI (unsigned char port_add, unsigned char a)
 # 172 "lcd.c"
 void LCDPutChar (unsigned char ch)
 {
-    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x80);
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
     WritePort_BBSPI (0x13, ch);
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0xC0);
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x00);
 }
 # 203 "lcd.c"
 void LCDPutInst (unsigned char ch)
 {
-    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x00);
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
     WritePort_BBSPI (0x13, ch);
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12,0x40);
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
     WritePort_BBSPI (0x12, 0x00);
 }
 # 222 "lcd.c"
@@ -7934,4 +7938,11 @@ void LCDPrint(unsigned char line, unsigned char pos, const char *ptr) {
         return;
     LCDMoveCursor(line, pos);
     LCDPutStr(ptr);
+}
+
+void LCDPrintChar(unsigned char line, unsigned char pos, unsigned char ch) {
+    if(line <0 || line > 2 || pos < 0 || pos > 15)
+        return;
+    LCDMoveCursor(line, pos);
+    LCDPutChar(ch);
 }

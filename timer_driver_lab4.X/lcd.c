@@ -171,13 +171,13 @@ void WritePort_BBSPI (unsigned char port_add, unsigned char a)
 
 void LCDPutChar (unsigned char ch)
 {
-    __delay_us(100);
+    __delay_us(10);
     WritePort_BBSPI (PORTA_ADD, data);        // prepare to send data to LCD
-    __delay_us(10);
+    __delay_us(1);
     WritePort_BBSPI (PORTB_ADD, ch);          // write the character to be displayed
-    __delay_us(10);
+    __delay_us(1);
     WritePort_BBSPI (PORTA_ADD, send_data);   // send data to LCD
-    __delay_us(10);
+    __delay_us(1);
     WritePort_BBSPI (PORTA_ADD, 0x00);        // stop sending data to LCD
 }
 
@@ -202,13 +202,13 @@ void LCDPutChar (unsigned char ch)
 
 void LCDPutInst (unsigned char ch)
 {
-    __delay_us(100);
+    __delay_us(10);
     WritePort_BBSPI (PORTA_ADD, instr);       // prepare to send instruction to LCD
-    __delay_us(10);
+    __delay_us(1);
     WritePort_BBSPI (PORTB_ADD, ch);          // write the instruction to be sent to LCD
-    __delay_us(10);
+    __delay_us(1);
     WritePort_BBSPI (PORTA_ADD,send_instr);   // send instruction to LCD
-    __delay_us(10);
+    __delay_us(1);
     WritePort_BBSPI (PORTA_ADD, 0x00);        // stop sending instruction to LCD
 }
 
@@ -234,4 +234,11 @@ void LCDPrint(unsigned char line, unsigned char pos, const char *ptr) {
         return;
     LCDMoveCursor(line, pos);
     LCDPutStr(ptr);
+}
+
+void LCDPrintChar(unsigned char line, unsigned char pos, unsigned char ch) {
+    if(line <0 || line > 2 || pos < 0 || pos > 15)
+        return;
+    LCDMoveCursor(line, pos);
+    LCDPutChar(ch);
 }

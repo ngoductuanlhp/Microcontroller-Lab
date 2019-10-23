@@ -1,13 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F4558 `(v ~T0 @X0 0 t? ]
+[v F4560 `(v ~T0 @X0 0 tf1`*v ]
 "31 ./config.h
 [; ;./config.h: 31: typedef struct {
-[s S502 `*F4558 1 `*v 1 ]
+[s S502 `*F4560 1 `*v 1 ]
 [n S502 . func_ptr data_p ]
-[v F4552 `(v ~T0 @X0 0 t? ]
+[v F4553 `(v ~T0 @X0 0 tf1`*v ]
 "23
 [; ;./config.h: 23: typedef struct {
-[s S501 `ul 1 `ul 1 `*F4552 1 `i 1 `*v 1 ]
+[s S501 `ul 1 `ul 1 `*F4553 1 `i 1 `*v 1 ]
 [n S501 . delay_t period_t func_ptr next data_p ]
 "12474 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12474: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
@@ -58,8 +58,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13144
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13144: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS493 ~T0 @X0 0 e@4082 ]
-"19 ./clock.h
-[; ;./clock.h: 19: int start_timer(char timer_vaddr);
+"58 ./lcd.h
+[; ;./lcd.h: 58:     void LCDInit(void);
+[v _LCDInit `(v ~T0 @X0 0 ef ]
+"22 ./clock.h
+[; ;./clock.h: 22: int start_timer(char timer_vaddr);
 [v _start_timer `(i ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
@@ -656,19 +659,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "36 ./config.h
-[; ;./config.h: 36: char value = 0;
+[; ;./config.h: 36: char task_id[20] = {0};
+[v _task_id `uc ~T0 @X0 -> 20 `i e ]
+[i _task_id
+:U ..
+-> -> 0 `i `uc
+..
+]
+"38
+[; ;./config.h: 38: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"38
-[; ;./config.h: 38: char RA5_pressed = 0;
+"40
+[; ;./config.h: 40: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"39
-[; ;./config.h: 39: char RB0_pressed = 0;
+"41
+[; ;./config.h: 41: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc
@@ -688,18 +699,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _rear
 -U -> 1 `i
 ]
-"23 ./task.h
-[; ;./task.h: 23: task_struct task_list[20];
+"15 ./task.h
+[; ;./task.h: 15: task_struct task_list[20];
 [v _task_list `S501 ~T0 @X0 -> 20 `i e ]
-"24
-[; ;./task.h: 24: char num_task;
+"16
+[; ;./task.h: 16: char num_task;
 [v _num_task `uc ~T0 @X0 1 e ]
-"25
-[; ;./task.h: 25: signed int head;
-[v _head `i ~T0 @X0 1 e ]
-"17 ./clock.h
-[; ;./clock.h: 17: unsigned long int time_ms;
+"17
+[; ;./task.h: 17: char head;
+[v _head `uc ~T0 @X0 1 e ]
+"19 ./clock.h
+[; ;./clock.h: 19: tWORD time_ms;
 [v _time_ms `ul ~T0 @X0 1 e ]
+"20
+[; ;./clock.h: 20: tWORD prev_time_ms = 0;
+[v _prev_time_ms `ul ~T0 @X0 1 e ]
+[i _prev_time_ms
+-> -> -> 0 `i `l `ul
+]
 "3 mcc.c
 [; ;mcc.c: 3: void osc_initialize(void) {
 [v _osc_initialize `(v ~T0 @X0 1 ef ]
@@ -782,12 +799,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc.c: 33:     interrupt_initialize();
 [e ( _interrupt_initialize ..  ]
 "34
-[; ;mcc.c: 34:     start_timer(0);
-[e ( _start_timer (1 -> -> 0 `i `uc ]
+[; ;mcc.c: 34:     LCDInit();
+[e ( _LCDInit ..  ]
 "35
-[; ;mcc.c: 35:     start_timer(1);
-[e ( _start_timer (1 -> -> 1 `i `uc ]
+[; ;mcc.c: 35:     start_timer(0);
+[e ( _start_timer (1 -> -> 0 `i `uc ]
 "36
-[; ;mcc.c: 36: }
+[; ;mcc.c: 36:     start_timer(1);
+[e ( _start_timer (1 -> -> 1 `i `uc ]
+"37
+[; ;mcc.c: 37: }
 [e :UE 506 ]
 }

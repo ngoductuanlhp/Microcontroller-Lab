@@ -13,7 +13,7 @@
 # 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)();
+typedef void (*FUNCTION_PTR)(void*);
 
 typedef struct {
     tWORD delay_t;
@@ -27,6 +27,8 @@ typedef struct {
     FUNCTION_PTR func_ptr;
     void* data_p;
 } queue_node;
+
+char task_id[20] = {0};
 
 char value = 0;
 
@@ -7795,7 +7797,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 int readButtonRA5();
 int readButtonRB0();
-void handleButton();
+void handleButton(void* data_ptr);
 # 2 "buttons.c" 2
 
 
@@ -7833,7 +7835,7 @@ int readButtonRB0() {
     return 0;
 }
 
-void handleButton() {
+void handleButton(void* data_ptr) {
     int checkRA5 = readButtonRA5();
     int checkRB0 = readButtonRB0();
     switch(stateRA5) {

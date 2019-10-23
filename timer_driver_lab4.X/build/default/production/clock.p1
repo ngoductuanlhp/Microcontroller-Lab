@@ -1,13 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F4558 `(v ~T0 @X0 0 t? ]
+[v F4560 `(v ~T0 @X0 0 tf1`*v ]
 "31 ./config.h
 [; ;./config.h: 31: typedef struct {
-[s S502 `*F4558 1 `*v 1 ]
+[s S502 `*F4560 1 `*v 1 ]
 [n S502 . func_ptr data_p ]
-[v F4552 `(v ~T0 @X0 0 t? ]
+[v F4553 `(v ~T0 @X0 0 tf1`*v ]
 "23
 [; ;./config.h: 23: typedef struct {
-[s S501 `ul 1 `ul 1 `*F4552 1 `i 1 `*v 1 ]
+[s S501 `ul 1 `ul 1 `*F4553 1 `i 1 `*v 1 ]
 [n S501 . delay_t period_t func_ptr next data_p ]
 "13118 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13118:     struct {
@@ -34,8 +34,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12640
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12640: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"27 ./task.h
-[; ;./task.h: 27: void initializeTaskList();
+"19 ./task.h
+[; ;./task.h: 19: void initializeTaskList();
 [v _initializeTaskList `(v ~T0 @X0 0 e? ]
 "7515 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 7515:     struct {
@@ -76,22 +76,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12027
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 12027: extern volatile unsigned char TMR1L __attribute__((address(0xFCE)));
 [v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
-[v F4614 `(v ~T0 @X0 0 t? ]
-[v F4618 `(v ~T0 @X0 0 t? ]
-[v F4583 `(v ~T0 @X0 0 t? ]
-"30 ./task.h
-[; ;./task.h: 30: char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data);
-[v _addTask `(uc ~T0 @X0 0 ef4`ul`ul`*F4583`*v ]
-"31
-[; ;./task.h: 31: char removeTask(char idx);
+[v F4625 `(v ~T0 @X0 0 tf1`*v ]
+[v F4630 `(v ~T0 @X0 0 tf1`*v ]
+[v F4589 `(v ~T0 @X0 0 tf1`*v ]
+"22 ./task.h
+[; ;./task.h: 22: char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data);
+[v _addTask `(uc ~T0 @X0 0 ef4`ul`ul`*F4589`*v ]
+"23
+[; ;./task.h: 23: char removeTask(char idx);
 [v _removeTask `(uc ~T0 @X0 0 ef1`uc ]
 [t ~ __interrupt . k ]
 [t T110 __interrupt ]
-"32
-[; ;./task.h: 32: void handleListHead();
+"24
+[; ;./task.h: 24: void handleListHead();
 [v _handleListHead `(v ~T0 @X0 0 e? ]
-"33
-[; ;./task.h: 33: void selectReadyTask();
+"25
+[; ;./task.h: 25: void selectReadyTask();
 [v _selectReadyTask `(v ~T0 @X0 0 e? ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
@@ -688,19 +688,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "36 ./config.h
-[; ;./config.h: 36: char value = 0;
+[; ;./config.h: 36: char task_id[20] = {0};
+[v _task_id `uc ~T0 @X0 -> 20 `i e ]
+[i _task_id
+:U ..
+-> -> 0 `i `uc
+..
+]
+"38
+[; ;./config.h: 38: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"38
-[; ;./config.h: 38: char RA5_pressed = 0;
+"40
+[; ;./config.h: 40: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"39
-[; ;./config.h: 39: char RB0_pressed = 0;
+"41
+[; ;./config.h: 41: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc
@@ -720,18 +728,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _rear
 -U -> 1 `i
 ]
-"23 ./task.h
-[; ;./task.h: 23: task_struct task_list[20];
+"15 ./task.h
+[; ;./task.h: 15: task_struct task_list[20];
 [v _task_list `S501 ~T0 @X0 -> 20 `i e ]
-"24
-[; ;./task.h: 24: char num_task;
+"16
+[; ;./task.h: 16: char num_task;
 [v _num_task `uc ~T0 @X0 1 e ]
-"25
-[; ;./task.h: 25: signed int head;
-[v _head `i ~T0 @X0 1 e ]
-"17 ./clock.h
-[; ;./clock.h: 17: unsigned long int time_ms;
+"17
+[; ;./task.h: 17: char head;
+[v _head `uc ~T0 @X0 1 e ]
+"19 ./clock.h
+[; ;./clock.h: 19: tWORD time_ms;
 [v _time_ms `ul ~T0 @X0 1 e ]
+"20
+[; ;./clock.h: 20: tWORD prev_time_ms = 0;
+[v _prev_time_ms `ul ~T0 @X0 1 e ]
+[i _prev_time_ms
+-> -> -> 0 `i `l `ul
+]
 "3 clock.c
 [; ;clock.c: 3: int count = 0;
 [v _count `i ~T0 @X0 1 e ]
@@ -856,12 +870,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "38
 [; ;clock.c: 38: char register_timer(unsigned long int period, unsigned long int delay, FUNCTION_PTR callback, void *data) {
-[v _register_timer `(uc ~T0 @X0 1 ef4`ul`ul`*F4614`*v ]
+[v _register_timer `(uc ~T0 @X0 1 ef4`ul`ul`*F4625`*v ]
 {
 [e :U _register_timer ]
 [v _period `ul ~T0 @X0 1 r1 ]
 [v _delay `ul ~T0 @X0 1 r2 ]
-[v _callback `*F4618 ~T0 @X0 1 r3 ]
+[v _callback `*F4630 ~T0 @X0 1 r3 ]
 [v _data `*v ~T0 @X0 1 r4 ]
 [f ]
 "39
@@ -900,88 +914,80 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;clock.c: 48:     INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "49
-[; ;clock.c: 49:     time_ms = 0;
-[e = _time_ms -> -> -> 0 `i `l `ul ]
+[; ;clock.c: 49:     PIE1bits.TMR1IE = 0;
+[e = . . _PIE1bits 0 0 -> -> 0 `i `uc ]
 "50
-[; ;clock.c: 50:     return 0;
+[; ;clock.c: 50:     PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"51
+[; ;clock.c: 51:     time_ms = 0;
+[e = _time_ms -> -> -> 0 `i `l `ul ]
+"52
+[; ;clock.c: 52:     return 0;
 [e ) -> 0 `i ]
 [e $UE 515  ]
-"51
-[; ;clock.c: 51: }
+"53
+[; ;clock.c: 53: }
 [e :UE 515 ]
 }
 [v $root$_timer_interrupt `(v ~T0 @X0 0 e ]
-"53
-[; ;clock.c: 53: void __attribute__((picinterrupt(("")))) timer_interrupt(void) {
+"55
+[; ;clock.c: 55: void __attribute__((picinterrupt(("")))) timer_interrupt(void) {
 [v _timer_interrupt `(v ~T110 @X0 1 ef ]
 {
 [e :U _timer_interrupt ]
 [f ]
-"54
-[; ;clock.c: 54:     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
+"56
+[; ;clock.c: 56:     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
 [e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 517  ]
 {
-"55
-[; ;clock.c: 55:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"56
-[; ;clock.c: 56:         TMR0L = 131;
-[e = _TMR0L -> -> 131 `i `uc ]
 "57
-[; ;clock.c: 57:         time_ms++;
-[e ++ _time_ms -> -> -> 1 `i `l `ul ]
+[; ;clock.c: 57:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "58
-[; ;clock.c: 58:     }
+[; ;clock.c: 58:         TMR0L = 131;
+[e = _TMR0L -> -> 131 `i `uc ]
+"59
+[; ;clock.c: 59:         time_ms++;
+[e ++ _time_ms -> -> -> 1 `i `l `ul ]
+"60
+[; ;clock.c: 60:     }
 }
 [e :U 517 ]
-"59
-[; ;clock.c: 59:     if(PIE1bits.TMR1IE && PIR1bits.TMR1IF) {
+"61
+[; ;clock.c: 61:     if(PIE1bits.TMR1IE && PIR1bits.TMR1IF) {
 [e $ ! && != -> . . _PIE1bits 0 0 `i -> 0 `i != -> . . _PIR1bits 0 0 `i -> 0 `i 518  ]
 {
-"60
-[; ;clock.c: 60:         PIR1bits.TMR1IF = 0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"61
-[; ;clock.c: 61:         TMR1H = 0xB1;
-[e = _TMR1H -> -> 177 `i `uc ]
 "62
-[; ;clock.c: 62:         TMR1L = 0xE0;
-[e = _TMR1L -> -> 224 `i `uc ]
+[; ;clock.c: 62:         PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "63
-[; ;clock.c: 63:         handleListHead();
-[e ( _handleListHead ..  ]
+[; ;clock.c: 63:         TMR1H = 0xB1;
+[e = _TMR1H -> -> 177 `i `uc ]
 "64
-[; ;clock.c: 64:         count++;
-[e ++ _count -> 1 `i ]
+[; ;clock.c: 64:         TMR1L = 0xE0;
+[e = _TMR1L -> -> 224 `i `uc ]
 "65
-[; ;clock.c: 65:         if(count == 100) {
-[e $ ! == _count -> 100 `i 519  ]
-{
+[; ;clock.c: 65:         handleListHead();
+[e ( _handleListHead ..  ]
 "66
-[; ;clock.c: 66:             count = 0;
-[e = _count -> 0 `i ]
-"68
-[; ;clock.c: 68:         }
-}
-[e :U 519 ]
-"69
-[; ;clock.c: 69:     }
+[; ;clock.c: 66:     }
 }
 [e :U 518 ]
-"70
-[; ;clock.c: 70: }
+"67
+[; ;clock.c: 67: }
 [e :UE 516 ]
 }
-"72
-[; ;clock.c: 72: void dispatch(void) {
+"69
+[; ;clock.c: 69: void dispatch(void) {
 [v _dispatch `(v ~T0 @X0 1 ef ]
 {
 [e :U _dispatch ]
 [f ]
-"73
-[; ;clock.c: 73:     selectReadyTask();
+"70
+[; ;clock.c: 70:     selectReadyTask();
 [e ( _selectReadyTask ..  ]
-"74
-[; ;clock.c: 74: }
-[e :UE 520 ]
+"71
+[; ;clock.c: 71: }
+[e :UE 519 ]
 }

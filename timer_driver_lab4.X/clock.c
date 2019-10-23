@@ -18,8 +18,8 @@ int start_timer(char timer_vaddr) {
             PIE1bits.TMR1IE = 1;
             PIR1bits.TMR1IF = 0;
             T1CON = 0b10000001;
-            TMR1H = 0xB1;
-            TMR1L = 0xE0;
+            TMR1H = TMR1H_PRELOAD;
+            TMR1L = TMR1L_PRELOAD;
             break;
         case 2:
             break;
@@ -46,6 +46,8 @@ int remove_timer(char id) {
 int stop_timer(void) {
     INTCONbits.TMR0IE = 0;
     INTCONbits.TMR0IF = 0;
+    PIE1bits.TMR1IE = 0;
+    PIR1bits.TMR1IF = 0;
     time_ms = 0;
     return 0;
 }
@@ -58,14 +60,9 @@ void __interrupt() timer_interrupt(void) {
     }
     if(PIE1bits.TMR1IE && PIR1bits.TMR1IF) {
         PIR1bits.TMR1IF = 0;
-        TMR1H = 0xB1;
-        TMR1L = 0xE0;
+        TMR1H = TMR1H_PRELOAD;
+        TMR1L = TMR1L_PRELOAD;
         handleListHead();
-        count++;
-        if(count == 100) {
-            count = 0;
-            //value++;
-        }
     }
 }
 

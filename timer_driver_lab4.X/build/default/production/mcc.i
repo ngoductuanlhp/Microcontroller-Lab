@@ -7776,7 +7776,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 19 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)();
+typedef void (*FUNCTION_PTR)(void*);
 
 typedef struct {
     tWORD delay_t;
@@ -7790,6 +7790,8 @@ typedef struct {
     FUNCTION_PTR func_ptr;
     void* data_p;
 } queue_node;
+
+char task_id[20] = {0};
 
 char value = 0;
 
@@ -7808,10 +7810,11 @@ queue_node dequeue();
 char isEmptyQueue();
 char isFullQueue();
 # 13 "./task.h" 2
-# 23 "./task.h"
+
+
 task_struct task_list[20];
 char num_task;
-signed int head;
+char head;
 
 void initializeTaskList();
 char isEmptyList();
@@ -7825,16 +7828,50 @@ void selectReadyTask();
 
 
 
-unsigned long int time_ms;
+
+
+tWORD time_ms;
+tWORD prev_time_ms = 0;
 
 int start_timer(char timer_vaddr);
-unsigned long int get_time(void);
-char register_timer(unsigned long int period, unsigned long int delay, FUNCTION_PTR callback, void* data);
+tWORD get_time(void);
+char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data);
 int remove_timer(char id);
 int stop_timer(void);
 int timer_ISR();
 void dispatch(void);
 # 13 "./mcc.h" 2
+# 1 "./lcd.h" 1
+# 58 "./lcd.h"
+    void LCDInit(void);
+# 67 "./lcd.h"
+    void InitBBSPI (void);
+# 76 "./lcd.h"
+    void SendByteBBSPI (unsigned char output);
+# 85 "./lcd.h"
+    void Port_BBSPIInit (unsigned char port_dir);
+# 95 "./lcd.h"
+    void WritePort_BBSPI (unsigned char port_add, unsigned char a);
+# 104 "./lcd.h"
+    void LCDPutChar(unsigned char);
+# 113 "./lcd.h"
+    void LCDPutInst(unsigned char);
+# 122 "./lcd.h"
+    void LCDPutStr(const char *);
+
+    void LCDMoveCursor(unsigned char line, unsigned char pos);
+
+    void LCDPrint(unsigned char line, unsigned char pos, const char *ptr);
+
+    void LCDPrintChar(unsigned char line, unsigned char pos, unsigned char ch);
+# 14 "./mcc.h" 2
+# 1 "./buttons.h" 1
+# 14 "./buttons.h"
+int readButtonRA5();
+int readButtonRB0();
+void handleButton(void* data_ptr);
+# 15 "./mcc.h" 2
+
 
 void system_initialize(void);
 # 2 "mcc.c" 2
@@ -7870,6 +7907,7 @@ void system_initialize(void) {
     osc_initialize();
     pin_initialize();
     interrupt_initialize();
+    LCDInit();
     start_timer(0);
     start_timer(1);
 }

@@ -10,6 +10,9 @@
 
 #include <xc.h>
 #include "clock.h"
+#include "lcd.h"
+#include "buttons.h"
+
 
 void system_initialize(void);
 

@@ -13,12 +13,15 @@
 #include "config.h"
 
 #define TMR0_PRELOAD 131
+#define TMR1H_PRELOAD 0xB1
+#define TMR1L_PRELOAD 0xE0
 
-unsigned long int time_ms;
+tWORD time_ms;
+tWORD prev_time_ms = 0;
 
 int start_timer(char timer_vaddr);
-unsigned long int get_time(void);
-char register_timer(unsigned long int period, unsigned long int delay, FUNCTION_PTR callback, void* data);
+tWORD get_time(void);
+char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data);
 int remove_timer(char id);
 int stop_timer(void);
 int timer_ISR();

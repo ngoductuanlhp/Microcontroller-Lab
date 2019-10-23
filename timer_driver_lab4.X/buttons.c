@@ -35,7 +35,7 @@ int readButtonRB0() {
     return 0;
 }
 
-void handleButton() {
+void handleButton(void* data_ptr) {
     int checkRA5 = readButtonRA5();
     int checkRB0 = readButtonRB0();
     switch(stateRA5) {
