@@ -7773,7 +7773,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 4 "./lcd.h" 2
 
 # 1 "./config.h" 1
-# 19 "./config.h"
+# 22 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7797,6 +7797,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+float temperature_value = 0;
+float humidity_value = 0;
 # 5 "./lcd.h" 2
 # 58 "./lcd.h"
     void LCDInit(void);

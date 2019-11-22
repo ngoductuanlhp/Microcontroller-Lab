@@ -702,31 +702,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"36 ./config.h
-[; ;./config.h: 36: char task_id[20] = {0};
+"39 ./config.h
+[; ;./config.h: 39: char task_id[20] = {0};
 [v _task_id `uc ~T0 @X0 -> 20 `i e ]
 [i _task_id
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-"38
-[; ;./config.h: 38: char value = 0;
+"41
+[; ;./config.h: 41: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"40
-[; ;./config.h: 40: char RA5_pressed = 0;
+"43
+[; ;./config.h: 43: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"41
-[; ;./config.h: 41: char RB0_pressed = 0;
+"44
+[; ;./config.h: 44: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc
+]
+"46
+[; ;./config.h: 46: float temperature_value = 0;
+[v _temperature_value `f ~T0 @X0 1 e ]
+[i _temperature_value
+-> -> 0 `i `f
+]
+"47
+[; ;./config.h: 47: float humidity_value = 0;
+[v _humidity_value `f ~T0 @X0 1 e ]
+[i _humidity_value
+-> -> 0 `i `f
 ]
 "45 lcd.c
 [; ;lcd.c: 45: void LCDInit (void)

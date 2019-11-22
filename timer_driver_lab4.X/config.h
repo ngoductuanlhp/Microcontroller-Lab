@@ -8,9 +8,12 @@
 #ifndef CONFIG_H
 #define	CONFIG_H
 
+#include <xc.h>
+
 #define MAX_SIZE 20
 #define NULL_VAL 105
 #define ERROR_VAL 109
+#define ERROR_SENSOR_VAL 209
 
 #define _XTAL_FREQ  8000000
 
@@ -39,6 +42,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+float temperature_value = 0;
+float humidity_value = 0;
 
 #endif	/* CONFIG_H */
 

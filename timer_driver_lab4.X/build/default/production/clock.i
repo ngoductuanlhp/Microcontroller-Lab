@@ -7771,7 +7771,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./task.h" 1
 # 11 "./task.h"
 # 1 "./config.h" 1
-# 19 "./config.h"
+# 22 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7795,6 +7795,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+float temperature_value = 0;
+float humidity_value = 0;
 # 12 "./task.h" 2
 # 1 "./ready_queue.h" 1
 # 13 "./ready_queue.h"

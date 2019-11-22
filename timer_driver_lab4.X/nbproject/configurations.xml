@@ -11,6 +11,7 @@
       <itemPath>clock.h</itemPath>
       <itemPath>buttons.h</itemPath>
       <itemPath>lcd.h</itemPath>
+      <itemPath>dht11.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -26,6 +27,8 @@
       <itemPath>clock.c</itemPath>
       <itemPath>buttons.c</itemPath>
       <itemPath>lcd.c</itemPath>
+      <itemPath>readNEC.c</itemPath>
+      <itemPath>dht11.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

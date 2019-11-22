@@ -11,6 +11,8 @@
 [v _handleButton handleButton `(v  1 e 1 0 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 [v i2___awmod __awmod `(i  1 e 2 0 ]
@@ -18,6 +20,8 @@
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
@@ -43,18 +47,24 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "5 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _start_timer start_timer `(i  1 e 2 0 ]
 "34
 [v _get_time get_time `(ul  1 e 4 0 ]
 "38
 [v _register_timer register_timer `(uc  1 e 1 0 ]
-"42
-[v _remove_timer remove_timer `(i  1 e 2 0 ]
 "55
 [v _timer_interrupt timer_interrupt `IIH(v  1 e 1 0 ]
 "69
 [v _dispatch dispatch `(v  1 e 1 0 ]
+"3 E:\MPLAPXProjects\timer_driver_lab4.X\dht11.c
+[v _getByte getByte `(uc  1 e 1 0 ]
+"28
+[v _readDHT readDHT `(uc  1 e 1 0 ]
+"67
+[v _readTempAndHumid readTempAndHumid `(v  1 e 1 0 ]
 "45 E:\MPLAPXProjects\timer_driver_lab4.X\lcd.c
 [v _LCDInit LCDInit `(v  1 e 1 0 ]
 "70
@@ -77,11 +87,11 @@
 [v _LCDPrint LCDPrint `(v  1 e 1 0 ]
 "239
 [v _LCDPrintChar LCDPrintChar `(v  1 e 1 0 ]
-"29 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
-[v _blinking_LED blinking_LED `(v  1 e 1 0 ]
-"52
+"49 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
 [v _printTime_ms printTime_ms `(v  1 e 1 0 ]
-"63
+"60
+[v _printTempAndHumid printTempAndHumid `(v  1 e 1 0 ]
+"76
 [v _main main `(v  1 e 1 0 ]
 "3 E:\MPLAPXProjects\timer_driver_lab4.X\mcc.c
 [v _osc_initialize osc_initialize `(v  1 e 1 0 ]
@@ -102,13 +112,12 @@
 [v _isEmptyQueue isEmptyQueue `(uc  1 e 1 0 ]
 "24
 [v _enqueue enqueue `(uc  1 e 1 0 ]
-"31 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
-[s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.39v 1 data_p 2 3 ]
+"34 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
+[s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
 "35 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
 [v _dequeue dequeue `(S25  1 e 5 0 ]
 "3 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
 [v _isEmptyList isEmptyList `(uc  1 e 1 0 ]
-[v i2_isEmptyList isEmptyList `(uc  1 e 1 0 ]
 "7
 [v _isFullList isFullList `(uc  1 e 1 0 ]
 "11
@@ -117,27 +126,34 @@
 [v _addTask addTask `(uc  1 e 1 0 ]
 "63
 [v _removeTask removeTask `(uc  1 e 1 0 ]
-[v i2_removeTask removeTask `(uc  1 e 1 0 ]
 "86
 [v _handleListHead handleListHead `(v  1 e 1 0 ]
 "123
 [v _selectReadyTask selectReadyTask `(v  1 e 1 0 ]
 "19 E:\MPLAPXProjects\timer_driver_lab4.X/clock.h
 [v _time_ms time_ms `ul  1 e 4 0 ]
-"36 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
+"39 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
 [v _task_id task_id `[20]uc  1 e 20 0 ]
-"40
+"43
 [v _RA5_pressed RA5_pressed `uc  1 e 1 0 ]
-"41
+"44
 [v _RB0_pressed RB0_pressed `uc  1 e 1 0 ]
-[s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.39v 1 data_p 2 3 ]
+"46
+[v _temperature_value temperature_value `f  1 e 4 0 ]
+"47
+[v _humidity_value humidity_value `f  1 e 4 0 ]
+"17 E:\MPLAPXProjects\timer_driver_lab4.X/dht11.h
+[v _temperature_dht11 temperature_dht11 `[2]uc  1 e 2 0 ]
+"18
+[v _humidity_dht11 humidity_dht11 `[2]uc  1 e 2 0 ]
+[s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
 "13 E:\MPLAPXProjects\timer_driver_lab4.X/ready_queue.h
 [v _ready_queue ready_queue `[20]S25  1 e 100 0 ]
 "14
 [v _front front `i  1 e 2 0 ]
 "15
 [v _rear rear `i  1 e 2 0 ]
-[s S33 . 15 `ul 1 delay_t 4 0 `ul 1 period_t 4 4 `*.38(v 1 func_ptr 3 8 `i 1 next 2 11 `*.39v 1 data_p 2 13 ]
+[s S33 . 15 `ul 1 delay_t 4 0 `ul 1 period_t 4 4 `*.38(v 1 func_ptr 3 8 `i 1 next 2 11 `*.2v 1 data_p 2 13 ]
 "15 E:\MPLAPXProjects\timer_driver_lab4.X/task.h
 [v _task_list task_list `[20]S33  1 e 300 0 ]
 "16
@@ -156,7 +172,7 @@
 [v _stateRA5 stateRA5 `uc  1 e 1 0 ]
 "15
 [v _stateRB0 stateRB0 `uc  1 e 1 0 ]
-[s S590 . 1 `uc 1 RA0 1 0 :1:0 
+[s S557 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -166,29 +182,29 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "2684 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
-[s S599 . 1 `uc 1 . 1 0 :2:0 
+[s S566 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S605 . 1 `uc 1 AN0 1 0 :1:0 
+[s S572 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S612 . 1 `uc 1 . 1 0 :5:0 
+[s S579 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S615 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S582 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S619 . 1 `S590 1 . 1 0 `S599 1 . 1 0 `S605 1 . 1 0 `S612 1 . 1 0 `S615 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES619  1 e 1 @3968 ]
-[s S655 . 1 `uc 1 RB0 1 0 :1:0 
+[u S586 . 1 `S557 1 . 1 0 `S566 1 . 1 0 `S572 1 . 1 0 `S579 1 . 1 0 `S582 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES586  1 e 1 @3968 ]
+[s S622 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -198,7 +214,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "2833
-[s S664 . 1 `uc 1 INT0 1 0 :1:0 
+[s S631 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -207,24 +223,76 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S673 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S640 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ECCP2 1 0 :1:3 
 ]
-[s S677 . 1 `uc 1 . 1 0 :3:0 
+[s S644 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2 1 0 :1:3 
 ]
-[s S680 . 1 `uc 1 . 1 0 :3:0 
+[s S647 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 P2A 1 0 :1:3 
 ]
-[s S683 . 1 `uc 1 . 1 0 :3:0 
+[s S650 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S686 . 1 `S655 1 . 1 0 `S664 1 . 1 0 `S673 1 . 1 0 `S677 1 . 1 0 `S680 1 . 1 0 `S683 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES686  1 e 1 @3969 ]
+[u S653 . 1 `S622 1 . 1 0 `S631 1 . 1 0 `S640 1 . 1 0 `S644 1 . 1 0 `S647 1 . 1 0 `S650 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES653  1 e 1 @3969 ]
+[s S887 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"3005
+[s S1099 . 1 `uc 1 T1OSO 1 0 :1:0 
+`uc 1 T1OSI 1 0 :1:1 
+`uc 1 ECCP1 1 0 :1:2 
+`uc 1 SCK 1 0 :1:3 
+`uc 1 SDI 1 0 :1:4 
+`uc 1 SDO 1 0 :1:5 
+`uc 1 TX 1 0 :1:6 
+`uc 1 RX 1 0 :1:7 
+]
+[s S1108 . 1 `uc 1 T13CKI 1 0 :1:0 
+`uc 1 ECCP2 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SCL 1 0 :1:3 
+`uc 1 SDA 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CK 1 0 :1:6 
+`uc 1 DT 1 0 :1:7 
+]
+[s S1117 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+`uc 1 CCP1 1 0 :1:2 
+`uc 1 SCL1 1 0 :1:3 
+`uc 1 SDA1 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CK1 1 0 :1:6 
+`uc 1 DT1 1 0 :1:7 
+]
+[s S1126 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 P2A 1 0 :1:1 
+`uc 1 P1A 1 0 :1:2 
+`uc 1 SCK1 1 0 :1:3 
+`uc 1 SDI1 1 0 :1:4 
+`uc 1 SDO1 1 0 :1:5 
+`uc 1 TX1 1 0 :1:6 
+`uc 1 RX1 1 0 :1:7 
+]
+[s S1135 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+`uc 1 PA1 1 0 :1:2 
+]
+[u S1139 . 1 `S887 1 . 1 0 `S1099 1 . 1 0 `S1108 1 . 1 0 `S1117 1 . 1 0 `S1126 1 . 1 0 `S1135 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1139  1 e 1 @3970 ]
 "4479
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S949 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S918 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -234,7 +302,7 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "4506
-[s S958 . 1 `uc 1 LA0 1 0 :1:0 
+[s S927 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -243,13 +311,13 @@
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S967 . 1 `S949 1 . 1 0 `S958 1 . 1 0 ]
-[v _LATAbits LATAbits `VES967  1 e 1 @3977 ]
+[u S936 . 1 `S918 1 . 1 0 `S927 1 . 1 0 ]
+[v _LATAbits LATAbits `VES936  1 e 1 @3977 ]
 "4591
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "4703
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S989 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S958 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -259,7 +327,7 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "4730
-[s S998 . 1 `uc 1 LC0 1 0 :1:0 
+[s S967 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -268,32 +336,11 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S1007 . 1 `S989 1 . 1 0 `S998 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1007  1 e 1 @3979 ]
+[u S976 . 1 `S958 1 . 1 0 `S967 1 . 1 0 ]
+[v _LATCbits LATCbits `VES976  1 e 1 @3979 ]
 "4815
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S43 . 1 `uc 1 LATD0 1 0 :1:0 
-`uc 1 LATD1 1 0 :1:1 
-`uc 1 LATD2 1 0 :1:2 
-`uc 1 LATD3 1 0 :1:3 
-`uc 1 LATD4 1 0 :1:4 
-`uc 1 LATD5 1 0 :1:5 
-`uc 1 LATD6 1 0 :1:6 
-`uc 1 LATD7 1 0 :1:7 
-]
-"4842
-[s S52 . 1 `uc 1 LD0 1 0 :1:0 
-`uc 1 LD1 1 0 :1:1 
-`uc 1 LD2 1 0 :1:2 
-`uc 1 LD3 1 0 :1:3 
-`uc 1 LD4 1 0 :1:4 
-`uc 1 LD5 1 0 :1:5 
-`uc 1 LD6 1 0 :1:6 
-`uc 1 LD7 1 0 :1:7 
-]
-[u S61 . 1 `S43 1 . 1 0 `S52 1 . 1 0 ]
-[v _LATDbits LATDbits `VES61  1 e 1 @3980 ]
-[s S807 . 1 `uc 1 LATF0 1 0 :1:0 
+[s S776 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -303,7 +350,7 @@
 `uc 1 LATF7 1 0 :1:7 
 ]
 "5066
-[s S816 . 1 `uc 1 LF0 1 0 :1:0 
+[s S785 . 1 `uc 1 LF0 1 0 :1:0 
 `uc 1 LF1 1 0 :1:1 
 `uc 1 LF2 1 0 :1:2 
 `uc 1 LF3 1 0 :1:3 
@@ -312,11 +359,11 @@
 `uc 1 LF6 1 0 :1:6 
 `uc 1 LF7 1 0 :1:7 
 ]
-[u S825 . 1 `S807 1 . 1 0 `S816 1 . 1 0 ]
-[v _LATFbits LATFbits `VES825  1 e 1 @3982 ]
+[u S794 . 1 `S776 1 . 1 0 `S785 1 . 1 0 ]
+[v _LATFbits LATFbits `VES794  1 e 1 @3982 ]
 "5457
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S869 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S838 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -326,13 +373,13 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "5489
-[u S887 . 1 `S869 1 . 1 0 `S590 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES887  1 e 1 @3986 ]
+[u S856 . 1 `S838 1 . 1 0 `S557 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES856  1 e 1 @3986 ]
 "5679
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "5901
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S909 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S878 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -342,20 +389,11 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "5933
-[s S918 . 1 `uc 1 RC0 1 0 :1:0 
-`uc 1 RC1 1 0 :1:1 
-`uc 1 RC2 1 0 :1:2 
-`uc 1 RC3 1 0 :1:3 
-`uc 1 RC4 1 0 :1:4 
-`uc 1 RC5 1 0 :1:5 
-`uc 1 RC6 1 0 :1:6 
-`uc 1 RC7 1 0 :1:7 
-]
-[u S927 . 1 `S909 1 . 1 0 `S918 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES927  1 e 1 @3988 ]
+[u S896 . 1 `S878 1 . 1 0 `S887 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES896  1 e 1 @3988 ]
 "6123
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S767 . 1 `uc 1 TRISF0 1 0 :1:0 
+[s S736 . 1 `uc 1 TRISF0 1 0 :1:0 
 `uc 1 TRISF1 1 0 :1:1 
 `uc 1 TRISF2 1 0 :1:2 
 `uc 1 TRISF3 1 0 :1:3 
@@ -365,7 +403,7 @@
 `uc 1 TRISF7 1 0 :1:7 
 ]
 "6599
-[s S776 . 1 `uc 1 RF0 1 0 :1:0 
+[s S745 . 1 `uc 1 RF0 1 0 :1:0 
 `uc 1 RF1 1 0 :1:1 
 `uc 1 RF2 1 0 :1:2 
 `uc 1 RF3 1 0 :1:3 
@@ -374,9 +412,9 @@
 `uc 1 RF6 1 0 :1:6 
 `uc 1 RF7 1 0 :1:7 
 ]
-[u S785 . 1 `S767 1 . 1 0 `S776 1 . 1 0 ]
-[v _TRISFbits TRISFbits `VES785  1 e 1 @3991 ]
-[s S454 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S754 . 1 `S736 1 . 1 0 `S745 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES754  1 e 1 @3991 ]
+[s S419 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -386,14 +424,14 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "7532
-[s S463 . 1 `uc 1 . 1 0 :3:0 
+[s S428 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIE 1 0 :1:3 
 `uc 1 TXIE 1 0 :1:4 
 `uc 1 RCIE 1 0 :1:5 
 ]
-[u S468 . 1 `S454 1 . 1 0 `S463 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES468  1 e 1 @3997 ]
-[s S486 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S433 . 1 `S419 1 . 1 0 `S428 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES433  1 e 1 @3997 ]
+[s S451 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -403,13 +441,13 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "7615
-[s S495 . 1 `uc 1 . 1 0 :3:0 
+[s S460 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S500 . 1 `S486 1 . 1 0 `S495 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES500  1 e 1 @3998 ]
+[u S465 . 1 `S451 1 . 1 0 `S460 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES465  1 e 1 @3998 ]
 "10174
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "11908
@@ -424,7 +462,7 @@
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
 "12640
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
-[s S198 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S155 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -434,7 +472,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "13144
-[s S207 . 1 `uc 1 . 1 0 :1:0 
+[s S164 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -443,20 +481,16 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S216 . 1 `uc 1 . 1 0 :6:0 
+[s S173 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S220 . 1 `S198 1 . 1 0 `S207 1 . 1 0 `S216 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES220  1 e 1 @4082 ]
-"24 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
-[v _LED_state LED_state `[8]i  1 e 16 0 ]
-"26
-[v _remove_task_counter remove_task_counter `i  1 e 2 0 ]
-"63
+[u S177 . 1 `S155 1 . 1 0 `S164 1 . 1 0 `S173 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES177  1 e 1 @4082 ]
+"76 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"94
+"109
 } 0
 "30 E:\MPLAPXProjects\timer_driver_lab4.X\mcc.c
 [v _system_initialize system_initialize `(v  1 e 1 0 ]
@@ -519,37 +553,13 @@
 {
 "81
 } 0
-"42 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
-[v _remove_timer remove_timer `(i  1 e 2 0 ]
-{
-[v remove_timer@id id `uc  1 a 1 wreg ]
-[v remove_timer@id id `uc  1 a 1 wreg ]
-[v remove_timer@id id `uc  1 a 1 6 ]
-"44
-} 0
-"63 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
-[v _removeTask removeTask `(uc  1 e 1 0 ]
-{
-[v removeTask@idx idx `uc  1 a 1 wreg ]
-"76
-[v removeTask@pos pos `uc  1 a 1 4 ]
-"63
-[v removeTask@idx idx `uc  1 a 1 wreg ]
-[v removeTask@idx idx `uc  1 a 1 5 ]
-"84
-} 0
-"3
-[v _isEmptyList isEmptyList `(uc  1 e 1 0 ]
-{
-"5
-} 0
 "38 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _register_timer register_timer `(uc  1 e 1 0 ]
 {
 [v register_timer@period period `ul  1 p 4 38 ]
 [v register_timer@delay delay `ul  1 p 4 42 ]
 [v register_timer@callback callback `*.38(v  1 p 3 46 ]
-[v register_timer@data data `*.39v  1 p 2 49 ]
+[v register_timer@data data `*.2v  1 p 2 49 ]
 "40
 } 0
 "24 E:\MPLAPXProjects\timer_driver_lab4.X\task.c
@@ -567,7 +577,7 @@
 [v addTask@period period `ul  1 p 4 6 ]
 [v addTask@delay delay `ul  1 p 4 10 ]
 [v addTask@ptr ptr `*.38(v  1 p 3 14 ]
-[v addTask@data data `*.39v  1 p 2 17 ]
+[v addTask@data data `*.2v  1 p 2 17 ]
 "61
 } 0
 "7
@@ -584,17 +594,71 @@
 [v _selectReadyTask selectReadyTask `(v  1 e 1 0 ]
 {
 "125
-[v selectReadyTask@node node `S25  1 a 5 22 ]
+[v selectReadyTask@node node `S25  1 a 5 64 ]
 "129
 } 0
-"29 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
-[v _blinking_LED blinking_LED `(v  1 e 1 0 ]
+"67 E:\MPLAPXProjects\timer_driver_lab4.X\dht11.c
+[v _readTempAndHumid readTempAndHumid `(v  1 e 1 0 ]
+{
+"82
+} 0
+"28
+[v _readDHT readDHT `(uc  1 e 1 0 ]
 {
 "30
-[v blinking_LED@idx idx `uc  1 a 1 20 ]
+[v readDHT@timeOut timeOut `ui  1 a 2 6 ]
 "29
-[v blinking_LED@idx_ptr idx_ptr `*.39v  1 p 2 14 ]
-"50
+[v readDHT@checkSum checkSum `uc  1 a 1 5 ]
+"65
+} 0
+"3
+[v _getByte getByte `(uc  1 e 1 0 ]
+{
+"6
+[v getByte@timeOut timeOut `ui  1 a 2 1 ]
+"4
+[v getByte@i i `uc  1 a 1 3 ]
+"5
+[v getByte@byteReceived byteReceived `uc  1 a 1 0 ]
+"26
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"245 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 55 ]
+[v ___flsub@a a `d  1 p 4 59 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 54 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 53 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 52 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 51 ]
+"10
+[v ___fladd@b b `d  1 p 4 39 ]
+[v ___fladd@a a `d  1 p 4 43 ]
+"237
 } 0
 "38 E:\MPLAPXProjects\timer_driver_lab4.X\buttons.c
 [v _handleButton handleButton `(v  1 e 1 0 ]
@@ -604,21 +668,19 @@
 "39
 [v handleButton@checkRA5 checkRA5 `i  1 a 2 18 ]
 "38
-[v handleButton@data_ptr data_ptr `*.39v  1 p 2 14 ]
+[v handleButton@data_ptr data_ptr `*.2v  1 p 2 14 ]
 "65
 } 0
-"52 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
+"49 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
 [v _printTime_ms printTime_ms `(v  1 e 1 0 ]
 {
-"56
-[v printTime_ms@temp temp `uc  1 a 1 16 ]
 "53
+[v printTime_ms@temp temp `uc  1 a 1 16 ]
+"50
 [v printTime_ms@current_time current_time `ul  1 a 4 18 ]
-"54
+"51
 [v printTime_ms@i i `uc  1 a 1 17 ]
-"52
-[v printTime_ms@data_ptr data_ptr `*.39v  1 p 2 14 ]
-"61
+"58
 } 0
 "34 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _get_time get_time `(ul  1 e 4 0 ]
@@ -647,6 +709,70 @@
 [v ___lldiv@divisor divisor `ul  1 p 4 4 ]
 "30
 } 0
+"60 E:\MPLAPXProjects\timer_driver_lab4.X\main.c
+[v _printTempAndHumid printTempAndHumid `(v  1 e 1 0 ]
+{
+"64
+[v printTempAndHumid@humid humid `i  1 a 2 49 ]
+"63
+[v printTempAndHumid@temp temp `i  1 a 2 47 ]
+"74
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 0 ]
+"70
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1586 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1591 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1594 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1586 1 fAsBytes 4 0 `S1591 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1594  1 a 4 33 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 27 ]
+[s S1662 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1665 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1662 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1665  1 a 2 37 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 31 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
 "239 E:\MPLAPXProjects\timer_driver_lab4.X\lcd.c
 [v _LCDPrintChar LCDPrintChar `(v  1 e 1 0 ]
 {
@@ -657,59 +783,7 @@
 [v LCDPrintChar@line line `uc  1 a 1 13 ]
 "244
 } 0
-"29 E:\MPLAPXProjects\timer_driver_lab4.X\buttons.c
-[v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
-{
-"36
-} 0
-"20
-[v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
-{
-"27
-} 0
-"31 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
-[s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.39v 1 data_p 2 3 ]
-"35 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
-[v _dequeue dequeue `(S25  1 e 5 0 ]
-{
-"36
-[v dequeue@temp temp `S25  1 a 5 15 ]
-"41
-[v dequeue@idx idx `i  1 a 2 13 ]
-"45
-} 0
-"18
-[v _isEmptyQueue isEmptyQueue `(uc  1 e 1 0 ]
-{
-"22
-} 0
-"10
-[v _getSizeQueue getSizeQueue `(uc  1 e 1 0 ]
-{
-"12
-} 0
-"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 4 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
-"53
-} 0
-"232 E:\MPLAPXProjects\timer_driver_lab4.X\lcd.c
+"232
 [v _LCDPrint LCDPrint `(v  1 e 1 0 ]
 {
 [v LCDPrint@line line `uc  1 a 1 wreg ]
@@ -779,6 +853,58 @@
 [v SendByteBBSPI@output output `uc  1 a 1 0 ]
 "114
 } 0
+"29 E:\MPLAPXProjects\timer_driver_lab4.X\buttons.c
+[v _readButtonRB0 readButtonRB0 `(i  1 e 2 0 ]
+{
+"36
+} 0
+"20
+[v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
+{
+"27
+} 0
+"34 E:\MPLAPXProjects\timer_driver_lab4.X/config.h
+[s S25 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
+"35 E:\MPLAPXProjects\timer_driver_lab4.X\ready_queue.c
+[v _dequeue dequeue `(S25  1 e 5 0 ]
+{
+"36
+[v dequeue@temp temp `S25  1 a 5 15 ]
+"41
+[v dequeue@idx idx `i  1 a 2 13 ]
+"45
+} 0
+"18
+[v _isEmptyQueue isEmptyQueue `(uc  1 e 1 0 ]
+{
+"22
+} 0
+"10
+[v _getSizeQueue getSizeQueue `(uc  1 e 1 0 ]
+{
+"12
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
 "55 E:\MPLAPXProjects\timer_driver_lab4.X\clock.c
 [v _timer_interrupt timer_interrupt `IIH(v  1 e 1 0 ]
 {
@@ -798,16 +924,18 @@
 "121
 } 0
 "63
-[v i2_removeTask removeTask `(uc  1 e 1 0 ]
+[v _removeTask removeTask `(uc  1 e 1 0 ]
 {
-[v i2removeTask@idx idx `uc  1 a 1 wreg ]
-[v i2removeTask@pos removeTask `uc  1 a 1 4 ]
-[v i2removeTask@idx idx `uc  1 a 1 wreg ]
-[v i2removeTask@idx idx `uc  1 a 1 5 ]
+[v removeTask@idx idx `uc  1 a 1 wreg ]
+"76
+[v removeTask@pos pos `uc  1 a 1 4 ]
+"63
+[v removeTask@idx idx `uc  1 a 1 wreg ]
+[v removeTask@idx idx `uc  1 a 1 5 ]
 "84
 } 0
 "3
-[v i2_isEmptyList isEmptyList `(uc  1 e 1 0 ]
+[v _isEmptyList isEmptyList `(uc  1 e 1 0 ]
 {
 "5
 } 0
@@ -815,7 +943,7 @@
 [v _enqueue enqueue `(uc  1 e 1 0 ]
 {
 [v enqueue@ptr ptr `*.38(v  1 p 3 9 ]
-[v enqueue@data data `*.39v  1 p 2 12 ]
+[v enqueue@data data `*.2v  1 p 2 12 ]
 "33
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c

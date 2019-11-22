@@ -10,43 +10,7 @@
 # 1 "./task.h" 1
 # 11 "./task.h"
 # 1 "./config.h" 1
-# 19 "./config.h"
-typedef char tBYTE;
-typedef unsigned long int tWORD;
-typedef void (*FUNCTION_PTR)(void*);
-
-typedef struct {
-    tWORD delay_t;
-    tWORD period_t;
-    FUNCTION_PTR func_ptr;
-    int next;
-    void* data_p;
-} task_struct;
-
-typedef struct {
-    FUNCTION_PTR func_ptr;
-    void* data_p;
-} queue_node;
-
-char task_id[20] = {0};
-
-char value = 0;
-
-char RA5_pressed = 0;
-char RB0_pressed = 0;
-# 12 "./task.h" 2
-# 1 "./ready_queue.h" 1
-# 13 "./ready_queue.h"
-queue_node ready_queue[20];
-int front = -1;
-int rear = -1;
-
-void queueInitialize(void);
-char enqueue(FUNCTION_PTR ptr, void* data);
-queue_node dequeue();
-char isEmptyQueue();
-char isFullQueue();
-# 13 "./task.h" 2
+# 11 "./config.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -7805,7 +7769,48 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 14 "./task.h" 2
+# 12 "./config.h" 2
+# 22 "./config.h"
+typedef char tBYTE;
+typedef unsigned long int tWORD;
+typedef void (*FUNCTION_PTR)(void*);
+
+typedef struct {
+    tWORD delay_t;
+    tWORD period_t;
+    FUNCTION_PTR func_ptr;
+    int next;
+    void* data_p;
+} task_struct;
+
+typedef struct {
+    FUNCTION_PTR func_ptr;
+    void* data_p;
+} queue_node;
+
+char task_id[20] = {0};
+
+char value = 0;
+
+char RA5_pressed = 0;
+char RB0_pressed = 0;
+
+float temperature_value = 0;
+float humidity_value = 0;
+# 12 "./task.h" 2
+# 1 "./ready_queue.h" 1
+# 13 "./ready_queue.h"
+queue_node ready_queue[20];
+int front = -1;
+int rear = -1;
+
+void queueInitialize(void);
+char enqueue(FUNCTION_PTR ptr, void* data);
+queue_node dequeue();
+char isEmptyQueue();
+char isFullQueue();
+# 13 "./task.h" 2
+
 
 task_struct task_list[20];
 char num_task;

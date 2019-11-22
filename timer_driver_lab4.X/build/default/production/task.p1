@@ -1,75 +1,34 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F18 `(v ~T0 @X0 0 tf1`*v ]
-"31 ./config.h
-[; ;./config.h: 31: typedef struct {
-[s S2 `*F18 1 `*v 1 ]
-[n S2 . func_ptr data_p ]
-[v F11 `(v ~T0 @X0 0 tf1`*v ]
-"23
-[; ;./config.h: 23: typedef struct {
-[s S1 `ul 1 `ul 1 `*F11 1 `i 1 `*v 1 ]
-[n S1 . delay_t period_t func_ptr next data_p ]
+[v F4560 `(v ~T0 @X0 0 tf1`*v ]
+"34 ./config.h
+[; ;./config.h: 34: typedef struct {
+[s S502 `*F4560 1 `*v 1 ]
+[n S502 . func_ptr data_p ]
+[v F4553 `(v ~T0 @X0 0 tf1`*v ]
+"26
+[; ;./config.h: 26: typedef struct {
+[s S501 `ul 1 `ul 1 `*F4553 1 `i 1 `*v 1 ]
+[n S501 . delay_t period_t func_ptr next data_p ]
 "17 ./ready_queue.h
 [; ;./ready_queue.h: 17: void queueInitialize(void);
 [v _queueInitialize `(v ~T0 @X0 0 ef ]
-[v F4607 `(v ~T0 @X0 0 tf1`*v ]
-[v F4612 `(v ~T0 @X0 0 tf1`*v ]
-[v F4617 `(v ~T0 @X0 0 tf1`*v ]
-[v F4623 `(v ~T0 @X0 0 tf1`*v ]
-[v F4636 `(v ~T0 @X0 0 tf1`*v ]
-[v F4640 `(v ~T0 @X0 0 tf1`*v ]
-[v F31 `(v ~T0 @X0 0 tf1`*v ]
+[v F4609 `(v ~T0 @X0 0 tf1`*v ]
+[v F4614 `(v ~T0 @X0 0 tf1`*v ]
+[v F4619 `(v ~T0 @X0 0 tf1`*v ]
+[v F4625 `(v ~T0 @X0 0 tf1`*v ]
+[v F4638 `(v ~T0 @X0 0 tf1`*v ]
+[v F4642 `(v ~T0 @X0 0 tf1`*v ]
+[v F4575 `(v ~T0 @X0 0 tf1`*v ]
 "18
 [; ;./ready_queue.h: 18: char enqueue(FUNCTION_PTR ptr, void* data);
-[v _enqueue `(uc ~T0 @X0 0 ef2`*F31`*v ]
+[v _enqueue `(uc ~T0 @X0 0 ef2`*F4575`*v ]
 "19
 [; ;./ready_queue.h: 19: queue_node dequeue();
-[v _dequeue `(S2 ~T0 @X0 0 e? ]
-[v F4656 `(v ~T0 @X0 0 tf1`*v ]
+[v _dequeue `(S502 ~T0 @X0 0 e? ]
+[v F4658 `(v ~T0 @X0 0 tf1`*v ]
 "20
 [; ;./ready_queue.h: 20: char isEmptyQueue();
 [v _isEmptyQueue `(uc ~T0 @X0 0 e? ]
-"36 ./config.h
-[; ;./config.h: 36: char task_id[20] = {0};
-[v _task_id `uc ~T0 @X0 -> 20 `i e ]
-[i _task_id
-:U ..
--> -> 0 `i `uc
-..
-]
-"38
-[; ;./config.h: 38: char value = 0;
-[v _value `uc ~T0 @X0 1 e ]
-[i _value
--> -> 0 `i `uc
-]
-"40
-[; ;./config.h: 40: char RA5_pressed = 0;
-[v _RA5_pressed `uc ~T0 @X0 1 e ]
-[i _RA5_pressed
--> -> 0 `i `uc
-]
-"41
-[; ;./config.h: 41: char RB0_pressed = 0;
-[v _RB0_pressed `uc ~T0 @X0 1 e ]
-[i _RB0_pressed
--> -> 0 `i `uc
-]
-"13 ./ready_queue.h
-[; ;./ready_queue.h: 13: queue_node ready_queue[20];
-[v _ready_queue `S2 ~T0 @X0 -> 20 `i e ]
-"14
-[; ;./ready_queue.h: 14: int front = -1;
-[v _front `i ~T0 @X0 1 e ]
-[i _front
--U -> 1 `i
-]
-"15
-[; ;./ready_queue.h: 15: int rear = -1;
-[v _rear `i ~T0 @X0 1 e ]
-[i _rear
--U -> 1 `i
-]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -664,9 +623,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"39 ./config.h
+[; ;./config.h: 39: char task_id[20] = {0};
+[v _task_id `uc ~T0 @X0 -> 20 `i e ]
+[i _task_id
+:U ..
+-> -> 0 `i `uc
+..
+]
+"41
+[; ;./config.h: 41: char value = 0;
+[v _value `uc ~T0 @X0 1 e ]
+[i _value
+-> -> 0 `i `uc
+]
+"43
+[; ;./config.h: 43: char RA5_pressed = 0;
+[v _RA5_pressed `uc ~T0 @X0 1 e ]
+[i _RA5_pressed
+-> -> 0 `i `uc
+]
+"44
+[; ;./config.h: 44: char RB0_pressed = 0;
+[v _RB0_pressed `uc ~T0 @X0 1 e ]
+[i _RB0_pressed
+-> -> 0 `i `uc
+]
+"46
+[; ;./config.h: 46: float temperature_value = 0;
+[v _temperature_value `f ~T0 @X0 1 e ]
+[i _temperature_value
+-> -> 0 `i `f
+]
+"47
+[; ;./config.h: 47: float humidity_value = 0;
+[v _humidity_value `f ~T0 @X0 1 e ]
+[i _humidity_value
+-> -> 0 `i `f
+]
+"13 ./ready_queue.h
+[; ;./ready_queue.h: 13: queue_node ready_queue[20];
+[v _ready_queue `S502 ~T0 @X0 -> 20 `i e ]
+"14
+[; ;./ready_queue.h: 14: int front = -1;
+[v _front `i ~T0 @X0 1 e ]
+[i _front
+-U -> 1 `i
+]
+"15
+[; ;./ready_queue.h: 15: int rear = -1;
+[v _rear `i ~T0 @X0 1 e ]
+[i _rear
+-U -> 1 `i
+]
 "15 ./task.h
 [; ;./task.h: 15: task_struct task_list[20];
-[v _task_list `S1 ~T0 @X0 -> 20 `i e ]
+[v _task_list `S501 ~T0 @X0 -> 20 `i e ]
 "16
 [; ;./task.h: 16: char num_task;
 [v _num_task `uc ~T0 @X0 1 e ]
@@ -727,7 +739,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul ]
 "16
 [; ;task.c: 16:         task_list[i].func_ptr = ((void*)0);
-[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4607 ]
+[e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4609 ]
 "17
 [; ;task.c: 17:         task_list[i].data_p = ((void*)0);
 [e = . *U + &U _task_list * -> -> _i `ui `ux -> -> # *U &U _task_list `ui `ux 4 -> -> 0 `i `*v ]
@@ -753,12 +765,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "24
 [; ;task.c: 24: char addTask(tWORD period, tWORD delay, FUNCTION_PTR ptr, void *data) {
-[v _addTask `(uc ~T0 @X0 1 ef4`ul`ul`*F4612`*v ]
+[v _addTask `(uc ~T0 @X0 1 ef4`ul`ul`*F4614`*v ]
 {
 [e :U _addTask ]
 [v _period `ul ~T0 @X0 1 r1 ]
 [v _delay `ul ~T0 @X0 1 r2 ]
-[v _ptr `*F4617 ~T0 @X0 1 r3 ]
+[v _ptr `*F4619 ~T0 @X0 1 r3 ]
 [v _data `*v ~T0 @X0 1 r4 ]
 [f ]
 "25
@@ -782,7 +794,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "29
 [; ;task.c: 29:         if(task_list[idx].func_ptr == ((void*)0))
-[e $ ! == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4623 514  ]
+[e $ ! == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4625 514  ]
 "30
 [; ;task.c: 30:             break;
 [e $U 512  ]
@@ -906,7 +918,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "64
 [; ;task.c: 64:     if(isEmptyList() || task_list[idx].func_ptr == ((void*)0))
-[e $ ! || != -> ( _isEmptyList ..  `i -> 0 `i == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4636 523  ]
+[e $ ! || != -> ( _isEmptyList ..  `i -> 0 `i == . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4638 523  ]
 "65
 [; ;task.c: 65:         return 0;
 [e ) -> -> 0 `i `uc ]
@@ -920,7 +932,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 1 -> -> -> 0 `i `l `ul ]
 "68
 [; ;task.c: 68:     task_list[idx].func_ptr = ((void*)0);
-[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4640 ]
+[e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 2 -> -> -> 0 `i `*v `*F4642 ]
 "69
 [; ;task.c: 69:     task_list[idx].data_p = ((void*)0);
 [e = . *U + &U _task_list * -> _idx `ux -> -> # *U &U _task_list `ui `ux 4 -> -> 0 `i `*v ]
@@ -1131,11 +1143,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "125
 [; ;task.c: 125:         queue_node node = dequeue();
-[v _node `S2 ~T0 @X0 1 a ]
+[v _node `S502 ~T0 @X0 1 a ]
 [e = _node ( _dequeue ..  ]
 "126
 [; ;task.c: 126:         if(node.func_ptr != ((void*)0))
-[e $ ! != . _node 0 -> -> -> 0 `i `*v `*F4656 546  ]
+[e $ ! != . _node 0 -> -> -> 0 `i `*v `*F4658 546  ]
 "127
 [; ;task.c: 127:             (node.func_ptr)(node.data_p);
 [e ( *U . _node 0 (1 . _node 1 ]

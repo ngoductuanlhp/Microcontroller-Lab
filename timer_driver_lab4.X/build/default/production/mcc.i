@@ -7773,7 +7773,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./task.h" 1
 # 11 "./task.h"
 # 1 "./config.h" 1
-# 19 "./config.h"
+# 22 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7797,6 +7797,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+float temperature_value = 0;
+float humidity_value = 0;
 # 12 "./task.h" 2
 # 1 "./ready_queue.h" 1
 # 13 "./ready_queue.h"
@@ -7871,6 +7874,13 @@ int readButtonRA5();
 int readButtonRB0();
 void handleButton(void* data_ptr);
 # 15 "./mcc.h" 2
+# 1 "./dht11.h" 1
+# 17 "./dht11.h"
+char temperature_dht11[2];
+char humidity_dht11[2];
+
+void readTempAndHumid(void);
+# 16 "./mcc.h" 2
 
 
 void system_initialize(void);

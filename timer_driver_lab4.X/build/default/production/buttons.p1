@@ -1,88 +1,62 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "2649 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2649:     struct {
-[s S120 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S120 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+[s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S118 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
 "2659
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2659:     struct {
-[s S121 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S121 . . VREFM VREFP T0CKI LVDIN ]
+[s S119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S119 . . VREFM VREFP T0CKI LVDIN ]
 "2666
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2666:     struct {
-[s S122 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S122 . AN0 AN1 AN2 AN3 . AN4 ]
+[s S120 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S120 . AN0 AN1 AN2 AN3 . AN4 ]
 "2674
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2674:     struct {
-[s S123 :5 `uc 1 :1 `uc 1 ]
-[n S123 . . HLVDIN ]
+[s S121 :5 `uc 1 :1 `uc 1 ]
+[n S121 . . HLVDIN ]
 "2678
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2678:     struct {
-[s S124 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S124 . ULPWUIN . RJPU ]
+[s S122 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
+[n S122 . ULPWUIN . RJPU ]
 "2648
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2648: typedef union {
-[u S119 `S120 1 `S121 1 `S122 1 `S123 1 `S124 1 ]
-[n S119 . . . . . . ]
+[u S117 `S118 1 `S119 1 `S120 1 `S121 1 `S122 1 ]
+[n S117 . . . . . . ]
 "2684
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2684: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS119 ~T0 @X0 0 e@3968 ]
+[v _PORTAbits `VS117 ~T0 @X0 0 e@3968 ]
 "2795
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2795:     struct {
-[s S126 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S126 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+[s S124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S124 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
 "2805
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2805:     struct {
-[s S127 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S127 . INT0 INT1 INT2 INT3 KBI0 KBI1 KBI2 KBI3 ]
+[s S125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S125 . INT0 INT1 INT2 INT3 KBI0 KBI1 KBI2 KBI3 ]
 "2815
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2815:     struct {
-[s S128 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S128 . FLT0 . ECCP2 ]
+[s S126 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S126 . FLT0 . ECCP2 ]
 "2820
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2820:     struct {
-[s S129 :3 `uc 1 :1 `uc 1 ]
-[n S129 . . CCP2 ]
+[s S127 :3 `uc 1 :1 `uc 1 ]
+[n S127 . . CCP2 ]
 "2824
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2824:     struct {
-[s S130 :3 `uc 1 :1 `uc 1 ]
-[n S130 . . P2A ]
+[s S128 :3 `uc 1 :1 `uc 1 ]
+[n S128 . . P2A ]
 "2828
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2828:     struct {
-[s S131 :3 `uc 1 :1 `uc 1 ]
-[n S131 . . CCP2_PA2 ]
+[s S129 :3 `uc 1 :1 `uc 1 ]
+[n S129 . . CCP2_PA2 ]
 "2794
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2794: typedef union {
-[u S125 `S126 1 `S127 1 `S128 1 `S129 1 `S130 1 `S131 1 ]
-[n S125 . . . . . . . ]
+[u S123 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 ]
+[n S123 . . . . . . . ]
 "2833
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 2833: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS125 ~T0 @X0 0 e@3969 ]
-"36 ./config.h
-[; ;./config.h: 36: char task_id[20] = {0};
-[v _task_id `uc ~T0 @X0 -> 20 `i e ]
-[i _task_id
-:U ..
--> -> 0 `i `uc
-..
-]
-"38
-[; ;./config.h: 38: char value = 0;
-[v _value `uc ~T0 @X0 1 e ]
-[i _value
--> -> 0 `i `uc
-]
-"40
-[; ;./config.h: 40: char RA5_pressed = 0;
-[v _RA5_pressed `uc ~T0 @X0 1 e ]
-[i _RA5_pressed
--> -> 0 `i `uc
-]
-"41
-[; ;./config.h: 41: char RB0_pressed = 0;
-[v _RB0_pressed `uc ~T0 @X0 1 e ]
-[i _RB0_pressed
--> -> 0 `i `uc
-]
+[v _PORTBbits `VS123 ~T0 @X0 0 e@3969 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 54: __asm("SSP2CON2 equ 0F62h");
 [; <" SSP2CON2 equ 0F62h ;# ">
@@ -677,6 +651,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"39 ./config.h
+[; ;./config.h: 39: char task_id[20] = {0};
+[v _task_id `uc ~T0 @X0 -> 20 `i e ]
+[i _task_id
+:U ..
+-> -> 0 `i `uc
+..
+]
+"41
+[; ;./config.h: 41: char value = 0;
+[v _value `uc ~T0 @X0 1 e ]
+[i _value
+-> -> 0 `i `uc
+]
+"43
+[; ;./config.h: 43: char RA5_pressed = 0;
+[v _RA5_pressed `uc ~T0 @X0 1 e ]
+[i _RA5_pressed
+-> -> 0 `i `uc
+]
+"44
+[; ;./config.h: 44: char RB0_pressed = 0;
+[v _RB0_pressed `uc ~T0 @X0 1 e ]
+[i _RB0_pressed
+-> -> 0 `i `uc
+]
+"46
+[; ;./config.h: 46: float temperature_value = 0;
+[v _temperature_value `f ~T0 @X0 1 e ]
+[i _temperature_value
+-> -> 0 `i `f
+]
+"47
+[; ;./config.h: 47: float humidity_value = 0;
+[v _humidity_value `f ~T0 @X0 1 e ]
+[i _humidity_value
+-> -> 0 `i `f
+]
 "6 buttons.c
 [; ;buttons.c: 6: tBYTE firstReadRA5 = 1;
 [v _firstReadRA5 `uc ~T0 @X0 1 e ]

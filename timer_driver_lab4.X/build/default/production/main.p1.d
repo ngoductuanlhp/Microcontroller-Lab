@@ -6,4 +6,5 @@ task.h  \
 config.h  \
 ready_queue.h  \
 lcd.h  \
-buttons.h 
+buttons.h  \
+dht11.h 

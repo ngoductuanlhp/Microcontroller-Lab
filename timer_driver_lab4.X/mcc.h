@@ -12,6 +12,7 @@
 #include "clock.h"
 #include "lcd.h"
 #include "buttons.h"
+#include "dht11.h"
 
 
 void system_initialize(void);
