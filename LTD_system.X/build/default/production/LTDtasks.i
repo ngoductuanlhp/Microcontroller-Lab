@@ -7770,7 +7770,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "./config.h" 2
-# 31 "./config.h"
+# 30 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7781,6 +7781,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+volatile char max_temperature = 80;
+volatile char min_humidity = 20;
 
 char humidity_value;
 char temperature_value;
@@ -7793,7 +7796,7 @@ enum State{IDLE, HEATER, HEAT_PUMP, TERMINATE};
 
 volatile enum State state = IDLE;
 
-enum State_Set_Time{IDLE_STATE, SETTING, FINISH};
+enum State_Set_Time{IDLE_STATE, SETTING1, SETTING2, SETTING3, FINISH};
 
 volatile enum State_Set_Time state_settime = IDLE_STATE;
 
@@ -7858,6 +7861,9 @@ void turn_off_fan(int idx) {
 
 void set_speed_fan3(int dutyCycle) {
     CCPR4L = 24 * dutyCycle;
+    if(dutyCycle > 0)
+        LATDbits.LATD5 = 1;
+    else LATDbits.LATD5 = 0;
 }
 
 void force_turn_off(void) {

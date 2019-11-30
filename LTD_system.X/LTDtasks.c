@@ -43,6 +43,9 @@ void turn_off_fan(int idx) {
 
 void set_speed_fan3(int dutyCycle) {
     CCPR4L = 24 * dutyCycle;
+    if(dutyCycle > 0)
+        LATDbits.LATD5 = 1;
+    else LATDbits.LATD5 = 0;
 }
 
 void force_turn_off(void) {

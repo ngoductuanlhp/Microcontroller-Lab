@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"51 ./config.h
-[; ;./config.h: 51: volatile enum State state = IDLE;
-[c E4557 0 1 2 3 .. ]
-[n E4557 State IDLE HEATER HEAT_PUMP TERMINATE  ]
-"55
-[; ;./config.h: 55: volatile enum State_Set_Time state_settime = IDLE_STATE;
-[c E4563 0 1 2 .. ]
-[n E4563 State_Set_Time IDLE_STATE SETTING FINISH  ]
+"53 ./config.h
+[; ;./config.h: 53: volatile enum State state = IDLE;
+[c E4559 0 1 2 3 .. ]
+[n E4559 State IDLE HEATER HEAT_PUMP TERMINATE  ]
+"57
+[; ;./config.h: 57: volatile enum State_Set_Time state_settime = IDLE_STATE;
+[c E4565 0 1 2 3 4 .. ]
+[n E4565 State_Set_Time IDLE_STATE SETTING1 SETTING2 SETTING3 FINISH  ]
 "3201 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 3201:     struct {
 [s S138 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -666,70 +666,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"35 ./config.h
-[; ;./config.h: 35: char task_id[20] = {0};
+"34 ./config.h
+[; ;./config.h: 34: char task_id[20] = {0};
 [v _task_id `uc ~T0 @X0 -> 20 `i e ]
 [i _task_id
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-"37
-[; ;./config.h: 37: char value = 0;
+"36
+[; ;./config.h: 36: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"39
-[; ;./config.h: 39: char RA5_pressed = 0;
+"38
+[; ;./config.h: 38: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"40
-[; ;./config.h: 40: char RB0_pressed = 0;
+"39
+[; ;./config.h: 39: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc
 ]
+"41
+[; ;./config.h: 41: volatile char max_temperature = 80;
+[v _max_temperature `Vuc ~T0 @X0 1 e ]
+[i _max_temperature
+-> -> 80 `i `uc
+]
 "42
-[; ;./config.h: 42: char humidity_value;
+[; ;./config.h: 42: volatile char min_humidity = 20;
+[v _min_humidity `Vuc ~T0 @X0 1 e ]
+[i _min_humidity
+-> -> 20 `i `uc
+]
+"44
+[; ;./config.h: 44: char humidity_value;
 [v _humidity_value `uc ~T0 @X0 1 e ]
-"43
-[; ;./config.h: 43: char temperature_value;
-[v _temperature_value `uc ~T0 @X0 1 e ]
 "45
-[; ;./config.h: 45: int period = 10000;
+[; ;./config.h: 45: char temperature_value;
+[v _temperature_value `uc ~T0 @X0 1 e ]
+"47
+[; ;./config.h: 47: int period = 10000;
 [v _period `i ~T0 @X0 1 e ]
 [i _period
 -> 10000 `i
 ]
-"47
-[; ;./config.h: 47: char ledVal = 0;
+"49
+[; ;./config.h: 49: char ledVal = 0;
 [v _ledVal `uc ~T0 @X0 1 e ]
 [i _ledVal
 -> -> 0 `i `uc
 ]
-"51
-[; ;./config.h: 51: volatile enum State state = IDLE;
-[v _state `VE4557 ~T0 @X0 1 e ]
+"53
+[; ;./config.h: 53: volatile enum State state = IDLE;
+[v _state `VE4559 ~T0 @X0 1 e ]
 [i _state
-. `E4557 0
-]
-"55
-[; ;./config.h: 55: volatile enum State_Set_Time state_settime = IDLE_STATE;
-[v _state_settime `VE4563 ~T0 @X0 1 e ]
-[i _state_settime
-. `E4563 0
+. `E4559 0
 ]
 "57
-[; ;./config.h: 57: char flag_change_state = 0;
+[; ;./config.h: 57: volatile enum State_Set_Time state_settime = IDLE_STATE;
+[v _state_settime `VE4565 ~T0 @X0 1 e ]
+[i _state_settime
+. `E4565 0
+]
+"59
+[; ;./config.h: 59: char flag_change_state = 0;
 [v _flag_change_state `uc ~T0 @X0 1 e ]
 [i _flag_change_state
 -> -> 0 `i `uc
 ]
-"58
-[; ;./config.h: 58: tWORD check_timeout = 0;
+"60
+[; ;./config.h: 60: tWORD check_timeout = 0;
 [v _check_timeout `ul ~T0 @X0 1 e ]
 [i _check_timeout
 -> -> -> 0 `i `l `ul
@@ -740,6 +752,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;./dht11.h: 21: char humidity_dht11[2];
 [v _humidity_dht11 `uc ~T0 @X0 -> 2 `i e ]
+"23
+[; ;./dht11.h: 23: char countError = 0;
+[v _countError `uc ~T0 @X0 1 e ]
+[i _countError
+-> -> 0 `i `uc
+]
 "3 dht11.c
 [; ;dht11.c: 3: char getByte() {
 [v _getByte `(uc ~T0 @X0 1 ef ]
@@ -850,14 +868,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;dht11.c: 27:     LATDbits.LATD0 = 0;
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
 "28
-[; ;dht11.c: 28:     _delay((unsigned long)((20)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;dht11.c: 28:     _delay((unsigned long)((18)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "30
 [; ;dht11.c: 30:     LATDbits.LATD0 = 1;
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
 "31
-[; ;dht11.c: 31:     _delay((unsigned long)((20)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;dht11.c: 31:     _delay((unsigned long)((30)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "32
 [; ;dht11.c: 32:     TRISDbits.TRISD0 = 1;
 [e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
@@ -971,26 +989,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;dht11.c: 76:     if(!readDHT()) {
 [e $ ! ! != -> ( _readDHT ..  `i -> 0 `i 530  ]
 {
-"78
-[; ;dht11.c: 78:         temperature_value = 399;
-[e = _temperature_value -> -> 399 `i `uc ]
-"79
-[; ;dht11.c: 79:         humidity_value = 399;
-[e = _humidity_value -> -> 399 `i `uc ]
-"80
-[; ;dht11.c: 80:         return;
-[e $UE 529  ]
+"77
+[; ;dht11.c: 77:         countError++;
+[e ++ _countError -> -> 1 `i `uc ]
 "81
-[; ;dht11.c: 81:     }
+[; ;dht11.c: 81:         return;
+[e $UE 529  ]
+"82
+[; ;dht11.c: 82:     }
 }
-[e :U 530 ]
+[e $U 531  ]
 "83
-[; ;dht11.c: 83:     temperature_value = temperature_dht11[0];
-[e = _temperature_value *U + &U _temperature_dht11 * -> -> -> 0 `i `ui `ux -> -> # *U &U _temperature_dht11 `ui `ux ]
+[; ;dht11.c: 83:     else {
+[e :U 530 ]
+{
 "84
-[; ;dht11.c: 84:     humidity_value = humidity_dht11[0];
+[; ;dht11.c: 84:         countError = 0;
+[e = _countError -> -> 0 `i `uc ]
+"85
+[; ;dht11.c: 85:         temperature_value = temperature_dht11[0];
+[e = _temperature_value *U + &U _temperature_dht11 * -> -> -> 0 `i `ui `ux -> -> # *U &U _temperature_dht11 `ui `ux ]
+"86
+[; ;dht11.c: 86:         humidity_value = humidity_dht11[0];
 [e = _humidity_value *U + &U _humidity_dht11 * -> -> -> 0 `i `ui `ux -> -> # *U &U _humidity_dht11 `ui `ux ]
-"99
-[; ;dht11.c: 99: }
+"87
+[; ;dht11.c: 87:     }
+}
+[e :U 531 ]
+"88
+[; ;dht11.c: 88:     if(countError >= 3) {
+[e $ ! >= -> _countError `i -> 3 `i 532  ]
+{
+"89
+[; ;dht11.c: 89:         temperature_value = 5;
+[e = _temperature_value -> -> 5 `i `uc ]
+"90
+[; ;dht11.c: 90:         humidity_value = 5;
+[e = _humidity_value -> -> 5 `i `uc ]
+"91
+[; ;dht11.c: 91:     }
+}
+[e :U 532 ]
+"107
+[; ;dht11.c: 107: }
 [e :UE 529 ]
 }

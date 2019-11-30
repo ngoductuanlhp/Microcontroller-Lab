@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"51 ./config.h
-[; ;./config.h: 51: volatile enum State state = IDLE;
-[c E4557 0 1 2 3 .. ]
-[n E4557 State IDLE HEATER HEAT_PUMP TERMINATE  ]
-"55
-[; ;./config.h: 55: volatile enum State_Set_Time state_settime = IDLE_STATE;
-[c E4563 0 1 2 .. ]
-[n E4563 State_Set_Time IDLE_STATE SETTING FINISH  ]
+"53 ./config.h
+[; ;./config.h: 53: volatile enum State state = IDLE;
+[c E4559 0 1 2 3 .. ]
+[n E4559 State IDLE HEATER HEAT_PUMP TERMINATE  ]
+"57
+[; ;./config.h: 57: volatile enum State_Set_Time state_settime = IDLE_STATE;
+[c E4565 0 1 2 3 4 .. ]
+[n E4565 State_Set_Time IDLE_STATE SETTING1 SETTING2 SETTING3 FINISH  ]
 "113 ./lcd.h
 [; ;./lcd.h: 113:     void LCDPutInst(unsigned char);
 [v _LCDPutInst `(v ~T0 @X0 0 ef1`uc ]
@@ -20,19 +20,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v __delay `JF4536 ~T0 @X0 0 e ]
 [p i __delay ]
-"36 ./clock.h
-[; ;./clock.h: 36: int remove_timer(char id);
+"38 ./clock.h
+[; ;./clock.h: 38: int remove_timer(char id);
 [v _remove_timer `(i ~T0 @X0 0 ef1`uc ]
-[v F4617 `(v ~T0 @X0 0 tf1`*v ]
-"35
-[; ;./clock.h: 35: char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data_ptr);
-[v _register_timer `(uc ~T0 @X0 0 ef4`ul`ul`*F4617`*v ]
+[v F4621 `(v ~T0 @X0 0 tf1`*v ]
+"37
+[; ;./clock.h: 37: char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data_ptr);
+[v _register_timer `(uc ~T0 @X0 0 ef4`ul`ul`*F4621`*v ]
 "19 ./mcc.h
 [; ;./mcc.h: 19: void changeState(void);
 [v _changeState `(v ~T0 @X0 0 ef ]
-[v F4656 `(v ~T0 @X0 0 tf1`*v ]
-"34 ./clock.h
-[; ;./clock.h: 34: tWORD get_time(void);
+[v F4661 `(v ~T0 @X0 0 tf1`*v ]
+"36 ./clock.h
+[; ;./clock.h: 36: tWORD get_time(void);
 [v _get_time `(ul ~T0 @X0 0 ef ]
 "13 ./LTDtasks.h
 [; ;./LTDtasks.h: 13: void turn_on_heater(void);
@@ -59,21 +59,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25 ./buttons.h
 [; ;./buttons.h: 25: void handleButton(void* data_ptr);
 [v _handleButton `(v ~T0 @X0 0 ef1`*v ]
-[v F4665 `(v ~T0 @X0 0 tf1`*v ]
+[v F4670 `(v ~T0 @X0 0 tf1`*v ]
 "20 ./mcc.h
 [; ;./mcc.h: 20: void check_humid_to_turn_fan(void);
 [v _check_humid_to_turn_fan `(v ~T0 @X0 0 ef ]
-[v F4668 `(v ~T0 @X0 0 tf1`*v ]
-"23 ./dht11.h
-[; ;./dht11.h: 23: void readTempAndHumid(void);
+[v F4673 `(v ~T0 @X0 0 tf1`*v ]
+"25 ./dht11.h
+[; ;./dht11.h: 25: void readTempAndHumid(void);
 [v _readTempAndHumid `(v ~T0 @X0 0 ef ]
-[v F4671 `(v ~T0 @X0 0 tf1`*v ]
+[v F4676 `(v ~T0 @X0 0 tf1`*v ]
 "21 ./mcc.h
 [; ;./mcc.h: 21: void print_temp_and_humid(void);
 [v _print_temp_and_humid `(v ~T0 @X0 0 ef ]
-[v F4674 `(v ~T0 @X0 0 tf1`*v ]
-"39 ./clock.h
-[; ;./clock.h: 39: void dispatch(void);
+[v F4679 `(v ~T0 @X0 0 tf1`*v ]
+"41 ./clock.h
+[; ;./clock.h: 41: void dispatch(void);
 [v _dispatch `(v ~T0 @X0 0 ef ]
 "8 main.c
 [p x OSC = INTIO7 ]
@@ -687,70 +687,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"35 ./config.h
-[; ;./config.h: 35: char task_id[20] = {0};
+"34 ./config.h
+[; ;./config.h: 34: char task_id[20] = {0};
 [v _task_id `uc ~T0 @X0 -> 20 `i e ]
 [i _task_id
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-"37
-[; ;./config.h: 37: char value = 0;
+"36
+[; ;./config.h: 36: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"39
-[; ;./config.h: 39: char RA5_pressed = 0;
+"38
+[; ;./config.h: 38: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"40
-[; ;./config.h: 40: char RB0_pressed = 0;
+"39
+[; ;./config.h: 39: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc
 ]
+"41
+[; ;./config.h: 41: volatile char max_temperature = 80;
+[v _max_temperature `Vuc ~T0 @X0 1 e ]
+[i _max_temperature
+-> -> 80 `i `uc
+]
 "42
-[; ;./config.h: 42: char humidity_value;
+[; ;./config.h: 42: volatile char min_humidity = 20;
+[v _min_humidity `Vuc ~T0 @X0 1 e ]
+[i _min_humidity
+-> -> 20 `i `uc
+]
+"44
+[; ;./config.h: 44: char humidity_value;
 [v _humidity_value `uc ~T0 @X0 1 e ]
-"43
-[; ;./config.h: 43: char temperature_value;
-[v _temperature_value `uc ~T0 @X0 1 e ]
 "45
-[; ;./config.h: 45: int period = 10000;
+[; ;./config.h: 45: char temperature_value;
+[v _temperature_value `uc ~T0 @X0 1 e ]
+"47
+[; ;./config.h: 47: int period = 10000;
 [v _period `i ~T0 @X0 1 e ]
 [i _period
 -> 10000 `i
 ]
-"47
-[; ;./config.h: 47: char ledVal = 0;
+"49
+[; ;./config.h: 49: char ledVal = 0;
 [v _ledVal `uc ~T0 @X0 1 e ]
 [i _ledVal
 -> -> 0 `i `uc
 ]
-"51
-[; ;./config.h: 51: volatile enum State state = IDLE;
-[v _state `VE4557 ~T0 @X0 1 e ]
+"53
+[; ;./config.h: 53: volatile enum State state = IDLE;
+[v _state `VE4559 ~T0 @X0 1 e ]
 [i _state
-. `E4557 0
-]
-"55
-[; ;./config.h: 55: volatile enum State_Set_Time state_settime = IDLE_STATE;
-[v _state_settime `VE4563 ~T0 @X0 1 e ]
-[i _state_settime
-. `E4563 0
+. `E4559 0
 ]
 "57
-[; ;./config.h: 57: char flag_change_state = 0;
+[; ;./config.h: 57: volatile enum State_Set_Time state_settime = IDLE_STATE;
+[v _state_settime `VE4565 ~T0 @X0 1 e ]
+[i _state_settime
+. `E4565 0
+]
+"59
+[; ;./config.h: 59: char flag_change_state = 0;
 [v _flag_change_state `uc ~T0 @X0 1 e ]
 [i _flag_change_state
 -> -> 0 `i `uc
 ]
-"58
-[; ;./config.h: 58: tWORD check_timeout = 0;
+"60
+[; ;./config.h: 60: tWORD check_timeout = 0;
 [v _check_timeout `ul ~T0 @X0 1 e ]
 [i _check_timeout
 -> -> -> 0 `i `l `ul
@@ -770,6 +782,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;./dht11.h: 21: char humidity_dht11[2];
 [v _humidity_dht11 `uc ~T0 @X0 -> 2 `i e ]
+"23
+[; ;./dht11.h: 23: char countError = 0;
+[v _countError `uc ~T0 @X0 1 e ]
+[i _countError
+-> -> 0 `i `uc
+]
 "24 main.c
 [; ;main.c: 24: char isSet = 0;
 [v _isSet `uc ~T0 @X0 1 e ]
@@ -801,7 +819,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _isSet -> -> 1 `i `uc ]
 "33
 [; ;main.c: 33:                 state_settime = 1;
-[e = _state_settime -> -> 1 `i `E4563 ]
+[e = _state_settime -> -> 1 `i `E4565 ]
 "34
 [; ;main.c: 34:                 LCDPutInst(0x01);
 [e ( _LCDPutInst (1 -> -> 1 `i `uc ]
@@ -832,7 +850,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 42:             break;
 [e $U 504  ]
 "43
-[; ;main.c: 43:         case SETTING:
+[; ;main.c: 43:         case SETTING1:
 [e :U 508 ]
 "44
 [; ;main.c: 44:             if(RA5_pressed) {
@@ -880,409 +898,531 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _remove_timer (1 *U + &U _task_id * -> -> -> 1 `i `ui `ux -> -> # *U &U _task_id `ui `ux ]
 "58
 [; ;main.c: 58:                 task_id[1] = register_timer(period, 0, changeState, ((void*)0));
-[e = *U + &U _task_id * -> -> -> 1 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> _period `l `ul -> -> -> 0 `i `l `ul -> &U _changeState `*F4656 -> -> 0 `i `*v ]
+[e = *U + &U _task_id * -> -> -> 1 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> _period `l `ul -> -> -> 0 `i `l `ul -> &U _changeState `*F4661 -> -> 0 `i `*v ]
 "59
 [; ;main.c: 59:                 state_settime = 2;
-[e = _state_settime -> -> 2 `i `E4563 ]
+[e = _state_settime -> -> 2 `i `E4565 ]
 "60
-[; ;main.c: 60:             }
+[; ;main.c: 60:                 LCDPutInst(0x01);
+[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
+"61
+[; ;main.c: 61:                 LCDPrint(0, 0, "Set temp");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 2C ]
+"62
+[; ;main.c: 62:                 LCDPrintChar(0, 10, max_temperature / 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 10 `i `uc -> + -> / -> _max_temperature `i -> 10 `i `ui -> 48 `ui `uc ]
+"63
+[; ;main.c: 63:                 LCDPrintChar(0, 11, max_temperature % 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 11 `i `uc -> + -> % -> _max_temperature `i -> 10 `i `ui -> 48 `ui `uc ]
+"64
+[; ;main.c: 64:             }
 }
 [e :U 511 ]
-"61
-[; ;main.c: 61:             break;
-[e $U 504  ]
-"62
-[; ;main.c: 62:         case FINISH:
-[e :U 512 ]
-"63
-[; ;main.c: 63:             isSet = 0;
-[e = _isSet -> -> 0 `i `uc ]
-"64
-[; ;main.c: 64:             state_settime = 0;
-[e = _state_settime -> -> 0 `i `E4563 ]
 "65
-[; ;main.c: 65:             LCDPrint(0, 0, "Set successful");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 2C ]
-"66
-[; ;main.c: 66:             _delay((unsigned long)((2000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"67
-[; ;main.c: 67:             LCDPrint(0, 0, "              ");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 3C ]
-"68
-[; ;main.c: 68:             if(state == HEATER) LCDPrint(0, 0, "Heater");
-[e $ ! == -> _state `ui -> . `E4557 1 `ui 513  ]
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 4C ]
-[e $U 514  ]
-"69
-[; ;main.c: 69:             else if(state == HEAT_PUMP) LCDPrint(0, 0, "Heat Pump");
-[e :U 513 ]
-[e $ ! == -> _state `ui -> . `E4557 2 `ui 515  ]
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 5C ]
-[e :U 515 ]
-[e :U 514 ]
-"70
-[; ;main.c: 70:             break;
+[; ;main.c: 65:             break;
 [e $U 504  ]
+"66
+[; ;main.c: 66:         case SETTING2:
+[e :U 512 ]
+"67
+[; ;main.c: 67:             if(RA5_pressed) {
+[e $ ! != -> _RA5_pressed `i -> 0 `i 513  ]
+{
+"68
+[; ;main.c: 68:                 RA5_pressed = 0;
+[e = _RA5_pressed -> -> 0 `i `uc ]
+"70
+[; ;main.c: 70:                 max_temperature+= 1;
+[e =+ _max_temperature -> -> 1 `i `Vuc ]
 "71
-[; ;main.c: 71:     }
+[; ;main.c: 71:                 if(max_temperature >= 100)
+[e $ ! >= -> _max_temperature `i -> 100 `i 514  ]
+"72
+[; ;main.c: 72:                     max_temperature = 27;
+[e = _max_temperature -> -> 27 `i `uc ]
+[e :U 514 ]
+"74
+[; ;main.c: 74:                 LCDPrintChar(0, 10, max_temperature / 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 10 `i `uc -> + -> / -> _max_temperature `i -> 10 `i `ui -> 48 `ui `uc ]
+"75
+[; ;main.c: 75:                 LCDPrintChar(0, 11, max_temperature % 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 11 `i `uc -> + -> % -> _max_temperature `i -> 10 `i `ui -> 48 `ui `uc ]
+"77
+[; ;main.c: 77:             }
+}
+[e :U 513 ]
+"78
+[; ;main.c: 78:             if(RB0_pressed) {
+[e $ ! != -> _RB0_pressed `i -> 0 `i 515  ]
+{
+"79
+[; ;main.c: 79:                 RB0_pressed = 0;
+[e = _RB0_pressed -> -> 0 `i `uc ]
+"80
+[; ;main.c: 80:                 state_settime = 3;
+[e = _state_settime -> -> 3 `i `E4565 ]
+"81
+[; ;main.c: 81:                 LCDPutInst(0x01);
+[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
+"82
+[; ;main.c: 82:                 LCDPrint(0, 0, "Set humid");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 3C ]
+"83
+[; ;main.c: 83:                 LCDPrintChar(0, 10, min_humidity / 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 10 `i `uc -> + -> / -> _min_humidity `i -> 10 `i `ui -> 48 `ui `uc ]
+"84
+[; ;main.c: 84:                 LCDPrintChar(0, 11, min_humidity % 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 11 `i `uc -> + -> % -> _min_humidity `i -> 10 `i `ui -> 48 `ui `uc ]
+"85
+[; ;main.c: 85:             }
+}
+[e :U 515 ]
+"86
+[; ;main.c: 86:             break;
+[e $U 504  ]
+"87
+[; ;main.c: 87:         case SETTING3:
+[e :U 516 ]
+"88
+[; ;main.c: 88:             if(RA5_pressed) {
+[e $ ! != -> _RA5_pressed `i -> 0 `i 517  ]
+{
+"89
+[; ;main.c: 89:                 RA5_pressed = 0;
+[e = _RA5_pressed -> -> 0 `i `uc ]
+"91
+[; ;main.c: 91:                 min_humidity-= 1;
+[e =- _min_humidity -> -> 1 `i `Vuc ]
+"92
+[; ;main.c: 92:                 if(min_humidity <= 10)
+[e $ ! <= -> _min_humidity `i -> 10 `i 518  ]
+"93
+[; ;main.c: 93:                     min_humidity = 80;
+[e = _min_humidity -> -> 80 `i `uc ]
+[e :U 518 ]
+"95
+[; ;main.c: 95:                 LCDPrintChar(0, 10, min_humidity / 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 10 `i `uc -> + -> / -> _min_humidity `i -> 10 `i `ui -> 48 `ui `uc ]
+"96
+[; ;main.c: 96:                 LCDPrintChar(0, 11, min_humidity % 10 + '0');
+[e ( _LCDPrintChar (3 , , -> -> 0 `i `uc -> -> 11 `i `uc -> + -> % -> _min_humidity `i -> 10 `i `ui -> 48 `ui `uc ]
+"98
+[; ;main.c: 98:             }
+}
+[e :U 517 ]
+"99
+[; ;main.c: 99:             if(RB0_pressed) {
+[e $ ! != -> _RB0_pressed `i -> 0 `i 519  ]
+{
+"100
+[; ;main.c: 100:                 RB0_pressed = 0;
+[e = _RB0_pressed -> -> 0 `i `uc ]
+"101
+[; ;main.c: 101:                 state_settime = 4;
+[e = _state_settime -> -> 4 `i `E4565 ]
+"102
+[; ;main.c: 102:             }
+}
+[e :U 519 ]
+"103
+[; ;main.c: 103:             break;
+[e $U 504  ]
+"104
+[; ;main.c: 104:         case FINISH:
+[e :U 520 ]
+"105
+[; ;main.c: 105:             isSet = 0;
+[e = _isSet -> -> 0 `i `uc ]
+"106
+[; ;main.c: 106:             state_settime = 0;
+[e = _state_settime -> -> 0 `i `E4565 ]
+"107
+[; ;main.c: 107:             LCDPrint(0, 0, "Set successful");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 4C ]
+"108
+[; ;main.c: 108:             _delay((unsigned long)((2000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"109
+[; ;main.c: 109:             LCDPrint(0, 0, "              ");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 5C ]
+"110
+[; ;main.c: 110:             if(state == HEATER) LCDPrint(0, 0, "Heater");
+[e $ ! == -> _state `ui -> . `E4559 1 `ui 521  ]
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 6C ]
+[e $U 522  ]
+"111
+[; ;main.c: 111:             else if(state == HEAT_PUMP) LCDPrint(0, 0, "Heat Pump");
+[e :U 521 ]
+[e $ ! == -> _state `ui -> . `E4559 2 `ui 523  ]
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 7C ]
+[e :U 523 ]
+[e :U 522 ]
+"112
+[; ;main.c: 112:             break;
+[e $U 504  ]
+"113
+[; ;main.c: 113:     }
 }
 [e $U 504  ]
 [e :U 505 ]
-[e [\ -> _state_settime `ui , $ -> . `E4563 0 `ui 506
- , $ -> . `E4563 1 `ui 508
- , $ -> . `E4563 2 `ui 512
+[e [\ -> _state_settime `ui , $ -> . `E4565 0 `ui 506
+ , $ -> . `E4565 1 `ui 508
+ , $ -> . `E4565 2 `ui 512
+ , $ -> . `E4565 3 `ui 516
+ , $ -> . `E4565 4 `ui 520
  504 ]
 [e :U 504 ]
-"72
-[; ;main.c: 72: }
+"114
+[; ;main.c: 114: }
 [e :UE 503 ]
 }
-"74
-[; ;main.c: 74: void LTD_process(void) {
+"116
+[; ;main.c: 116: void LTD_process(void) {
 [v _LTD_process `(v ~T0 @X0 1 ef ]
 {
 [e :U _LTD_process ]
 [f ]
-"75
-[; ;main.c: 75:     switch(state) {
-[e $U 518  ]
+"117
+[; ;main.c: 117:     switch(state) {
+[e $U 526  ]
 {
-"76
-[; ;main.c: 76:         case IDLE:
-[e :U 519 ]
-"77
-[; ;main.c: 77:             if(RA5_pressed) {
-[e $ ! != -> _RA5_pressed `i -> 0 `i 520  ]
-{
-"78
-[; ;main.c: 78:                 RA5_pressed = 0;
-[e = _RA5_pressed -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:                 state = HEATER;
-[e = _state . `E4557 1 ]
-"80
-[; ;main.c: 80:                 check_timeout = get_time();
-[e = _check_timeout ( _get_time ..  ]
-"81
-[; ;main.c: 81:                 turn_on_heater();
-[e ( _turn_on_heater ..  ]
-"82
-[; ;main.c: 82:                 turn_on_fan(1);
-[e ( _turn_on_fan (1 -> 1 `i ]
-"83
-[; ;main.c: 83:                 LCDPrint(0, 0, "              ");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 6C ]
-"84
-[; ;main.c: 84:                 LCDPrint(0, 0, "Heater");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 7C ]
-"85
-[; ;main.c: 85:             }
-}
-[e :U 520 ]
-"86
-[; ;main.c: 86:             break;
-[e $U 517  ]
-"87
-[; ;main.c: 87:         case HEATER:
-[e :U 521 ]
-"88
-[; ;main.c: 88:             if(get_time() - check_timeout > 30000) {
-[e $ ! > - ( _get_time ..  _check_timeout -> -> -> 30000 `i `l `ul 522  ]
-{
-"89
-[; ;main.c: 89:                 LCDPutInst(0x01);
-[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
-"90
-[; ;main.c: 90:                 LCDPrint(0, 0, "ERROR - TURN OFF");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 8C ]
-"91
-[; ;main.c: 91:                 state = TERMINATE;
-[e = _state . `E4557 3 ]
-"92
-[; ;main.c: 92:             }
-}
-[e :U 522 ]
-"93
-[; ;main.c: 93:             if(flag_change_state) {
-[e $ ! != -> _flag_change_state `i -> 0 `i 523  ]
-{
-"94
-[; ;main.c: 94:                 flag_change_state = 0;
-[e = _flag_change_state -> -> 0 `i `uc ]
-"95
-[; ;main.c: 95:                 if(!isSet) {
-[e $ ! ! != -> _isSet `i -> 0 `i 524  ]
-{
-"96
-[; ;main.c: 96:                     LCDPrint(0, 0, "              ");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 9C ]
-"97
-[; ;main.c: 97:                     LCDPrint(0, 0, "Heat Pump");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 10C ]
-"98
-[; ;main.c: 98:                 }
-}
-[e :U 524 ]
-"100
-[; ;main.c: 100:                 state = HEAT_PUMP;
-[e = _state . `E4557 2 ]
-"101
-[; ;main.c: 101:                 check_timeout = get_time();
-[e = _check_timeout ( _get_time ..  ]
-"103
-[; ;main.c: 103:                 turn_off_heater();
-[e ( _turn_off_heater ..  ]
-"104
-[; ;main.c: 104:                 turn_off_fan(1);
-[e ( _turn_off_fan (1 -> 1 `i ]
-"105
-[; ;main.c: 105:                 turn_on_heat_pump();
-[e ( _turn_on_heat_pump ..  ]
-"106
-[; ;main.c: 106:                 turn_on_fan(2);
-[e ( _turn_on_fan (1 -> 2 `i ]
-"107
-[; ;main.c: 107:             }
-}
-[e :U 523 ]
-"108
-[; ;main.c: 108:             break;
-[e $U 517  ]
-"109
-[; ;main.c: 109:         case HEAT_PUMP:
-[e :U 525 ]
-"110
-[; ;main.c: 110:             if(get_time() - check_timeout > 30000) {
-[e $ ! > - ( _get_time ..  _check_timeout -> -> -> 30000 `i `l `ul 526  ]
-{
-"111
-[; ;main.c: 111:                 LCDPutInst(0x01);
-[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
-"112
-[; ;main.c: 112:                 LCDPrint(0, 0, "ERROR - TURN OFF");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 11C ]
-"113
-[; ;main.c: 113:                 state = TERMINATE;
-[e = _state . `E4557 3 ]
-"114
-[; ;main.c: 114:             }
-}
-[e :U 526 ]
-"115
-[; ;main.c: 115:             if(flag_change_state) {
-[e $ ! != -> _flag_change_state `i -> 0 `i 527  ]
-{
-"116
-[; ;main.c: 116:                 flag_change_state = 0;
-[e = _flag_change_state -> -> 0 `i `uc ]
 "118
-[; ;main.c: 118:                 if(!isSet) {
-[e $ ! ! != -> _isSet `i -> 0 `i 528  ]
-{
+[; ;main.c: 118:         case IDLE:
+[e :U 527 ]
 "119
-[; ;main.c: 119:                     LCDPrint(0, 0, "              ");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 12C ]
+[; ;main.c: 119:             if(RA5_pressed) {
+[e $ ! != -> _RA5_pressed `i -> 0 `i 528  ]
+{
 "120
-[; ;main.c: 120:                     LCDPrint(0, 0, "Heater");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 13C ]
+[; ;main.c: 120:                 RA5_pressed = 0;
+[e = _RA5_pressed -> -> 0 `i `uc ]
 "121
-[; ;main.c: 121:                 }
+[; ;main.c: 121:                 state = HEATER;
+[e = _state . `E4559 1 ]
+"122
+[; ;main.c: 122:                 check_timeout = get_time();
+[e = _check_timeout ( _get_time ..  ]
+"123
+[; ;main.c: 123:                 turn_on_heater();
+[e ( _turn_on_heater ..  ]
+"124
+[; ;main.c: 124:                 turn_on_fan(1);
+[e ( _turn_on_fan (1 -> 1 `i ]
+"125
+[; ;main.c: 125:                 LCDPrint(0, 0, "              ");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 8C ]
+"126
+[; ;main.c: 126:                 LCDPrint(0, 0, "Heater");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 9C ]
+"127
+[; ;main.c: 127:             }
 }
 [e :U 528 ]
-"123
-[; ;main.c: 123:                 state = HEATER;
-[e = _state . `E4557 1 ]
-"124
-[; ;main.c: 124:                 check_timeout = get_time();
-[e = _check_timeout ( _get_time ..  ]
-"126
-[; ;main.c: 126:                 turn_off_heat_pump();
-[e ( _turn_off_heat_pump ..  ]
-"127
-[; ;main.c: 127:                 turn_off_fan(2);
-[e ( _turn_off_fan (1 -> 2 `i ]
 "128
-[; ;main.c: 128:                 turn_on_heater();
-[e ( _turn_on_heater ..  ]
+[; ;main.c: 128:             break;
+[e $U 525  ]
 "129
-[; ;main.c: 129:                 turn_on_fan(1);
-[e ( _turn_on_fan (1 -> 1 `i ]
-"130
-[; ;main.c: 130:             }
-}
-[e :U 527 ]
-"131
-[; ;main.c: 131:             break;
-[e $U 517  ]
-"132
-[; ;main.c: 132:         case TERMINATE:
+[; ;main.c: 129:         case HEATER:
 [e :U 529 ]
+"130
+[; ;main.c: 130:             if(get_time() - check_timeout > 30000) {
+[e $ ! > - ( _get_time ..  _check_timeout -> -> -> 30000 `i `l `ul 530  ]
+{
+"131
+[; ;main.c: 131:                 LCDPutInst(0x01);
+[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
+"132
+[; ;main.c: 132:                 LCDPrint(0, 0, "ERROR - TURN OFF");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 10C ]
 "133
-[; ;main.c: 133:             LCDPrint(0, 0, "              ");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 14C ]
+[; ;main.c: 133:                 state = TERMINATE;
+[e = _state . `E4559 3 ]
 "134
-[; ;main.c: 134:             LCDPrint(0, 0, "Finish");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 15C ]
+[; ;main.c: 134:             }
+}
+[e :U 530 ]
 "135
-[; ;main.c: 135:             LCDPrint(1, 0, "T:");
-[e ( _LCDPrint (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 16C ]
+[; ;main.c: 135:             if(flag_change_state) {
+[e $ ! != -> _flag_change_state `i -> 0 `i 531  ]
+{
 "136
-[; ;main.c: 136:             LCDPrint(1, 6, "H:");
-[e ( _LCDPrint (3 , , -> -> 1 `i `uc -> -> 6 `i `uc :s 17C ]
+[; ;main.c: 136:                 flag_change_state = 0;
+[e = _flag_change_state -> -> 0 `i `uc ]
 "137
-[; ;main.c: 137:             int temp = (int)temperature_value;
+[; ;main.c: 137:                 if(!isSet) {
+[e $ ! ! != -> _isSet `i -> 0 `i 532  ]
+{
+"138
+[; ;main.c: 138:                     LCDPrint(0, 0, "              ");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 11C ]
+"139
+[; ;main.c: 139:                     LCDPrint(0, 0, "Heat Pump");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 12C ]
+"140
+[; ;main.c: 140:                 }
+}
+[e :U 532 ]
+"142
+[; ;main.c: 142:                 state = HEAT_PUMP;
+[e = _state . `E4559 2 ]
+"143
+[; ;main.c: 143:                 check_timeout = get_time();
+[e = _check_timeout ( _get_time ..  ]
+"145
+[; ;main.c: 145:                 turn_off_heater();
+[e ( _turn_off_heater ..  ]
+"146
+[; ;main.c: 146:                 turn_off_fan(1);
+[e ( _turn_off_fan (1 -> 1 `i ]
+"147
+[; ;main.c: 147:                 turn_on_heat_pump();
+[e ( _turn_on_heat_pump ..  ]
+"148
+[; ;main.c: 148:                 turn_on_fan(2);
+[e ( _turn_on_fan (1 -> 2 `i ]
+"149
+[; ;main.c: 149:             }
+}
+[e :U 531 ]
+"150
+[; ;main.c: 150:             break;
+[e $U 525  ]
+"151
+[; ;main.c: 151:         case HEAT_PUMP:
+[e :U 533 ]
+"152
+[; ;main.c: 152:             if(get_time() - check_timeout > 30000) {
+[e $ ! > - ( _get_time ..  _check_timeout -> -> -> 30000 `i `l `ul 534  ]
+{
+"153
+[; ;main.c: 153:                 LCDPutInst(0x01);
+[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
+"154
+[; ;main.c: 154:                 LCDPrint(0, 0, "ERROR - TURN OFF");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 13C ]
+"155
+[; ;main.c: 155:                 state = TERMINATE;
+[e = _state . `E4559 3 ]
+"156
+[; ;main.c: 156:             }
+}
+[e :U 534 ]
+"157
+[; ;main.c: 157:             if(flag_change_state) {
+[e $ ! != -> _flag_change_state `i -> 0 `i 535  ]
+{
+"158
+[; ;main.c: 158:                 flag_change_state = 0;
+[e = _flag_change_state -> -> 0 `i `uc ]
+"160
+[; ;main.c: 160:                 if(!isSet) {
+[e $ ! ! != -> _isSet `i -> 0 `i 536  ]
+{
+"161
+[; ;main.c: 161:                     LCDPrint(0, 0, "              ");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 14C ]
+"162
+[; ;main.c: 162:                     LCDPrint(0, 0, "Heater");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 15C ]
+"163
+[; ;main.c: 163:                 }
+}
+[e :U 536 ]
+"165
+[; ;main.c: 165:                 state = HEATER;
+[e = _state . `E4559 1 ]
+"166
+[; ;main.c: 166:                 check_timeout = get_time();
+[e = _check_timeout ( _get_time ..  ]
+"168
+[; ;main.c: 168:                 turn_off_heat_pump();
+[e ( _turn_off_heat_pump ..  ]
+"169
+[; ;main.c: 169:                 turn_off_fan(2);
+[e ( _turn_off_fan (1 -> 2 `i ]
+"170
+[; ;main.c: 170:                 turn_on_heater();
+[e ( _turn_on_heater ..  ]
+"171
+[; ;main.c: 171:                 turn_on_fan(1);
+[e ( _turn_on_fan (1 -> 1 `i ]
+"172
+[; ;main.c: 172:             }
+}
+[e :U 535 ]
+"173
+[; ;main.c: 173:             break;
+[e $U 525  ]
+"174
+[; ;main.c: 174:         case TERMINATE:
+[e :U 537 ]
+"175
+[; ;main.c: 175:             LCDPrint(0, 0, "              ");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 16C ]
+"176
+[; ;main.c: 176:             LCDPrint(0, 0, "Finish");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 17C ]
+"177
+[; ;main.c: 177:             LCDPrint(1, 0, "T:");
+[e ( _LCDPrint (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 18C ]
+"178
+[; ;main.c: 178:             LCDPrint(1, 6, "H:");
+[e ( _LCDPrint (3 , , -> -> 1 `i `uc -> -> 6 `i `uc :s 19C ]
+"179
+[; ;main.c: 179:             int temp = (int)temperature_value;
 [v _temp `i ~T0 @X0 1 a ]
 [e = _temp -> _temperature_value `i ]
-"138
-[; ;main.c: 138:             int humid = (int)humidity_value;
+"180
+[; ;main.c: 180:             int humid = (int)humidity_value;
 [v _humid `i ~T0 @X0 1 a ]
 [e = _humid -> _humidity_value `i ]
-"139
-[; ;main.c: 139:             LCDPrintChar(1, 3, temp / 10 + '0');
+"181
+[; ;main.c: 181:             LCDPrintChar(1, 3, temp / 10 + '0');
 [e ( _LCDPrintChar (3 , , -> -> 1 `i `uc -> -> 3 `i `uc -> + -> / _temp -> 10 `i `ui -> 48 `ui `uc ]
-"140
-[; ;main.c: 140:             LCDPrintChar(1, 4, temp % 10 + '0');
+"182
+[; ;main.c: 182:             LCDPrintChar(1, 4, temp % 10 + '0');
 [e ( _LCDPrintChar (3 , , -> -> 1 `i `uc -> -> 4 `i `uc -> + -> % _temp -> 10 `i `ui -> 48 `ui `uc ]
-"141
-[; ;main.c: 141:             LCDPrintChar(1, 8, humid / 10 + '0');
+"183
+[; ;main.c: 183:             LCDPrintChar(1, 8, humid / 10 + '0');
 [e ( _LCDPrintChar (3 , , -> -> 1 `i `uc -> -> 8 `i `uc -> + -> / _humid -> 10 `i `ui -> 48 `ui `uc ]
-"142
-[; ;main.c: 142:             LCDPrintChar(1, 9, humid % 10 + '0');
+"184
+[; ;main.c: 184:             LCDPrintChar(1, 9, humid % 10 + '0');
 [e ( _LCDPrintChar (3 , , -> -> 1 `i `uc -> -> 9 `i `uc -> + -> % _humid -> 10 `i `ui -> 48 `ui `uc ]
-"143
-[; ;main.c: 143:             _delay((unsigned long)((2000)*(8000000/4000.0)));
+"185
+[; ;main.c: 185:             _delay((unsigned long)((2000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"144
-[; ;main.c: 144:             turn_off_heater();
+"186
+[; ;main.c: 186:             turn_off_heater();
 [e ( _turn_off_heater ..  ]
-"145
-[; ;main.c: 145:             turn_off_fan(1);
+"187
+[; ;main.c: 187:             turn_off_fan(1);
 [e ( _turn_off_fan (1 -> 1 `i ]
-"146
-[; ;main.c: 146:             turn_off_heat_pump();
+"188
+[; ;main.c: 188:             turn_off_heat_pump();
 [e ( _turn_off_heat_pump ..  ]
-"147
-[; ;main.c: 147:             turn_off_fan(2);
+"189
+[; ;main.c: 189:             turn_off_fan(2);
 [e ( _turn_off_fan (1 -> 2 `i ]
-"148
-[; ;main.c: 148:             check_timeout = 0;
+"190
+[; ;main.c: 190:             check_timeout = 0;
 [e = _check_timeout -> -> -> 0 `i `l `ul ]
-"149
-[; ;main.c: 149:             state = IDLE;
-[e = _state . `E4557 0 ]
-"150
-[; ;main.c: 150:             RA5_pressed = 0;
+"191
+[; ;main.c: 191:             state = IDLE;
+[e = _state . `E4559 0 ]
+"192
+[; ;main.c: 192:             RA5_pressed = 0;
 [e = _RA5_pressed -> -> 0 `i `uc ]
-"151
-[; ;main.c: 151:             LCDPrint(0, 0, "              ");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 18C ]
-"152
-[; ;main.c: 152:             LCDPrint(0, 0, "IDLE");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 19C ]
-"153
-[; ;main.c: 153:             break;
-[e $U 517  ]
-"154
-[; ;main.c: 154:     }
+"193
+[; ;main.c: 193:             LCDPrint(0, 0, "              ");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 20C ]
+"194
+[; ;main.c: 194:             LCDPrint(0, 0, "IDLE");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 21C ]
+"195
+[; ;main.c: 195:             break;
+[e $U 525  ]
+"196
+[; ;main.c: 196:     }
 }
-[e $U 517  ]
-[e :U 518 ]
-[e [\ -> _state `ui , $ -> . `E4557 0 `ui 519
- , $ -> . `E4557 1 `ui 521
- , $ -> . `E4557 2 `ui 525
- , $ -> . `E4557 3 `ui 529
- 517 ]
-[e :U 517 ]
-"155
-[; ;main.c: 155: }
-[e :UE 516 ]
+[e $U 525  ]
+[e :U 526 ]
+[e [\ -> _state `ui , $ -> . `E4559 0 `ui 527
+ , $ -> . `E4559 1 `ui 529
+ , $ -> . `E4559 2 `ui 533
+ , $ -> . `E4559 3 `ui 537
+ 525 ]
+[e :U 525 ]
+"197
+[; ;main.c: 197: }
+[e :UE 524 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"157
-[; ;main.c: 157: void main(void) {
+"199
+[; ;main.c: 199: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"158
-[; ;main.c: 158:     system_initialize();
+"200
+[; ;main.c: 200:     system_initialize();
 [e ( _system_initialize ..  ]
-"160
-[; ;main.c: 160:     task_id[0] = register_timer(50, 0, handleButton, ((void*)0));
+"202
+[; ;main.c: 202:     task_id[0] = register_timer(50, 0, handleButton, ((void*)0));
 [e = *U + &U _task_id * -> -> -> 0 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> -> 50 `i `l `ul -> -> -> 0 `i `l `ul &U _handleButton -> -> 0 `i `*v ]
-"161
-[; ;main.c: 161:     task_id[1] = register_timer(period, 5000, changeState, ((void*)0));
-[e = *U + &U _task_id * -> -> -> 1 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> _period `l `ul -> -> -> 5000 `i `l `ul -> &U _changeState `*F4665 -> -> 0 `i `*v ]
-"162
-[; ;main.c: 162:     task_id[2] = register_timer(4000, 3100, check_humid_to_turn_fan, ((void*)0));
-[e = *U + &U _task_id * -> -> -> 2 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> -> 4000 `i `l `ul -> -> -> 3100 `i `l `ul -> &U _check_humid_to_turn_fan `*F4668 -> -> 0 `i `*v ]
-"163
-[; ;main.c: 163:     task_id[3] = register_timer(4000, 3300, readTempAndHumid, ((void*)0));
-[e = *U + &U _task_id * -> -> -> 3 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> -> 4000 `i `l `ul -> -> -> 3300 `i `l `ul -> &U _readTempAndHumid `*F4671 -> -> 0 `i `*v ]
-"164
-[; ;main.c: 164:     task_id[4] = register_timer(4000, 1500, print_temp_and_humid, ((void*)0));
-[e = *U + &U _task_id * -> -> -> 4 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> -> 4000 `i `l `ul -> -> -> 1500 `i `l `ul -> &U _print_temp_and_humid `*F4674 -> -> 0 `i `*v ]
-"166
-[; ;main.c: 166:     LCDPrint(0, 0, "LTD controller  ");
-[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 20C ]
-"167
-[; ;main.c: 167:     LCDPrint(1, 0, "ID: 1710364     ");
-[e ( _LCDPrint (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 21C ]
-"169
-[; ;main.c: 169:     _delay((unsigned long)((2000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"170
-[; ;main.c: 170:     LCDPutInst(0x01);
-[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
-"171
-[; ;main.c: 171:     LCDPrint(0, 0, "IDLE");
+"203
+[; ;main.c: 203:     task_id[1] = register_timer(period, 5000, changeState, ((void*)0));
+[e = *U + &U _task_id * -> -> -> 1 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> _period `l `ul -> -> -> 5000 `i `l `ul -> &U _changeState `*F4670 -> -> 0 `i `*v ]
+"204
+[; ;main.c: 204:     task_id[2] = register_timer(4000, 3100, check_humid_to_turn_fan, ((void*)0));
+[e = *U + &U _task_id * -> -> -> 2 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> -> 4000 `i `l `ul -> -> -> 3100 `i `l `ul -> &U _check_humid_to_turn_fan `*F4673 -> -> 0 `i `*v ]
+"205
+[; ;main.c: 205:     task_id[3] = register_timer(4000, 3300, readTempAndHumid, ((void*)0));
+[e = *U + &U _task_id * -> -> -> 3 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> -> 4000 `i `l `ul -> -> -> 3300 `i `l `ul -> &U _readTempAndHumid `*F4676 -> -> 0 `i `*v ]
+"206
+[; ;main.c: 206:     task_id[4] = register_timer(4000, 1500, print_temp_and_humid, ((void*)0));
+[e = *U + &U _task_id * -> -> -> 4 `i `ui `ux -> -> # *U &U _task_id `ui `ux ( _register_timer (4 , , , -> -> -> 4000 `i `l `ul -> -> -> 1500 `i `l `ul -> &U _print_temp_and_humid `*F4679 -> -> 0 `i `*v ]
+"208
+[; ;main.c: 208:     LCDPrint(0, 0, "LTD controller  ");
 [e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 22C ]
-"172
-[; ;main.c: 172:     while(1) {
-[e :U 532 ]
+"209
+[; ;main.c: 209:     LCDPrint(1, 0, "ID: 1710364     ");
+[e ( _LCDPrint (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 23C ]
+"211
+[; ;main.c: 211:     _delay((unsigned long)((2000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"212
+[; ;main.c: 212:     LCDPutInst(0x01);
+[e ( _LCDPutInst (1 -> -> 1 `i `uc ]
+"213
+[; ;main.c: 213:     LCDPrint(0, 0, "IDLE");
+[e ( _LCDPrint (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 24C ]
+"214
+[; ;main.c: 214:     while(1) {
+[e :U 540 ]
 {
-"173
-[; ;main.c: 173:         set_time_process();
+"215
+[; ;main.c: 215:         set_time_process();
 [e ( _set_time_process ..  ]
-"174
-[; ;main.c: 174:         LTD_process();
+"216
+[; ;main.c: 216:         LTD_process();
 [e ( _LTD_process ..  ]
-"175
-[; ;main.c: 175:         dispatch();
+"217
+[; ;main.c: 217:         dispatch();
 [e ( _dispatch ..  ]
-"176
-[; ;main.c: 176:     }
+"218
+[; ;main.c: 218:     }
 }
-[e :U 531 ]
-[e $U 532  ]
-[e :U 533 ]
-"177
-[; ;main.c: 177:     return;
-[e $UE 530  ]
-"178
-[; ;main.c: 178: }
-[e :UE 530 ]
+[e :U 539 ]
+[e $U 540  ]
+[e :U 541 ]
+"219
+[; ;main.c: 219:     return;
+[e $UE 538  ]
+"220
+[; ;main.c: 220: }
+[e :UE 538 ]
 }
-[a 4C 72 101 97 116 101 114 0 ]
-[a 7C 72 101 97 116 101 114 0 ]
-[a 13C 72 101 97 116 101 114 0 ]
-[a 5C 72 101 97 116 32 80 117 109 112 0 ]
-[a 10C 72 101 97 116 32 80 117 109 112 0 ]
-[a 2C 83 101 116 32 115 117 99 99 101 115 115 102 117 108 0 ]
-[a 15C 70 105 110 105 115 104 0 ]
+[a 6C 72 101 97 116 101 114 0 ]
+[a 9C 72 101 97 116 101 114 0 ]
+[a 15C 72 101 97 116 101 114 0 ]
+[a 7C 72 101 97 116 32 80 117 109 112 0 ]
+[a 12C 72 101 97 116 32 80 117 109 112 0 ]
+[a 2C 83 101 116 32 116 101 109 112 0 ]
+[a 4C 83 101 116 32 115 117 99 99 101 115 115 102 117 108 0 ]
+[a 17C 70 105 110 105 115 104 0 ]
 [a 1C 83 101 116 32 116 105 109 101 0 ]
-[a 8C 69 82 82 79 82 32 45 32 84 85 82 78 32 79 70 70 0 ]
-[a 11C 69 82 82 79 82 32 45 32 84 85 82 78 32 79 70 70 0 ]
-[a 19C 73 68 76 69 0 ]
-[a 22C 73 68 76 69 0 ]
-[a 16C 84 58 0 ]
-[a 17C 72 58 0 ]
-[a 20C 76 84 68 32 99 111 110 116 114 111 108 108 101 114 32 32 0 ]
-[a 21C 73 68 58 32 49 55 49 48 51 54 52 32 32 32 32 32 0 ]
-[a 3C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 9C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 12C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 3C 83 101 116 32 104 117 109 105 100 0 ]
+[a 10C 69 82 82 79 82 32 45 32 84 85 82 78 32 79 70 70 0 ]
+[a 13C 69 82 82 79 82 32 45 32 84 85 82 78 32 79 70 70 0 ]
+[a 21C 73 68 76 69 0 ]
+[a 24C 73 68 76 69 0 ]
+[a 18C 84 58 0 ]
+[a 19C 72 58 0 ]
+[a 22C 76 84 68 32 99 111 110 116 114 111 108 108 101 114 32 32 0 ]
+[a 23C 73 68 58 32 49 55 49 48 51 54 52 32 32 32 32 32 0 ]
+[a 5C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 8C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 11C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 14C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 18C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 16C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 20C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

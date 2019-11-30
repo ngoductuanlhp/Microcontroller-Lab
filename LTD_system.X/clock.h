@@ -23,12 +23,14 @@ typedef struct {
     void* data_p;
 } queue_node;
 
-#define TMR0_PRELOAD 100
+#define TMR0_PRELOAD 0x82
 #define TMR1H_PRELOAD 0xB1
 #define TMR1L_PRELOAD 0xE0
 
 tWORD time_ms;
 tWORD prev_time_ms = 0;
+
+
 
 int start_timer(char timer_vaddr);
 tWORD get_time(void);

@@ -16,10 +16,9 @@
 #define PERIOD 10000
 #define TIME_OUT 30000
 
-#define ERROR_SENSOR_VAL 399
+#define ERROR_SENSOR_VAL 5
 
-#define MAX_TEMPERATURE 80
-#define MIN_HUMIDITY 10
+
 
 #define HUMIDITY_THRESHOLD1 90
 #define HUMIDITY_THRESHOLD2 80
@@ -39,6 +38,9 @@ char value = 0;
 char RA5_pressed = 0;
 char RB0_pressed = 0;
 
+volatile char max_temperature = 80;
+volatile char min_humidity = 20;
+
 char humidity_value;
 char temperature_value;
 
@@ -50,7 +52,7 @@ enum State{IDLE, HEATER, HEAT_PUMP, TERMINATE};
 
 volatile enum State state = IDLE;
 
-enum State_Set_Time{IDLE_STATE, SETTING, FINISH};
+enum State_Set_Time{IDLE_STATE, SETTING1, SETTING2, SETTING3, FINISH};
 
 volatile enum State_Set_Time state_settime = IDLE_STATE;
 

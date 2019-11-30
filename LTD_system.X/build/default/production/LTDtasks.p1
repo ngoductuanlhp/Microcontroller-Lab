@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"51 ./config.h
-[; ;./config.h: 51: volatile enum State state = IDLE;
-[c E4557 0 1 2 3 .. ]
-[n E4557 State IDLE HEATER HEAT_PUMP TERMINATE  ]
-"55
-[; ;./config.h: 55: volatile enum State_Set_Time state_settime = IDLE_STATE;
-[c E4563 0 1 2 .. ]
-[n E4563 State_Set_Time IDLE_STATE SETTING FINISH  ]
+"53 ./config.h
+[; ;./config.h: 53: volatile enum State state = IDLE;
+[c E4559 0 1 2 3 .. ]
+[n E4559 State IDLE HEATER HEAT_PUMP TERMINATE  ]
+"57
+[; ;./config.h: 57: volatile enum State_Set_Time state_settime = IDLE_STATE;
+[c E4565 0 1 2 3 4 .. ]
+[n E4565 State_Set_Time IDLE_STATE SETTING1 SETTING2 SETTING3 FINISH  ]
 "4821 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 4821:     struct {
 [s S194 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -619,70 +619,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13453
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f8722.h: 13453: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"35 ./config.h
-[; ;./config.h: 35: char task_id[20] = {0};
+"34 ./config.h
+[; ;./config.h: 34: char task_id[20] = {0};
 [v _task_id `uc ~T0 @X0 -> 20 `i e ]
 [i _task_id
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-"37
-[; ;./config.h: 37: char value = 0;
+"36
+[; ;./config.h: 36: char value = 0;
 [v _value `uc ~T0 @X0 1 e ]
 [i _value
 -> -> 0 `i `uc
 ]
-"39
-[; ;./config.h: 39: char RA5_pressed = 0;
+"38
+[; ;./config.h: 38: char RA5_pressed = 0;
 [v _RA5_pressed `uc ~T0 @X0 1 e ]
 [i _RA5_pressed
 -> -> 0 `i `uc
 ]
-"40
-[; ;./config.h: 40: char RB0_pressed = 0;
+"39
+[; ;./config.h: 39: char RB0_pressed = 0;
 [v _RB0_pressed `uc ~T0 @X0 1 e ]
 [i _RB0_pressed
 -> -> 0 `i `uc
 ]
+"41
+[; ;./config.h: 41: volatile char max_temperature = 80;
+[v _max_temperature `Vuc ~T0 @X0 1 e ]
+[i _max_temperature
+-> -> 80 `i `uc
+]
 "42
-[; ;./config.h: 42: char humidity_value;
+[; ;./config.h: 42: volatile char min_humidity = 20;
+[v _min_humidity `Vuc ~T0 @X0 1 e ]
+[i _min_humidity
+-> -> 20 `i `uc
+]
+"44
+[; ;./config.h: 44: char humidity_value;
 [v _humidity_value `uc ~T0 @X0 1 e ]
-"43
-[; ;./config.h: 43: char temperature_value;
-[v _temperature_value `uc ~T0 @X0 1 e ]
 "45
-[; ;./config.h: 45: int period = 10000;
+[; ;./config.h: 45: char temperature_value;
+[v _temperature_value `uc ~T0 @X0 1 e ]
+"47
+[; ;./config.h: 47: int period = 10000;
 [v _period `i ~T0 @X0 1 e ]
 [i _period
 -> 10000 `i
 ]
-"47
-[; ;./config.h: 47: char ledVal = 0;
+"49
+[; ;./config.h: 49: char ledVal = 0;
 [v _ledVal `uc ~T0 @X0 1 e ]
 [i _ledVal
 -> -> 0 `i `uc
 ]
-"51
-[; ;./config.h: 51: volatile enum State state = IDLE;
-[v _state `VE4557 ~T0 @X0 1 e ]
+"53
+[; ;./config.h: 53: volatile enum State state = IDLE;
+[v _state `VE4559 ~T0 @X0 1 e ]
 [i _state
-. `E4557 0
-]
-"55
-[; ;./config.h: 55: volatile enum State_Set_Time state_settime = IDLE_STATE;
-[v _state_settime `VE4563 ~T0 @X0 1 e ]
-[i _state_settime
-. `E4563 0
+. `E4559 0
 ]
 "57
-[; ;./config.h: 57: char flag_change_state = 0;
+[; ;./config.h: 57: volatile enum State_Set_Time state_settime = IDLE_STATE;
+[v _state_settime `VE4565 ~T0 @X0 1 e ]
+[i _state_settime
+. `E4565 0
+]
+"59
+[; ;./config.h: 59: char flag_change_state = 0;
 [v _flag_change_state `uc ~T0 @X0 1 e ]
 [i _flag_change_state
 -> -> 0 `i `uc
 ]
-"58
-[; ;./config.h: 58: tWORD check_timeout = 0;
+"60
+[; ;./config.h: 60: tWORD check_timeout = 0;
 [v _check_timeout `ul ~T0 @X0 1 e ]
 [i _check_timeout
 -> -> -> 0 `i `l `ul
@@ -844,31 +856,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LTDtasks.c: 45:     CCPR4L = 24 * dutyCycle;
 [e = _CCPR4L -> * -> 24 `i _dutyCycle `uc ]
 "46
-[; ;LTDtasks.c: 46: }
+[; ;LTDtasks.c: 46:     if(dutyCycle > 0)
+[e $ ! > _dutyCycle -> 0 `i 517  ]
+"47
+[; ;LTDtasks.c: 47:         LATDbits.LATD5 = 1;
+[e = . . _LATDbits 0 5 -> -> 1 `i `uc ]
+[e $U 518  ]
+"48
+[; ;LTDtasks.c: 48:     else LATDbits.LATD5 = 0;
+[e :U 517 ]
+[e = . . _LATDbits 0 5 -> -> 0 `i `uc ]
+[e :U 518 ]
+"49
+[; ;LTDtasks.c: 49: }
 [e :UE 516 ]
 }
-"48
-[; ;LTDtasks.c: 48: void force_turn_off(void) {
+"51
+[; ;LTDtasks.c: 51: void force_turn_off(void) {
 [v _force_turn_off `(v ~T0 @X0 1 ef ]
 {
 [e :U _force_turn_off ]
 [f ]
-"49
-[; ;LTDtasks.c: 49:     turn_off_fan(1);
-[e ( _turn_off_fan (1 -> 1 `i ]
-"50
-[; ;LTDtasks.c: 50:     turn_off_fan(2);
-[e ( _turn_off_fan (1 -> 2 `i ]
-"51
-[; ;LTDtasks.c: 51:     set_speed_fan3(0);
-[e ( _set_speed_fan3 (1 -> 0 `i ]
 "52
-[; ;LTDtasks.c: 52:     turn_off_heat_pump();
-[e ( _turn_off_heat_pump ..  ]
+[; ;LTDtasks.c: 52:     turn_off_fan(1);
+[e ( _turn_off_fan (1 -> 1 `i ]
 "53
-[; ;LTDtasks.c: 53:     turn_off_heater();
-[e ( _turn_off_heater ..  ]
+[; ;LTDtasks.c: 53:     turn_off_fan(2);
+[e ( _turn_off_fan (1 -> 2 `i ]
 "54
-[; ;LTDtasks.c: 54: }
-[e :UE 517 ]
+[; ;LTDtasks.c: 54:     set_speed_fan3(0);
+[e ( _set_speed_fan3 (1 -> 0 `i ]
+"55
+[; ;LTDtasks.c: 55:     turn_off_heat_pump();
+[e ( _turn_off_heat_pump ..  ]
+"56
+[; ;LTDtasks.c: 56:     turn_off_heater();
+[e ( _turn_off_heater ..  ]
+"57
+[; ;LTDtasks.c: 57: }
+[e :UE 519 ]
 }

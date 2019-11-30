@@ -45,30 +45,37 @@ void system_initialize(void) {
     mOPEN_LCD;
     humidity_value = 70;
     temperature_value = 25;
-    start_timer(0);//for timestamp
+//    start_timer(0);//for timestamp
     start_timer(1);//for handle tasks
 }
 
 void changeState(void) {
-    if(temperature_value >= MAX_TEMPERATURE && humidity_value <= MIN_HUMIDITY && state != IDLE)
+    if(temperature_value >= max_temperature && humidity_value <= min_humidity && state != IDLE) {
         state = TERMINATE;
-    else if(humidity_value <= MIN_HUMIDITY && state == HEAT_PUMP) {
+    }
+    else if(humidity_value <= min_humidity && state == HEATER) {
+        flag_change_state = 0;
+    }
+    else if(temperature_value >= max_temperature && state == HEAT_PUMP) {
+        flag_change_state = 0;
+    }
+    else if(state == HEATER || state == HEAT_PUMP) {
         flag_change_state = 1;
     }
-    else if(temperature_value >= MAX_TEMPERATURE && state == HEATER)
-        flag_change_state = 1;
-    else if(state == HEATER || state == HEAT_PUMP)
-        flag_change_state = 1;
+        
      
 }
 
 void check_humid_to_turn_fan(void) {
     if(state == HEATER || state == HEAT_PUMP) {
-        int humid = (int)humidity_value;
-        set_speed_fan3(humid);
         LCDPrint(1, 11, "F3:");
-        LCDPrintChar(1, 14, humid / 10 + '0');
-        LCDPrintChar(1, 15, humid % 10 + '0');
+        if(humidity_value == ERROR_SENSOR_VAL) {
+            LCDPrint(1, 14, "ER");
+            set_speed_fan3(0);
+            return;
+        }
+        LCDPrintChar(1, 14, humidity_value / 10 + '0');
+        LCDPrintChar(1, 15, humidity_value % 10 + '0');
     }  
 }
 

@@ -20,6 +20,8 @@
 char temperature_dht11[2];
 char humidity_dht11[2];
 
+char countError = 0;
+
 void readTempAndHumid(void);
 
 #endif	/* DHT11_H */

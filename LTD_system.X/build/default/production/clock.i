@@ -7770,7 +7770,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "./config.h" 2
-# 31 "./config.h"
+# 30 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7781,6 +7781,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+volatile char max_temperature = 80;
+volatile char min_humidity = 20;
 
 char humidity_value;
 char temperature_value;
@@ -7793,7 +7796,7 @@ enum State{IDLE, HEATER, HEAT_PUMP, TERMINATE};
 
 volatile enum State state = IDLE;
 
-enum State_Set_Time{IDLE_STATE, SETTING, FINISH};
+enum State_Set_Time{IDLE_STATE, SETTING1, SETTING2, SETTING3, FINISH};
 
 volatile enum State_Set_Time state_settime = IDLE_STATE;
 
@@ -7821,6 +7824,8 @@ typedef struct {
 
 tWORD time_ms;
 tWORD prev_time_ms = 0;
+
+
 
 int start_timer(char timer_vaddr);
 tWORD get_time(void);
@@ -7919,8 +7924,8 @@ int start_timer(char timer_vaddr) {
         case 0:
             INTCONbits.TMR0IE = 1;
             INTCONbits.TMR0IF = 0;
-            T0CON = 0xC6;
-            TMR0L = 100;
+            T0CON = 0b11000111;
+            TMR0L = 0x82;
             time_ms = 0;
             break;
         case 1:
@@ -8015,14 +8020,25 @@ int stop_timer(void) {
     time_ms = 0;
     return 0;
 }
-# 197 "clock.c"
+
+void change_temp_and_humid(void) {
+    if(state == HEATER && humidity_value != 100) {
+        temperature_value+= 3;
+        humidity_value+= 1;
+    }
+    else if(state == HEAT_PUMP && humidity_value >= 3 && temperature_value >= 1) {
+        humidity_value-= 3;
+        temperature_value-= 1;
+    }
+}
+
 void __attribute__((picinterrupt(("")))) timer_interrupt(void) {
     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
-        TMR0L = 100;
-        time_ms++;
+        TMR0L = 0x82;
+        time_ms+= 10;
         count++;
-        if(count == 1000) {
+        if(count == 100) {
             count = 0;
 
         }

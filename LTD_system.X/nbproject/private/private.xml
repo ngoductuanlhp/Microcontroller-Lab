@@ -4,13 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/MPLAPXProjects/LTD_system.X/mcc.c</file>
-            <file>file:/E:/MPLAPXProjects/LTD_system.X/buttons.c</file>
             <file>file:/E:/MPLAPXProjects/LTD_system.X/config.h</file>
             <file>file:/E:/MPLAPXProjects/LTD_system.X/main.c</file>
-            <file>file:/E:/MPLAPXProjects/LTD_system.X/lcd.c</file>
-            <file>file:/E:/MPLAPXProjects/LTD_system.X/LTDtasks.h</file>
-            <file>file:/E:/MPLAPXProjects/LTD_system.X/buttons.h</file>
-            <file>file:/E:/MPLAPXProjects/LTD_system.X/LTDtasks.c</file>
             <file>file:/E:/MPLAPXProjects/LTD_system.X/dht11.c</file>
             <file>file:/E:/MPLAPXProjects/LTD_system.X/clock.c</file>
         </group>

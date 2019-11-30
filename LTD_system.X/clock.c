@@ -87,7 +87,7 @@ int start_timer(char timer_vaddr) {
         case 0:
             INTCONbits.TMR0IE = 1;
             INTCONbits.TMR0IF = 0;
-            T0CON = 0xC6; //11010011
+            T0CON = 0b11000111; //11010011
             TMR0L = TMR0_PRELOAD;// 1ms interrupt
             time_ms = 0;
             break;
@@ -184,23 +184,24 @@ int stop_timer(void) {
     return 0;
 }
 
-//void change_temp_and_humid(void) {
-//    if(state == HEATER && humidity_value != 100) {
-//        temperature_value+= 3;
-//        humidity_value+= 1;
-//    }
-//    else if(state == HEAT_PUMP && humidity_value >= 3 && temperature_value >= 1) {
-//        humidity_value-= 3;
-//        temperature_value-= 1;
-//    }
-//}
+void change_temp_and_humid(void) {
+    if(state == HEATER && humidity_value != 100) {
+        temperature_value+= 3;
+        humidity_value+= 1;
+    }
+    else if(state == HEAT_PUMP && humidity_value >= 3 && temperature_value >= 1) {
+        humidity_value-= 3;
+        temperature_value-= 1;
+    }
+}
+
 void __interrupt() timer_interrupt(void) {
     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
         TMR0L = TMR0_PRELOAD;
-        time_ms++;
+        time_ms+= 10;
         count++;
-        if(count == 1000) {
+        if(count == 100) {
             count = 0;
             //change_temp_and_humid();
         }

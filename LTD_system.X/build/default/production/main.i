@@ -7787,7 +7787,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 19 "main.c" 2
 
 # 1 "./config.h" 1
-# 31 "./config.h"
+# 30 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7798,6 +7798,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+volatile char max_temperature = 80;
+volatile char min_humidity = 20;
 
 char humidity_value;
 char temperature_value;
@@ -7810,7 +7813,7 @@ enum State{IDLE, HEATER, HEAT_PUMP, TERMINATE};
 
 volatile enum State state = IDLE;
 
-enum State_Set_Time{IDLE_STATE, SETTING, FINISH};
+enum State_Set_Time{IDLE_STATE, SETTING1, SETTING2, SETTING3, FINISH};
 
 volatile enum State_Set_Time state_settime = IDLE_STATE;
 
@@ -7867,6 +7870,8 @@ typedef struct {
 tWORD time_ms;
 tWORD prev_time_ms = 0;
 
+
+
 int start_timer(char timer_vaddr);
 tWORD get_time(void);
 char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data_ptr);
@@ -7887,6 +7892,8 @@ void handleButton(void* data_ptr);
 # 20 "./dht11.h"
 char temperature_dht11[2];
 char humidity_dht11[2];
+
+char countError = 0;
 
 void readTempAndHumid(void);
 # 15 "./mcc.h" 2
@@ -7933,7 +7940,7 @@ void set_time_process(void) {
                 _delay((unsigned long)((2000)*(8000000/4000.0)));
             }
             break;
-        case SETTING:
+        case SETTING1:
             if(RA5_pressed) {
                 RA5_pressed = 0;
 
@@ -7950,6 +7957,48 @@ void set_time_process(void) {
                 remove_timer(task_id[1]);
                 task_id[1] = register_timer(period, 0, changeState, ((void*)0));
                 state_settime = 2;
+                LCDPutInst(0x01);
+                LCDPrint(0, 0, "Set temp");
+                LCDPrintChar(0, 10, max_temperature / 10 + '0');
+                LCDPrintChar(0, 11, max_temperature % 10 + '0');
+            }
+            break;
+        case SETTING2:
+            if(RA5_pressed) {
+                RA5_pressed = 0;
+
+                max_temperature+= 1;
+                if(max_temperature >= 100)
+                    max_temperature = 27;
+
+                LCDPrintChar(0, 10, max_temperature / 10 + '0');
+                LCDPrintChar(0, 11, max_temperature % 10 + '0');
+
+            }
+            if(RB0_pressed) {
+                RB0_pressed = 0;
+                state_settime = 3;
+                LCDPutInst(0x01);
+                LCDPrint(0, 0, "Set humid");
+                LCDPrintChar(0, 10, min_humidity / 10 + '0');
+                LCDPrintChar(0, 11, min_humidity % 10 + '0');
+            }
+            break;
+        case SETTING3:
+            if(RA5_pressed) {
+                RA5_pressed = 0;
+
+                min_humidity-= 1;
+                if(min_humidity <= 10)
+                    min_humidity = 80;
+
+                LCDPrintChar(0, 10, min_humidity / 10 + '0');
+                LCDPrintChar(0, 11, min_humidity % 10 + '0');
+
+            }
+            if(RB0_pressed) {
+                RB0_pressed = 0;
+                state_settime = 4;
             }
             break;
         case FINISH:

@@ -40,7 +40,7 @@ void set_time_process(void) {
                 __delay_ms(2000);
             }
             break;
-        case SETTING:
+        case SETTING1:
             if(RA5_pressed) {
                 RA5_pressed = 0;
 
@@ -57,6 +57,48 @@ void set_time_process(void) {
                 remove_timer(task_id[1]);
                 task_id[1] = register_timer(period, 0, changeState, ((void*)0));
                 state_settime = 2;
+                mLCD_CLEAR;
+                LCDPrint(0, 0, "Set temp");
+                LCDPrintChar(0, 10, max_temperature / 10 + '0');
+                LCDPrintChar(0, 11, max_temperature % 10 + '0');
+            }
+            break;
+        case SETTING2:
+            if(RA5_pressed) {
+                RA5_pressed = 0;
+
+                max_temperature+= 1;
+                if(max_temperature >= 100)
+                    max_temperature = 27;
+//                int temp = max_temperature;
+                LCDPrintChar(0, 10, max_temperature / 10 + '0');
+                LCDPrintChar(0, 11, max_temperature % 10 + '0');
+//                LCDPrintChar(0, 12, 's');
+            }
+            if(RB0_pressed) {
+                RB0_pressed = 0;
+                state_settime = 3;
+                mLCD_CLEAR;
+                LCDPrint(0, 0, "Set humid");
+                LCDPrintChar(0, 10, min_humidity / 10 + '0');
+                LCDPrintChar(0, 11, min_humidity % 10 + '0');
+            }
+            break;
+        case SETTING3:
+            if(RA5_pressed) {
+                RA5_pressed = 0;
+
+                min_humidity-= 1;
+                if(min_humidity <= 10)
+                    min_humidity = 80;
+//                int temp = MIN_HUMIDITY;
+                LCDPrintChar(0, 10, min_humidity / 10 + '0');
+                LCDPrintChar(0, 11, min_humidity % 10 + '0');
+//                LCDPrintChar(0, 12, 's');
+            }
+            if(RB0_pressed) {
+                RB0_pressed = 0;
+                state_settime = 4;
             }
             break;
         case FINISH:

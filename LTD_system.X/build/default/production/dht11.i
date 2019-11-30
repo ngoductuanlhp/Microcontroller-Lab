@@ -7770,7 +7770,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "./config.h" 2
-# 31 "./config.h"
+# 30 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7781,6 +7781,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+volatile char max_temperature = 80;
+volatile char min_humidity = 20;
 
 char humidity_value;
 char temperature_value;
@@ -7793,7 +7796,7 @@ enum State{IDLE, HEATER, HEAT_PUMP, TERMINATE};
 
 volatile enum State state = IDLE;
 
-enum State_Set_Time{IDLE_STATE, SETTING, FINISH};
+enum State_Set_Time{IDLE_STATE, SETTING1, SETTING2, SETTING3, FINISH};
 
 volatile enum State_Set_Time state_settime = IDLE_STATE;
 
@@ -7836,6 +7839,8 @@ tWORD check_timeout = 0;
 char temperature_dht11[2];
 char humidity_dht11[2];
 
+char countError = 0;
+
 void readTempAndHumid(void);
 # 1 "dht11.c" 2
 
@@ -7865,10 +7870,10 @@ char readDHT() {
     unsigned int timeOut = 80;
     TRISDbits.TRISD0 = 0;
     LATDbits.LATD0 = 0;
-    _delay((unsigned long)((20)*(8000000/4000.0)));
+    _delay((unsigned long)((18)*(8000000/4000.0)));
 
     LATDbits.LATD0 = 1;
-    _delay((unsigned long)((20)*(8000000/4000000.0)));
+    _delay((unsigned long)((30)*(8000000/4000000.0)));
     TRISDbits.TRISD0 = 1;
 
     while(PORTDbits.RD0 & 1) {
@@ -7902,13 +7907,20 @@ char readDHT() {
 
 void readTempAndHumid(void) {
     if(!readDHT()) {
+        countError++;
 
-        temperature_value = 399;
-        humidity_value = 399;
+
+
         return;
     }
-
-    temperature_value = temperature_dht11[0];
-    humidity_value = humidity_dht11[0];
-# 99 "dht11.c"
+    else {
+        countError = 0;
+        temperature_value = temperature_dht11[0];
+        humidity_value = humidity_dht11[0];
+    }
+    if(countError >= 3) {
+        temperature_value = 5;
+        humidity_value = 5;
+    }
+# 107 "dht11.c"
 }

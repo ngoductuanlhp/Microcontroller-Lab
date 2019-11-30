@@ -3,96 +3,110 @@
 [d edition pro ]
 [d chip 18F8722 ]
 [d frameptr 4065 ]
-"51 E:\MPLAPXProjects\LTD_system.X/config.h
-[e E4557 State `uc
+"53 E:\MPLAPXProjects\LTD_system.X/config.h
+[e E4559 State `uc
 IDLE 0
 HEATER 1
 HEAT_PUMP 2
 TERMINATE 3
 ]
-"55
-[e E4563 State_Set_Time `uc
+"57
+[e E4565 State_Set_Time `uc
 IDLE_STATE 0
-SETTING 1
-FINISH 2
+SETTING1 1
+SETTING2 2
+SETTING3 3
+FINISH 4
 ]
-"51
-[e E4557 State `uc
+"53
+[e E4559 State `uc
 IDLE 0
 HEATER 1
 HEAT_PUMP 2
 TERMINATE 3
 ]
-"55
-[e E4563 State_Set_Time `uc
+"57
+[e E4565 State_Set_Time `uc
 IDLE_STATE 0
-SETTING 1
-FINISH 2
+SETTING1 1
+SETTING2 2
+SETTING3 3
+FINISH 4
 ]
-"51
-[e E4557 State `uc
+"53
+[e E4559 State `uc
 IDLE 0
 HEATER 1
 HEAT_PUMP 2
 TERMINATE 3
 ]
-"55
-[e E4563 State_Set_Time `uc
+"57
+[e E4565 State_Set_Time `uc
 IDLE_STATE 0
-SETTING 1
-FINISH 2
+SETTING1 1
+SETTING2 2
+SETTING3 3
+FINISH 4
 ]
-"51
-[e E4557 State `uc
+"53
+[e E4559 State `uc
 IDLE 0
 HEATER 1
 HEAT_PUMP 2
 TERMINATE 3
 ]
-"55
-[e E4563 State_Set_Time `uc
+"57
+[e E4565 State_Set_Time `uc
 IDLE_STATE 0
-SETTING 1
-FINISH 2
+SETTING1 1
+SETTING2 2
+SETTING3 3
+FINISH 4
 ]
-"51
-[e E4557 State `uc
+"53
+[e E4559 State `uc
 IDLE 0
 HEATER 1
 HEAT_PUMP 2
 TERMINATE 3
 ]
-"55
-[e E4563 State_Set_Time `uc
+"57
+[e E4565 State_Set_Time `uc
 IDLE_STATE 0
-SETTING 1
-FINISH 2
+SETTING1 1
+SETTING2 2
+SETTING3 3
+FINISH 4
 ]
-"51
-[e E4557 State `uc
+"53
+[e E4559 State `uc
 IDLE 0
 HEATER 1
 HEAT_PUMP 2
 TERMINATE 3
 ]
-"55
-[e E4563 State_Set_Time `uc
+"57
+[e E4565 State_Set_Time `uc
 IDLE_STATE 0
-SETTING 1
-FINISH 2
+SETTING1 1
+SETTING2 2
+SETTING3 3
+FINISH 4
 ]
-"51
-[e E4557 State `uc
+"53
+[e E4559 State `uc
 IDLE 0
 HEATER 1
 HEAT_PUMP 2
 TERMINATE 3
 ]
-"55
-[e E4563 State_Set_Time `uc
+"57
+[e E4565 State_Set_Time `uc
 IDLE_STATE 0
-SETTING 1
-FINISH 2
+SETTING1 1
+SETTING2 2
+SETTING3 3
+FINISH 4
 ]
 "17 E:\MPLAPXProjects\LTD_system.X\buttons.c
 [v _readButtonRA5 readButtonRA5 `(i  1 e 2 0 ]
@@ -144,9 +158,9 @@ FINISH 2
 "29
 [v _enqueue enqueue `(uc  1 e 1 0 ]
 "21 E:\MPLAPXProjects\LTD_system.X/clock.h
-[s S946 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
+[s S968 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
 "40 E:\MPLAPXProjects\LTD_system.X\clock.c
-[v _dequeue dequeue `(S946  1 e 5 0 ]
+[v _dequeue dequeue `(S968  1 e 5 0 ]
 "60
 [v _initializeTaskList initializeTaskList `(v  1 e 1 0 ]
 "73
@@ -163,9 +177,9 @@ FINISH 2
 "155
 [v _remove_timer remove_timer `(i  1 e 2 0 ]
 [v i2_remove_timer remove_timer `(i  1 e 2 0 ]
-"197
+"198
 [v _timer_interrupt timer_interrupt `IIH(v  1 e 1 0 ]
-"249
+"250
 [v _dispatch dispatch `(v  1 e 1 0 ]
 "3 E:\MPLAPXProjects\LTD_system.X\dht11.c
 [v _getByte getByte `(uc  1 e 1 0 ]
@@ -211,9 +225,9 @@ FINISH 2
 [v _set_speed_fan3 set_speed_fan3 `(v  1 e 1 0 ]
 "27 E:\MPLAPXProjects\LTD_system.X\main.c
 [v _set_time_process set_time_process `(v  1 e 1 0 ]
-"74
+"116
 [v _LTD_process LTD_process `(v  1 e 1 0 ]
-"157
+"199
 [v _main main `(v  1 e 1 0 ]
 "3 E:\MPLAPXProjects\LTD_system.X\mcc.c
 [v _osc_initialize osc_initialize `(v  1 e 1 0 ]
@@ -225,36 +239,42 @@ FINISH 2
 [v _system_initialize system_initialize `(v  1 e 1 0 ]
 "52
 [v _changeState changeState `(v  1 e 1 0 ]
-"65
+"69
 [v _check_humid_to_turn_fan check_humid_to_turn_fan `(v  1 e 1 0 ]
-"75
+"82
 [v _print_temp_and_humid print_temp_and_humid `(v  1 e 1 0 ]
 "30 E:\MPLAPXProjects\LTD_system.X/clock.h
 [v _time_ms time_ms `ul  1 e 4 0 ]
-"35 E:\MPLAPXProjects\LTD_system.X/config.h
+"34 E:\MPLAPXProjects\LTD_system.X/config.h
 [v _task_id task_id `[20]uc  1 e 20 0 ]
-"39
+"38
 [v _RA5_pressed RA5_pressed `uc  1 e 1 0 ]
-"40
+"39
 [v _RB0_pressed RB0_pressed `uc  1 e 1 0 ]
+"41
+[v _max_temperature max_temperature `VEuc  1 e 1 0 ]
 "42
+[v _min_humidity min_humidity `VEuc  1 e 1 0 ]
+"44
 [v _humidity_value humidity_value `uc  1 e 1 0 ]
-"43
-[v _temperature_value temperature_value `uc  1 e 1 0 ]
 "45
+[v _temperature_value temperature_value `uc  1 e 1 0 ]
+"47
 [v _period period `i  1 e 2 0 ]
-"51
-[v _state state `VEE4557  1 e 1 0 ]
-"55
-[v _state_settime state_settime `VEE4563  1 e 1 0 ]
+"53
+[v _state state `VEE4559  1 e 1 0 ]
 "57
+[v _state_settime state_settime `VEE4565  1 e 1 0 ]
+"59
 [v _flag_change_state flag_change_state `uc  1 e 1 0 ]
-"58
+"60
 [v _check_timeout check_timeout `ul  1 e 4 0 ]
 "20 E:\MPLAPXProjects\LTD_system.X/dht11.h
 [v _temperature_dht11 temperature_dht11 `[2]uc  1 e 2 0 ]
 "21
 [v _humidity_dht11 humidity_dht11 `[2]uc  1 e 2 0 ]
+"23
+[v _countError countError `uc  1 e 1 0 ]
 "3 E:\MPLAPXProjects\LTD_system.X\buttons.c
 [v _firstReadRA5 firstReadRA5 `uc  1 e 1 0 ]
 "4
@@ -279,7 +299,7 @@ FINISH 2
 [v _CCP4CON CCP4CON `VEuc  1 e 1 @3955 ]
 "1862
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @3956 ]
-[s S198 . 1 `uc 1 RA0 1 0 :1:0 
+[s S207 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -289,29 +309,29 @@ FINISH 2
 `uc 1 RA7 1 0 :1:7 
 ]
 "2684
-[s S207 . 1 `uc 1 . 1 0 :2:0 
+[s S216 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S213 . 1 `uc 1 AN0 1 0 :1:0 
+[s S222 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S220 . 1 `uc 1 . 1 0 :5:0 
+[s S229 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S223 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S232 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S227 . 1 `S198 1 . 1 0 `S207 1 . 1 0 `S213 1 . 1 0 `S220 1 . 1 0 `S223 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES227  1 e 1 @3968 ]
-[s S263 . 1 `uc 1 RB0 1 0 :1:0 
+[u S236 . 1 `S207 1 . 1 0 `S216 1 . 1 0 `S222 1 . 1 0 `S229 1 . 1 0 `S232 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES236  1 e 1 @3968 ]
+[s S272 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -321,7 +341,7 @@ FINISH 2
 `uc 1 RB7 1 0 :1:7 
 ]
 "2833
-[s S272 . 1 `uc 1 INT0 1 0 :1:0 
+[s S281 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -330,22 +350,22 @@ FINISH 2
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S281 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S290 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ECCP2 1 0 :1:3 
 ]
-[s S285 . 1 `uc 1 . 1 0 :3:0 
+[s S294 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2 1 0 :1:3 
 ]
-[s S288 . 1 `uc 1 . 1 0 :3:0 
+[s S297 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 P2A 1 0 :1:3 
 ]
-[s S291 . 1 `uc 1 . 1 0 :3:0 
+[s S300 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S294 . 1 `S263 1 . 1 0 `S272 1 . 1 0 `S281 1 . 1 0 `S285 1 . 1 0 `S288 1 . 1 0 `S291 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES294  1 e 1 @3969 ]
-[s S1195 . 1 `uc 1 RD0 1 0 :1:0 
+[u S303 . 1 `S272 1 . 1 0 `S281 1 . 1 0 `S290 1 . 1 0 `S294 1 . 1 0 `S297 1 . 1 0 `S300 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES303  1 e 1 @3969 ]
+[s S1222 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -355,7 +375,7 @@ FINISH 2
 `uc 1 RD7 1 0 :1:7 
 ]
 "3249
-[s S1204 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S1231 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -364,7 +384,7 @@ FINISH 2
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S1213 . 1 `uc 1 AD0 1 0 :1:0 
+[s S1240 . 1 `uc 1 AD0 1 0 :1:0 
 `uc 1 AD1 1 0 :1:1 
 `uc 1 AD2 1 0 :1:2 
 `uc 1 AD3 1 0 :1:3 
@@ -373,25 +393,25 @@ FINISH 2
 `uc 1 AD6 1 0 :1:6 
 `uc 1 AD7 1 0 :1:7 
 ]
-[s S1222 . 1 `uc 1 . 1 0 :5:0 
+[s S1249 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SDA2 1 0 :1:5 
 `uc 1 SCL2 1 0 :1:6 
 `uc 1 SS2 1 0 :1:7 
 ]
-[s S1227 . 1 `uc 1 . 1 0 :7:0 
+[s S1254 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_SS2 1 0 :1:7 
 ]
-[s S1230 . 1 `uc 1 . 1 0 :4:0 
+[s S1257 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SDO2 1 0 :1:4 
 `uc 1 SDI2 1 0 :1:5 
 `uc 1 SCK2 1 0 :1:6 
 `uc 1 nSS2 1 0 :1:7 
 ]
-[u S1236 . 1 `S1195 1 . 1 0 `S1204 1 . 1 0 `S1213 1 . 1 0 `S1222 1 . 1 0 `S1227 1 . 1 0 `S1230 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1236  1 e 1 @3971 ]
+[u S1263 . 1 `S1222 1 . 1 0 `S1231 1 . 1 0 `S1240 1 . 1 0 `S1249 1 . 1 0 `S1254 1 . 1 0 `S1257 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES1263  1 e 1 @3971 ]
 "4479
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S566 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S579 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -401,7 +421,7 @@ FINISH 2
 `uc 1 LATA7 1 0 :1:7 
 ]
 "4506
-[s S575 . 1 `uc 1 LA0 1 0 :1:0 
+[s S588 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -410,13 +430,13 @@ FINISH 2
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S584 . 1 `S566 1 . 1 0 `S575 1 . 1 0 ]
-[v _LATAbits LATAbits `VES584  1 e 1 @3977 ]
+[u S597 . 1 `S579 1 . 1 0 `S588 1 . 1 0 ]
+[v _LATAbits LATAbits `VES597  1 e 1 @3977 ]
 "4591
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "4703
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S606 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S619 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -426,7 +446,7 @@ FINISH 2
 `uc 1 LATC7 1 0 :1:7 
 ]
 "4730
-[s S615 . 1 `uc 1 LC0 1 0 :1:0 
+[s S628 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -435,11 +455,11 @@ FINISH 2
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S624 . 1 `S606 1 . 1 0 `S615 1 . 1 0 ]
-[v _LATCbits LATCbits `VES624  1 e 1 @3979 ]
+[u S637 . 1 `S619 1 . 1 0 `S628 1 . 1 0 ]
+[v _LATCbits LATCbits `VES637  1 e 1 @3979 ]
 "4815
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S1327 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1354 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -449,7 +469,7 @@ FINISH 2
 `uc 1 LATD7 1 0 :1:7 
 ]
 "4842
-[s S1336 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1363 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -458,9 +478,9 @@ FINISH 2
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1345 . 1 `S1327 1 . 1 0 `S1336 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1345  1 e 1 @3980 ]
-[s S432 . 1 `uc 1 LATF0 1 0 :1:0 
+[u S1372 . 1 `S1354 1 . 1 0 `S1363 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1372  1 e 1 @3980 ]
+[s S445 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -470,7 +490,7 @@ FINISH 2
 `uc 1 LATF7 1 0 :1:7 
 ]
 "5066
-[s S441 . 1 `uc 1 LF0 1 0 :1:0 
+[s S454 . 1 `uc 1 LF0 1 0 :1:0 
 `uc 1 LF1 1 0 :1:1 
 `uc 1 LF2 1 0 :1:2 
 `uc 1 LF3 1 0 :1:3 
@@ -479,11 +499,11 @@ FINISH 2
 `uc 1 LF6 1 0 :1:6 
 `uc 1 LF7 1 0 :1:7 
 ]
-[u S450 . 1 `S432 1 . 1 0 `S441 1 . 1 0 ]
-[v _LATFbits LATFbits `VES450  1 e 1 @3982 ]
+[u S463 . 1 `S445 1 . 1 0 `S454 1 . 1 0 ]
+[v _LATFbits LATFbits `VES463  1 e 1 @3982 ]
 "5457
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S486 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S499 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -493,13 +513,13 @@ FINISH 2
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "5489
-[u S504 . 1 `S486 1 . 1 0 `S198 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES504  1 e 1 @3986 ]
+[u S517 . 1 `S499 1 . 1 0 `S207 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES517  1 e 1 @3986 ]
 "5679
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "5901
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S526 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S539 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -509,7 +529,7 @@ FINISH 2
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "5933
-[s S535 . 1 `uc 1 RC0 1 0 :1:0 
+[s S548 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -518,11 +538,11 @@ FINISH 2
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S544 . 1 `S526 1 . 1 0 `S535 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES544  1 e 1 @3988 ]
+[u S557 . 1 `S539 1 . 1 0 `S548 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES557  1 e 1 @3988 ]
 "6123
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S1287 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S1314 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -532,9 +552,9 @@ FINISH 2
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "6155
-[u S1305 . 1 `S1287 1 . 1 0 `S1195 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES1305  1 e 1 @3989 ]
-[s S392 . 1 `uc 1 TRISF0 1 0 :1:0 
+[u S1332 . 1 `S1314 1 . 1 0 `S1222 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES1332  1 e 1 @3989 ]
+[s S405 . 1 `uc 1 TRISF0 1 0 :1:0 
 `uc 1 TRISF1 1 0 :1:1 
 `uc 1 TRISF2 1 0 :1:2 
 `uc 1 TRISF3 1 0 :1:3 
@@ -544,7 +564,7 @@ FINISH 2
 `uc 1 TRISF7 1 0 :1:7 
 ]
 "6599
-[s S401 . 1 `uc 1 RF0 1 0 :1:0 
+[s S414 . 1 `uc 1 RF0 1 0 :1:0 
 `uc 1 RF1 1 0 :1:1 
 `uc 1 RF2 1 0 :1:2 
 `uc 1 RF3 1 0 :1:3 
@@ -553,24 +573,24 @@ FINISH 2
 `uc 1 RF6 1 0 :1:6 
 `uc 1 RF7 1 0 :1:7 
 ]
-[u S410 . 1 `S392 1 . 1 0 `S401 1 . 1 0 ]
-[v _TRISFbits TRISFbits `VES410  1 e 1 @3991 ]
-[s S763 . 1 `uc 1 TRISG0 1 0 :1:0 
+[u S423 . 1 `S405 1 . 1 0 `S414 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES423  1 e 1 @3991 ]
+[s S780 . 1 `uc 1 TRISG0 1 0 :1:0 
 `uc 1 TRISG1 1 0 :1:1 
 `uc 1 TRISG2 1 0 :1:2 
 `uc 1 TRISG3 1 0 :1:3 
 `uc 1 TRISG4 1 0 :1:4 
 ]
 "6815
-[s S769 . 1 `uc 1 RG0 1 0 :1:0 
+[s S786 . 1 `uc 1 RG0 1 0 :1:0 
 `uc 1 RG1 1 0 :1:1 
 `uc 1 RG2 1 0 :1:2 
 `uc 1 RG3 1 0 :1:3 
 `uc 1 RG4 1 0 :1:4 
 ]
-[u S775 . 1 `S763 1 . 1 0 `S769 1 . 1 0 ]
-[v _TRISGbits TRISGbits `VES775  1 e 1 @3992 ]
-[s S998 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S792 . 1 `S780 1 . 1 0 `S786 1 . 1 0 ]
+[v _TRISGbits TRISGbits `VES792  1 e 1 @3992 ]
+[s S1020 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -580,14 +600,14 @@ FINISH 2
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "7532
-[s S1007 . 1 `uc 1 . 1 0 :3:0 
+[s S1029 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIE 1 0 :1:3 
 `uc 1 TXIE 1 0 :1:4 
 `uc 1 RCIE 1 0 :1:5 
 ]
-[u S1012 . 1 `S998 1 . 1 0 `S1007 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES1012  1 e 1 @3997 ]
-[s S1030 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S1034 . 1 `S1020 1 . 1 0 `S1029 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES1034  1 e 1 @3997 ]
+[s S1052 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -597,23 +617,23 @@ FINISH 2
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "7615
-[s S1039 . 1 `uc 1 . 1 0 :3:0 
+[s S1061 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S1044 . 1 `S1030 1 . 1 0 `S1039 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1044  1 e 1 @3998 ]
+[u S1066 . 1 `S1052 1 . 1 0 `S1061 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1066  1 e 1 @3998 ]
 "10174
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "11823
 [v _T2CON T2CON `VEuc  1 e 1 @4042 ]
-[s S796 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S813 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 TOUTPS 1 0 :4:3 
 ]
 "11844
-[s S800 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S817 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -621,8 +641,8 @@ FINISH 2
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S808 . 1 `S796 1 . 1 0 `S800 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES808  1 e 1 @4042 ]
+[u S825 . 1 `S813 1 . 1 0 `S817 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES825  1 e 1 @4042 ]
 "11894
 [v _PR2 PR2 `VEuc  1 e 1 @4043 ]
 "11901
@@ -639,7 +659,7 @@ FINISH 2
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
 "12640
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
-[s S824 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S841 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -649,7 +669,7 @@ FINISH 2
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "13144
-[s S833 . 1 `uc 1 . 1 0 :1:0 
+[s S850 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -658,22 +678,22 @@ FINISH 2
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S842 . 1 `uc 1 . 1 0 :6:0 
+[s S859 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S846 . 1 `S824 1 . 1 0 `S833 1 . 1 0 `S842 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES846  1 e 1 @4082 ]
-[s S946 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
+[u S863 . 1 `S841 1 . 1 0 `S850 1 . 1 0 `S859 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES863  1 e 1 @4082 ]
+[s S968 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
 "4 E:\MPLAPXProjects\LTD_system.X\clock.c
-[v _ready_queue ready_queue `[20]S946  1 e 100 0 ]
+[v _ready_queue ready_queue `[20]S968  1 e 100 0 ]
 "5
 [v _front front `i  1 e 2 0 ]
 "6
 [v _rear rear `i  1 e 2 0 ]
-[s S958 . 15 `ul 1 delay_t 4 0 `ul 1 period_t 4 4 `*.38(v 1 func_ptr 3 8 `i 1 next 2 11 `*.2v 1 data_p 2 13 ]
+[s S980 . 15 `ul 1 delay_t 4 0 `ul 1 period_t 4 4 `*.38(v 1 func_ptr 3 8 `i 1 next 2 11 `*.2v 1 data_p 2 13 ]
 "54
-[v _task_list task_list `[20]S958  1 e 300 0 ]
+[v _task_list task_list `[20]S980  1 e 300 0 ]
 "55
 [v _num_task num_task `uc  1 e 1 0 ]
 "56
@@ -682,10 +702,10 @@ FINISH 2
 [v _count count `i  1 e 2 0 ]
 "24 E:\MPLAPXProjects\LTD_system.X\main.c
 [v _isSet isSet `uc  1 e 1 0 ]
-"157
+"199
 [v _main main `(v  1 e 1 0 ]
 {
-"178
+"220
 } 0
 "41 E:\MPLAPXProjects\LTD_system.X\mcc.c
 [v _system_initialize system_initialize `(v  1 e 1 0 ]
@@ -752,10 +772,10 @@ FINISH 2
 [v _set_time_process set_time_process `(v  1 e 1 0 ]
 {
 "50
-[v set_time_process@temp_156 temp `i  1 a 2 42 ]
+[v set_time_process@temp_161 temp `i  1 a 2 42 ]
 "36
 [v set_time_process@temp temp `i  1 a 2 40 ]
-"72
+"114
 } 0
 "155 E:\MPLAPXProjects\LTD_system.X\clock.c
 [v _remove_timer remove_timer `(i  1 e 2 0 ]
@@ -796,18 +816,18 @@ FINISH 2
 {
 "79
 } 0
-"249
+"250
 [v _dispatch dispatch `(v  1 e 1 0 ]
 {
-[s S946 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
-"251
-[v dispatch@node node `S946  1 a 5 20 ]
-"255
+[s S968 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
+"252
+[v dispatch@node node `S968  1 a 5 20 ]
+"256
 } 0
 "75 E:\MPLAPXProjects\LTD_system.X\dht11.c
 [v _readTempAndHumid readTempAndHumid `(v  1 e 1 0 ]
 {
-"99
+"107
 } 0
 "22
 [v _readDHT readDHT `(uc  1 e 1 0 ]
@@ -828,10 +848,10 @@ FINISH 2
 [v getByte@i i `uc  1 a 1 2 ]
 "20
 } 0
-"75 E:\MPLAPXProjects\LTD_system.X\mcc.c
+"82 E:\MPLAPXProjects\LTD_system.X\mcc.c
 [v _print_temp_and_humid print_temp_and_humid `(v  1 e 1 0 ]
 {
-"90
+"97
 } 0
 "35 E:\MPLAPXProjects\LTD_system.X\buttons.c
 [v _handleButton handleButton `(v  1 e 1 0 ]
@@ -855,12 +875,12 @@ FINISH 2
 "24
 } 0
 "21 E:\MPLAPXProjects\LTD_system.X/clock.h
-[s S946 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
+[s S968 . 5 `*.38(v 1 func_ptr 3 0 `*.2v 1 data_p 2 3 ]
 "40 E:\MPLAPXProjects\LTD_system.X\clock.c
-[v _dequeue dequeue `(S946  1 e 5 0 ]
+[v _dequeue dequeue `(S968  1 e 5 0 ]
 {
 "41
-[v dequeue@temp temp `S946  1 a 5 15 ]
+[v dequeue@temp temp `S968  1 a 5 15 ]
 "46
 [v dequeue@idx idx `i  1 a 2 13 ]
 "50
@@ -885,32 +905,30 @@ FINISH 2
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"65 E:\MPLAPXProjects\LTD_system.X\mcc.c
+"69 E:\MPLAPXProjects\LTD_system.X\mcc.c
 [v _check_humid_to_turn_fan check_humid_to_turn_fan `(v  1 e 1 0 ]
 {
-"67
-[v check_humid_to_turn_fan@humid humid `i  1 a 2 15 ]
-"73
+"80
 } 0
 "44 E:\MPLAPXProjects\LTD_system.X\LTDtasks.c
 [v _set_speed_fan3 set_speed_fan3 `(v  1 e 1 0 ]
 {
 [v set_speed_fan3@dutyCycle dutyCycle `i  1 p 2 0 ]
-"46
+"49
 } 0
 "52 E:\MPLAPXProjects\LTD_system.X\mcc.c
 [v _changeState changeState `(v  1 e 1 0 ]
 {
-"63
+"67
 } 0
-"74 E:\MPLAPXProjects\LTD_system.X\main.c
+"116 E:\MPLAPXProjects\LTD_system.X\main.c
 [v _LTD_process LTD_process `(v  1 e 1 0 ]
 {
-"138
+"180
 [v LTD_process@humid humid `i  1 a 2 21 ]
-"137
+"179
 [v LTD_process@temp temp `i  1 a 2 19 ]
-"155
+"197
 } 0
 "3 E:\MPLAPXProjects\LTD_system.X\LTDtasks.c
 [v _turn_on_heater turn_on_heater `(v  1 e 1 0 ]
@@ -1053,18 +1071,18 @@ FINISH 2
 [v SendByteBBSPI@output output `uc  1 a 1 0 ]
 "114
 } 0
-"197 E:\MPLAPXProjects\LTD_system.X\clock.c
+"198 E:\MPLAPXProjects\LTD_system.X\clock.c
 [v _timer_interrupt timer_interrupt `IIH(v  1 e 1 0 ]
 {
-"229
-[v timer_interrupt@cur cur `i  1 a 2 47 ]
 "230
+[v timer_interrupt@cur cur `i  1 a 2 47 ]
+"231
 [v timer_interrupt@prev prev `i  1 a 2 43 ]
-"223
+"224
 [v timer_interrupt@sum sum `i  1 a 2 45 ]
-"215
+"216
 [v timer_interrupt@pos pos `i  1 a 2 49 ]
-"247
+"248
 } 0
 "155
 [v i2_remove_timer remove_timer `(i  1 e 2 0 ]

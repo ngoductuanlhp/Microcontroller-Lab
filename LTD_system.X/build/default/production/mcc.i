@@ -7770,7 +7770,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "./config.h" 2
-# 31 "./config.h"
+# 30 "./config.h"
 typedef char tBYTE;
 typedef unsigned long int tWORD;
 typedef void (*FUNCTION_PTR)(void*);
@@ -7781,6 +7781,9 @@ char value = 0;
 
 char RA5_pressed = 0;
 char RB0_pressed = 0;
+
+volatile char max_temperature = 80;
+volatile char min_humidity = 20;
 
 char humidity_value;
 char temperature_value;
@@ -7793,7 +7796,7 @@ enum State{IDLE, HEATER, HEAT_PUMP, TERMINATE};
 
 volatile enum State state = IDLE;
 
-enum State_Set_Time{IDLE_STATE, SETTING, FINISH};
+enum State_Set_Time{IDLE_STATE, SETTING1, SETTING2, SETTING3, FINISH};
 
 volatile enum State_Set_Time state_settime = IDLE_STATE;
 
@@ -7848,6 +7851,8 @@ typedef struct {
 tWORD time_ms;
 tWORD prev_time_ms = 0;
 
+
+
 int start_timer(char timer_vaddr);
 tWORD get_time(void);
 char register_timer(tWORD period, tWORD delay, FUNCTION_PTR callback, void* data_ptr);
@@ -7868,6 +7873,8 @@ void handleButton(void* data_ptr);
 # 20 "./dht11.h"
 char temperature_dht11[2];
 char humidity_dht11[2];
+
+char countError = 0;
 
 void readTempAndHumid(void);
 # 15 "./mcc.h" 2
@@ -7939,43 +7946,50 @@ void system_initialize(void) {
     LCDInit();
     humidity_value = 70;
     temperature_value = 25;
-    start_timer(0);
+
     start_timer(1);
 }
 
 void changeState(void) {
-    if(temperature_value >= 80 && humidity_value <= 10 && state != IDLE)
+    if(temperature_value >= max_temperature && humidity_value <= min_humidity && state != IDLE) {
         state = TERMINATE;
-    else if(humidity_value <= 10 && state == HEAT_PUMP) {
+    }
+    else if(humidity_value <= min_humidity && state == HEATER) {
+        flag_change_state = 0;
+    }
+    else if(temperature_value >= max_temperature && state == HEAT_PUMP) {
+        flag_change_state = 0;
+    }
+    else if(state == HEATER || state == HEAT_PUMP) {
         flag_change_state = 1;
     }
-    else if(temperature_value >= 80 && state == HEATER)
-        flag_change_state = 1;
-    else if(state == HEATER || state == HEAT_PUMP)
-        flag_change_state = 1;
+
 
 }
 
 void check_humid_to_turn_fan(void) {
     if(state == HEATER || state == HEAT_PUMP) {
-        int humid = (int)humidity_value;
-        set_speed_fan3(humid);
         LCDPrint(1, 11, "F3:");
-        LCDPrintChar(1, 14, humid / 10 + '0');
-        LCDPrintChar(1, 15, humid % 10 + '0');
+        if(humidity_value == 5) {
+            LCDPrint(1, 14, "ER");
+            set_speed_fan3(0);
+            return;
+        }
+        LCDPrintChar(1, 14, humidity_value / 10 + '0');
+        LCDPrintChar(1, 15, humidity_value % 10 + '0');
     }
 }
 
 void print_temp_and_humid(void) {
     LCDPrint(1, 0, "T:");
     LCDPrint(1, 6, "H:");
-    if(temperature_value == 399) {
+    if(temperature_value == 5) {
         LCDPrint(1, 3, "ER");
     } else{
         LCDPrintChar(1, 3, temperature_value / 10 + '0');
         LCDPrintChar(1, 4, temperature_value % 10 + '0');
     }
-    if(humidity_value == 399) {
+    if(humidity_value == 5) {
         LCDPrint(1, 8, "ER");
     } else {
         LCDPrintChar(1, 8, humidity_value / 10 + '0');

@@ -25,10 +25,10 @@ char readDHT() {
     unsigned int timeOut = TIME_OUT_DHT;
     DHT_DIRECTION = 0;
     DHT_DATA_OUT = 0;
-    __delay_ms(20);
+    __delay_ms(18);
     
     DHT_DATA_OUT = 1;
-    __delay_us(20);
+    __delay_us(30);
     DHT_DIRECTION = 1;
     
     while(DHT_DATA_IN & 1) {
@@ -74,14 +74,22 @@ char readDHT() {
 
 void readTempAndHumid(void) {
     if(!readDHT()) {
+        countError++;
         //LCDPrint(1, 8, "ERROR");
-        temperature_value = ERROR_SENSOR_VAL;
-        humidity_value = ERROR_SENSOR_VAL;
+//        temperature_value = ERROR_SENSOR_VAL;
+//        humidity_value = ERROR_SENSOR_VAL;
         return;
     }
+    else {
+        countError = 0;
+        temperature_value = temperature_dht11[0];
+        humidity_value = humidity_dht11[0];
+    }
+    if(countError >= 3) {
+        temperature_value = ERROR_SENSOR_VAL;
+        humidity_value = ERROR_SENSOR_VAL;
+    }
     
-    temperature_value = temperature_dht11[0];
-    humidity_value = humidity_dht11[0];
 //    if(!readDHT()) {
 //        temperature_value = ERROR_SENSOR_VAL;
 //        humidity_value = ERROR_SENSOR_VAL;
