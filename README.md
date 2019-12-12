@@ -3,5 +3,4 @@
 
 These labs are built on PIC18 Explorer Board.
 
-[PIC18 Explorer Board](https://i.imgur.com/1ZOo5D7.png)
-
+[PIC18](https://i.imgur.com/1ZOo5D7.png)
